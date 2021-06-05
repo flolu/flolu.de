@@ -49,7 +49,6 @@ const foregroundColors = {
 }
 
 module.exports = {
-  mode: 'jit',
   purge: {
     content: [
       './pages/**/*.{js,ts,jsx,tsx}',
@@ -59,6 +58,11 @@ module.exports = {
     ],
   },
   theme: {
+    fontFamily: {
+      sans: ['Poppins', 'sans-serif'],
+      serif: ['ui-serif', 'Georgia'],
+      mono: ['ui-monospace', 'SFMono-Regular'],
+    },
     colors: {},
     extend: {
       textColor: {
