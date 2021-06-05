@@ -78,7 +78,6 @@ export function Header() {
           </span>
         </div>
       </nav>
-      <div className="h-24"></div>
     </>
   )
 }
