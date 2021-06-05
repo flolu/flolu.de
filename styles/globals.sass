@@ -1,0 +1,108 @@
+@import "tailwindcss/base"
+@import "tailwindcss/components"
+@import "tailwindcss/utilities"
+
+@layer base
+  .theme-light
+    --color-background-50: #FFFFFF
+    --color-background-100: #FAFAFA
+    --color-background-300: #F5F5F5
+    --color-background-500: #EDEDED
+    --color-background-700: #E6E5E5
+    --color-background-900: #DEDEDE
+
+    --color-foreground-50: #D8D5D4
+    --color-foreground-100: #969392
+    --color-foreground-300: #565352
+    --color-foreground-500: #32302F
+    --color-foreground-700: #1F1E1E
+    --color-foreground-900: #0D0D0D
+
+    --color-background-50-backdrop: rgba(255, 255, 255, 0.8)
+    --color-background-100-backdrop: rgba(250, 250, 250, 0.8)
+    --color-background-500-backdrop: rgba(237, 237, 237, 0.8)
+    --color-background-900-backdrop: rgba(222, 222, 222, 0.8)
+    --color-background-darken: rgba(0, 0, 0, 0.025)
+
+    --color-primary-50: #E0F5E2
+    --color-primary-100: #C1EBC5
+    --color-primary-300: #84D78B
+    --color-primary-500: #56C860
+    --color-primary-700: #329A3B
+    --color-primary-900: #236C29
+
+    --color-primary-inverted-50: #143E17
+    --color-primary-inverted-100: #236C29
+    --color-primary-inverted-300: #E0F5E2
+    --color-primary-inverted-500: #E0F5E2
+    --color-primary-inverted-700: #E0F5E2
+    --color-primary-inverted-900: #E0F5E2
+
+    --color-primary-foreground-50: #B2E6B7
+    --color-primary-foreground-100: #93DC9A
+    --color-primary-foreground-300: #56C85F
+    --color-primary-foreground-500: #37A941
+    --color-primary-foreground-700: #236C29
+    --color-primary-foreground-900: #143E17
+
+  .theme-dark
+    --color-background-50: #171717
+    --color-background-100: #1D1D1D
+    --color-background-300: #232323
+    --color-background-500: #2F2F2F
+    --color-background-700: #3B3B3B
+    --color-background-900: #474747
+
+    --color-foreground-50: #585858
+    --color-foreground-100: #828282
+    --color-foreground-300: #ACACAC
+    --color-foreground-500: #D6D6D6
+    --color-foreground-700: #EBEBEB
+    --color-foreground-900: #FFFFFF
+
+    --color-background-50-backdrop: rgba(23, 23, 23, 0.8)
+    --color-background-100-backdrop: rgba(29, 29, 29, 0.8)
+    --color-background-500-backdrop: rgba(47, 47, 47, 0.8)
+    --color-background-900-backdrop: rgba(71, 71, 71, 0.8)
+    --color-background-darken: rgba(0, 0, 0, 0.1)
+
+    --color-primary-50: #E0F5E2
+    --color-primary-100: #C1EBC5
+    --color-primary-300: #84D78B
+    --color-primary-500: #56C860
+    --color-primary-700: #329A3B
+    --color-primary-900: #236C29
+
+    --color-primary-inverted-50: #143E17
+    --color-primary-inverted-100: #236C29
+    --color-primary-inverted-300: #E0F5E2
+    --color-primary-inverted-500: #E0F5E2
+    --color-primary-inverted-700: #E0F5E2
+    --color-primary-inverted-900: #E0F5E2
+
+    --color-primary-foreground-50: #143E17
+    --color-primary-foreground-100: #236C29
+    --color-primary-foreground-300: #37A941
+    --color-primary-foreground-500: #56C85F
+    --color-primary-foreground-700: #93DC9A
+    --color-primary-foreground-900: #B2E6B7
+
+body
+  min-width: 320px
+  min-height: 100vh
+  background-color: var(--color-background-50)
+
+::selection
+  color: var(--color-primary-inverted-300)
+  background: var(--color-primary-700)
+
+::-webkit-scrollbar
+  width: 11px
+
+::-webkit-scrollbar-track
+  background: var(--color-background-900)
+
+::-webkit-scrollbar-thumb
+  background-color: var(--color-foreground-300)
+  border-radius: 6px
+  border: 3px solid var(--color-background-900)
