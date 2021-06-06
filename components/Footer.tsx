@@ -9,7 +9,7 @@ import {GermanIcon} from '../components/Icons/GermanIcon'
 import {GithubIcon} from '../components/Icons/GithubIcon'
 import {InstagramIcon} from '../components/Icons/InstagramIcon'
 import {UnitedKingdomIcon} from '../components/Icons/UnitedKingdomIcon'
-import {YoutubeIcon} from '../components/Icons/YoutubeIcon'
+import {YouTubeIcon} from './Icons/YouTubeIcon'
 
 export function Footer() {
   const router = useRouter()
@@ -89,7 +89,7 @@ export function Footer() {
               href="https://www.youtube.com/c/flolu"
               className="w-4 cursor-pointer fill-current"
             >
-              <YoutubeIcon />
+              <YouTubeIcon />
             </a>
             <a
               target="_blank"
@@ -128,46 +128,65 @@ export function Footer() {
             <h2 className="mb-4 font-medium tracking-widest text-900">{t('footer:random')}</h2>
             <ul className="mb-10 space-y-2">
               <li className="hover:underline">
-                <Link href="/">{t('footer:skills')}</Link>
+                <Link href="/skills">{t('footer:skills')}</Link>
               </li>
               <li className="hover:underline">
-                <Link href="/">{t('footer:portfolio')}</Link>
+                <Link href="/portfolio">{t('footer:portfolio')}</Link>
               </li>
               <li className="hover:underline">
-                <Link href="/">{t('footer:bio_hacking')}</Link>
+                <Link href="/biohacking">{t('footer:biohacking')}</Link>
               </li>
               <li className="hover:underline">
-                <Link href="/">{t('footer:random_facts')}</Link>
+                <Link href="/facts">{t('footer:facts')}</Link>
               </li>
               <li className="hover:underline">
-                <Link href="/">{t('footer:recommendations')}</Link>
+                <Link href="/recommendations">{t('footer:recommendations')}</Link>
               </li>
               <li className="hover:underline">
-                <Link href="/">{t('footer:favorites')}</Link>
+                <Link href="/favorites">{t('footer:favorites')}</Link>
               </li>
             </ul>
           </div>
           <div className="w-full md:w-1/2 lg:w-1/3">
             <h2 className="mb-4 font-medium tracking-widest text-900">{t('footer:online')}</h2>
-            <ul className="mb-10 space-y-2">
-              <li className="hover:underline">
-                <Link href="/">{t('footer:instagram')}</Link>
-              </li>
-              <li className="hover:underline">
-                <Link href="/">{t('footer:youtube')}</Link>
-              </li>
-              <li className="hover:underline">
-                <Link href="/">{t('footer:github')}</Link>
-              </li>
-              <li className="hover:underline">
-                <Link href="/">{t('footer:strava')}</Link>
-              </li>
-              <li className="hover:underline">
-                <Link href="/">{t('footer:linked_in')}</Link>
-              </li>
-              <li className="hover:underline">
-                <Link href="/">{t('footer:stack_overflow')}</Link>
-              </li>
+            <ul className="flex flex-col mb-10 space-y-2">
+              <a
+                className="hover:underline"
+                target="_blank"
+                href="https://www.instagram.com/flo.ludewig"
+              >
+                Instagram
+              </a>
+              <a className="hover:underline" target="_blank" href="https://www.youtube.com/c/flolu">
+                YouTube
+              </a>
+              <a className="hover:underline" target="_blank" href="https://github.com/flolu">
+                GitHub
+              </a>
+              <a
+                className="hover:underline"
+                target="_blank"
+                href="https://www.strava.com/athletes/69079803"
+              >
+                Strava
+              </a>
+              <a
+                className="hover:underline"
+                target="_blank"
+                href="https://www.linkedin.com/in/florian-ludewig"
+              >
+                LinkedIn
+              </a>
+              <a
+                className="hover:underline"
+                target="_blank"
+                href="https://stackoverflow.com/users/8586803"
+              >
+                StackOverflow
+              </a>
+              <a className="hover:underline" target="_blank" href="https://unsplash.com/@flolu">
+                Unsplash
+              </a>
             </ul>
           </div>
         </div>

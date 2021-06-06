@@ -22,7 +22,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <Header spacer={false} />
+      <div className="h-24 md:hidden"></div>
 
       <main className="px-4 mx-auto space-y-32 max-w-7xl">
         <HomeHead />
@@ -38,7 +39,7 @@ export default function Home() {
 }
 
 export const getStaticProps: GetStaticProps = async ({locale}) => {
-  const namespaces = ['header', 'footer']
+  const namespaces = ['header', 'footer', 'home', 'timeline']
   const translations = await serverSideTranslations(locale || 'en', namespaces)
 
   return {

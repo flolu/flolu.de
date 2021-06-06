@@ -10,7 +10,12 @@ import {DarkModeIcon} from './Icons/DarkModeIcon'
 import {LightModeIcon} from './Icons/LightModeIcon'
 import {WidgetsIcon} from './Icons/WidgetsIcon'
 
-export function Header() {
+interface Props {
+  spacer?: boolean
+}
+
+export const Header = (props: Props) => {
+  const spacer = props.spacer === undefined ? true : props.spacer
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const topAnchorRef = useRef<HTMLDivElement>(null)
@@ -61,7 +66,7 @@ export function Header() {
 
   return (
     <>
-      <div className="h-24 md:hidden"></div>
+      {spacer && <div className="h-24"></div>}
       <div className="absolute top-8" ref={topAnchorRef}></div>
       <nav className="fixed top-0 z-10 w-full bg-50-backdrop backdrop-filter backdrop-blur-lg">
         <div
@@ -79,22 +84,22 @@ export function Header() {
           <div className="flex-1"></div>
 
           <div className="hidden ml-auto sm:block">
-            <Link href="/3d-scanning">
+            <Link href="/">
               <a className="hover:text-900">{t('header:about_me')}</a>
             </Link>
           </div>
           <div className="hidden md:block">
-            <Link href="/contact">
+            <Link href="/">
               <a className="hover:text-900">{t('header:activity')}</a>
             </Link>
           </div>
           <div className="hidden md:block">
-            <Link href="/contact">
+            <Link href="/">
               <a className="hover:text-900">{t('header:timeline')}</a>
             </Link>
           </div>
           <div className="hidden md:block">
-            <Link href="/our-story">
+            <Link href="/">
               <a className="hover:text-900">{t('header:get_in_touch')}</a>
             </Link>
           </div>

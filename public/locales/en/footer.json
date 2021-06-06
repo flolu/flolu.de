@@ -1,5 +1,19 @@
 {
   "tagline": "I'd rather live in regret of failure then in regret of never trying. ~ Mj Demarco",
   "locale_en": "English",
-  "locale_de": "German"
+  "locale_de": "German",
+  "online": "Online",
+  "home": "Home",
+  "about_me": "About me",
+  "activity": "Activity",
+  "timeline": "Timeline",
+  "get_in_touch": "Get in touch",
+  "blog": "Blog",
+  "random": "Random",
+  "portfolio": "Portfolio",
+  "biohacking": "Biohacking",
+  "facts": "Random facts",
+  "recommendations": "Recommendations",
+  "favorites": "Favorites",
+  "skills": "Skills"
 }

@@ -1,29 +1,34 @@
 import Image from 'next/image'
+import {useTranslation} from 'react-i18next'
 
 import {ArrowDownIcon} from '../Icons/ArrowDownIcon'
 import {ArrowForwardIcon} from '../Icons/ArrowForwardIcon'
 import {GithubIcon} from '../Icons/GithubIcon'
 import {InstagramIcon} from '../Icons/InstagramIcon'
 import {MouseIcon} from '../Icons/MouseIcon'
-import {YoutubeIcon} from '../Icons/YoutubeIcon'
+import {YouTubeIcon} from '../Icons/YouTubeIcon'
 
 export function HomeHead() {
+  const {t} = useTranslation()
+
   return (
     <section className="relative flex flex-col-reverse items-center justify-end space-x-4 md:justify-center md:flex-row md:min-h-screen md:px-28 lg:px-0">
-      <div className="max-w-xs mt-12 md:max-w-sm md:mt-0">
-        <h1 className="text-5xl font-bold md:text-7xl lg:text-8xl text-900">I'm Flo</h1>
+      <div className="max-w-xs mt-12 md:max-w-sm md:mt-0 lg:max-w-lg">
+        <h1 className="text-5xl font-bold md:text-7xl lg:text-8xl text-900 whitespace-nowrap">
+          {t('home:title')}
+        </h1>
         <p className="mt-4 leading-relaxed lg:mt-6 md:text-base lg:text-xl text-500">
-          Computer science student, programmer, startupper and fitness addict.
+          {t('home:tagline')}
         </p>
         <button className="flex items-center px-4 py-2 mt-8 space-x-2 text-lg font-medium rounded-lg lg:mt-12 lg:px-6 lg:py-3 lg:text-xl bg-primary-500 text-on-primary-300 focus:outline-none focus:ring-4 ring-offset-2 ring-primary-100">
-          <span>Stalk me</span>
+          <span>{t('home:stalk_me')}</span>
           <span className="w-6 fill-current">
             <ArrowForwardIcon />
           </span>
         </button>
       </div>
 
-      <div className="w-56 md:w-full md:max-w-xs lg:max-w-sm xl:max-w-md">
+      <div className="w-56 md:w-full lg:max-w-sm xl:max-w-md">
         <Image
           className="rounded-full"
           src="/avatar.jpg"
@@ -55,7 +60,7 @@ export function HomeHead() {
             href="https://www.youtube.com/c/flolu"
             className="w-5 fill-current text-primary-300"
           >
-            <YoutubeIcon />
+            <YouTubeIcon />
           </a>
         </div>
       </div>
@@ -65,7 +70,7 @@ export function HomeHead() {
           <span className="w-6 fill-current">
             <MouseIcon />
           </span>
-          <span>Scroll down</span>
+          <span>{t('home:scroll_down')}</span>
           <span className="w-5 fill-current">
             <ArrowDownIcon />
           </span>
