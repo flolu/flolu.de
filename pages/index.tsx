@@ -9,6 +9,7 @@ import {AboutMe} from '../components/Home/AboutMe'
 import {Activity} from '../components/Home/Activity'
 import {GetInTouch} from '../components/Home/GetInTouch'
 import {HomeHead} from '../components/Home/Head'
+import {Sitemap} from '../components/Home/Sitemap'
 import {Timeline} from '../components/Home/Timeline'
 
 export default function Home() {
@@ -30,8 +31,13 @@ export default function Home() {
         <AboutMe />
         <Activity />
         <Timeline />
-        <GetInTouch />
       </main>
+
+      <GetInTouch />
+
+      <div className="px-4 mx-auto mt-16 space-y-32 max-w-7xl">
+        <Sitemap />
+      </div>
 
       <Footer />
     </div>

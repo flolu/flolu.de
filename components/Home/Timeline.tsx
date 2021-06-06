@@ -15,10 +15,10 @@ export function Timeline() {
   return (
     <section id="timeline">
       <div className="mb-8 space-y-2 text-center">
-        <h1 className="text-6xl font-bold">{t('home:timeline')}</h1>
+        <h1 className="text-4xl font-bold lg:text-6xl">{t('home:timeline')}</h1>
       </div>
       <div className="max-w-xl mx-auto space-y-8">
-        <h2 className="flex items-center space-x-4 text-4xl font-bold">
+        <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
           <span>2021</span>
           <span className="w-full h-px bg-500"></span>
         </h2>
@@ -33,7 +33,7 @@ export function Timeline() {
               <p className="text-sm font-medium sm:text-base">
                 {t('timeline:learnt_freestyle_swimming')}
               </p>
-              <p className="text-xs sm:text-sm md:text-base text-300">
+              <p className="text-sm md:text-base text-300">
                 {t('timeline:learnt_freestyle_swimming_description')}
               </p>
               <a
@@ -59,7 +59,7 @@ export function Timeline() {
           </li>
         </ul>
 
-        <h2 className="flex items-center space-x-4 text-4xl font-bold">
+        <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
           <span>2020</span>
           <span className="w-full h-px bg-500"></span>
         </h2>
@@ -74,7 +74,7 @@ export function Timeline() {
               <p className="text-sm font-medium sm:text-base">
                 {t('timeline:founded_first_company')}
               </p>
-              <p className="text-xs sm:text-sm md:text-base text-300">
+              <p className="text-sm md:text-base text-300">
                 {t('timeline:founded_first_company_description')}
               </p>
               <a
@@ -98,7 +98,7 @@ export function Timeline() {
               <p className="text-sm font-medium sm:text-base">
                 {t('timeline:started_3d_designer')}
               </p>
-              <p className="text-xs sm:text-sm md:text-base text-300">
+              <p className="text-sm md:text-base text-300">
                 {t('timeline:started_3d_designer_desc')}
               </p>
               <a
@@ -122,7 +122,7 @@ export function Timeline() {
               <p className="text-sm font-medium sm:text-base">
                 {t('timeline:started_drakery_platform')}
               </p>
-              <p className="text-xs sm:text-sm md:text-base text-300">
+              <p className="text-sm md:text-base text-300">
                 {t('timeline:started_drakery_platform_desc')}
               </p>
               <a
@@ -177,7 +177,7 @@ export function Timeline() {
               <p className="text-sm font-medium sm:text-base">
                 {t('timeline:started_3d_scanning')}
               </p>
-              <p className="text-xs sm:text-sm md:text-base text-300">
+              <p className="text-sm md:text-base text-300">
                 {t('timeline:started_3d_scanning_desc')}
               </p>
             </div>
@@ -196,7 +196,7 @@ export function Timeline() {
           </li>
         </ul>
 
-        <h2 className="flex items-center space-x-4 text-4xl font-bold">
+        <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
           <span>2019</span>
           <span className="w-full h-px bg-500"></span>
         </h2>
@@ -228,9 +228,7 @@ export function Timeline() {
             </div>
             <div className="space-y-2">
               <p className="text-sm font-medium sm:text-base">{t('timeline:startup_teens')}</p>
-              <p className="text-xs sm:text-sm md:text-base text-300">
-                {t('timeline:startup_teens_desc')}
-              </p>
+              <p className="text-sm md:text-base text-300">{t('timeline:startup_teens_desc')}</p>
               <a
                 href="https://www.startupteens.de/site/2019"
                 className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
@@ -297,7 +295,7 @@ export function Timeline() {
         )}
 
         <div className={classNames('space-y-8', showFullTimeline ? 'block' : 'hidden')}>
-          <h2 className="flex items-center space-x-4 text-4xl font-bold">
+          <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
             <span>2018</span>
             <span className="w-full h-px bg-500"></span>
           </h2>
@@ -310,7 +308,7 @@ export function Timeline() {
               </div>
               <div className="space-y-2">
                 <p className="text-sm font-medium sm:text-base">{t('timeline:tackle_it')}</p>
-                <p className="text-xs sm:text-sm md:text-base text-300">
+                <p className="text-sm md:text-base text-300">
                   {t('timeline:tackle_it_description')}
                 </p>
                 <a
@@ -332,7 +330,7 @@ export function Timeline() {
               </div>
               <div className="space-y-2">
                 <p className="text-sm font-medium sm:text-base">{t('timeline:entrepreneurship')}</p>
-                <p className="text-xs sm:text-sm md:text-base text-300">
+                <p className="text-sm md:text-base text-300">
                   {t('timeline:entrepreneurship_description')}
                 </p>
                 <div className="space-x-4">
@@ -380,7 +378,7 @@ export function Timeline() {
             </li>
           </ul>
 
-          <h2 className="flex items-center space-x-4 text-4xl font-bold">
+          <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
             <span>{t('timeline:before')}</span>
             <span className="w-full h-px bg-500"></span>
           </h2>
@@ -395,7 +393,7 @@ export function Timeline() {
                 <p className="text-sm font-medium sm:text-base">
                   {t('timeline:first_line_of_code')}
                 </p>
-                <p className="text-xs sm:text-sm md:text-base text-300">
+                <p className="text-sm md:text-base text-300">
                   {t('timeline:first_line_of_code_description')}
                 </p>
               </div>
@@ -409,7 +407,7 @@ export function Timeline() {
               {/* TODO show video samples */}
               <div className="space-y-2">
                 <p className="text-sm font-medium sm:text-base">{t('timeline:de_junts')}</p>
-                <p className="text-xs sm:text-sm md:text-base text-300">
+                <p className="text-sm md:text-base text-300">
                   {t('timeline:de_junts_description')}
                 </p>
                 <div className="space-x-4">
@@ -442,7 +440,7 @@ export function Timeline() {
               </div>
               <div className="space-y-2">
                 <p className="text-sm font-medium sm:text-base">{t('timeline:skatestyle')}</p>
-                <p className="text-xs sm:text-sm md:text-base text-300">
+                <p className="text-sm md:text-base text-300">
                   {t('timeline:skatestyle_description')}
                 </p>
                 <div className="space-x-4">
@@ -475,9 +473,7 @@ export function Timeline() {
               </div>
               <div className="space-y-2">
                 <p className="text-sm font-medium sm:text-base">{t('timeline:paluten')}</p>
-                <p className="text-xs sm:text-sm md:text-base text-300">
-                  {t('timeline:paluten_description')}
-                </p>
+                <p className="text-sm md:text-base text-300">{t('timeline:paluten_description')}</p>
                 <div className="space-x-4">
                   <a
                     href="https://youtu.be/y6QRGQhEYJI"
@@ -499,7 +495,7 @@ export function Timeline() {
               </div>
               <div className="space-y-2">
                 <p className="text-sm font-medium sm:text-base">{t('timeline:skateboarding')}</p>
-                <p className="text-xs sm:text-sm md:text-base text-300">
+                <p className="text-sm md:text-base text-300">
                   {t('timeline:skateboarding_description')}
                 </p>
               </div>
@@ -512,14 +508,14 @@ export function Timeline() {
               </div>
               <div className="space-y-2">
                 <p className="text-sm font-medium sm:text-base">{t('timeline:childhood')}</p>{' '}
-                <p className="text-xs sm:text-sm md:text-base text-300">
+                <p className="text-sm md:text-base text-300">
                   {t('timeline:childhood_description')}
                 </p>
               </div>
             </li>
           </ul>
 
-          <h2 className="flex items-center space-x-4 text-4xl font-bold">
+          <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
             <span className="whitespace-nowrap">2001</span>
             <span className="w-full h-px bg-500"></span>
           </h2>

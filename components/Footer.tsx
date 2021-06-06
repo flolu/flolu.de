@@ -16,7 +16,7 @@ export function Footer() {
   const {t} = useTranslation()
 
   return (
-    <footer className="mt-12 text-sm text-300 body-font">
+    <footer className="text-sm text-300 body-font">
       <div className="container flex flex-col flex-wrap px-4 py-8 mx-auto border-t border-background-500 sm:px-8 md:py-12 max-w-7xl md:items-center lg:items-start md:flex-row md:flex-nowrap">
         <div className="flex-shrink-0 max-w-sm space-y-6 md:w-1/3 md:mx-0">
           <Link href="/">
@@ -108,16 +108,16 @@ export function Footer() {
                 <Link href="/">{t('footer:home')}</Link>
               </li>
               <li className="hover:underline">
-                <Link href="/">{t('footer:about_me')}</Link>
+                <Link href="/#about-me">{t('footer:about_me')}</Link>
               </li>
               <li className="hover:underline">
-                <Link href="/">{t('footer:activity')}</Link>
+                <Link href="/#activity">{t('footer:activity')}</Link>
               </li>
               <li className="hover:underline">
-                <Link href="/">{t('footer:timeline')}</Link>
+                <Link href="/#timeline">{t('footer:timeline')}</Link>
               </li>
               <li className="hover:underline">
-                <Link href="/">{t('footer:get_in_touch')}</Link>
+                <Link href="/#get-in-touch">{t('footer:get_in_touch')}</Link>
               </li>
               <li className="hover:underline">
                 <Link href="/blog">{t('footer:blog')}</Link>
@@ -192,6 +192,9 @@ export function Footer() {
               </a>
               <a className="hover:underline" target="_blank" href="https://unsplash.com/@flolu">
                 Unsplash
+              </a>
+              <a className="hover:underline" target="_blank" href="https://t.me/flolu">
+                Telegram
               </a>
             </ul>
           </div>
