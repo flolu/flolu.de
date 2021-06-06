@@ -102,26 +102,71 @@ export function Footer() {
         </div>
         <div className="flex flex-wrap flex-grow mt-10 -mb-10 md:pl-20 md:mt-0">
           <div className="w-full md:w-1/2 lg:w-1/3">
-            <h2 className="mb-4 font-medium tracking-widest text-900">{t('footer:placeholder')}</h2>
+            <h2 className="mb-4 font-medium tracking-widest text-900">{t('footer:home')}</h2>
             <ul className="mb-10 space-y-2">
               <li className="hover:underline">
-                <Link href="/beta">{t('footer:placeholder')}</Link>
+                <Link href="/">{t('footer:home')}</Link>
+              </li>
+              <li className="hover:underline">
+                <Link href="/">{t('footer:about_me')}</Link>
+              </li>
+              <li className="hover:underline">
+                <Link href="/">{t('footer:activity')}</Link>
+              </li>
+              <li className="hover:underline">
+                <Link href="/">{t('footer:timeline')}</Link>
+              </li>
+              <li className="hover:underline">
+                <Link href="/">{t('footer:get_in_touch')}</Link>
+              </li>
+              <li className="hover:underline">
+                <Link href="/blog">{t('footer:blog')}</Link>
               </li>
             </ul>
           </div>
           <div className="w-full md:w-1/2 lg:w-1/3">
-            <h2 className="mb-4 font-medium tracking-widest text-900">{t('footer:placeholder')}</h2>
+            <h2 className="mb-4 font-medium tracking-widest text-900">{t('footer:random')}</h2>
             <ul className="mb-10 space-y-2">
               <li className="hover:underline">
-                <Link href="/3d-scanning">{t('footer:placeholder')}</Link>
+                <Link href="/">{t('footer:skills')}</Link>
+              </li>
+              <li className="hover:underline">
+                <Link href="/">{t('footer:portfolio')}</Link>
+              </li>
+              <li className="hover:underline">
+                <Link href="/">{t('footer:bio_hacking')}</Link>
+              </li>
+              <li className="hover:underline">
+                <Link href="/">{t('footer:random_facts')}</Link>
+              </li>
+              <li className="hover:underline">
+                <Link href="/">{t('footer:recommendations')}</Link>
+              </li>
+              <li className="hover:underline">
+                <Link href="/">{t('footer:favorites')}</Link>
               </li>
             </ul>
           </div>
           <div className="w-full md:w-1/2 lg:w-1/3">
-            <h2 className="mb-4 font-medium tracking-widest text-900">{t('footer:placeholder')}</h2>
+            <h2 className="mb-4 font-medium tracking-widest text-900">{t('footer:online')}</h2>
             <ul className="mb-10 space-y-2">
               <li className="hover:underline">
-                <Link href="/blog">{t('footer:placeholder')}</Link>
+                <Link href="/">{t('footer:instagram')}</Link>
+              </li>
+              <li className="hover:underline">
+                <Link href="/">{t('footer:youtube')}</Link>
+              </li>
+              <li className="hover:underline">
+                <Link href="/">{t('footer:github')}</Link>
+              </li>
+              <li className="hover:underline">
+                <Link href="/">{t('footer:strava')}</Link>
+              </li>
+              <li className="hover:underline">
+                <Link href="/">{t('footer:linked_in')}</Link>
+              </li>
+              <li className="hover:underline">
+                <Link href="/">{t('footer:stack_overflow')}</Link>
               </li>
             </ul>
           </div>

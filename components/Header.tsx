@@ -61,6 +61,7 @@ export function Header() {
 
   return (
     <>
+      <div className="h-24 md:hidden"></div>
       <div className="absolute top-8" ref={topAnchorRef}></div>
       <nav className="fixed top-0 z-10 w-full bg-50-backdrop backdrop-filter backdrop-blur-lg">
         <div
@@ -79,12 +80,12 @@ export function Header() {
 
           <div className="hidden ml-auto sm:block">
             <Link href="/3d-scanning">
-              <a className="hover:text-900">{t('header:about')}</a>
+              <a className="hover:text-900">{t('header:about_me')}</a>
             </Link>
           </div>
           <div className="hidden md:block">
             <Link href="/contact">
-              <a className="hover:text-900">{t('header:skills')}</a>
+              <a className="hover:text-900">{t('header:activity')}</a>
             </Link>
           </div>
           <div className="hidden md:block">
@@ -94,7 +95,7 @@ export function Header() {
           </div>
           <div className="hidden md:block">
             <Link href="/our-story">
-              <a className="hover:text-900">{t('header:contact_me')}</a>
+              <a className="hover:text-900">{t('header:get_in_touch')}</a>
             </Link>
           </div>
           <span className="w-6 cursor-pointer fill-current" onClick={onSwitchTheme}>
