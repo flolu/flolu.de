@@ -32,7 +32,7 @@ export default function Home() {
           <div className="max-w-xs mt-12 md:max-w-sm md:mt-0">
             <h1 className="text-5xl font-bold md:text-7xl lg:text-8xl text-900">I'm Flo</h1>
             <p className="mt-4 leading-relaxed lg:mt-6 md:text-base lg:text-xl text-500">
-              Computer science student, programmer, startup entrepreneur and athlete.
+              Computer science student, programmer, startupper and fitness addict.
             </p>
             <button className="flex items-center px-4 py-2 mt-8 space-x-2 text-lg font-medium rounded-lg lg:mt-12 lg:px-6 lg:py-3 lg:text-xl bg-primary-500 text-on-primary-300 focus:outline-none focus:ring-4 ring-offset-2 ring-primary-100">
               <span>Stalk me</span>

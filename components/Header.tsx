@@ -1,15 +1,20 @@
+import {Transition} from '@headlessui/react'
 import {useTranslation} from 'next-i18next'
 import Link from 'next/link'
-import {useEffect, useRef, useState} from 'react'
+import {Fragment, useEffect, useRef, useState} from 'react'
 
 import {Themes, useAppearance} from '../contexts/AppearanceContext'
 import {classNames} from '../lib/class-names'
+import {CloseIcon} from './Icons/CloseIcon'
 import {DarkModeIcon} from './Icons/DarkModeIcon'
 import {LightModeIcon} from './Icons/LightModeIcon'
+import {WidgetsIcon} from './Icons/WidgetsIcon'
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const topAnchorRef = useRef<HTMLDivElement>(null)
+  const menuRef = useRef<HTMLDivElement>(null)
   const {t} = useTranslation()
   const appearance = useAppearance()
 
@@ -29,9 +34,29 @@ export function Header() {
     }
   }, [topAnchorRef])
 
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent | TouchEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('touchstart', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+    }
+  }, [menuRef])
+
   const onSwitchTheme = () => {
     if (appearance.theme === Themes.Light) appearance.setTheme(Themes.Dark)
     if (appearance.theme === Themes.Dark) appearance.setTheme(Themes.Light)
+  }
+
+  const onToggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
   }
 
   return (
@@ -76,8 +101,40 @@ export function Header() {
             {appearance.theme === Themes.Light && <DarkModeIcon />}
             {appearance.theme === Themes.Dark && <LightModeIcon />}
           </span>
+          <span className="w-6 cursor-pointer fill-current" onClick={onToggleMenu}>
+            {isMenuOpen && <CloseIcon />}
+            {!isMenuOpen && <WidgetsIcon />}
+          </span>
         </div>
       </nav>
+
+      <div className="fixed bottom-0 z-10 flex flex-col items-center left-2 right-2">
+        <div className="w-full max-w-sm" ref={menuRef}>
+          <Transition
+            show={isMenuOpen}
+            as={Fragment}
+            enter="transition ease-out duration-200"
+            enterFrom="transform opacity-0 scale-95 translate-y-32"
+            enterTo="transform opacity-100 scale-100 translate-y-0"
+            leave="transition ease-in duration-100"
+            leaveFrom="transform opacity-100 scale-100 translate-y-0"
+            leaveTo="transform opacity-0 scale-95 translate-y-32"
+          >
+            <div className="flex flex-col items-center p-4 space-y-4 border-2 border-b-0 shadow-2xl rounded-t-2xl bg-500-backdrop backdrop-filter backdrop-blur-lg border-background-300">
+              <div className="flex space-x-8">
+                <span>About</span>
+                <span>Skills</span>
+                <span>Timeline</span>
+              </div>
+              <div className="flex space-x-8">
+                <span>Contact</span>
+                <span>Activity</span>
+                <span>Find me</span>
+              </div>
+            </div>
+          </Transition>
+        </div>
+      </div>
     </>
   )
 }
