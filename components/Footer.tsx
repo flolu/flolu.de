@@ -122,6 +122,9 @@ export function Footer() {
               <li className="hover:underline">
                 <Link href="/blog">{t('footer:blog')}</Link>
               </li>
+              <li className="hover:underline">
+                <Link href="/online">{t('footer:online')}</Link>
+              </li>
             </ul>
           </div>
           <div className="w-full md:w-1/2 lg:w-1/3">
@@ -144,6 +147,9 @@ export function Footer() {
               </li>
               <li className="hover:underline">
                 <Link href="/favorites">{t('footer:favorites')}</Link>
+              </li>
+              <li className="hover:underline">
+                <Link href="/principles">{t('footer:principles')}</Link>
               </li>
             </ul>
           </div>

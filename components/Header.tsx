@@ -7,7 +7,10 @@ import {Themes, useAppearance} from '../contexts/AppearanceContext'
 import {classNames} from '../lib/class-names'
 import {CloseIcon} from './Icons/CloseIcon'
 import {DarkModeIcon} from './Icons/DarkModeIcon'
+import {HistoryIcon} from './Icons/HistoryIcon'
+import {LaughIcon} from './Icons/LaughIcon'
 import {LightModeIcon} from './Icons/LightModeIcon'
+import {TimelineIcon} from './Icons/TimelineIcon'
 import {WidgetsIcon} from './Icons/WidgetsIcon'
 
 interface Props {
@@ -20,6 +23,7 @@ export const Header = (props: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const topAnchorRef = useRef<HTMLDivElement>(null)
   const menuRef = useRef<HTMLDivElement>(null)
+  const closeMenuRef = useRef<HTMLDivElement>(null)
   const {t} = useTranslation()
   const appearance = useAppearance()
 
@@ -42,6 +46,7 @@ export const Header = (props: Props) => {
   useEffect(() => {
     function handleClickOutside(event: MouseEvent | TouchEvent) {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        if (closeMenuRef.current && closeMenuRef.current.contains(event.target as Node)) return
         setIsMenuOpen(false)
       }
     }
@@ -84,22 +89,22 @@ export const Header = (props: Props) => {
           <div className="flex-1"></div>
 
           <div className="hidden ml-auto sm:block">
-            <Link href="/">
+            <Link href="#about-me">
               <a className="hover:text-900">{t('header:about_me')}</a>
             </Link>
           </div>
           <div className="hidden md:block">
-            <Link href="/">
+            <Link href="#activity">
               <a className="hover:text-900">{t('header:activity')}</a>
             </Link>
           </div>
           <div className="hidden md:block">
-            <Link href="/">
+            <Link href="#timeline">
               <a className="hover:text-900">{t('header:timeline')}</a>
             </Link>
           </div>
           <div className="hidden md:block">
-            <Link href="/">
+            <Link href="#get-in-touch">
               <a className="hover:text-900">{t('header:get_in_touch')}</a>
             </Link>
           </div>
@@ -108,13 +113,18 @@ export const Header = (props: Props) => {
             {appearance.theme === Themes.Dark && <LightModeIcon />}
           </span>
           <span className="w-6 cursor-pointer fill-current" onClick={onToggleMenu}>
-            {isMenuOpen && <CloseIcon />}
-            {!isMenuOpen && <WidgetsIcon />}
+            {isMenuOpen ? (
+              <span ref={closeMenuRef}>
+                <CloseIcon />
+              </span>
+            ) : (
+              <WidgetsIcon />
+            )}
           </span>
         </div>
       </nav>
 
-      <div className="fixed bottom-0 z-10 flex flex-col items-center left-2 right-2">
+      <div className="fixed bottom-0 z-10 flex flex-col items-center shadow-2xl left-2 right-2">
         <div className="w-full max-w-sm" ref={menuRef}>
           <Transition
             show={isMenuOpen}
@@ -126,16 +136,32 @@ export const Header = (props: Props) => {
             leaveFrom="transform opacity-100 scale-100 translate-y-0"
             leaveTo="transform opacity-0 scale-95 translate-y-32"
           >
-            <div className="flex flex-col items-center p-4 space-y-4 border-2 border-b-0 shadow-2xl rounded-t-2xl bg-500-backdrop backdrop-filter backdrop-blur-lg border-background-300">
-              <div className="flex space-x-8">
-                <span>About</span>
-                <span>Skills</span>
-                <span>Timeline</span>
-              </div>
-              <div className="flex space-x-8">
-                <span>Contact</span>
-                <span>Activity</span>
-                <span>Find me</span>
+            <div className="flex flex-col items-center p-4 space-y-4 border-2 border-b-0 rounded-t-2xl bg-500-backdrop backdrop-filter backdrop-blur-lg border-background-300">
+              <div className="flex space-x-8" onClick={() => setIsMenuOpen(false)}>
+                <Link href="#about-me">
+                  <div className="flex flex-col items-center space-y-1 cursor-pointer">
+                    <span className="w-8 fill-current text-300">
+                      <LaughIcon />
+                    </span>
+                    <span>{t('header:about_me')}</span>
+                  </div>
+                </Link>
+                <Link href="#activity">
+                  <div className="flex flex-col items-center space-y-1 cursor-pointer">
+                    <span className="w-8 fill-current text-300">
+                      <HistoryIcon />
+                    </span>
+                    <span>{t('header:activity')}</span>
+                  </div>
+                </Link>
+                <Link href="#timeline">
+                  <div className="flex flex-col items-center space-y-1 cursor-pointer">
+                    <span className="w-8 fill-current text-300">
+                      <TimelineIcon />
+                    </span>
+                    <span>{t('header:timeline')}</span>
+                  </div>
+                </Link>
               </div>
             </div>
           </Transition>

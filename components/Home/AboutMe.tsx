@@ -10,7 +10,7 @@ export function AboutMe() {
   const {t} = useTranslation()
 
   return (
-    <section>
+    <section id="about-me">
       <div className="mb-8 space-y-12 text-center">
         <h1 className="text-6xl font-bold">{t('home:about_me')}</h1>
         <div className="flex flex-col items-center space-y-16 md:space-y-0 md:space-x-8 lg:space-x-32 md:flex-row">

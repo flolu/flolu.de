@@ -13,7 +13,7 @@ export function Timeline() {
   const [showFullTimeline, setShowFullTimeline] = useState(false)
 
   return (
-    <section>
+    <section id="timeline">
       <div className="mb-8 space-y-2 text-center">
         <h1 className="text-6xl font-bold">{t('home:timeline')}</h1>
       </div>

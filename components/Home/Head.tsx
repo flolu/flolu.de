@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import {useTranslation} from 'react-i18next'
 
 import {ArrowDownIcon} from '../Icons/ArrowDownIcon'
@@ -66,15 +67,17 @@ export function HomeHead() {
       </div>
 
       <div className="absolute justify-center hidden w-full bottom-8 md:flex">
-        <div className="flex items-center space-x-2 cursor-pointer animate-bounce">
-          <span className="w-6 fill-current">
-            <MouseIcon />
-          </span>
-          <span>{t('home:scroll_down')}</span>
-          <span className="w-5 fill-current">
-            <ArrowDownIcon />
-          </span>
-        </div>
+        <Link href="#about-me">
+          <div className="flex items-center space-x-2 cursor-pointer animate-bounce">
+            <span className="w-6 fill-current">
+              <MouseIcon />
+            </span>
+            <span>{t('home:scroll_down')}</span>
+            <span className="w-5 fill-current">
+              <ArrowDownIcon />
+            </span>
+          </div>
+        </Link>
       </div>
     </section>
   )
