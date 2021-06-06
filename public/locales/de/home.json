@@ -6,5 +6,17 @@
   "about_me": "Über mich",
   "activity": "Aktivität",
   "timeline": "Meine Story",
-  "get_in_touch": "Kontaktiere mich"
+  "get_in_touch": "Kontaktiere mich",
+  "project": "Projekt",
+  "focus": "Fokus",
+  "ceo": "CEO",
+  "cto": "CTO",
+  "drakery_description": "Ich baue eine 3D-Plattform zum Teilen von 3D-Modellen und zur 3D-Produkt-Visualisierung auf. Es ist wie Instagram, nur mit 3D-Modellen anstatt Fotos.",
+  "3d_designer_description": "Wir arbeiten an einer 3D-Produkt-Entwicklungs- und Herstellungs-Plattform.",
+  "student": "Student",
+  "computer_science": "Informatik",
+  "computer_science_description": "Ich studiere im vierten Semester meines Bachelor-Abschlusses Informatik.",
+  "personal_life": "Persönliches Leben",
+  "human": "Mensch",
+  "personal_life_description": "YouTube-Videos produzieren, Kraftsport, Laufen, Schwimmen, Familie & Freunde, Fotografie, Kochen."
 }

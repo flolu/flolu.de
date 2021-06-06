@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Flo</title>
+        <title>Florian Ludewig</title>
         <meta name="description" content={t('footer:tagline')} />
         <link rel="icon" href="/favicon.ico" />
       </Head>

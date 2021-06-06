@@ -6,5 +6,17 @@
   "about_me": "About me",
   "activity": "Activity",
   "timeline": "Timeline",
-  "get_in_touch": "Get in touch"
+  "get_in_touch": "Get in touch",
+  "project": "Project",
+  "focus": "Focus",
+  "ceo": "CEO",
+  "cto": "CTO",
+  "drakery_description": "I am building a 3D platform for sharing 3D models and 3D product visualization. It's like Instagram, but with 3D models instead of photos.",
+  "3d_designer_description": "We are working on a 3D product development and manufacturing platform.",
+  "student": "Student",
+  "computer_science": "Computer Science",
+  "computer_science_description": "I am studying in the 4th semester of my Bachelor degree.",
+  "personal_life": "Personal life",
+  "human": "Human",
+  "personal_life_description": "Making YouTube videos, working out, running, swimming, family & friends, photography, cooking."
 }
