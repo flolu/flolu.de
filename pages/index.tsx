@@ -3,6 +3,7 @@ import {useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import {Octokit} from 'octokit'
+import * as queryString from 'query-string'
 
 import {Footer} from '../components/Footer'
 import {Header} from '../components/Header'
@@ -36,7 +37,7 @@ export default function Home(props: any) {
         </section>
 
         <section className="px-4 mx-auto max-w-7xl">
-          <Activity activity={props.activity} />
+          <Activity activities={props.activities} commits={props.commits} />
         </section>
 
         <section>
@@ -66,11 +67,8 @@ function mapToCommit(event: any, commit: any) {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({locale}) => {
-  const namespaces = ['header', 'footer', 'home', 'timeline']
-  const translations = await serverSideTranslations(locale || 'en', namespaces)
-
-  console.time()
+async function gitHubCommits() {
+  console.time('github')
   const octokit = new Octokit({auth: process.env.GITHUB_TOKEN})
   let floluCommits: any[] = []
   const floluEvents = await octokit.rest.activity.listEventsForAuthenticatedUser({
@@ -112,12 +110,56 @@ export const getStaticProps: GetStaticProps = async ({locale}) => {
       }
     }),
   )
-  console.timeEnd()
+  console.timeEnd('github')
+
+  return allCommitsWithStats
+}
+
+async function stravaActivities() {
+  console.time('strava')
+
+  const query = queryString.stringify({
+    client_id: process.env.STRAVA_CLIENT_ID,
+    client_secret: process.env.STRAVA_CLIENT_SECRET,
+    refresh_token: process.env.STRAVA_REFRESH_TOKEN,
+    grant_type: 'refresh_token',
+  })
+  const tokenResponse = await fetch(`https://www.strava.com/oauth/token?${query}`, {method: 'POST'})
+  const token = await tokenResponse.json()
+
+  const {access_token} = token
+  const activitiesResponse = await fetch('https://www.strava.com/api/v3/athlete/activities', {
+    headers: {Authorization: `Bearer ${access_token}`},
+  })
+  const activities = await activitiesResponse.json()
+
+  console.timeEnd('strava')
+
+  return activities.map((activity: any) => {
+    return {
+      id: activity.id,
+      name: activity.name,
+      distance: activity.distance,
+      time: activity.moving_time,
+      type: activity.type,
+      start_date: activity.start_date,
+      map: activity.map,
+    }
+  })
+}
+
+export const getStaticProps: GetStaticProps = async ({locale}) => {
+  const namespaces = ['header', 'footer', 'home', 'timeline']
+
+  const translations = await serverSideTranslations(locale || 'en', namespaces)
+  const allCommitsWithStats = await gitHubCommits()
+  const activities = await stravaActivities()
 
   return {
     props: {
       ...translations,
-      activity: allCommitsWithStats,
+      commits: allCommitsWithStats,
+      activities,
     },
     revalidate: 60 * 60 * 24,
   }
