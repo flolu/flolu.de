@@ -43,6 +43,7 @@ export default function Home(props: any) {
             oura={props.oura}
             instagramPosts={props.instagramPosts}
             youTubeVideos={props.youTubeVideos}
+            unsplashPhotos={props.unsplashPhotos}
           />
         </section>
 
@@ -226,18 +227,47 @@ async function getYouTubeVideos() {
   })
 }
 
+async function getUnsplashPhotos() {
+  console.time('unsplash')
+
+  const username = 'flolu'
+  const photosResponse = await fetch(
+    `https://api.unsplash.com/users/${username}/photos?client_id=${process.env.UNSPLASH_ACCESS_KEY}`,
+  )
+  const photos = await photosResponse.json()
+
+  console.timeEnd('unsplash')
+  return photos.map((photo: any) => {
+    return {
+      url: `https://unsplash.com/photos/${photo.id}`,
+      createdAt: photo.created_at,
+      width: photo.width,
+      height: photo.height,
+      imageUrl: photo.urls.small,
+    }
+  })
+}
+
 export const getStaticProps: GetStaticProps = async ({locale}) => {
   const namespaces = ['header', 'footer', 'home', 'timeline']
 
-  const [translations, allCommitsWithStats, activities, oura, instagramPosts, youTubeVideos] =
-    await Promise.all([
-      serverSideTranslations(locale || 'en', namespaces),
-      gitHubCommits(),
-      stravaActivities(),
-      getOuraData(),
-      getInstagramPosts(),
-      getYouTubeVideos(),
-    ])
+  const [
+    translations,
+    allCommitsWithStats,
+    activities,
+    oura,
+    instagramPosts,
+    youTubeVideos,
+    unsplashPhotos,
+  ] = await Promise.all([
+    serverSideTranslations(locale || 'en', namespaces),
+    gitHubCommits(),
+    stravaActivities(),
+    getOuraData(),
+    getInstagramPosts(),
+    getYouTubeVideos(),
+    getUnsplashPhotos(),
+  ])
 
   return {
     props: {
@@ -247,6 +277,7 @@ export const getStaticProps: GetStaticProps = async ({locale}) => {
       oura,
       instagramPosts,
       youTubeVideos,
+      unsplashPhotos,
       lastUpdated: Date.now().toString(),
     },
     revalidate: 60 * 60 * 24,

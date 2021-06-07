@@ -3,7 +3,7 @@ import {useTranslation} from 'react-i18next'
 export function Activity(props: any) {
   const {t} = useTranslation()
 
-  const {activities, commits, oura, instagramPosts, youTubeVideos} = props
+  const {activities, commits, oura, instagramPosts, youTubeVideos,unsplashPhotos} = props
 
   return (
     <section id="activity">
@@ -91,6 +91,22 @@ export function Activity(props: any) {
                   </a>
                   <p className="ml-1 text-sm bg-500">{video.title}</p>
                   <p className="ml-1 text-sm bg-500">{video.publishTime}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        <h2 className="mb-2 text-2xl font-medium">Unsplash</h2>
+        <div className="p-2 overflow-y-auto h-96 bg-100">
+          <div className="space-y-4">
+            {unsplashPhotos.map((photo: any, index: number) => {
+              return (
+                <div className="text-left" key={index}>
+                  <a href={photo.url}>
+                    <img src={photo.imageUrl}></img>
+                  </a>
+                  <span className="ml-1 text-sm bg-500">{photo.createdAt}</span>
                 </div>
               )
             })}
