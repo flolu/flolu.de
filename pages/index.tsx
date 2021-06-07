@@ -37,7 +37,7 @@ export default function Home(props: any) {
         </section>
 
         <section className="px-4 mx-auto max-w-7xl">
-          <Activity activities={props.activities} commits={props.commits} />
+          <Activity activities={props.activities} commits={props.commits} oura={props.oura} />
         </section>
 
         <section>
@@ -148,18 +148,49 @@ async function stravaActivities() {
   })
 }
 
+async function getOuraData() {
+  console.time('oura')
+  const query = queryString.stringify({
+    start: '2021-05-01',
+  })
+  const ouraResponse = await fetch(`https://api.ouraring.com/v1/sleep?${query}`, {
+    headers: {Authorization: `Bearer ${process.env.OURA_ACCESS_TOKEN}`},
+  })
+  const {sleep} = await ouraResponse.json()
+  console.timeEnd('oura')
+  return sleep.map((night: any) => {
+    return {
+      date: night.summary_date,
+      duration: night.duration,
+      total: night.total,
+      awake: night.awake,
+      rem: night.rem,
+      deep: night.deep,
+      light: night.light,
+      score: night.score,
+      hr_lowest: night.hr_lowest,
+      hr_average: night.hr_average,
+    }
+  })
+}
+
 export const getStaticProps: GetStaticProps = async ({locale}) => {
   const namespaces = ['header', 'footer', 'home', 'timeline']
 
-  const translations = await serverSideTranslations(locale || 'en', namespaces)
-  const allCommitsWithStats = await gitHubCommits()
-  const activities = await stravaActivities()
+  const [translations, allCommitsWithStats, activities, oura] = await Promise.all([
+    serverSideTranslations(locale || 'en', namespaces),
+    gitHubCommits(),
+    stravaActivities(),
+    getOuraData(),
+  ])
 
   return {
     props: {
       ...translations,
       commits: allCommitsWithStats,
       activities,
+      oura,
+      lastUpdated: Date.now().toString(),
     },
     revalidate: 60 * 60 * 24,
   }
