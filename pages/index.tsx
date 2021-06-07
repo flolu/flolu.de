@@ -37,7 +37,12 @@ export default function Home(props: any) {
         </section>
 
         <section className="px-4 mx-auto max-w-7xl">
-          <Activity activities={props.activities} commits={props.commits} oura={props.oura} />
+          <Activity
+            activities={props.activities}
+            commits={props.commits}
+            oura={props.oura}
+            instagramPosts={props.instagramPosts}
+          />
         </section>
 
         <section>
@@ -174,14 +179,39 @@ async function getOuraData() {
   })
 }
 
+async function getInstagramPosts() {
+  console.time('instagram')
+  const userId = '17841402069339334'
+  const userResponse = await fetch(
+    `https://graph.instagram.com/${userId}?fields=media&access_token=${process.env.INSTAGRAM_TOKEN}`,
+  )
+  const user = await userResponse.json()
+
+  console.log(user.media.data)
+  const posts = await Promise.all(
+    user.media.data.map(async ({id}: any) => {
+      const mediaResponse = await fetch(
+        `https://graph.instagram.com/${id}?fields=id,media_type,media_url,permalink,thumbnail_url,timestamp&access_token=${process.env.INSTAGRAM_TOKEN}`,
+      )
+      const media = await mediaResponse.json()
+      console.log(media)
+      return media
+    }),
+  )
+
+  console.timeEnd('instagram')
+  return posts
+}
+
 export const getStaticProps: GetStaticProps = async ({locale}) => {
   const namespaces = ['header', 'footer', 'home', 'timeline']
 
-  const [translations, allCommitsWithStats, activities, oura] = await Promise.all([
+  const [translations, allCommitsWithStats, activities, oura, instagramPosts] = await Promise.all([
     serverSideTranslations(locale || 'en', namespaces),
     gitHubCommits(),
     stravaActivities(),
     getOuraData(),
+    getInstagramPosts(),
   ])
 
   return {
@@ -190,6 +220,7 @@ export const getStaticProps: GetStaticProps = async ({locale}) => {
       commits: allCommitsWithStats,
       activities,
       oura,
+      instagramPosts,
       lastUpdated: Date.now().toString(),
     },
     revalidate: 60 * 60 * 24,

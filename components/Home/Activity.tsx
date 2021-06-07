@@ -3,7 +3,7 @@ import {useTranslation} from 'react-i18next'
 export function Activity(props: any) {
   const {t} = useTranslation()
 
-  const {activities, commits, oura} = props
+  const {activities, commits, oura, instagramPosts} = props
 
   return (
     <section id="activity">
@@ -58,6 +58,22 @@ export function Activity(props: any) {
                   <span className="ml-1 text-sm bg-500">{sleep.hr_lowest} LRHR</span>
                   <span className="ml-1 text-sm bg-500">{sleep.deep} deep</span>
                   <p className="text-xs">{sleep.date}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        <h2 className="mb-2 text-2xl font-medium">Instagram</h2>
+        <div className="p-2 overflow-y-auto h-96 bg-100">
+          <div className="space-y-4">
+            {instagramPosts.map((post: any, index: number) => {
+              return (
+                <div className="text-left" key={index}>
+                  <a href={post.permalink}>
+                    <img src={post.media_url}></img>
+                  </a>
+                  <span className="ml-1 text-sm bg-500">{post.timestamp}</span>
                 </div>
               )
             })}
