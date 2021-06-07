@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           ></link>
         </Head>
-        <body>
+        <body className="theme-light">
           <Main />
           <NextScript />
         </body>

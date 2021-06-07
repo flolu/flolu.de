@@ -9,7 +9,6 @@ import {AboutMe} from '../components/Home/AboutMe'
 import {Activity} from '../components/Home/Activity'
 import {GetInTouch} from '../components/Home/GetInTouch'
 import {HomeHead} from '../components/Home/Head'
-import {Sitemap} from '../components/Home/Sitemap'
 import {Timeline} from '../components/Home/Timeline'
 
 export default function Home() {
@@ -26,18 +25,27 @@ export default function Home() {
       <Header spacer={false} />
       <div className="h-24 md:hidden"></div>
 
-      <main className="px-4 mx-auto space-y-32 max-w-7xl">
-        <HomeHead />
-        <AboutMe />
-        <Activity />
-        <Timeline />
+      <main className="mb-8 space-y-16 sm:mb-16 sm:space-y-32">
+        <section className="px-4 mx-auto max-w-7xl">
+          <HomeHead />
+        </section>
+
+        <section className="px-4 mx-auto max-w-7xl">
+          <AboutMe />
+        </section>
+
+        <section className="px-4 mx-auto max-w-7xl">
+          <Activity />
+        </section>
+
+        <section>
+          <GetInTouch />
+        </section>
+
+        <section className="px-4 mx-auto max-w-7xl">
+          <Timeline />
+        </section>
       </main>
-
-      <GetInTouch />
-
-      <div className="px-4 mx-auto mt-16 space-y-32 max-w-7xl">
-        <Sitemap />
-      </div>
 
       <Footer />
     </div>
@@ -46,7 +54,8 @@ export default function Home() {
 
 export const getStaticProps: GetStaticProps = async ({locale}) => {
   const namespaces = ['header', 'footer', 'home', 'timeline']
-  const translations = await serverSideTranslations(locale || 'en', namespaces)
+
+  const [translations] = await Promise.all([serverSideTranslations(locale || 'en', namespaces)])
 
   return {
     props: {

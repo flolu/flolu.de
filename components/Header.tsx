@@ -105,7 +105,7 @@ export const Header = (props: Props) => {
           </div>
           <div className="hidden md:block">
             <Link href="#get-in-touch">
-              <a className="hover:text-900">{t('header:get_in_touch')}</a>
+              <a className="hover:text-900">{t('header:contact_me')}</a>
             </Link>
           </div>
           <span className="w-6 cursor-pointer fill-current" onClick={onSwitchTheme}>
@@ -124,7 +124,7 @@ export const Header = (props: Props) => {
         </div>
       </nav>
 
-      <div className="fixed bottom-0 z-10 flex flex-col items-center shadow-2xl left-2 right-2">
+      <div className="fixed bottom-0 z-10 flex flex-col items-center left-2 right-2">
         <div className="w-full max-w-sm" ref={menuRef}>
           <Transition
             show={isMenuOpen}
@@ -136,7 +136,7 @@ export const Header = (props: Props) => {
             leaveFrom="transform opacity-100 scale-100 translate-y-0"
             leaveTo="transform opacity-0 scale-95 translate-y-32"
           >
-            <div className="flex flex-col items-center p-4 space-y-4 border-2 border-b-0 rounded-t-2xl bg-500-backdrop backdrop-filter backdrop-blur-lg border-background-300">
+            <div className="flex flex-col items-center p-4 space-y-4 border-2 border-b-0 shadow-2xl rounded-t-2xl bg-500-backdrop backdrop-filter backdrop-blur-lg border-background-300">
               <div className="flex space-x-8" onClick={() => setIsMenuOpen(false)}>
                 <Link href="#about-me">
                   <div className="flex flex-col items-center space-y-1 cursor-pointer">

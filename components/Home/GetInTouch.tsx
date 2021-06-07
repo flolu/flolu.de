@@ -9,8 +9,8 @@ export function GetInTouch() {
 
   return (
     <section id="get-in-touch">
-      <div className="py-8 mx-auto mt-16 space-y-2 space-y-8 text-center lg:py-16 bg-primary-900 text-on-primary-900 xl:max-w-7xl xl:rounded-xl">
-        <h1 className="text-4xl font-bold lg:text-6xl">{t('home:get_in_touch')}</h1>
+      <div className="py-8 mx-auto mt-16 space-y-2 space-y-8 text-center lg:py-16 bg-primary-700 text-on-primary-700 xl:max-w-7xl xl:rounded-xl">
+        <h1 className="text-4xl font-bold lg:text-6xl">{t('home:contact_me')}</h1>
         <div className="flex w-full px-8 mx-auto space-x-8 sm:max-w-md lg:max-w-lg">
           <a href="mailto:flo@drakery.com" className="flex flex-col items-center flex-1 space-y-2">
             <span className="w-8 fill-current sm:w-10 md:w-12">

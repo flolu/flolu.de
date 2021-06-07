@@ -13,7 +13,7 @@ export function HomeHead() {
   const {t} = useTranslation()
 
   return (
-    <section className="relative flex flex-col-reverse items-center justify-end space-x-4 md:justify-center md:flex-row md:min-h-screen md:px-28 lg:px-0">
+    <div className="relative flex flex-col-reverse items-center justify-end space-x-4 md:justify-center md:flex-row md:min-h-screen md:px-28 lg:px-0">
       <div className="max-w-xs mt-12 md:max-w-sm md:mt-0 lg:max-w-lg">
         <h1 className="text-5xl font-bold md:text-7xl lg:text-8xl text-900 whitespace-nowrap">
           {t('home:title')}
@@ -21,19 +21,20 @@ export function HomeHead() {
         <p className="mt-4 leading-relaxed lg:mt-6 md:text-base lg:text-xl text-500">
           {t('home:tagline')}
         </p>
-        <button className="flex items-center px-4 py-2 mt-8 space-x-2 text-lg font-medium rounded-lg lg:mt-12 lg:px-6 lg:py-3 lg:text-xl bg-primary-500 text-on-primary-300 focus:outline-none focus:ring-4 ring-offset-2 ring-primary-100">
-          <span>{t('home:stalk_me')}</span>
-          <span className="w-6 fill-current">
-            <ArrowForwardIcon />
-          </span>
-        </button>
+        <Link href="#activity">
+          <button className="flex items-center px-4 py-2 mt-8 space-x-2 text-lg font-medium rounded-lg lg:mt-12 lg:px-6 lg:py-3 lg:text-xl bg-primary-500 text-on-primary-300 focus:outline-none focus:ring-4 ring-offset-2 ring-primary-100">
+            <span>{t('home:stalk_me')}</span>
+            <span className="w-6 fill-current">
+              <ArrowForwardIcon />
+            </span>
+          </button>
+        </Link>
       </div>
 
       <div className="w-56 md:w-full lg:max-w-sm xl:max-w-md">
         <Image
           className="rounded-full"
           src="/avatar.jpg"
-          alt="Avatar of Flo"
           layout="responsive"
           width={512}
           height={512}
@@ -79,6 +80,6 @@ export function HomeHead() {
           </div>
         </Link>
       </div>
-    </section>
+    </div>
   )
 }

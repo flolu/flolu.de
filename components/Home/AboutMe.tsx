@@ -4,7 +4,7 @@ import {useTranslation} from 'react-i18next'
 import {DDDesignerIcon} from '../Icons/3DDesignerIcon'
 import {DrakeryLogo} from '../Icons/DrakeryLogo'
 import {LaughIcon} from '../Icons/LaughIcon'
-import {SchoolIcon} from '../Icons/Schoolcon'
+import {SchoolIcon} from '../Icons/SchoolIcon'
 
 export function AboutMe() {
   const {t} = useTranslation()
@@ -66,22 +66,22 @@ export function AboutMe() {
                 <div className="flex items-center space-x-4">
                   <div className="flex-none hidden w-20 h-20 p-5 mx-2 rounded-full sm:block bg-500">
                     <span className="w-full fill-current text-100">
-                      <DDDesignerIcon />
+                      <LaughIcon />
                     </span>
                   </div>
                   <div className="flex-1 space-y-2 text-left">
                     <p className="space-x-2 text-lg font-medium">
-                      <span>3D Designer</span>
+                      <span>{t('home:personal_life')}</span>
                       <span className="px-2 py-px text-sm rounded-lg bg-500 text-500">
-                        {t('home:cto')}
+                        {t('home:human')}
                       </span>
                     </p>
-                    <p className="text-300">{t('home:3d_designer_description')}</p>
+                    <p className="text-300">{t('home:personal_life_description')}</p>
                   </div>
                   <div className="flex flex-col w-12 space-y-1 sm:w-20 xl:w-28">
-                    <span className="text-xl font-medium text-900">20%</span>
+                    <span className="text-xl font-medium text-900">30%</span>
                     <span className="flex items-center h-4 rounded-full bg-300">
-                      <span className="w-1/5 h-3 ml-px rounded-full bg-900"></span>
+                      <span className="w-1/3 h-3 ml-px rounded-full bg-900"></span>
                     </span>
                   </div>
                 </div>
@@ -112,22 +112,22 @@ export function AboutMe() {
                 <div className="flex items-center space-x-4">
                   <div className="flex-none hidden w-20 h-20 p-5 mx-2 rounded-full sm:block bg-500">
                     <span className="w-full fill-current text-100">
-                      <LaughIcon />
+                      <DDDesignerIcon />
                     </span>
                   </div>
                   <div className="flex-1 space-y-2 text-left">
                     <p className="space-x-2 text-lg font-medium">
-                      <span>{t('home:personal_life')}</span>
+                      <span>3D Designer</span>
                       <span className="px-2 py-px text-sm rounded-lg bg-500 text-500">
-                        {t('home:human')}
+                        {t('home:cto')}
                       </span>
                     </p>
-                    <p className="text-300">{t('home:personal_life_description')}</p>
+                    <p className="text-300">{t('home:3d_designer_description')}</p>
                   </div>
                   <div className="flex flex-col w-12 space-y-1 sm:w-20 xl:w-28">
-                    <span className="text-xl font-medium text-900">20%</span>
+                    <span className="text-xl font-medium text-900">10%</span>
                     <span className="flex items-center h-4 rounded-full bg-300">
-                      <span className="w-1/5 h-3 ml-px rounded-full bg-900"></span>
+                      <span className="w-2/12 h-3 ml-px rounded-full bg-900"></span>
                     </span>
                   </div>
                 </div>

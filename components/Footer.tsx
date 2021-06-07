@@ -117,7 +117,7 @@ export function Footer() {
                 <Link href="/#timeline">{t('footer:timeline')}</Link>
               </li>
               <li className="hover:underline">
-                <Link href="/#get-in-touch">{t('footer:get_in_touch')}</Link>
+                <Link href="/#get-in-touch">{t('footer:contact_me')}</Link>
               </li>
               <li className="hover:underline">
                 <Link href="/blog">{t('footer:blog')}</Link>
