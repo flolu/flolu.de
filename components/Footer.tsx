@@ -172,7 +172,7 @@ export function Footer() {
               <a
                 className="hover:underline"
                 target="_blank"
-                href="https://www.strava.com/athletes/69079803"
+                href="https://www.strava.com/athletes/flolu"
               >
                 Strava
               </a>
