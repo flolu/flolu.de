@@ -11,7 +11,7 @@ import {GetInTouch} from '../components/Home/GetInTouch'
 import {HomeHead} from '../components/Home/Head'
 import {Timeline} from '../components/Home/Timeline'
 
-export default function Home() {
+export default function Home(props: any) {
   const {t} = useTranslation()
 
   return (
@@ -35,7 +35,7 @@ export default function Home() {
         </section>
 
         <section className="px-4 mx-auto max-w-7xl">
-          <Activity />
+          <Activity activity={props.activity} />
         </section>
 
         <section>
@@ -55,11 +55,18 @@ export default function Home() {
 export const getStaticProps: GetStaticProps = async ({locale}) => {
   const namespaces = ['header', 'footer', 'home', 'timeline']
 
-  const [translations] = await Promise.all([serverSideTranslations(locale || 'en', namespaces)])
+  const [translations, activityResponse] = await Promise.all([
+    serverSideTranslations(locale || 'en', namespaces),
+    fetch(`${process.env.NEXT_PUBLIC_API}/activity`),
+  ])
+
+  const activity = await activityResponse.json()
 
   return {
     props: {
       ...translations,
+      activity,
     },
+    revalidate: 60 * 60 * 24,
   }
 }
