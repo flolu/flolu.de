@@ -42,6 +42,7 @@ export default function Home(props: any) {
             commits={props.commits}
             oura={props.oura}
             instagramPosts={props.instagramPosts}
+            youTubeVideos={props.youTubeVideos}
           />
         </section>
 
@@ -187,14 +188,12 @@ async function getInstagramPosts() {
   )
   const user = await userResponse.json()
 
-  console.log(user.media.data)
   const posts = await Promise.all(
     user.media.data.map(async ({id}: any) => {
       const mediaResponse = await fetch(
         `https://graph.instagram.com/${id}?fields=id,media_type,media_url,permalink,thumbnail_url,timestamp&access_token=${process.env.INSTAGRAM_TOKEN}`,
       )
       const media = await mediaResponse.json()
-      console.log(media)
       return media
     }),
   )
@@ -203,16 +202,42 @@ async function getInstagramPosts() {
   return posts
 }
 
+async function getYouTubeVideos() {
+  console.time('youtube')
+
+  const channelId = 'UCpeRl3f3jAMKGoomvddzBoQ'
+  const videosResponse = await fetch(
+    `https://www.googleapis.com/youtube/v3/search?key=${process.env.YOUTUBE_API_KEY}&channelId=${channelId}&part=snippet,id&order=date&maxResults=10`,
+  )
+  const videos = await videosResponse.json()
+
+  console.timeEnd('youtube')
+  return videos.items.map((video: any) => {
+    return {
+      title: video.snippet.title,
+      url: `https://www.youtube.com/watch?v=${video.id.videoId}`,
+      thumbnail: {
+        url: video.snippet.thumbnails.high.url,
+        width: video.snippet.thumbnails.high.width,
+        height: video.snippet.thumbnails.high.height,
+      },
+      publishTime: video.snippet.publishTime,
+    }
+  })
+}
+
 export const getStaticProps: GetStaticProps = async ({locale}) => {
   const namespaces = ['header', 'footer', 'home', 'timeline']
 
-  const [translations, allCommitsWithStats, activities, oura, instagramPosts] = await Promise.all([
-    serverSideTranslations(locale || 'en', namespaces),
-    gitHubCommits(),
-    stravaActivities(),
-    getOuraData(),
-    getInstagramPosts(),
-  ])
+  const [translations, allCommitsWithStats, activities, oura, instagramPosts, youTubeVideos] =
+    await Promise.all([
+      serverSideTranslations(locale || 'en', namespaces),
+      gitHubCommits(),
+      stravaActivities(),
+      getOuraData(),
+      getInstagramPosts(),
+      getYouTubeVideos(),
+    ])
 
   return {
     props: {
@@ -221,6 +246,7 @@ export const getStaticProps: GetStaticProps = async ({locale}) => {
       activities,
       oura,
       instagramPosts,
+      youTubeVideos,
       lastUpdated: Date.now().toString(),
     },
     revalidate: 60 * 60 * 24,

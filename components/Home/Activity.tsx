@@ -3,7 +3,7 @@ import {useTranslation} from 'react-i18next'
 export function Activity(props: any) {
   const {t} = useTranslation()
 
-  const {activities, commits, oura, instagramPosts} = props
+  const {activities, commits, oura, instagramPosts, youTubeVideos} = props
 
   return (
     <section id="activity">
@@ -74,6 +74,23 @@ export function Activity(props: any) {
                     <img src={post.media_url}></img>
                   </a>
                   <span className="ml-1 text-sm bg-500">{post.timestamp}</span>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        <h2 className="mb-2 text-2xl font-medium">YouTube</h2>
+        <div className="p-2 overflow-y-auto h-96 bg-100">
+          <div className="space-y-4">
+            {youTubeVideos.map((video: any, index: number) => {
+              return (
+                <div className="text-left" key={index}>
+                  <a href={video.url}>
+                    <img src={video.thumbnail.url}></img>
+                  </a>
+                  <p className="ml-1 text-sm bg-500">{video.title}</p>
+                  <p className="ml-1 text-sm bg-500">{video.publishTime}</p>
                 </div>
               )
             })}
