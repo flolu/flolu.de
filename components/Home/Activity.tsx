@@ -3,7 +3,7 @@ import {useTranslation} from 'react-i18next'
 export function Activity(props: any) {
   const {t} = useTranslation()
 
-  const {commits} = props.activity.activity
+  const commits = props.activity
 
   return (
     <section id="activity">
