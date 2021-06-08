@@ -61,9 +61,9 @@ module.exports = {
     fontFamily: {
       sans: ['Poppins', 'sans-serif'],
       serif: ['ui-serif', 'Georgia'],
-      mono: ['ui-monospace', 'SFMono-Regular'],
+      mono: ['Roboto Mono', 'monospace'],
     },
-    colors: {},
+    // colors: {},
     extend: {
       textColor: {
         ...foregroundColors,

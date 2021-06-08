@@ -1,4 +1,4 @@
-export interface GitHubBaseCommit {
+export interface IGitHubBaseCommit {
   sha: string
   message: string
   url: string
@@ -6,7 +6,7 @@ export interface GitHubBaseCommit {
   apiUrl: string
 }
 
-export interface GitHubCommit {
+export interface IGitHubCommit {
   sha: string
   message: string
   url: string
@@ -18,7 +18,7 @@ export interface GitHubCommit {
   }
 }
 
-export interface StravaActivity {
+export interface IStravaActivity {
   url: string
   name: string
   distance: number
@@ -27,7 +27,7 @@ export interface StravaActivity {
   map: any
 }
 
-export interface OuraNight {
+export interface IOuraNight {
   duration: number
   total: number
   rem: number
@@ -37,12 +37,12 @@ export interface OuraNight {
   averageHr: number
 }
 
-export interface InstagramPost {
+export interface IInstagramPost {
   url: string
   imageUrl: string
 }
 
-export interface YouTubeVideo {
+export interface IYouTubeVideo {
   url: string
   title: string
   thumbnail: {
@@ -52,7 +52,7 @@ export interface YouTubeVideo {
   }
 }
 
-export interface UnsplashPhoto {
+export interface IUnsplashPhoto {
   url: string
   imageUrl: string
   width: number
@@ -60,12 +60,12 @@ export interface UnsplashPhoto {
 }
 
 export type ActivityPayload =
-  | GitHubCommit
-  | StravaActivity
-  | OuraNight
-  | InstagramPost
-  | YouTubeVideo
-  | UnsplashPhoto
+  | IGitHubCommit
+  | IStravaActivity
+  | IOuraNight
+  | IInstagramPost
+  | IYouTubeVideo
+  | IUnsplashPhoto
 
 export interface IActivity<T = ActivityPayload> {
   type:

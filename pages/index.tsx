@@ -13,14 +13,14 @@ import {GetInTouch} from '../components/Home/GetInTouch'
 import {HomeHead} from '../components/Home/Head'
 import {Timeline} from '../components/Home/Timeline'
 import {
-  GitHubBaseCommit,
-  GitHubCommit,
   IActivity,
-  InstagramPost,
-  OuraNight,
-  StravaActivity,
-  UnsplashPhoto,
-  YouTubeVideo,
+  IGitHubBaseCommit,
+  IGitHubCommit,
+  IInstagramPost,
+  IOuraNight,
+  IStravaActivity,
+  IUnsplashPhoto,
+  IYouTubeVideo,
 } from '../types/activity'
 
 export default function Home(props: any) {
@@ -72,14 +72,14 @@ async function getInstagramPosts() {
   )
   const user = await userResponse.json()
 
-  const activities: IActivity<InstagramPost>[] = await Promise.all(
+  const activities: IActivity<IInstagramPost>[] = await Promise.all(
     user.media.data.map(async ({id}: any) => {
       const mediaResponse = await fetch(
         `https://graph.instagram.com/${id}?fields=media_url,permalink,timestamp&access_token=${token}`,
       )
       const media = await mediaResponse.json()
 
-      const activity: IActivity<InstagramPost> = {
+      const activity: IActivity<IInstagramPost> = {
         type: 'instagram_post',
         payload: {
           imageUrl: media.media_url,
@@ -105,7 +105,7 @@ async function getYouTubeVideos() {
   const videos = await videosResponse.json()
 
   return videos.items.map((video: any) => {
-    const activity: IActivity<YouTubeVideo> = {
+    const activity: IActivity<IYouTubeVideo> = {
       type: 'youtube-video',
       payload: {
         thumbnail: {
@@ -119,7 +119,7 @@ async function getYouTubeVideos() {
       timestamp: video.snippet.publishTime,
     }
     return activity
-  }) as IActivity<YouTubeVideo>[]
+  }) as IActivity<IYouTubeVideo>[]
 }
 
 async function getUnsplashPhotos() {
@@ -130,7 +130,7 @@ async function getUnsplashPhotos() {
   const photos = await photosResponse.json()
 
   return photos.map((photo: any) => {
-    const activity: IActivity<UnsplashPhoto> = {
+    const activity: IActivity<IUnsplashPhoto> = {
       type: 'unsplash-photo',
       payload: {
         url: `https://unsplash.com/photos/${photo.id}`,
@@ -141,7 +141,7 @@ async function getUnsplashPhotos() {
       timestamp: photo.created_at,
     }
     return activity
-  }) as IActivity<UnsplashPhoto>[]
+  }) as IActivity<IUnsplashPhoto>[]
 }
 
 async function getGitHubCommits() {
@@ -154,7 +154,7 @@ async function getGitHubCommits() {
     octokit.rest.activity.listOrgEventsForAuthenticatedUser({org, username}),
   ])
 
-  const mapToCommit = (event: any, commit: any): IActivity<GitHubBaseCommit> => {
+  const mapToCommit = (event: any, commit: any): IActivity<IGitHubBaseCommit> => {
     return {
       type: 'github_commit',
       payload: {
@@ -168,7 +168,7 @@ async function getGitHubCommits() {
     }
   }
 
-  let baseCommits: IActivity<GitHubBaseCommit>[] = []
+  let baseCommits: IActivity<IGitHubBaseCommit>[] = []
   personalEvents.data.forEach(event => {
     if (event.type === 'PushEvent') {
       const commits = (event.payload as any).commits
@@ -191,7 +191,7 @@ async function getGitHubCommits() {
   return Promise.all(
     baseCommits.map(async commit => {
       const {data} = await octokit.request({url: commit.payload.apiUrl})
-      const activity: IActivity<GitHubCommit> = {
+      const activity: IActivity<IGitHubCommit> = {
         ...commit,
         payload: {
           ...commit.payload,
@@ -220,7 +220,7 @@ async function getStravaActivities() {
   const activities = await activitiesResponse.json()
 
   return activities.map((data: any) => {
-    const activity: IActivity<StravaActivity> = {
+    const activity: IActivity<IStravaActivity> = {
       type: 'strava_activity',
       payload: {
         distance: data.distance,
@@ -233,7 +233,7 @@ async function getStravaActivities() {
       timestamp: data.start_date,
     }
     return activity
-  }) as IActivity<StravaActivity>[]
+  }) as IActivity<IStravaActivity>[]
 }
 
 async function getOuraNights() {
@@ -244,7 +244,7 @@ async function getOuraNights() {
   })
   const {sleep} = await ouraResponse.json()
   return sleep.map((night: any) => {
-    const activity: IActivity<OuraNight> = {
+    const activity: IActivity<IOuraNight> = {
       type: 'oura_night',
       payload: {
         averageHr: night.hr_average,
@@ -258,7 +258,7 @@ async function getOuraNights() {
       timestamp: night.summary_date,
     }
     return activity
-  }) as IActivity<OuraNight>[]
+  }) as IActivity<IOuraNight>[]
 }
 
 // TODO only fetch data from last 10 days or so
