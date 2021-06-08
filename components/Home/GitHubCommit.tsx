@@ -12,10 +12,10 @@ export const GitHubCommit: FC<Props> = ({activity}) => {
   const repoUrl = `https://github.com/${activity.payload.repo}`
 
   return (
-    <div className="flex items-center space-x-2 text-xs sm:text-sm">
+    <div className="flex items-center space-x-2 text-xs sm:text-sm whitespace-nowrap">
       <span>👨‍💻️</span>
       <a
-        className="overflow-hidden font-mono text-500 hover:underline overflow-ellipsis whitespace-nowrap"
+        className="overflow-hidden font-mono text-500 hover:underline overflow-ellipsis"
         href={activity.payload.url}
       >
         {activity.payload.message}

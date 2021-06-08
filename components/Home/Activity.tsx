@@ -13,7 +13,11 @@ import {
 } from '../../types/activity'
 import {ActivityDate} from './ActivityDate'
 import {GitHubCommit} from './GitHubCommit'
+import {InstagramPost} from './InstagramPost'
+import {OuraNight} from './OuraNight'
 import {StravaActivity} from './StravaActivity'
+import {UnsplashPhoto} from './UnsplashPhoto'
+import {YouTubeVideo} from './YouTubeVideo'
 
 interface Props {
   activities: IActivityDay[]
@@ -49,28 +53,19 @@ export const Activity: FC<Props> = props => {
                         )}
 
                         {activity.type === 'instagram_post' && (
-                          <a href={(activity.payload as IInstagramPost).url}>
-                            <img src={(activity.payload as IInstagramPost).imageUrl}></img>
-                          </a>
+                          <InstagramPost activity={activity as IActivity<IInstagramPost>} />
                         )}
 
                         {activity.type === 'oura_night' && (
-                          <div>
-                            Slept {Math.round((activity.payload as IOuraNight).total / 60 / 60)}{' '}
-                            hours with a score of {(activity.payload as IOuraNight).score}
-                          </div>
+                          <OuraNight activity={activity as IActivity<IOuraNight>} />
                         )}
 
                         {activity.type === 'unsplash-photo' && (
-                          <a href={(activity.payload as IUnsplashPhoto).url}>
-                            <img src={(activity.payload as IUnsplashPhoto).imageUrl}></img>
-                          </a>
+                          <UnsplashPhoto activity={activity as IActivity<IUnsplashPhoto>} />
                         )}
 
                         {activity.type === 'youtube-video' && (
-                          <a href={(activity.payload as IYouTubeVideo).url}>
-                            <img src={(activity.payload as IYouTubeVideo).thumbnail.url}></img>
-                          </a>
+                          <YouTubeVideo activity={activity as IActivity<IYouTubeVideo>} />
                         )}
                       </div>
                     )

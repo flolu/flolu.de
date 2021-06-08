@@ -13,7 +13,7 @@ export const Duration: FC<Props> = ({time}) => {
     <span>
       {hours > 0 && <span>{hours}h </span>}
       {minutes && <span>{minutes}m </span>}
-      {hours <= 0 && seconds && <span>{minutes}s </span>}
+      {hours <= 0 && seconds > 0 && <span>{minutes}s </span>}
     </span>
   )
 }

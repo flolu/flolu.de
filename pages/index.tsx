@@ -152,7 +152,7 @@ async function getUnsplashPhotos() {
   }) as IActivity<IUnsplashPhoto>[]
 }
 
-async function getGitHubCommits() {
+async function getGitHubCommits(after: Date) {
   const username = 'flolu'
   const org = 'drakery3d'
   const octokit = new Octokit({auth: process.env.GITHUB_TOKEN})
@@ -177,15 +177,19 @@ async function getGitHubCommits() {
   }
 
   let baseCommits: IActivity<IGitHubBaseCommit>[] = []
-  personalEvents.data.forEach(event => {
+  for (const event of personalEvents.data) {
+    if (!event.created_at || Number(new Date(event.created_at)) < Number(after)) break
+
     if (event.type === 'PushEvent') {
       const commits = (event.payload as any).commits
       commits.forEach((commit: any) => {
         baseCommits.push(mapToCommit(event, commit))
       })
     }
-  })
-  orgEvents.data.forEach(event => {
+  }
+  for (const event of orgEvents.data) {
+    if (!event.created_at || Number(new Date(event.created_at)) < Number(after)) break
+
     if (event.type === 'PushEvent') {
       const commits = (event.payload as any).commits
       commits.forEach((commit: any) => {
@@ -194,7 +198,7 @@ async function getGitHubCommits() {
         }
       })
     }
-  })
+  }
 
   return Promise.all(
     baseCommits.map(async commit => {
@@ -211,7 +215,7 @@ async function getGitHubCommits() {
   )
 }
 
-async function getStravaActivities() {
+async function getStravaActivities(after: Date) {
   const query = queryString.stringify({
     client_id: process.env.STRAVA_CLIENT_ID,
     client_secret: process.env.STRAVA_CLIENT_SECRET,
@@ -225,9 +229,13 @@ async function getStravaActivities() {
   const activitiesResponse = await fetch('https://www.strava.com/api/v3/athlete/activities', {
     headers: {Authorization: `Bearer ${access_token}`},
   })
-  const activities = await activitiesResponse.json()
+  const rawActivities = await activitiesResponse.json()
 
-  return activities.map((data: any) => {
+  let activities: IActivity<IStravaActivity>[] = []
+
+  for (const data of rawActivities) {
+    if (Number(new Date(data.start_date)) < Number(after)) break
+
     const activity: IActivity<IStravaActivity> = {
       type: 'strava_activity',
       payload: {
@@ -244,13 +252,18 @@ async function getStravaActivities() {
       },
       timestamp: data.start_date,
     }
-    return activity
-  }) as IActivity<IStravaActivity>[]
+    activities.push(activity)
+  }
+
+  return activities
 }
 
-async function getOuraNights() {
-  // TODO dynamically set start date
-  const query = queryString.stringify({start: '2021-05-27'})
+async function getOuraNights(after: Date) {
+  const year = after.getUTCFullYear()
+  const month = ('0' + (after.getMonth() + 1)).slice(-2)
+  const date = ('0' + after.getDate()).slice(-2)
+  const startDay = `${year}-${month}-${date}`
+  const query = queryString.stringify({start: startDay})
   const ouraResponse = await fetch(`https://api.ouraring.com/v1/sleep?${query}`, {
     headers: {Authorization: `Bearer ${process.env.OURA_ACCESS_TOKEN}`},
   })
@@ -267,14 +280,17 @@ async function getOuraNights() {
         score: night.score,
         total: night.total,
       },
-      timestamp: night.summary_date,
+      timestamp: night.bedtime_end,
     }
     return activity
   }) as IActivity<IOuraNight>[]
 }
 
-// TODO only fetch data from last 10 days or so
 async function assembleActivities() {
+  const now = new Date()
+  const oneWeekAgo = new Date()
+  oneWeekAgo.setDate(now.getDate() - 7)
+
   const [
     gitHubCommits,
     stravaActivities,
@@ -283,9 +299,9 @@ async function assembleActivities() {
     youTubeVideos,
     unsplashPhotos,
   ] = await Promise.all([
-    getGitHubCommits(),
-    getStravaActivities(),
-    getOuraNights(),
+    getGitHubCommits(oneWeekAgo),
+    getStravaActivities(oneWeekAgo),
+    getOuraNights(oneWeekAgo),
     getInstagramPosts(),
     getYouTubeVideos(),
     getUnsplashPhotos(),
