@@ -237,6 +237,10 @@ async function getStravaActivities() {
         time: data.moving_time,
         type: data.type,
         url: `https://www.strava.com/activities/${data.id}`,
+        avgHr: data.average_heartrate,
+        avgSpeed: data.average_speed,
+        avgTemperature: data.average_temp,
+        elevGain: data.total_elevation_gain,
       },
       timestamp: data.start_date,
     }

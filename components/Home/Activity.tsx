@@ -13,6 +13,7 @@ import {
 } from '../../types/activity'
 import {ActivityDate} from './ActivityDate'
 import {GitHubCommit} from './GitHubCommit'
+import {StravaActivity} from './StravaActivity'
 
 interface Props {
   activities: IActivityDay[]
@@ -43,6 +44,10 @@ export const Activity: FC<Props> = props => {
                           <GitHubCommit activity={activity as IActivity<IGitHubCommit>} />
                         )}
 
+                        {activity.type === 'strava_activity' && (
+                          <StravaActivity activity={activity as IActivity<IStravaActivity>} />
+                        )}
+
                         {activity.type === 'instagram_post' && (
                           <a href={(activity.payload as IInstagramPost).url}>
                             <img src={(activity.payload as IInstagramPost).imageUrl}></img>
@@ -54,13 +59,6 @@ export const Activity: FC<Props> = props => {
                             Slept {Math.round((activity.payload as IOuraNight).total / 60 / 60)}{' '}
                             hours with a score of {(activity.payload as IOuraNight).score}
                           </div>
-                        )}
-
-                        {activity.type === 'strava_activity' && (
-                          <a href={(activity.payload as IStravaActivity).url}>
-                            {Math.round((activity.payload as IStravaActivity).time / 60)} minute
-                            long {(activity.payload as IStravaActivity).type} workout
-                          </a>
                         )}
 
                         {activity.type === 'unsplash-photo' && (

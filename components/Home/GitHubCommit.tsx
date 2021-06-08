@@ -13,8 +13,9 @@ export const GitHubCommit: FC<Props> = ({activity}) => {
 
   return (
     <div className="flex items-center space-x-2 text-xs sm:text-sm">
+      <span>👨‍💻️</span>
       <a
-        className="overflow-hidden font-mono text-300 hover:underline overflow-ellipsis whitespace-nowrap"
+        className="overflow-hidden font-mono text-500 hover:underline overflow-ellipsis whitespace-nowrap"
         href={activity.payload.url}
       >
         {activity.payload.message}

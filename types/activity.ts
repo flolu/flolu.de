@@ -25,6 +25,10 @@ export interface IStravaActivity {
   time: number
   type: string
   map: any
+  avgHr: number
+  avgSpeed: number
+  avgTemperature: number
+  elevGain: number
 }
 
 export interface IOuraNight {
