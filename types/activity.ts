@@ -37,6 +37,7 @@ export interface IOuraNight {
   rem: number
   deep: number
   score: number
+  light: number
   lowestHr: number
   averageHr: number
 }

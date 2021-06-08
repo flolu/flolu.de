@@ -277,6 +277,7 @@ async function getOuraNights(after: Date) {
         duration: night.duration,
         lowestHr: night.hr_lowest,
         rem: night.rem,
+        light: night.light,
         score: night.score,
         total: night.total,
       },

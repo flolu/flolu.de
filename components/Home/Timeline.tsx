@@ -1,23 +1,20 @@
 import {useTranslation} from 'next-i18next'
-import {useState} from 'react'
 
-import {classNames} from '../../lib/class-names'
 import {CheckRoundIcon} from '../Icons/CheckRoundIcon'
-import {ChevronDownIcon} from '../Icons/ChevronDownIcon'
 import {LinkIcon} from '../Icons/LinkIcon'
 
 // TODO add images and videos
 
 export function Timeline() {
   const {t} = useTranslation()
-  const [showFullTimeline, setShowFullTimeline] = useState(false)
+  // const [showFullTimeline, setShowFullTimeline] = useState(false)
 
   return (
     <section id="timeline">
       <div className="mb-8 space-y-2 text-center">
         <h1 className="text-4xl font-bold lg:text-6xl">{t('home:timeline')}</h1>
       </div>
-      <div className="max-w-xl mx-auto space-y-8">
+      <div className="max-w-xl mx-auto space-y-8 md:max-w-2xl">
         <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
           <span>2021</span>
           <span className="w-full h-px bg-500"></span>
@@ -283,7 +280,7 @@ export function Timeline() {
           </li>
         </ul>
 
-        {!showFullTimeline && (
+        {/* {!showFullTimeline && (
           <div onClick={() => setShowFullTimeline(true)} className="flex justify-center w-full">
             <div className="flex items-center p-4 cursor-pointer">
               <span>{t('timeline:show_more')}</span>
@@ -292,9 +289,10 @@ export function Timeline() {
               </span>
             </div>
           </div>
-        )}
+        )} */}
 
-        <div className={classNames('space-y-8', showFullTimeline ? 'block' : 'hidden')}>
+        {/* <div className={classNames('space-y-8', showFullTimeline ? 'block' : 'hidden')}> */}
+        <div className="space-y-8">
           <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
             <span>2018</span>
             <span className="w-full h-px bg-500"></span>

@@ -13,5 +13,5 @@ export const ActivityDate: FC<Props> = ({timestamp, locale}) => {
   })
   const date = formatter.format(new Date(timestamp))
 
-  return <span className="text-lg text-100">{date}</span>
+  return <span className="text-xl font-medium text-100">{date}</span>
 }
