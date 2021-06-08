@@ -4,6 +4,7 @@ import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import {Octokit} from 'octokit'
 import * as queryString from 'query-string'
+import {FC} from 'react'
 
 import {Footer} from '../components/Footer'
 import {Header} from '../components/Header'
@@ -12,8 +13,10 @@ import {Activity} from '../components/Home/Activity'
 import {GetInTouch} from '../components/Home/GetInTouch'
 import {HomeHead} from '../components/Home/Head'
 import {Timeline} from '../components/Home/Timeline'
+import {isSameDay} from '../lib/is-same-day'
 import {
   IActivity,
+  IActivityDay,
   IGitHubBaseCommit,
   IGitHubCommit,
   IInstagramPost,
@@ -23,7 +26,12 @@ import {
   IYouTubeVideo,
 } from '../types/activity'
 
-export default function Home(props: any) {
+interface Props {
+  activities: IActivityDay[]
+  locale: string
+}
+
+const Home: FC<Props> = props => {
   const {t} = useTranslation()
 
   return (
@@ -47,7 +55,7 @@ export default function Home(props: any) {
         </section>
 
         <section className="px-4 mx-auto max-w-7xl">
-          <Activity activities={props.activities} />
+          <Activity activities={props.activities} locale={props.locale} />
         </section>
 
         <section>
@@ -238,7 +246,7 @@ async function getStravaActivities() {
 
 async function getOuraNights() {
   // TODO dynamically set start date
-  const query = queryString.stringify({start: '2021-05-01'})
+  const query = queryString.stringify({start: '2021-05-27'})
   const ouraResponse = await fetch(`https://api.ouraring.com/v1/sleep?${query}`, {
     headers: {Authorization: `Bearer ${process.env.OURA_ACCESS_TOKEN}`},
   })
@@ -292,7 +300,18 @@ async function assembleActivities() {
     return Number(new Date(b.timestamp)) - Number(new Date(a.timestamp))
   })
 
-  return sorted
+  let groupedByDay: IActivityDay[] = []
+  let previousDate: string | undefined
+  for (const activity of sorted) {
+    if (previousDate && isSameDay(new Date(activity.timestamp), new Date(previousDate))) {
+      groupedByDay[groupedByDay.length - 1].activities.push(activity)
+    } else {
+      groupedByDay.push({date: activity.timestamp, activities: [activity]})
+    }
+    previousDate = activity.timestamp
+  }
+
+  return groupedByDay
 }
 
 export const getStaticProps: GetStaticProps = async ({locale}) => {
@@ -307,9 +326,12 @@ export const getStaticProps: GetStaticProps = async ({locale}) => {
     props: {
       ...translations,
       activities,
+      locale: locale || 'en',
       // TODO utilize last updated
       lastUpdated: Date.now().toString(),
     },
     revalidate: 60 * 60 * 1,
   }
 }
+
+export default Home

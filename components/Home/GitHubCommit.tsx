@@ -23,7 +23,7 @@ export const GitHubCommit: FC<Props> = ({activity}) => {
       <a href={repoUrl} className="hidden font-medium text-50 sm:block">
         {repo}
       </a>
-      <div className="flex items-center space-x-1 font-medium">
+      <div className="flex items-center space-x-1 font-mono text-xs font-medium">
         <span className="text-green-600">+{activity.payload.stats.additions}</span>
         <span className="text-red-600">-{activity.payload.stats.deletions}</span>
         <DiffStat

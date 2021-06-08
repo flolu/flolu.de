@@ -78,3 +78,8 @@ export interface IActivity<T = ActivityPayload> {
   payload: T
   timestamp: string
 }
+
+export interface IActivityDay {
+  date: string
+  activities: IActivity[]
+}
