@@ -34,9 +34,7 @@ export const StravaActivity: FC<Props> = ({activity}) => {
             </div>
 
             <Duration time={activity.payload.time} />
-            <span className="overflow-hidden overflow-ellipsis hover:underline">
-              {activity.payload.name}
-            </span>
+            <span className="overflow-hidden overflow-ellipsis">{activity.payload.name}</span>
             <div className="flex-1"></div>
 
             <div className="flex items-center space-x-2">
@@ -73,9 +71,7 @@ export const StravaActivity: FC<Props> = ({activity}) => {
             </div>
 
             <Duration time={activity.payload.time} />
-            <span className="overflow-hidden overflow-ellipsis hover:underline">
-              {activity.payload.name}
-            </span>
+            <span className="overflow-hidden overflow-ellipsis">{activity.payload.name}</span>
             <div className="flex-1"></div>
 
             <div className="flex items-center space-x-2">
@@ -98,9 +94,7 @@ export const StravaActivity: FC<Props> = ({activity}) => {
             </div>
 
             <Duration time={activity.payload.time} />
-            <span className="overflow-hidden overflow-ellipsis hover:underline">
-              {activity.payload.name}
-            </span>
+            <span className="overflow-hidden overflow-ellipsis">{activity.payload.name}</span>
             <div className="flex-1"></div>
 
             <div className="flex items-center space-x-2">
@@ -137,9 +131,7 @@ export const StravaActivity: FC<Props> = ({activity}) => {
             </div>
 
             <Duration time={activity.payload.time} />
-            <span className="overflow-hidden overflow-ellipsis hover:underline">
-              {activity.payload.name}
-            </span>
+            <span className="overflow-hidden overflow-ellipsis">{activity.payload.name}</span>
             <div className="flex-1"></div>
 
             <div className="flex items-center space-x-2">

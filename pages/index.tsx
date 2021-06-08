@@ -144,7 +144,7 @@ async function getUnsplashPhotos() {
         url: `https://unsplash.com/photos/${photo.id}`,
         width: photo.width,
         height: photo.height,
-        imageUrl: photo.urls.small,
+        imageUrl: photo.urls.thumb,
       },
       timestamp: photo.created_at,
     }
