@@ -114,10 +114,10 @@ export function Footer() {
                 <Link href="/#activity">{t('footer:activity')}</Link>
               </li>
               <li className="hover:underline">
-                <Link href="/#timeline">{t('footer:timeline')}</Link>
+                <Link href="/#get-in-touch">{t('footer:contact_me')}</Link>
               </li>
               <li className="hover:underline">
-                <Link href="/#get-in-touch">{t('footer:contact_me')}</Link>
+                <Link href="/#timeline">{t('footer:timeline')}</Link>
               </li>
               <li className="hover:underline">
                 <Link href="/blog">{t('footer:blog')}</Link>

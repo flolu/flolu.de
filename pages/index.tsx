@@ -29,6 +29,7 @@ import {
 interface Props {
   activities: IActivityDay[]
   locale: string
+  lastUpdated: string
 }
 
 const Home: FC<Props> = props => {
@@ -55,7 +56,11 @@ const Home: FC<Props> = props => {
         </section>
 
         <section className="px-4 mx-auto max-w-7xl">
-          <Activity activities={props.activities} locale={props.locale} />
+          <Activity
+            activities={props.activities}
+            locale={props.locale}
+            lastUpdated={props.lastUpdated}
+          />
         </section>
 
         <section>
@@ -72,7 +77,7 @@ const Home: FC<Props> = props => {
   )
 }
 
-async function getInstagramPosts() {
+async function getInstagramPosts(after: Date) {
   const userId = '17841402069339334'
   const token = process.env.INSTAGRAM_TOKEN
   const userResponse = await fetch(
@@ -100,19 +105,19 @@ async function getInstagramPosts() {
     }),
   )
 
-  return activities
+  return activities.filter(activity => Number(new Date(activity.timestamp)) >= Number(after))
 }
 
-async function getYouTubeVideos() {
+async function getYouTubeVideos(after: Date) {
   const channelId = 'UCpeRl3f3jAMKGoomvddzBoQ'
   const key = process.env.YOUTUBE_API_KEY
 
   const videosResponse = await fetch(
-    `https://www.googleapis.com/youtube/v3/search?key=${key}&channelId=${channelId}&part=snippet,id&order=date&maxResults=1`,
+    `https://www.googleapis.com/youtube/v3/search?key=${key}&channelId=${channelId}&part=snippet,id&order=date&publishedAfter=${after.toISOString()}`,
   )
   const videos = await videosResponse.json()
 
-  return videos.items.map((video: any) => {
+  const activities = videos.items.map((video: any) => {
     const activity: IActivity<IYouTubeVideo> = {
       type: 'youtube-video',
       payload: {
@@ -128,16 +133,18 @@ async function getYouTubeVideos() {
     }
     return activity
   }) as IActivity<IYouTubeVideo>[]
+
+  return activities.filter(activity => Number(new Date(activity.timestamp)) >= Number(after))
 }
 
-async function getUnsplashPhotos() {
+async function getUnsplashPhotos(after: Date) {
   const username = 'flolu'
   const photosResponse = await fetch(
     `https://api.unsplash.com/users/${username}/photos?client_id=${process.env.UNSPLASH_ACCESS_KEY}`,
   )
   const photos = await photosResponse.json()
 
-  return photos.map((photo: any) => {
+  const activities = photos.map((photo: any) => {
     const activity: IActivity<IUnsplashPhoto> = {
       type: 'unsplash-photo',
       payload: {
@@ -150,6 +157,8 @@ async function getUnsplashPhotos() {
     }
     return activity
   }) as IActivity<IUnsplashPhoto>[]
+
+  return activities.filter(activity => Number(new Date(activity.timestamp)) >= Number(after))
 }
 
 async function getGitHubCommits(after: Date) {
@@ -303,9 +312,9 @@ async function assembleActivities() {
     getGitHubCommits(oneWeekAgo),
     getStravaActivities(oneWeekAgo),
     getOuraNights(oneWeekAgo),
-    getInstagramPosts(),
-    getYouTubeVideos(),
-    getUnsplashPhotos(),
+    getInstagramPosts(oneWeekAgo),
+    getYouTubeVideos(oneWeekAgo),
+    getUnsplashPhotos(oneWeekAgo),
   ])
 
   const activities: IActivity[] = [
@@ -348,8 +357,7 @@ export const getStaticProps: GetStaticProps = async ({locale}) => {
       ...translations,
       activities,
       locale: locale || 'en',
-      // TODO utilize last updated
-      lastUpdated: Date.now().toString(),
+      lastUpdated: new Date().toISOString(),
     },
     revalidate: 60 * 60 * 1,
   }
