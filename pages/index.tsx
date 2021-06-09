@@ -392,6 +392,8 @@ export const getStaticProps: GetStaticProps = async ({locale}) => {
 
   const [translations, activities] = await Promise.all([
     serverSideTranslations(locale || 'en', namespaces),
+    // TODO consider to use swr to fetch data instead
+    // like here: https://github.com/leerob/leerob.io/blob/746b7d61f5a4346fe2539a366f5b3fd96fa3d603/components/metrics/Unsplash.js#L7
     assembleActivities(),
   ])
 
