@@ -6,6 +6,8 @@ import {DrakeryLogo} from '../Icons/DrakeryLogo'
 import {LaughIcon} from '../Icons/LaughIcon'
 import {SchoolIcon} from '../Icons/SchoolIcon'
 
+// TODO links to other pages on this website like https://headlessui.dev/
+
 export function AboutMe() {
   const {t} = useTranslation()
 

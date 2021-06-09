@@ -21,10 +21,9 @@ export function Footer() {
         <div className="flex-shrink-0 max-w-sm space-y-6 md:w-1/3 md:mx-0">
           <Link href="/">
             <div className="flex items-center space-x-2 cursor-pointer text-900">
-              <span className="text-lg font-medium">Flo</span>
+              <span className="text-lg font-medium">Florian Ludewig</span>
             </div>
           </Link>
-          <p className="text-100">{t('footer:tagline')}</p>
           <p className="text-xs text-100">© 2021 Florian Ludewig</p>
           <div>
             <Menu as="div" className="relative inline-block">
@@ -117,16 +116,13 @@ export function Footer() {
                 <Link href="/#activity">{t('footer:activity')}</Link>
               </li>
               <li className="hover:underline">
-                <Link href="/#get-in-touch">{t('footer:contact_me')}</Link>
-              </li>
-              <li className="hover:underline">
                 <Link href="/#timeline">{t('footer:timeline')}</Link>
               </li>
               <li className="hover:underline">
-                <Link href="/blog">{t('footer:blog')}</Link>
+                <Link href="/#get-in-touch">{t('footer:contact_me')}</Link>
               </li>
               <li className="hover:underline">
-                <Link href="/online">{t('footer:online')}</Link>
+                <Link href="/blog">{t('footer:blog')}</Link>
               </li>
             </ul>
           </div>
