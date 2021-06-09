@@ -62,6 +62,7 @@ export interface IUnsplashPhoto {
   imageUrl: string
   width: number
   height: number
+  description: string
 }
 
 export type ActivityPayload =

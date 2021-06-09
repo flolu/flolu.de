@@ -10,10 +10,13 @@ interface Props {
 
 export const GitHubCommit: FC<Props> = ({activity}) => {
   const repo = activity.payload.repo.split('/')[1]
-  const repoUrl = `https://github.com/${activity.payload.repo}`
 
   return (
-    <a href={activity.payload.url} className="flex items-center space-x-2 whitespace-nowrap">
+    <a
+      href={activity.payload.url}
+      rel="noopener"
+      className="flex items-center space-x-2 whitespace-nowrap"
+    >
       <div className="flex flex-col items-center w-5 mr-2 h-11">
         <span className="w-0.5 h-full bg-900"></span>
         <span className="w-6 md:w-7 p-0.5 border-2 rounded-full fill-current border-bg-900 text-100">
@@ -26,7 +29,7 @@ export const GitHubCommit: FC<Props> = ({activity}) => {
 
       <span className="hidden font-medium whitespace-nowrap text-50 sm:block">
         <span>in </span>
-        <a href={repoUrl}>{repo}</a>
+        <span>{repo}</span>
       </span>
       <div className="flex-1"></div>
 

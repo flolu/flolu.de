@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://flolu.de">
-    <img width="180px" height="auto" src="./public/avatar.jpg" style="border-radius: 50%;" />
+    <img width="180px" height="auto" src="./public/avatar.jpg" />
   </a>
   <br>
   <h1>flolu.de</h1>

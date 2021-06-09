@@ -11,6 +11,7 @@ export const YouTubeVideo: FC<Props> = ({activity}) => {
   return (
     <a
       href={(activity.payload as IYouTubeVideo).url}
+      rel="noopener"
       className="flex items-stretch space-x-6 whitespace-nowrap"
     >
       <div className="flex flex-col items-center w-5">
@@ -23,8 +24,9 @@ export const YouTubeVideo: FC<Props> = ({activity}) => {
 
       <div className="flex items-center space-x-2">
         <img
-          src={(activity.payload as IYouTubeVideo).thumbnail.url}
+          src={activity.payload.thumbnail.url}
           className="my-2 rounded-md w-52"
+          alt={activity.payload.title}
         ></img>
       </div>
     </a>

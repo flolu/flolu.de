@@ -32,7 +32,7 @@ export const Activity: FC<Props> = props => {
   return (
     <section id="activity">
       <div className="max-w-xl mx-auto mb-8 space-y-2 text-center md:max-w-2xl">
-        <h1 className="text-4xl font-bold lg:text-6xl">{t('home:activity')}</h1>
+        <h2 className="text-4xl font-bold lg:text-6xl">{t('home:activity')}</h2>
 
         <p className="text-sm text-300">
           <span>{t('home:last_7_days')}, </span>
@@ -54,9 +54,6 @@ export const Activity: FC<Props> = props => {
                 <ActivityDate locale={props.locale} timestamp={day.date} />
               </div>
               <div className="text-xs sm:text-sm md:text-base">
-                {/* TODO probably better to group by day and summarize commits */}
-                {/* TODO space in between days (group by day in backend) */}
-                {/* TODO group similar commits (commits into same repo) */}
                 {day.activities.map((activity, index) => {
                   return (
                     <div key={index}>

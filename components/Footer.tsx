@@ -79,6 +79,7 @@ export function Footer() {
           <div className="flex space-x-4">
             <a
               target="_blank"
+              rel="noopener"
               href="https://www.instagram.com/flo.ludewig"
               className="w-4 cursor-pointer fill-current"
             >
@@ -86,6 +87,7 @@ export function Footer() {
             </a>
             <a
               target="_blank"
+              rel="noopener"
               href="https://www.youtube.com/c/flolu"
               className="w-4 cursor-pointer fill-current"
             >
@@ -93,6 +95,7 @@ export function Footer() {
             </a>
             <a
               target="_blank"
+              rel="noopener"
               href="https://github.com/flolu"
               className="w-4 cursor-pointer fill-current"
             >
@@ -159,19 +162,31 @@ export function Footer() {
               <a
                 className="hover:underline"
                 target="_blank"
+                rel="noopener"
                 href="https://www.instagram.com/flo.ludewig"
               >
                 Instagram
               </a>
-              <a className="hover:underline" target="_blank" href="https://www.youtube.com/c/flolu">
+              <a
+                className="hover:underline"
+                target="_blank"
+                rel="noopener"
+                href="https://www.youtube.com/c/flolu"
+              >
                 YouTube
               </a>
-              <a className="hover:underline" target="_blank" href="https://github.com/flolu">
+              <a
+                className="hover:underline"
+                target="_blank"
+                rel="noopener"
+                href="https://github.com/flolu"
+              >
                 GitHub
               </a>
               <a
                 className="hover:underline"
                 target="_blank"
+                rel="noopener"
                 href="https://www.strava.com/athletes/flolu"
               >
                 Strava
@@ -179,6 +194,7 @@ export function Footer() {
               <a
                 className="hover:underline"
                 target="_blank"
+                rel="noopener"
                 href="https://www.linkedin.com/in/florian-ludewig"
               >
                 LinkedIn
@@ -186,17 +202,33 @@ export function Footer() {
               <a
                 className="hover:underline"
                 target="_blank"
+                rel="noopener"
                 href="https://stackoverflow.com/users/8586803"
               >
                 StackOverflow
               </a>
-              <a className="hover:underline" target="_blank" href="https://unsplash.com/@flolu">
+              <a
+                className="hover:underline"
+                target="_blank"
+                rel="noopener"
+                href="https://unsplash.com/@flolu"
+              >
                 Unsplash
               </a>
-              <a className="hover:underline" target="_blank" href="https://t.me/flolu">
+              <a
+                className="hover:underline"
+                target="_blank"
+                rel="noopener"
+                href="https://t.me/flolu"
+              >
                 Telegram
               </a>
-              <a className="hover:underline" target="_blank" href="https://twitter.com/floludewig">
+              <a
+                className="hover:underline"
+                target="_blank"
+                rel="noopener"
+                href="https://twitter.com/floludewig"
+              >
                 Twitter
               </a>
             </ul>

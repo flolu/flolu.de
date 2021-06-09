@@ -63,8 +63,8 @@ const Home: FC<Props> = props => {
         }}
         twitter={{handle: '@floludewig', site: '@floludewig', cardType: 'summary'}}
         languageAlternates={[
-          {hrefLang: 'en', href: '/en'},
-          {hrefLang: 'de', href: '/de'},
+          {hrefLang: 'en', href: 'https://flolu.de/en'},
+          {hrefLang: 'de', href: 'https://flolu.de/de'},
         ]}
         robotsProps={{}}
       />
@@ -195,6 +195,7 @@ async function getUnsplashPhotos(after: Date) {
         width: photo.width,
         height: photo.height,
         imageUrl: photo.urls.thumb,
+        description: photo.description,
       },
       timestamp: photo.created_at,
     }

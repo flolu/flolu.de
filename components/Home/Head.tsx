@@ -22,7 +22,7 @@ export function HomeHead() {
           {t('home:tagline')}
         </p>
         <Link href="#activity">
-          <button className="flex items-center px-4 py-2 mt-8 space-x-2 text-lg font-medium rounded-lg lg:mt-12 lg:px-6 lg:py-3 lg:text-xl bg-primary-500 text-on-primary-300 focus:outline-none focus:ring-4 ring-offset-2 ring-primary-100">
+          <button className="flex items-center px-4 py-2 mt-8 space-x-2 text-lg font-medium rounded-lg lg:mt-12 lg:px-6 lg:py-3 lg:text-xl bg-primary-700 text-on-primary-300 focus:outline-none focus:ring-4 ring-offset-2 ring-primary-100">
             <span>{t('home:stalk_me')}</span>
             <span className="w-6 fill-current">
               <ArrowForwardIcon />
@@ -34,6 +34,7 @@ export function HomeHead() {
       <div className="w-56 md:w-full lg:max-w-sm xl:max-w-md">
         <Image
           className="rounded-full"
+          alt="Florian Ludewig"
           src="/avatar.jpg"
           layout="responsive"
           width={512}
@@ -45,6 +46,7 @@ export function HomeHead() {
         <div className="flex flex-col items-center justify-center w-5 h-56 space-y-10 cursor-pointer md:h-auto">
           <a
             target="_blank"
+            rel="noopener"
             href="https://github.com/flolu"
             className="w-5 fill-current text-primary-300"
           >
@@ -52,6 +54,7 @@ export function HomeHead() {
           </a>
           <a
             target="_blank"
+            rel="noopener"
             href="https://instagram.com/flo.ludewig"
             className="w-5 fill-current text-primary-300"
           >
@@ -59,6 +62,7 @@ export function HomeHead() {
           </a>
           <a
             target="_blank"
+            rel="noopener"
             href="https://www.youtube.com/c/flolu"
             className="w-5 fill-current text-primary-300"
           >
