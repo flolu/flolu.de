@@ -1,7 +1,7 @@
 import {GetStaticProps} from 'next'
 import {useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
-import Head from 'next/head'
+import {NextSeo, SocialProfileJsonLd} from 'next-seo'
 import {Octokit} from 'octokit'
 import * as queryString from 'query-string'
 import {FC} from 'react'
@@ -35,13 +35,56 @@ interface Props {
 const Home: FC<Props> = props => {
   const {t} = useTranslation()
 
+  const title = 'Florian Ludewig'
+  const description = t('home:tagline')
+  const url = `https://flolu.de/${props.locale}`
+
   return (
-    <div>
-      <Head>
-        <title>Florian Ludewig</title>
-        <meta name="description" content={t('footer:tagline')} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <NextSeo
+        title={title}
+        description={description}
+        canonical={url}
+        openGraph={{
+          url,
+          title,
+          description,
+          locale: props.locale,
+          type: 'profile',
+          profile: {firstName: 'Florian', lastName: 'Ludewig', username: 'flolu', gender: 'Male'},
+          images: [
+            {
+              url: 'https://flolu.de/avatar.jpg',
+              width: 512,
+              height: 512,
+              alt: 'Profile Photo',
+            },
+          ],
+        }}
+        twitter={{handle: '@floludewig', site: '@floludewig', cardType: 'summary'}}
+        languageAlternates={[
+          {hrefLang: 'en', href: '/en'},
+          {hrefLang: 'de', href: '/de'},
+        ]}
+        robotsProps={{}}
+      />
+
+      <SocialProfileJsonLd
+        type="Person"
+        name="Florian Ludewig"
+        url={url}
+        sameAs={[
+          'https://www.instagram.com/flo.ludewig',
+          'https://www.youtube.com/c/flolu',
+          'https://github.com/flolu',
+          'https://www.strava.com/athletes/flolu',
+          'https://www.linkedin.com/in/florian-ludewig',
+          'https://stackoverflow.com/users/8586803',
+          'https://unsplash.com/@flolu',
+          'https://t.me/flolu',
+          'https://twitter.com/floludewig',
+        ]}
+      />
 
       <Header spacer={false} />
       <div className="h-24 md:hidden"></div>
@@ -73,7 +116,7 @@ const Home: FC<Props> = props => {
       </main>
 
       <Footer />
-    </div>
+    </>
   )
 }
 

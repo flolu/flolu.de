@@ -196,6 +196,9 @@ export function Footer() {
               <a className="hover:underline" target="_blank" href="https://t.me/flolu">
                 Telegram
               </a>
+              <a className="hover:underline" target="_blank" href="https://twitter.com/floludewig">
+                Twitter
+              </a>
             </ul>
           </div>
         </div>
