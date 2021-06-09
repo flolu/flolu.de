@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://flolu.de
+
+# Sitemaps
+Sitemap: https://flolu.de/sitemap.xml

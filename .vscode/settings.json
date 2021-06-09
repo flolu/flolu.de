@@ -6,17 +6,25 @@
     "LACOS",
     "Ludewig",
     "OURA",
+    "Parens",
+    "Roboto",
     "STRAVA",
     "YOUTUBE",
     "biohacking",
+    "changefreq",
     "drakery",
     "flolu",
     "floludewig",
+    "headlessui",
     "junts",
+    "lastmod",
+    "monospace",
     "octokit",
     "paluten",
+    "postbuild",
     "skatestyle",
     "spleenlab",
-    "startupper"
+    "startupper",
+    "tailwindcss"
   ]
 }
