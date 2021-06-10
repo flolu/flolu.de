@@ -89,22 +89,22 @@ export const Header = (props: Props) => {
           <div className="flex-1"></div>
 
           <div className="hidden ml-auto sm:block">
-            <Link href="#about-me">
+            <Link href="/#about-me">
               <a className="hover:text-900">{t('header:about_me')}</a>
             </Link>
           </div>
           <div className="hidden md:block">
-            <Link href="#activity">
+            <Link href="/#activity">
               <a className="hover:text-900">{t('header:activity')}</a>
             </Link>
           </div>
           <div className="hidden md:block">
-            <Link href="#timeline">
+            <Link href="/#timeline">
               <a className="hover:text-900">{t('header:timeline')}</a>
             </Link>
           </div>
           <div className="hidden md:block">
-            <Link href="#get-in-touch">
+            <Link href="/#get-in-touch">
               <a className="hover:text-900">{t('header:contact_me')}</a>
             </Link>
           </div>
@@ -138,7 +138,7 @@ export const Header = (props: Props) => {
           >
             <div className="flex flex-col items-center p-4 space-y-4 border-2 border-b-0 shadow-2xl rounded-t-2xl bg-500-backdrop backdrop-filter backdrop-blur-lg border-background-300">
               <div className="flex space-x-8" onClick={() => setIsMenuOpen(false)}>
-                <Link href="#about-me">
+                <Link href="/#about-me">
                   <div className="flex flex-col items-center space-y-1 cursor-pointer">
                     <span className="w-8 fill-current text-300">
                       <LaughIcon />
@@ -146,7 +146,7 @@ export const Header = (props: Props) => {
                     <span>{t('header:about_me')}</span>
                   </div>
                 </Link>
-                <Link href="#activity">
+                <Link href="/#activity">
                   <div className="flex flex-col items-center space-y-1 cursor-pointer">
                     <span className="w-8 fill-current text-300">
                       <HistoryIcon />
@@ -154,7 +154,7 @@ export const Header = (props: Props) => {
                     <span>{t('header:activity')}</span>
                   </div>
                 </Link>
-                <Link href="#timeline">
+                <Link href="/#timeline">
                   <div className="flex flex-col items-center space-y-1 cursor-pointer">
                     <span className="w-8 fill-current text-300">
                       <TimelineIcon />

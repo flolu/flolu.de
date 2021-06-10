@@ -5,7 +5,7 @@ import {useTranslation} from 'react-i18next'
 import {Footer} from '../components/Footer'
 import {Header} from '../components/Header'
 
-export default function Recommendations() {
+export default function Principles() {
   const {t} = useTranslation()
 
   return (
@@ -15,11 +15,9 @@ export default function Recommendations() {
       <main className="max-w-4xl px-4 mx-auto space-y-8 sm:space-y-12 sm:px-8">
         <div className="space-y-2" style={{minHeight: '50vh'}}>
           <span className="text-lg font-medium text-100 sm:text-xl">
-            {t('recommendations:recommendations')}
+            {t('principles:principles')}
           </span>
-          <h1 className="text-2xl font-bold sm:text-5xl">
-            {t('recommendations:work_in_progress')}
-          </h1>
+          <h1 className="text-2xl font-bold sm:text-5xl">{t('principles:work_in_progress')}</h1>
         </div>
       </main>
 
@@ -29,7 +27,7 @@ export default function Recommendations() {
 }
 
 export const getStaticProps: GetStaticProps = async ({locale}) => {
-  const namespaces = ['header', 'footer', 'recommendations']
+  const namespaces = ['header', 'footer', 'principles']
   const translations = await serverSideTranslations(locale || 'en', namespaces)
   return {props: {...translations}}
 }

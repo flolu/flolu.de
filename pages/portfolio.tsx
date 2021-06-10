@@ -5,7 +5,7 @@ import {useTranslation} from 'react-i18next'
 import {Footer} from '../components/Footer'
 import {Header} from '../components/Header'
 
-export default function Portfolio() {
+export default function Portfolio({lastUpdated}: any) {
   const {t} = useTranslation()
 
   return (
@@ -18,6 +18,7 @@ export default function Portfolio() {
             {t('portfolio:portfolio')}
           </span>
           <h1 className="text-2xl font-bold sm:text-5xl">{t('portfolio:work_in_progress')}</h1>
+          <span>{lastUpdated}</span>
         </div>
       </main>
 
@@ -29,5 +30,6 @@ export default function Portfolio() {
 export const getStaticProps: GetStaticProps = async ({locale}) => {
   const namespaces = ['header', 'footer', 'portfolio']
   const translations = await serverSideTranslations(locale || 'en', namespaces)
-  return {props: {...translations}}
+  console.log('update static portfolio page', new Date().toISOString())
+  return {props: {...translations, lastUpdated: new Date().toISOString()}, revalidate: 15}
 }

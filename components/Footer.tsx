@@ -121,37 +121,38 @@ export function Footer() {
               <li className="hover:underline">
                 <Link href="/#get-in-touch">{t('footer:contact_me')}</Link>
               </li>
-              <li className="hover:underline">
-                <Link href="/blog">{t('footer:blog')}</Link>
-              </li>
             </ul>
           </div>
           <div className="w-full md:w-1/2 lg:w-1/3">
             <h2 className="mb-4 font-medium tracking-widest text-900">{t('footer:random')}</h2>
             <ul className="mb-10 space-y-2">
               <li className="hover:underline">
-                <Link href="/skills">{t('footer:skills')}</Link>
-              </li>
-              <li className="hover:underline">
                 <Link href="/portfolio">{t('footer:portfolio')}</Link>
-              </li>
-              <li className="hover:underline">
-                <Link href="/biohacking">{t('footer:biohacking')}</Link>
-              </li>
-              <li className="hover:underline">
-                <Link href="/facts">{t('footer:facts')}</Link>
-              </li>
-              <li className="hover:underline">
-                <Link href="/recommendations">{t('footer:recommendations')}</Link>
               </li>
               <li className="hover:underline">
                 <Link href="/favorites">{t('footer:favorites')}</Link>
               </li>
               <li className="hover:underline">
+                <Link href="/blog">{t('footer:blog')}</Link>
+              </li>
+              <li className="hover:underline">
                 <Link href="/principles">{t('footer:principles')}</Link>
               </li>
               <li className="hover:underline">
+                <Link href="/legal">{t('footer:legal')}</Link>
+              </li>
+              <li className="hover:underline">
                 <Link href="/sitemap.xml">Sitemap</Link>
+              </li>
+              <li>
+                <a
+                  className="hover:underline"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://github.com/flolu/flolu.de"
+                >
+                  Source Code
+                </a>
               </li>
             </ul>
           </div>
@@ -222,14 +223,14 @@ export function Footer() {
               >
                 Telegram
               </a>
-              <a
+              {/* <a
                 className="hover:underline"
                 target="_blank"
                 rel="noopener"
                 href="https://twitter.com/floludewig"
               >
                 Twitter
-              </a>
+              </a> */}
             </ul>
           </div>
         </div>

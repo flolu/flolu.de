@@ -1,37 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://flolu.de</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/biohacking</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/facts</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/favorites</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/legal</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/portfolio</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/principles</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/recommendations</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/skills</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/en/500</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/de/500</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/en/legal</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/de/legal</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/en/recommendations</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/de/recommendations</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/en/favorites</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/de/favorites</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/en/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/de/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/en/biohacking</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/de/biohacking</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/en/principles</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/de/principles</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/en/404</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/de/404</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/en/facts</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/de/facts</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/en/skills</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/de/skills</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/en/portfolio</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/de/portfolio</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/en</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
-<url><loc>https://flolu.de/de</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-09T12:09:07.576Z</lastmod></url>
+<url><loc>https://flolu.de</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.866Z</lastmod></url>
+<url><loc>https://flolu.de/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/favorites</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/legal</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/portfolio</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/principles</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/principles copy</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/en/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/de/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/en/portfolio</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/de/portfolio</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/en/500</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/de/500</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/en/favorites</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/de/favorites</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/en/legal</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/de/legal</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/en/principles</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/de/principles</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/en/404</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/de/404</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/en</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/de</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/en/principles copy</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
+<url><loc>https://flolu.de/de/principles copy</loc><changefreq>weekly</changefreq><priority>0.7</priority><lastmod>2021-06-10T11:20:16.867Z</lastmod></url>
 </urlset>

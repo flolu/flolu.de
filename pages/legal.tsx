@@ -13,7 +13,7 @@ export default function Legal() {
       <Header />
 
       <main className="max-w-4xl px-4 mx-auto space-y-8 sm:space-y-12 sm:px-8">
-        <div className="space-y-2">
+        <div className="space-y-2" style={{minHeight: '50vh'}}>
           <span className="text-lg font-medium text-100 sm:text-xl">{t('legal:legal_notice')}</span>
           <h1 className="text-2xl font-bold sm:text-5xl">Florian Ludewig</h1>
         </div>

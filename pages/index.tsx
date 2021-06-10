@@ -341,6 +341,7 @@ async function getOuraNights(after: Date) {
 }
 
 async function assembleActivities() {
+  console.time('assemble-activities')
   const now = new Date()
   const oneWeekAgo = new Date()
   oneWeekAgo.setDate(now.getDate() - 7)
@@ -385,6 +386,7 @@ async function assembleActivities() {
     previousDate = activity.timestamp
   }
 
+  console.timeEnd('assemble-activities')
   return groupedByDay
 }
 
@@ -405,7 +407,8 @@ export const getStaticProps: GetStaticProps = async ({locale}) => {
       locale: locale || 'en',
       lastUpdated: new Date().toISOString(),
     },
-    revalidate: 60 * 60 * 1,
+    // revalidate: 60 * 60 * 1,
+    revalidate: 15,
   }
 }
 
