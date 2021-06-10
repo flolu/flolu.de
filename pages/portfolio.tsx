@@ -1,6 +1,6 @@
 import {GetStaticProps} from 'next'
+import {useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
-import {useTranslation} from 'react-i18next'
 
 import {Footer} from '../components/Footer'
 import {Header} from '../components/Header'
@@ -30,6 +30,5 @@ export default function Portfolio({lastUpdated}: any) {
 export const getStaticProps: GetStaticProps = async ({locale}) => {
   const namespaces = ['header', 'footer', 'portfolio']
   const translations = await serverSideTranslations(locale || 'en', namespaces)
-  console.log('update static portfolio page', new Date().toISOString())
   return {props: {...translations, lastUpdated: new Date().toISOString()}, revalidate: 15}
 }

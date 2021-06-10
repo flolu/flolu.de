@@ -407,8 +407,7 @@ export const getStaticProps: GetStaticProps = async ({locale}) => {
       locale: locale || 'en',
       lastUpdated: new Date().toISOString(),
     },
-    // revalidate: 60 * 60 * 1,
-    revalidate: 15,
+    revalidate: 60 * 5,
   }
 }
 
