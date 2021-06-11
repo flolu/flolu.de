@@ -1,4 +1,63 @@
 {
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  /* Import Sorter Extension */
+  "importSorter.generalConfiguration.sortOnBeforeSave": true,
+  "importSorter.importStringConfiguration.hasSemicolon": false,
+  "importSorter.importStringConfiguration.spacingPerImportExpression.afterStartingBracket": 0,
+  "importSorter.importStringConfiguration.spacingPerImportExpression.beforeEndingBracket": 0,
+  "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.type": "newLineEachExpressionAfterCountLimitExceptIfOnlyOne",
+  "importSorter.importStringConfiguration.tabSize": 2,
+  "importSorter.importStringConfiguration.trailingComma": "multiLine",
+  "importSorter.sortConfiguration.removeUnusedImports": true,
+  "importSorter.sortConfiguration.customOrderingRules.rules": [
+    {"type": "importMember", "regex": "^$", "orderLevel": 10, "disableSort": true},
+    {"regex": "^(@libs)", "orderLevel": 30},
+    {"regex": "^(@/)", "orderLevel": 40},
+    {"regex": "^[.]", "orderLevel": 50}
+  ],
+
+  /* Todo Tree Extension */
+  "todo-tree.regex.regex": "(//|/\\*\\*|/\\*|\\*|<!--|#)\\s*($TAGS).*(\\n\\s*//\\s{2,}.*)*",
+  "todo-tree.tree.showCountsInTree": true,
+  "todo-tree.general.tags": ["NOW", "TODO", "FIXME", "LATER"],
+  "todo-tree.highlights.defaultHighlight": {
+    "rulerColour": "pink",
+    "rulerLane": "full",
+    "type": "text-and-comment",
+    "gutterIcon": true
+  },
+  "todo-tree.highlights.customHighlight": {
+    "NOW": {
+      "icon": "flame",
+      "iconColour": "#c90000",
+      "foreground": "#c90000",
+      "rulerColour": "#c90000"
+    },
+    "TODO": {
+      "icon": "star",
+      "iconColour": "#c97f00",
+      "foreground": "#c97f00",
+      "rulerColour": "#c97f00"
+    },
+    "FIXME": {
+      "icon": "bug",
+      "iconColour": "#00c968",
+      "foreground": "#00c968",
+      "rulerColour": "#00c968"
+    },
+    "LATER": {
+      "icon": "bookmark",
+      "iconColour": "#808080",
+      "foreground": "#808080",
+      "rulerColour": "#808080"
+    }
+  },
+
   "cSpell.words": [
     "Demarco",
     "Fastlane",

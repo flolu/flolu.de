@@ -2,8 +2,8 @@ import type {NextApiRequest, NextApiResponse} from 'next'
 
 import * as queryString from 'query-string'
 
-import {fetcher} from '../../lib/fetcher'
-import {setCacheControl} from '../../lib/set-cache-control'
+import {fetcher} from '@/lib//fetcher'
+import {setCacheControl} from '@/lib//set-cache-control'
 
 const api = 'https://api.unsplash.com'
 const key = process.env.UNSPLASH_ACCESS_KEY

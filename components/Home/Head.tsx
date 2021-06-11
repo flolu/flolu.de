@@ -2,12 +2,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import {useTranslation} from 'react-i18next'
 
-import {ArrowDownIcon} from '../Icons/ArrowDownIcon'
-import {ArrowForwardIcon} from '../Icons/ArrowForwardIcon'
-import {GithubIcon} from '../Icons/GithubIcon'
-import {InstagramIcon} from '../Icons/InstagramIcon'
-import {MouseIcon} from '../Icons/MouseIcon'
-import {YouTubeIcon} from '../Icons/YouTubeIcon'
+import {ArrowDownIcon} from '@/icons/ArrowDownIcon'
+import {ArrowForwardIcon} from '@/icons/ArrowForwardIcon'
+import {GithubIcon} from '@/icons/GithubIcon'
+import {InstagramIcon} from '@/icons/InstagramIcon'
+import {MouseIcon} from '@/icons/MouseIcon'
+import {YouTubeIcon} from '@/icons/YouTubeIcon'
 
 export function HomeHead() {
   const {t} = useTranslation()

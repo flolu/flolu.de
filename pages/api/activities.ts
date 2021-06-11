@@ -1,8 +1,8 @@
 import {Octokit} from 'octokit'
 import * as queryString from 'query-string'
 
-import {isSameDay} from '../../lib/is-same-day'
-import {setCacheControl} from '../../lib/set-cache-control'
+import {isSameDay} from '@/lib//is-same-day'
+import {setCacheControl} from '@/lib//set-cache-control'
 import {
   IActivity,
   IActivityDay,
@@ -13,7 +13,7 @@ import {
   IStravaActivity,
   IUnsplashPhoto,
   IYouTubeVideo,
-} from '../../types/activity'
+} from '@/types//activity'
 
 import type {NextApiRequest, NextApiResponse} from 'next'
 const cacheMaxAge = 5 * 60

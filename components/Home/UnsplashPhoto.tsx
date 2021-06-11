@@ -1,7 +1,7 @@
 import {FC} from 'react'
 
-import {IActivity, IUnsplashPhoto} from '../../types/activity'
-import {CameraIcon} from '../Icons/CameraIcon'
+import {CameraIcon} from '@/icons/CameraIcon'
+import {IActivity, IUnsplashPhoto} from '@/types//activity'
 
 interface Props {
   activity: IActivity<IUnsplashPhoto>

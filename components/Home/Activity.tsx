@@ -10,7 +10,8 @@ import {
   IStravaActivity,
   IUnsplashPhoto,
   IYouTubeVideo,
-} from '../../types/activity'
+} from '@/types//activity'
+
 import {ActivityDate} from './ActivityDate'
 import {DateWithTime} from './DateWithTime'
 import {GitHubCommit} from './GitHubCommit'

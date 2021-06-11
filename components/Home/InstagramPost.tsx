@@ -1,7 +1,7 @@
 import {FC} from 'react'
 
-import {IActivity, IInstagramPost} from '../../types/activity'
-import {CameraIcon} from '../Icons/CameraIcon'
+import {CameraIcon} from '@/icons/CameraIcon'
+import {IActivity, IInstagramPost} from '@/types//activity'
 
 interface Props {
   activity: IActivity<IInstagramPost>

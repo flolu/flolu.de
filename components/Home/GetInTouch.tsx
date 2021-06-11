@@ -1,8 +1,8 @@
 import {useTranslation} from 'next-i18next'
 
-import {EmailIcon} from '../Icons/EmailIcon'
-import {InstagramIcon} from '../Icons/InstagramIcon'
-import {TelegramIcon} from '../Icons/TelegramIcon'
+import {EmailIcon} from '@/icons/EmailIcon'
+import {InstagramIcon} from '@/icons/InstagramIcon'
+import {TelegramIcon} from '@/icons/TelegramIcon'
 
 export function GetInTouch() {
   const {t} = useTranslation()

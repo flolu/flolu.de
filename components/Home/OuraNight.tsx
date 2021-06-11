@@ -1,9 +1,10 @@
 import {FC} from 'react'
 
-import {IActivity, IOuraNight} from '../../types/activity'
-import {HeartIcon} from '../Icons/HeartIcon'
-import {HeartIconOutline} from '../Icons/HeartIconOutline'
-import {SleepIcon} from '../Icons/SleepIcon'
+import {HeartIcon} from '@/icons/HeartIcon'
+import {HeartIconOutline} from '@/icons/HeartIconOutline'
+import {SleepIcon} from '@/icons/SleepIcon'
+import {IActivity, IOuraNight} from '@/types//activity'
+
 import {Duration} from './Duration'
 
 interface Props {

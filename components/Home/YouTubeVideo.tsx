@@ -1,7 +1,7 @@
 import {FC} from 'react'
 
-import {IActivity, IYouTubeVideo} from '../../types/activity'
-import {YouTubeIcon} from '../Icons/YouTubeIcon'
+import {YouTubeIcon} from '@/icons/YouTubeIcon'
+import {IActivity, IYouTubeVideo} from '@/types//activity'
 
 interface Props {
   activity: IActivity<IYouTubeVideo>

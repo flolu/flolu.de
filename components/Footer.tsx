@@ -4,11 +4,12 @@ import Link from 'next/link'
 import {useRouter} from 'next/router'
 import {Fragment} from 'react'
 
-import {ExpandMoreIcon} from '../components/Icons/ExpandMoreIcon'
-import {GermanIcon} from '../components/Icons/GermanIcon'
-import {GithubIcon} from '../components/Icons/GithubIcon'
-import {InstagramIcon} from '../components/Icons/InstagramIcon'
-import {UnitedKingdomIcon} from '../components/Icons/UnitedKingdomIcon'
+import {ExpandMoreIcon} from '@/components/Icons/ExpandMoreIcon'
+import {GermanIcon} from '@/components/Icons/GermanIcon'
+import {GithubIcon} from '@/components/Icons/GithubIcon'
+import {InstagramIcon} from '@/components/Icons/InstagramIcon'
+import {UnitedKingdomIcon} from '@/components/Icons/UnitedKingdomIcon'
+
 import {YouTubeIcon} from './Icons/YouTubeIcon'
 
 export function Footer() {

@@ -3,10 +3,10 @@ import {FC} from 'react'
 import {useTranslation} from 'react-i18next'
 import useSWR from 'swr'
 
-import {DDDesignerIcon} from '../Icons/3DDesignerIcon'
-import {DrakeryLogo} from '../Icons/DrakeryLogo'
-import {LaughIcon} from '../Icons/LaughIcon'
-import {SchoolIcon} from '../Icons/SchoolIcon'
+import {DDDesignerIcon} from '@/icons/3DDesignerIcon'
+import {DrakeryLogo} from '@/icons/DrakeryLogo'
+import {LaughIcon} from '@/icons/LaughIcon'
+import {SchoolIcon} from '@/icons/SchoolIcon'
 
 // TODO links to other pages on this website like https://headlessui.dev/
 

@@ -1,8 +1,8 @@
-import '../styles/globals.sass'
+import '@/styles/globals.sass'
 
 import {appWithTranslation} from 'next-i18next'
 
-import {AppearanceProvider} from '../contexts/AppearanceContext'
+import {AppearanceProvider} from '@/contexts/AppearanceContext'
 
 import type {AppProps} from 'next/app'
 

@@ -1,7 +1,8 @@
 import {FC} from 'react'
 
-import {IActivity, IGitHubCommit} from '../../types/activity'
-import {CodeIcon} from '../Icons/CodeIcon'
+import {CodeIcon} from '@/icons/CodeIcon'
+import {IActivity, IGitHubCommit} from '@/types//activity'
+
 import {DiffStat} from './DiffStat'
 
 interface Props {

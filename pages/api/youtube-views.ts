@@ -1,7 +1,7 @@
 import type {NextApiRequest, NextApiResponse} from 'next'
 import {google} from 'googleapis'
 
-import {setCacheControl} from '../../lib/set-cache-control'
+import {setCacheControl} from '@/lib//set-cache-control'
 
 const googleAuth = new google.auth.GoogleAuth({
   credentials: {

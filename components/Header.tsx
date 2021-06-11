@@ -3,8 +3,9 @@ import {useTranslation} from 'next-i18next'
 import Link from 'next/link'
 import {Fragment, useEffect, useRef, useState} from 'react'
 
-import {Themes, useAppearance} from '../contexts/AppearanceContext'
-import {classNames} from '../lib/class-names'
+import {Themes, useAppearance} from '@/contexts//AppearanceContext'
+import {classNames} from '@/lib//class-names'
+
 import {CloseIcon} from './Icons/CloseIcon'
 import {DarkModeIcon} from './Icons/DarkModeIcon'
 import {HistoryIcon} from './Icons/HistoryIcon'

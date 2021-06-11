@@ -1,7 +1,7 @@
 import {useTranslation} from 'next-i18next'
 
-import {CheckRoundIcon} from '../Icons/CheckRoundIcon'
-import {LinkIcon} from '../Icons/LinkIcon'
+import {CheckRoundIcon} from '@/icons/CheckRoundIcon'
+import {LinkIcon} from '@/icons/LinkIcon'
 
 // TODO add images and videos
 

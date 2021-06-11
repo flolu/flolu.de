@@ -1,6 +1,7 @@
 import {FunctionComponent, useContext, useEffect, useState} from 'react'
 
-import {isServer} from '../lib/ssr'
+import {isServer} from '@/lib//ssr'
+
 import {createContextHack, Setter} from './utils'
 
 export enum Themes {
