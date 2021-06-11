@@ -65,6 +65,9 @@ module.exports = {
     },
     // colors: {},
     extend: {
+      screens: {
+        xs: '400px',
+      },
       textColor: {
         ...foregroundColors,
         primary: primaryColors,
@@ -97,7 +100,9 @@ module.exports = {
         primary: primaryColors,
       },
       padding: {
-        '1/3': '33%',
+        '1/3': '33.333%',
+        '1/2': '50%',
+        '2/3': '66.666%',
         full: '100%',
       },
     },
