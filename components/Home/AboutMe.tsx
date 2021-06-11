@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import {FC} from 'react'
 import {useTranslation} from 'react-i18next'
 import useSWR from 'swr'
 
@@ -9,10 +10,20 @@ import {SchoolIcon} from '../Icons/SchoolIcon'
 
 // TODO links to other pages on this website like https://headlessui.dev/
 
-export function AboutMe() {
-  const unsplashViews = useSWR('/api/unsplash-views')
-  const youtubeViews = useSWR('/api/youtube-views')
-  const gitHubStars = useSWR('/api/github-stars')
+interface Props {
+  githubStars: number
+  unsplashViews: number
+  youTubeViews: number
+}
+
+export const AboutMe: FC<Props> = props => {
+  const {data: unsplashViews} = useSWR('/api/unsplash-views', {
+    initialData: {views: props.unsplashViews},
+  })
+  const {data: youtubeViews} = useSWR('/api/youtube-views', {
+    initialData: {views: props.youTubeViews},
+  })
+  const {data: gitHubStars} = useSWR('/api/github-stars', {initialData: {stars: props.githubStars}})
   const {t} = useTranslation()
 
   return (
@@ -147,15 +158,15 @@ export function AboutMe() {
         <h3>All time stats</h3>
         <div>
           <span>Unsplash views: </span>
-          <span>{unsplashViews.data?.views}</span>
+          <span>{unsplashViews!.views}</span>
         </div>
         <div>
           <span>YouTube views: </span>
-          <span>{youtubeViews.data?.views}</span>
+          <span>{youtubeViews!.views}</span>
         </div>
         <div>
           <span>GitHub stars: </span>
-          <span>{gitHubStars.data?.stars}</span>
+          <span>{gitHubStars!.stars}</span>
         </div>
       </div>
     </section>

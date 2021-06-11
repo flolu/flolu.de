@@ -1,6 +1,8 @@
 import type {NextApiRequest, NextApiResponse} from 'next'
 import {google} from 'googleapis'
 
+import {setCacheControl} from '../../lib/set-cache-control'
+
 const googleAuth = new google.auth.GoogleAuth({
   credentials: {
     client_email: process.env.GOOGLE_CLIENT_EMAIL,
@@ -20,7 +22,7 @@ const channelIds = [
   'UCa_UyaAlrWAgjZM0GB6zvpw',
   'UCxJ0yiNnIeF7YwGfUHKmqzA',
 ]
-const cacheMaxAge = 1200
+const cacheMaxAge = 60 * 60
 
 async function getViews() {
   const response = await youtube.channels.list({
@@ -36,10 +38,6 @@ async function getViews() {
 export default async (_req: NextApiRequest, res: NextApiResponse) => {
   const views = await getViews()
 
-  res.setHeader(
-    'Cache-Control',
-    `public, s-maxage=${cacheMaxAge}, stale-while-revalidate=${cacheMaxAge / 2}`,
-  )
-
+  setCacheControl(res, cacheMaxAge, cacheMaxAge / 2)
   res.status(200).json({views})
 }

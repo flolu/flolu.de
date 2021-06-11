@@ -1,36 +1,42 @@
 import type {NextApiRequest, NextApiResponse} from 'next'
-
 import * as queryString from 'query-string'
+
+import {fetcher} from '../../lib/fetcher'
+import {setCacheControl} from '../../lib/set-cache-control'
 
 const api = 'https://api.github.com'
 const username = 'flolu'
-const cacheMaxAge = 1200
+const drakery = 'drakery3d'
+const cacheMaxAge = 60 * 60
+const token = process.env.GITHUB_TOKEN
+const headers = {Authorization: `token ${token}`}
+
+interface UserData {
+  public_repos: number
+}
 
 interface RepoData {
   fork: boolean
   stargazers_count: number
 }
 
-async function getStars() {
-  const userRes = await fetch(`${api}/users/${username}`)
-  const {public_repos} = await userRes.json()
-  const query = queryString.stringify({per_page: public_repos})
-  const res = await fetch(`${api}/users/${username}/repos?${query}`)
-
-  const repos: RepoData[] = await res.json()
-  const mine = repos.filter(repo => !repo.fork)
-  return mine.reduce((accumulator, repo) => {
+async function getStarsOf(username: string) {
+  const user = await fetcher<UserData>(`${api}/users/${username}`, {headers})
+  const query = queryString.stringify({per_page: user.public_repos})
+  const repos = await fetcher<RepoData[]>(`${api}/users/${username}/repos?${query}`, {headers})
+  const sourceRepos = repos.filter(repo => !repo.fork)
+  return sourceRepos.reduce((accumulator, repo) => {
     return accumulator + repo.stargazers_count
   }, 0)
 }
 
 export default async (_req: NextApiRequest, res: NextApiResponse) => {
-  const stars = await getStars()
+  const [personalStars, drakeryStars] = await Promise.all([
+    getStarsOf(username),
+    getStarsOf(drakery),
+  ])
+  const stars = personalStars + drakeryStars
 
-  res.setHeader(
-    'Cache-Control',
-    `public, s-maxage=${cacheMaxAge}, stale-while-revalidate=${cacheMaxAge / 2}`,
-  )
-
+  setCacheControl(res, cacheMaxAge, cacheMaxAge / 2)
   res.status(200).json({stars})
 }
