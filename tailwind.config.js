@@ -96,6 +96,11 @@ module.exports = {
         foreground: foregroundColors,
         primary: primaryColors,
       },
+      padding: {
+        '1/3': '33%',
+        full: '100%',
+      },
     },
   },
+  plugins: [require('@tailwindcss/aspect-ratio')],
 }

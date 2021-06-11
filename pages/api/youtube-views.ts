@@ -35,7 +35,8 @@ export async function getYouTubeViews() {
       return accumulator + Number(channel.statistics!.viewCount)
     }, 0)
   } catch (e) {
-    return NaN
+    // Fallback, manually calculated (Jun 11, 2021)
+    return 677542
   }
 }
 

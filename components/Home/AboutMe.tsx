@@ -71,7 +71,7 @@ export const AboutMe: FC<Props> = props => {
           <div className="w-64 md:w-1/3">
             <Image
               className="rounded-2xl"
-              src="/avatar2.jpg"
+              src="https://storage.googleapis.com/flolu-website/me/avatar2.jpg"
               alt="Avatar of Flo"
               layout="responsive"
               width={512}

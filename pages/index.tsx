@@ -48,7 +48,7 @@ const Home: FC<Props> = props => {
           profile: {firstName: 'Florian', lastName: 'Ludewig', username: 'flolu', gender: 'Male'},
           images: [
             {
-              url: 'https://flolu.de/avatar.jpg',
+              url: 'https://storage.googleapis.com/flolu-website/me/avatar1.jpg',
               width: 512,
               height: 512,
               alt: 'Profile Photo',

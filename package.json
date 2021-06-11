@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.2.0",
+    "@tailwindcss/aspect-ratio": "^0.2.1",
     "googleapis": "^76.0.0",
     "next": "10.2.3",
     "next-i18next": "^8.4.0",
