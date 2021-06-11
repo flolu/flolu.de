@@ -24,7 +24,7 @@ const channelIds = [
 ]
 const cacheMaxAge = 60 * 60
 
-async function getViews() {
+export async function getYouTubeViews() {
   const response = await youtube.channels.list({
     id: channelIds,
     part: ['statistics', 'statistics', 'statistics'],
@@ -36,7 +36,7 @@ async function getViews() {
 }
 
 export default async (_req: NextApiRequest, res: NextApiResponse) => {
-  const views = await getViews()
+  const views = await getYouTubeViews()
 
   setCacheControl(res, cacheMaxAge, cacheMaxAge / 2)
   res.status(200).json({views})

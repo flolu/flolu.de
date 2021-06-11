@@ -18,6 +18,7 @@
       "@/components/*": ["components/*"],
       "@/icons/*": ["components/Icons/*"],
       "@/lib/*": ["lib/*"],
+      "@/api/*": ["pages/api/*"],
       "@/types/*": ["types/*"],
       "@/contexts/*": ["contexts/*"],
       "@/styles/*": ["styles/*"]

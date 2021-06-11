@@ -240,57 +240,7 @@ async function getOuraNights(after: Date) {
   }) as IActivity<IOuraNight>[]
 }
 
-async function assembleActivities() {
-  console.time('assemble-activities')
-  const now = new Date()
-  const oneWeekAgo = new Date()
-  oneWeekAgo.setDate(now.getDate() - 7)
-
-  const [
-    gitHubCommits,
-    stravaActivities,
-    ouraNights,
-    instagramPosts,
-    youTubeVideos,
-    unsplashPhotos,
-  ] = await Promise.all([
-    getGitHubCommits(oneWeekAgo),
-    getStravaActivities(oneWeekAgo),
-    getOuraNights(oneWeekAgo),
-    getInstagramPosts(oneWeekAgo),
-    getYouTubeVideos(oneWeekAgo),
-    getUnsplashPhotos(oneWeekAgo),
-  ])
-
-  const activities: IActivity[] = [
-    ...gitHubCommits,
-    ...stravaActivities,
-    ...ouraNights,
-    ...instagramPosts,
-    ...youTubeVideos,
-    ...unsplashPhotos,
-  ]
-
-  const sorted = activities.sort((a, b) => {
-    return Number(new Date(b.timestamp)) - Number(new Date(a.timestamp))
-  })
-
-  let groupedByDay: IActivityDay[] = []
-  let previousDate: string | undefined
-  for (const activity of sorted) {
-    if (previousDate && isSameDay(new Date(activity.timestamp), new Date(previousDate))) {
-      groupedByDay[groupedByDay.length - 1].activities.push(activity)
-    } else {
-      groupedByDay.push({date: activity.timestamp, activities: [activity]})
-    }
-    previousDate = activity.timestamp
-  }
-
-  console.timeEnd('assemble-activities')
-  return groupedByDay
-}
-
-export default async (_req: NextApiRequest, res: NextApiResponse) => {
+export async function getActivities() {
   const now = new Date()
   const oneWeekAgo = new Date()
   oneWeekAgo.setDate(now.getDate() - 7)
@@ -335,6 +285,12 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
     previousDate = activity.timestamp
   }
 
+  return groupedByDay
+}
+
+export default async (_req: NextApiRequest, res: NextApiResponse) => {
+  const activities = await getActivities()
+
   setCacheControl(res, cacheMaxAge, cacheMaxAge / 2)
-  res.status(200).json(groupedByDay)
+  res.status(200).json(activities)
 }

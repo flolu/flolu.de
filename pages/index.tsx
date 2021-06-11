@@ -5,6 +5,10 @@ import {NextSeo, SocialProfileJsonLd} from 'next-seo'
 import {FC} from 'react'
 import useSWR from 'swr'
 
+import {getActivities} from '@/api/activities'
+import {getStars} from '@/api/github-stars'
+import {getUnsplashViews} from '@/api/unsplash-views'
+import {getYouTubeViews} from '@/api/youtube-views'
 import {Footer} from '@/components/Footer'
 import {Header} from '@/components/Header'
 import {AboutMe} from '@/components/Home/AboutMe'
@@ -12,7 +16,6 @@ import {Activity} from '@/components/Home/Activity'
 import {GetInTouch} from '@/components/Home/GetInTouch'
 import {HomeHead} from '@/components/Home/Head'
 import {Timeline} from '@/components/Home/Timeline'
-import {fetcher} from '@/lib//fetcher'
 import {IActivityDay} from '@/types//activity'
 
 interface Props {
@@ -122,23 +125,22 @@ const Home: FC<Props> = props => {
 export const getStaticProps: GetStaticProps<Props> = async context => {
   const namespaces = ['header', 'footer', 'home', 'timeline']
   const locale = context.locale || 'en'
-  const api = process.env.API_URL
 
   const [translations, activities, githubStars, unsplashViews, youTubeViews] = await Promise.all([
     serverSideTranslations(locale, namespaces),
-    fetcher<IActivityDay[]>(`${api}/activities`),
-    fetcher<{stars: number}>(`${api}/github-stars`),
-    fetcher<{views: number}>(`${api}/unsplash-views`),
-    fetcher<{views: number}>(`${api}/youtube-views`),
+    getActivities(),
+    getStars(),
+    getUnsplashViews(),
+    getYouTubeViews(),
   ])
 
   return {
     props: {
       ...translations,
       activities,
-      githubStars: githubStars.stars,
-      unsplashViews: unsplashViews.views,
-      youTubeViews: youTubeViews.views,
+      githubStars,
+      unsplashViews,
+      youTubeViews,
       lastUpdated: new Date().toISOString(),
       locale,
     },

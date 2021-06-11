@@ -30,12 +30,16 @@ async function getStarsOf(username: string) {
   }, 0)
 }
 
-export default async (_req: NextApiRequest, res: NextApiResponse) => {
+export async function getStars() {
   const [personalStars, drakeryStars] = await Promise.all([
     getStarsOf(username),
     getStarsOf(drakery),
   ])
-  const stars = personalStars + drakeryStars
+  return personalStars + drakeryStars
+}
+
+export default async (_req: NextApiRequest, res: NextApiResponse) => {
+  const stars = await getStars()
 
   setCacheControl(res, cacheMaxAge, cacheMaxAge / 2)
   res.status(200).json({stars})

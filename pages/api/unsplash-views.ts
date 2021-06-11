@@ -17,10 +17,14 @@ interface StatisticsData {
   }
 }
 
-export default async (_req: NextApiRequest, res: NextApiResponse) => {
+export async function getUnsplashViews() {
   const query = queryString.stringify({client_id: key})
   const stats = await fetcher<StatisticsData>(`${api}/users/${username}/statistics?${query}`)
-  const views = stats.views.total
+  return stats.views.total
+}
+
+export default async (_req: NextApiRequest, res: NextApiResponse) => {
+  const views = await getUnsplashViews()
 
   setCacheControl(res, cacheMaxAge, cacheMaxAge / 2)
   res.status(200).json({views})
