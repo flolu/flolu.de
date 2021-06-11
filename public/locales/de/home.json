@@ -20,5 +20,9 @@
   "human": "Mensch",
   "personal_life_description": "YouTube-Videos produzieren, Kraftsport, Laufen, Schwimmen, Familie & Freunde, Fotografie, Kochen.",
   "last_updated_at": "zuletzt aktualisiert",
-  "last_7_days": "Meine Woche"
+  "last_7_days": "Meine Woche",
+  "youtube_views": "YouTube-Aufrufe",
+  "unsplash_views": "Unsplash-Aufrufe",
+  "github_stars": "GitHub-Sterne",
+  "more_about_me": "Mehr über mich"
 }

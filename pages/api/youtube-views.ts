@@ -25,14 +25,18 @@ const channelIds = [
 const cacheMaxAge = 60 * 60
 
 export async function getYouTubeViews() {
-  const response = await youtube.channels.list({
-    id: channelIds,
-    part: ['statistics', 'statistics', 'statistics'],
-  })
+  try {
+    const response = await youtube.channels.list({
+      id: channelIds,
+      part: ['statistics', 'statistics', 'statistics'],
+    })
 
-  return response.data.items!.reduce((accumulator, channel) => {
-    return accumulator + Number(channel.statistics!.viewCount)
-  }, 0)
+    return response.data.items!.reduce((accumulator, channel) => {
+      return accumulator + Number(channel.statistics!.viewCount)
+    }, 0)
+  } catch (e) {
+    return NaN
+  }
 }
 
 export default async (_req: NextApiRequest, res: NextApiResponse) => {

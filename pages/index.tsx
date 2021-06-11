@@ -3,7 +3,6 @@ import {useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import {NextSeo, SocialProfileJsonLd} from 'next-seo'
 import {FC} from 'react'
-import useSWR from 'swr'
 
 import {getActivities} from '@/api/activities'
 import {getStars} from '@/api/github-stars'
@@ -28,9 +27,6 @@ interface Props {
 }
 
 const Home: FC<Props> = props => {
-  const {data: activities} = useSWR<IActivityDay[]>('/api/activities', {
-    initialData: props.activities,
-  })
   const {t} = useTranslation()
 
   const title = 'Florian Ludewig'
@@ -97,12 +93,13 @@ const Home: FC<Props> = props => {
             githubStars={props.githubStars}
             unsplashViews={props.unsplashViews}
             youTubeViews={props.youTubeViews}
+            locale={props.locale}
           />
         </section>
 
         <section className="px-4 mx-auto max-w-7xl">
           <Activity
-            activities={activities!}
+            activities={props.activities!}
             locale={props.locale}
             lastUpdated={props.lastUpdated}
           />

@@ -1,12 +1,17 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import {FC} from 'react'
 import {useTranslation} from 'react-i18next'
-import useSWR from 'swr'
 
 import {DDDesignerIcon} from '@/icons/3DDesignerIcon'
 import {DrakeryLogo} from '@/icons/DrakeryLogo'
+import {FavoritesIcon} from '@/icons/FavoritesIcon'
+import {HistoryIcon} from '@/icons/HistoryIcon'
 import {LaughIcon} from '@/icons/LaughIcon'
+import {PortfolioIcon} from '@/icons/PortfolioIcon'
+import {PrinciplesIcon} from '@/icons/PrinciplesIcon'
 import {SchoolIcon} from '@/icons/SchoolIcon'
+import {TimelineIcon} from '@/icons/TimelineIcon'
 
 // TODO links to other pages on this website like https://headlessui.dev/
 
@@ -14,22 +19,54 @@ interface Props {
   githubStars: number
   unsplashViews: number
   youTubeViews: number
+  locale: string
 }
 
 export const AboutMe: FC<Props> = props => {
-  const {data: unsplashViews} = useSWR('/api/unsplash-views', {
-    initialData: {views: props.unsplashViews},
-  })
-  const {data: youtubeViews} = useSWR('/api/youtube-views', {
-    initialData: {views: props.youTubeViews},
-  })
-  const {data: gitHubStars} = useSWR('/api/github-stars', {initialData: {stars: props.githubStars}})
   const {t} = useTranslation()
+  const formatter = new Intl.NumberFormat(props.locale)
 
   return (
     <section id="about-me">
-      <div className="mb-8 space-y-12 text-center">
+      <div className="mb-8 space-y-8 text-center sm:space-y-16">
         <h2 className="text-4xl font-bold lg:text-6xl">{t('home:about_me')}</h2>
+
+        <div className="flex items-center justify-between max-w-xl mx-auto text-xs text-left sm:text-sm md:text-base">
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://www.youtube.com/c/flolu"
+            className="flex flex-col space-y-2"
+          >
+            <p>{t('home:youtube_views')}</p>
+            <span className="text-2xl font-bold sm:text-4xl">
+              {formatter.format(props.youTubeViews)}
+            </span>
+          </a>
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://unsplash.com/@flolu"
+            className="flex flex-col space-y-2"
+          >
+            <p>{t('home:unsplash_views')}</p>
+            <span className="text-2xl font-bold sm:text-4xl">
+              {formatter.format(props.unsplashViews)}
+            </span>
+          </a>
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://github.com/flolu"
+            className="flex flex-col space-y-2"
+          >
+            <p>{t('home:github_stars')}</p>
+            <span className="text-2xl font-bold sm:text-4xl">
+              {formatter.format(props.githubStars)}
+            </span>
+          </a>
+        </div>
+
         <div className="flex flex-col items-center space-y-16 md:space-y-0 md:space-x-8 lg:space-x-32 md:flex-row">
           <div className="w-64 md:w-1/3">
             <Image
@@ -152,21 +189,59 @@ export const AboutMe: FC<Props> = props => {
             </div>
           </div>
         </div>
-      </div>
 
-      <div>
-        <h3>All time stats</h3>
-        <div>
-          <span>Unsplash views: </span>
-          <span>{unsplashViews!.views}</span>
-        </div>
-        <div>
-          <span>YouTube views: </span>
-          <span>{youtubeViews!.views}</span>
-        </div>
-        <div>
-          <span>GitHub stars: </span>
-          <span>{gitHubStars!.stars}</span>
+        <div className="space-y-8">
+          <h3 className="text-2xl font-bold lg:text-4xl">{t('home:more_about_me')}</h3>
+          <div className="flex justify-between max-w-xl mx-auto">
+            <Link href="/#activity">
+              <div className="flex-col items-center hidden space-y-1 cursor-pointer sm:flex">
+                <span className="w-8 fill-current text-300">
+                  <HistoryIcon />
+                </span>
+                <span>{t('header:activity')}</span>
+              </div>
+            </Link>
+            <Link href="/#timeline">
+              <div className="flex-col items-center hidden space-y-1 cursor-pointer sm:flex">
+                <span className="w-8 fill-current text-300">
+                  <TimelineIcon />
+                </span>
+                <span>{t('header:timeline')}</span>
+              </div>
+            </Link>
+            <Link href="/favorites">
+              <div className="flex flex-col items-center space-y-1 cursor-pointer sm:hidden">
+                <span className="w-8 fill-current text-300">
+                  <FavoritesIcon />
+                </span>
+                <span>{t('header:favorites')}</span>
+              </div>
+            </Link>
+            <Link href="/portfolio">
+              <div className="flex flex-col items-center space-y-1 cursor-pointer text-primary-500">
+                <span className="w-8 fill-current sm:w-10">
+                  <PortfolioIcon />
+                </span>
+                <span>{t('header:portfolio')}</span>
+              </div>
+            </Link>
+            <Link href="/favorites">
+              <div className="flex-col items-center hidden space-y-1 cursor-pointer sm:flex">
+                <span className="w-8 fill-current text-300">
+                  <FavoritesIcon />
+                </span>
+                <span>{t('header:favorites')}</span>
+              </div>
+            </Link>
+            <Link href="/principles">
+              <div className="flex flex-col items-center space-y-1 cursor-pointer">
+                <span className="w-8 fill-current text-300">
+                  <PrinciplesIcon />
+                </span>
+                <span>{t('header:principles')}</span>
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

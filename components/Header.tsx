@@ -4,15 +4,17 @@ import Link from 'next/link'
 import {Fragment, useEffect, useRef, useState} from 'react'
 
 import {Themes, useAppearance} from '@/contexts//AppearanceContext'
-import {classNames} from '@/lib//class-names'
-
-import {CloseIcon} from './Icons/CloseIcon'
-import {DarkModeIcon} from './Icons/DarkModeIcon'
-import {HistoryIcon} from './Icons/HistoryIcon'
-import {LaughIcon} from './Icons/LaughIcon'
-import {LightModeIcon} from './Icons/LightModeIcon'
-import {TimelineIcon} from './Icons/TimelineIcon'
-import {WidgetsIcon} from './Icons/WidgetsIcon'
+import {CloseIcon} from '@/icons/CloseIcon'
+import {DarkModeIcon} from '@/icons/DarkModeIcon'
+import {FavoritesIcon} from '@/icons/FavoritesIcon'
+import {HistoryIcon} from '@/icons/HistoryIcon'
+import {LaughIcon} from '@/icons/LaughIcon'
+import {LightModeIcon} from '@/icons/LightModeIcon'
+import {PortfolioIcon} from '@/icons/PortfolioIcon'
+import {PrinciplesIcon} from '@/icons/PrinciplesIcon'
+import {TimelineIcon} from '@/icons/TimelineIcon'
+import {WidgetsIcon} from '@/icons/WidgetsIcon'
+import {classNames} from '@/lib/class-names'
 
 interface Props {
   spacer?: boolean
@@ -137,7 +139,7 @@ export const Header = (props: Props) => {
             leaveFrom="transform opacity-100 scale-100 translate-y-0"
             leaveTo="transform opacity-0 scale-95 translate-y-32"
           >
-            <div className="flex flex-col items-center p-4 space-y-4 border-2 border-b-0 shadow-2xl rounded-t-2xl bg-500-backdrop backdrop-filter backdrop-blur-lg border-background-300">
+            <div className="flex flex-col items-center p-4 space-y-8 border-2 border-b-0 shadow-2xl rounded-t-2xl bg-500-backdrop backdrop-filter backdrop-blur-lg border-background-300">
               <div className="flex space-x-8" onClick={() => setIsMenuOpen(false)}>
                 <Link href="/#about-me">
                   <div className="flex flex-col items-center space-y-1 cursor-pointer">
@@ -161,6 +163,32 @@ export const Header = (props: Props) => {
                       <TimelineIcon />
                     </span>
                     <span>{t('header:timeline')}</span>
+                  </div>
+                </Link>
+              </div>
+              <div className="flex space-x-8" onClick={() => setIsMenuOpen(false)}>
+                <Link href="/portfolio">
+                  <div className="flex flex-col items-center space-y-1 cursor-pointer">
+                    <span className="w-8 fill-current text-300">
+                      <PortfolioIcon />
+                    </span>
+                    <span>{t('header:portfolio')}</span>
+                  </div>
+                </Link>
+                <Link href="/favorites">
+                  <div className="flex flex-col items-center space-y-1 cursor-pointer">
+                    <span className="w-8 fill-current text-300">
+                      <FavoritesIcon />
+                    </span>
+                    <span>{t('header:favorites')}</span>
+                  </div>
+                </Link>
+                <Link href="/principles">
+                  <div className="flex flex-col items-center space-y-1 cursor-pointer">
+                    <span className="w-8 fill-current text-300">
+                      <PrinciplesIcon />
+                    </span>
+                    <span>{t('header:principles')}</span>
                   </div>
                 </Link>
               </div>

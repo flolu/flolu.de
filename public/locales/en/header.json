@@ -2,5 +2,8 @@
   "about_me": "About me",
   "activity": "Activity",
   "timeline": "Timeline",
-  "contact_me": "Let's chat"
+  "contact_me": "Let's chat",
+  "portfolio": "Portfolio",
+  "favorites": "Favorites",
+  "principles": "Principles"
 }

@@ -3,6 +3,7 @@ import * as queryString from 'query-string'
 
 import {isSameDay} from '@/lib//is-same-day'
 import {setCacheControl} from '@/lib//set-cache-control'
+import {fetcher} from '@/lib/fetcher'
 import {
   IActivity,
   IActivityDay,
@@ -17,36 +18,46 @@ import {
 
 import type {NextApiRequest, NextApiResponse} from 'next'
 const cacheMaxAge = 5 * 60
+const api = 'https://graph.instagram.com'
+
+interface UserData {
+  media: {
+    data: {
+      id: string
+    }[]
+  }
+}
 
 async function getInstagramPosts(after: Date) {
-  const userId = '17841402069339334'
-  const token = process.env.INSTAGRAM_TOKEN
-  const userResponse = await fetch(
-    `https://graph.instagram.com/${userId}?fields=media&access_token=${token}`,
-  )
-  const user = await userResponse.json()
+  try {
+    const userId = '17841402069339334'
+    const token = process.env.INSTAGRAM_TOKEN
+    const user = await fetcher<UserData>(`${api}/${userId}?fields=media&access_token=${token}`)
 
-  const activities: IActivity<IInstagramPost>[] = await Promise.all(
-    user.media.data.map(async ({id}: any) => {
-      const mediaResponse = await fetch(
-        `https://graph.instagram.com/${id}?fields=media_url,permalink,timestamp&access_token=${token}`,
-      )
-      const media = await mediaResponse.json()
+    const activities: IActivity<IInstagramPost>[] = await Promise.all(
+      user.media.data.map(async ({id}: any) => {
+        const mediaResponse = await fetch(
+          `${api}/${id}?fields=media_url,permalink,timestamp&access_token=${token}`,
+        )
+        const media = await mediaResponse.json()
 
-      const activity: IActivity<IInstagramPost> = {
-        type: 'instagram_post',
-        payload: {
-          imageUrl: media.media_url,
-          url: media.permalink,
-        },
-        timestamp: media.timestamp,
-      }
+        const activity: IActivity<IInstagramPost> = {
+          type: 'instagram_post',
+          payload: {
+            imageUrl: media.media_url,
+            url: media.permalink,
+          },
+          timestamp: media.timestamp,
+        }
 
-      return activity
-    }),
-  )
+        return activity
+      }),
+    )
 
-  return activities.filter(activity => Number(new Date(activity.timestamp)) >= Number(after))
+    return activities.filter(activity => Number(new Date(activity.timestamp)) >= Number(after))
+  } catch (e) {
+    return []
+  }
 }
 
 async function getYouTubeVideos(after: Date) {

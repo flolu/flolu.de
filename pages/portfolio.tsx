@@ -30,5 +30,5 @@ export default function Portfolio({lastUpdated}: any) {
 export const getStaticProps: GetStaticProps = async ({locale}) => {
   const namespaces = ['header', 'footer', 'portfolio']
   const translations = await serverSideTranslations(locale || 'en', namespaces)
-  return {props: {...translations, lastUpdated: new Date().toISOString()}, revalidate: 15}
+  return {props: {...translations}}
 }
