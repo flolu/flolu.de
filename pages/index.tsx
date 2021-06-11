@@ -160,22 +160,25 @@ async function getYouTubeVideos(after: Date) {
   )
   const videos = await videosResponse.json()
 
-  const activities = videos.items.map((video: any) => {
-    const activity: IActivity<IYouTubeVideo> = {
-      type: 'youtube-video',
-      payload: {
-        thumbnail: {
-          url: video.snippet.thumbnails.high.url,
-          width: video.snippet.thumbnails.high.width,
-          height: video.snippet.thumbnails.high.height,
+  let activities: IActivity<IYouTubeVideo>[] = []
+  if (videos.items) {
+    activities = videos.items.map((video: any) => {
+      const activity: IActivity<IYouTubeVideo> = {
+        type: 'youtube-video',
+        payload: {
+          thumbnail: {
+            url: video.snippet.thumbnails.high.url,
+            width: video.snippet.thumbnails.high.width,
+            height: video.snippet.thumbnails.high.height,
+          },
+          title: video.snippet.title,
+          url: `https://www.youtube.com/watch?v=${video.id.videoId}`,
         },
-        title: video.snippet.title,
-        url: `https://www.youtube.com/watch?v=${video.id.videoId}`,
-      },
-      timestamp: video.snippet.publishTime,
-    }
-    return activity
-  }) as IActivity<IYouTubeVideo>[]
+        timestamp: video.snippet.publishTime,
+      }
+      return activity
+    }) as IActivity<IYouTubeVideo>[]
+  }
 
   return activities.filter(activity => Number(new Date(activity.timestamp)) >= Number(after))
 }
@@ -207,12 +210,13 @@ async function getUnsplashPhotos(after: Date) {
 
 async function getGitHubCommits(after: Date) {
   const username = 'flolu'
+  const userId = 34191949
   const org = 'drakery3d'
   const octokit = new Octokit({auth: process.env.GITHUB_TOKEN})
 
   const [personalEvents, orgEvents] = await Promise.all([
-    octokit.rest.activity.listEventsForAuthenticatedUser({username}),
-    octokit.rest.activity.listOrgEventsForAuthenticatedUser({org, username}),
+    octokit.rest.activity.listEventsForAuthenticatedUser({username, per_page: 100}),
+    octokit.rest.activity.listOrgEventsForAuthenticatedUser({org, username, per_page: 100}),
   ])
 
   const mapToCommit = (event: any, commit: any): IActivity<IGitHubBaseCommit> => {
@@ -233,7 +237,7 @@ async function getGitHubCommits(after: Date) {
   for (const event of personalEvents.data) {
     if (!event.created_at || Number(new Date(event.created_at)) < Number(after)) break
 
-    if (event.type === 'PushEvent') {
+    if (event.type === 'PushEvent' && event.actor.id === userId) {
       const commits = (event.payload as any).commits
       commits.forEach((commit: any) => {
         baseCommits.push(mapToCommit(event, commit))
@@ -243,12 +247,10 @@ async function getGitHubCommits(after: Date) {
   for (const event of orgEvents.data) {
     if (!event.created_at || Number(new Date(event.created_at)) < Number(after)) break
 
-    if (event.type === 'PushEvent') {
+    if (event.type === 'PushEvent' && event.actor.id === userId) {
       const commits = (event.payload as any).commits
       commits.forEach((commit: any) => {
-        if (commit.author.name === username) {
-          baseCommits.push(mapToCommit(event, commit))
-        }
+        baseCommits.push(mapToCommit(event, commit))
       })
     }
   }

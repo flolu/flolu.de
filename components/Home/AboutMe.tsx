@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import {useTranslation} from 'react-i18next'
+import useSWR from 'swr'
 
 import {DDDesignerIcon} from '../Icons/3DDesignerIcon'
 import {DrakeryLogo} from '../Icons/DrakeryLogo'
@@ -9,6 +10,9 @@ import {SchoolIcon} from '../Icons/SchoolIcon'
 // TODO links to other pages on this website like https://headlessui.dev/
 
 export function AboutMe() {
+  const unsplashViews = useSWR('/api/unsplash-views')
+  const youtubeViews = useSWR('/api/youtube-views')
+  const gitHubStars = useSWR('/api/github-stars')
   const {t} = useTranslation()
 
   return (
@@ -136,6 +140,22 @@ export function AboutMe() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div>
+        <h3>All time stats</h3>
+        <div>
+          <span>Unsplash views: </span>
+          <span>{unsplashViews.data?.views}</span>
+        </div>
+        <div>
+          <span>YouTube views: </span>
+          <span>{youtubeViews.data?.views}</span>
+        </div>
+        <div>
+          <span>GitHub stars: </span>
+          <span>{gitHubStars.data?.stars}</span>
         </div>
       </div>
     </section>
