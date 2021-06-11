@@ -10,6 +10,7 @@ import {PortfolioCard} from '@/components/Portfolio/Card'
 import {GitHubRepository} from '@/components/Portfolio/GitHubRepository'
 import {SketchfabModel} from '@/components/Portfolio/SketchfabModel'
 import {UnsplashPhoto} from '@/components/Portfolio/UnsplashPhoto'
+import {YouTubeVideo} from '@/components/Portfolio/YouTubeVideo'
 
 interface Props {
   locale: string
@@ -176,6 +177,15 @@ const Portfolio: FC<Props> = ({locale}) => {
               />
             </PortfolioCard>
 
+            <PortfolioCard>
+              {/* 15.07.2020 */}
+              <SketchfabModel
+                id="6TOEE"
+                image="3d-models/woodden-giraffe_thumb.png"
+                label="Wooden giraffe 3d model"
+              />
+            </PortfolioCard>
+
             {/* August 2020 */}
             <GitHubRepository
               repo="drakery3d/postgrammetry"
@@ -195,15 +205,6 @@ const Portfolio: FC<Props> = ({locale}) => {
               ]}
               locale={locale}
             ></GitHubRepository>
-
-            <PortfolioCard>
-              {/* 15.07.2020 */}
-              <SketchfabModel
-                id="6TOEE"
-                image="3d-models/woodden-giraffe_thumb.png"
-                label="Wooden giraffe 3d model"
-              />
-            </PortfolioCard>
 
             <PortfolioCard>
               {/* 12.07.2020 */}
@@ -310,6 +311,25 @@ const Portfolio: FC<Props> = ({locale}) => {
                 label="Realistic skateboard 3d model"
               />
             </PortfolioCard>
+
+            {/* January 2018 */}
+            <div className="relative col-span-3 pt-1/3">
+              <div className="absolute flex overflow-hidden md:items-center inset-2">
+                <a
+                  className="space-y-1 text-left sm:space-y-2"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://apkpure.com/in/tackleit-distance-tracker/net.tackleit.tackleit"
+                >
+                  <Image
+                    width={3 * 512}
+                    height={512}
+                    src="https://storage.googleapis.com/flolu-website/apps/tackle-it_thumb.png"
+                    alt="TackleIt distance tracker android app"
+                  />
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -324,6 +344,13 @@ const Portfolio: FC<Props> = ({locale}) => {
                 label="Realistic skateboard 3d model"
               />
             </PortfolioCard>
+
+            {/* 30.04.2017 */}
+            <YouTubeVideo
+              id="MokPDn7D9sI"
+              image="vfx/city-loop-animation_thumb.png"
+              label="City loop animation thumbnail"
+            ></YouTubeVideo>
 
             <PortfolioCard>
               {/* 09.04.2017 */}
@@ -340,6 +367,219 @@ const Portfolio: FC<Props> = ({locale}) => {
                 />
               </a>
             </PortfolioCard>
+
+            {/* 18.03.2017 */}
+            <YouTubeVideo
+              id="VEw0jVt4ivc"
+              image="vfx/lost-room-animation_thumb.png"
+              label="Lost room animation thumbnail"
+            ></YouTubeVideo>
+          </div>
+        </section>
+
+        <section className="space-y-2">
+          <h2 className="text-4xl font-bold sm:text-6xl">2016</h2>
+          <div className="grid grid-cols-3 gap-0 sm:gap-2 md:gap-4">
+            {/* 26.05.2016 */}
+            <YouTubeVideo
+              id="FTErQciXgBo"
+              image="intros/reazz_thumb.png"
+              label="Reazz intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 22.05.2016 */}
+            <YouTubeVideo
+              id="BVLgVxS8Geg"
+              image="intros/lyke_thumb.png"
+              label="Lyke intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 27.04.2016 */}
+            <YouTubeVideo
+              id="x-LIrip4vP0"
+              image="vfx/skateboard-render_thumb.png"
+              label="Realistic skateboard animation thumbnail"
+            ></YouTubeVideo>
+
+            {/* 16.04.2016 */}
+            <YouTubeVideo
+              id="qdm63x0obGw"
+              image="vfx/knives_thumb.png"
+              label="Knives animation thumbnail"
+            ></YouTubeVideo>
+
+            {/* 20.03.2016 */}
+            <YouTubeVideo
+              id="7qjBRy4nRuk"
+              image="intros/hegeas_thumb.png"
+              label="Hegeas intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 14.03.2016 */}
+            <YouTubeVideo
+              id="o8SU_hDVCpQ"
+              image="intros/omega_thumb.png"
+              label="Omega intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 14.03.2016 */}
+            <YouTubeVideo
+              id="O8h74qskcII"
+              image="intros/louis_thumb.png"
+              label="Louis intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 04.03.2016 */}
+            <YouTubeVideo
+              id="0wPvaxTE4eU"
+              image="intros/jace_thumb.png"
+              label="Jace intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 01.02.2016 */}
+            <YouTubeVideo
+              id="J2OvKK-NKPA"
+              image="intros/dahjonas_thumb.png"
+              label="Dahjonas intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 24.01.2016 */}
+            <YouTubeVideo
+              id="xWXS7XItSS4"
+              image="intros/agrodunkel-10k_thumb.png"
+              label="Agrodunkel 10k giveaway intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 23.01.2016 */}
+            <YouTubeVideo
+              id="1IbTyT0q1Gc"
+              image="intros/flakez_thumb.png"
+              label="Flakez intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 22.01.2016 */}
+            <YouTubeVideo
+              id="5N37RYhlbf8"
+              image="intros/vexu_thumb.png"
+              label="Vexu intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 18.01.2016 */}
+            <YouTubeVideo
+              id="SFeeFUjtW_I"
+              image="intros/reqen_thumb.png"
+              label="Reqen intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 17.01.2016 */}
+            <YouTubeVideo
+              id="L9Ujye2owGA"
+              image="intros/kimo_thumb.png"
+              label="Kimo intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 2.01.2016 */}
+            <YouTubeVideo
+              id="p52sofpC4_I"
+              image="intros/imrame_thumb.png"
+              label="Imrame intro thumbnail"
+            ></YouTubeVideo>
+          </div>
+        </section>
+
+        <section className="space-y-2">
+          <h2 className="text-4xl font-bold sm:text-6xl">2015</h2>
+          <div className="grid grid-cols-3 gap-0 sm:gap-2 md:gap-4">
+            {/* 31.12.2015 */}
+            <YouTubeVideo
+              id="LGxMiI0YZWs"
+              image="intros/bosnian-turns_thumb.png"
+              label="Bosnian turns intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 29.12.2015 */}
+            <YouTubeVideo
+              id="YLdivX3u3ag"
+              image="intros/omri_thumb.png"
+              label="Omri intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 26.12.2015 */}
+            <YouTubeVideo
+              id="Fbccinc99f0"
+              image="intros/nico-plays_thumb.png"
+              label="Nicoplays intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 23.12.2015 */}
+            <YouTubeVideo
+              id="ZLFOKLwbFZU"
+              image="intros/domix_thumb.png"
+              label="Domix intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 12.12.2015 */}
+            <YouTubeVideo
+              id="Ydms10EglXI"
+              image="intros/ozelord_thumb.png"
+              label="Ozelord intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 05.12.2015 */}
+            <YouTubeVideo
+              id="KLV0PF9Kaak"
+              image="intros/exa_thumb.png"
+              label="Exa intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 21.11.2015 */}
+            <YouTubeVideo
+              id="x59Inph4quU"
+              image="intros/z33rka_thumb.png"
+              label="Z33rka intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 08.11.2015 */}
+            <YouTubeVideo
+              id="Ot7bMNZceL0"
+              image="intros/two4you_thumb.png"
+              label="Two4You intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 30.10.2015 */}
+            <YouTubeVideo
+              id="BfHaSZnCdN0"
+              image="intros/spectrus_thumb.png"
+              label="Spectrus intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 27.10.2015 */}
+            <YouTubeVideo
+              id="AhyRbOqk-hs"
+              image="intros/headpvp_thumb.png"
+              label="Headpvp intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 06.09.2015 */}
+            <YouTubeVideo
+              id="ghAjDC1jX4g"
+              image="intros/lizureax_thumb.png"
+              label="Lizureax intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 29.07.2015 */}
+            <YouTubeVideo
+              id="7oVPVnPbeVU"
+              image="intros/nur-luis_thumb.png"
+              label="Nur Luis intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 29.05.2015 */}
+            <YouTubeVideo
+              id="S79LoUbRBeA"
+              image="intros/paluten_thumb.png"
+              label="Paluten intro thumbnail"
+            ></YouTubeVideo>
           </div>
         </section>
       </main>
