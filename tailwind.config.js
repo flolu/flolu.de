@@ -60,7 +60,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Poppins', 'sans-serif'],
-      serif: ['Playfair Display', 'serif'],
+      serif: ['Noto Serif JP', 'serif'],
       mono: ['Roboto Mono', 'monospace'],
     },
     // colors: {},

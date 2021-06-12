@@ -60,6 +60,7 @@ const Principles: FC<Props> = ({locale}) => {
           </li>
 
           <li className="space-y-2">
+            {/* https://www.instagram.com/p/CLifgVgH-4d/ */}
             <span className="font-serif text-2xl sm:text-3xl space-y-2">
               2. {t('principles:do_things_that_suck')}
             </span>

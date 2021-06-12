@@ -13,8 +13,6 @@ import {PrinciplesIcon} from '@/icons/PrinciplesIcon'
 import {SchoolIcon} from '@/icons/SchoolIcon'
 import {TimelineIcon} from '@/icons/TimelineIcon'
 
-// TODO links to other pages on this website like https://headlessui.dev/
-
 interface Props {
   githubStars: number
   unsplashViews: number

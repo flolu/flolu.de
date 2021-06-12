@@ -1,6 +1,7 @@
 import {GetStaticProps} from 'next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import {NextSeo} from 'next-seo'
+import Link from 'next/link'
 import {FC} from 'react'
 import {useTranslation} from 'react-i18next'
 
@@ -37,6 +38,9 @@ const Blog: FC<Props> = ({locale}) => {
         <div className="space-y-2" style={{minHeight: '50vh'}}>
           <span className="text-lg font-medium text-100 sm:text-xl">{t('blog:blog')}</span>
           <h1 className="text-2xl font-bold sm:text-5xl">{t('blog:work_in_progress')}</h1>
+          <Link href="/blog/whatsapp-without-phone">
+            <a>WhatsApp without phone</a>
+          </Link>
         </div>
       </main>
 
