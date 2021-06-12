@@ -381,15 +381,6 @@ const Portfolio: FC<Props> = ({locale}) => {
             </PortfolioCard>
 
             <PortfolioCard>
-              {/* 16.03.2020 */}
-              <SketchfabModel
-                id="o6SxZ"
-                image="3d-models/spruce-tree-trunk_thumb.png"
-                label="Spruce tree trunk 3d model"
-              />
-            </PortfolioCard>
-
-            <PortfolioCard>
               {/* 06.03.2020 */}
               <SketchfabModel
                 id="o6SxZ"
@@ -514,12 +505,60 @@ const Portfolio: FC<Props> = ({locale}) => {
               image="vfx/abstract-dancing_thumb.png"
               label="Abstract dancing vfx animation thumbnail"
             ></YouTubeVideo>
+
+            <PortfolioCard>
+              {/* 07.02.2017 */}
+              <a
+                className="w-full h-full"
+                target="_blank"
+                rel="noopener"
+                href="https://storage.googleapis.com/flolu-website/skateboarding/07-02-2017.mp4"
+              >
+                <Image
+                  width={512}
+                  height={512}
+                  src="https://storage.googleapis.com/flolu-website/skateboarding/07-02-2017_thumb.png"
+                />
+              </a>
+            </PortfolioCard>
           </div>
         </section>
 
         <section className="space-y-2">
           <h2 className="text-4xl font-bold sm:text-6xl">2016</h2>
           <div className="grid grid-cols-3 gap-0 sm:gap-2 md:gap-4">
+            <PortfolioCard>
+              {/* 16.10.2016 */}
+              <a
+                className="w-full h-full"
+                target="_blank"
+                rel="noopener"
+                href="https://storage.googleapis.com/flolu-website/skateboarding/16-10-2016_HQ.mp4"
+              >
+                <Image
+                  width={512}
+                  height={512}
+                  src="https://storage.googleapis.com/flolu-website/skateboarding/16-10-2016_HQ_thumb.png"
+                />
+              </a>
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* 14.10.2016 */}
+              <a
+                className="w-full h-full"
+                target="_blank"
+                rel="noopener"
+                href="https://storage.googleapis.com/flolu-website/skateboarding/14-10-2016_HQ.mp4"
+              >
+                <Image
+                  width={512}
+                  height={512}
+                  src="https://storage.googleapis.com/flolu-website/skateboarding/14-10-2016_HQ_thumb.png"
+                />
+              </a>
+            </PortfolioCard>
+
             <PortfolioCard>
               {/* Summer 2016 */}
               <a
@@ -646,6 +685,22 @@ const Portfolio: FC<Props> = ({locale}) => {
               label="Lyke intro thumbnail"
             ></YouTubeVideo>
 
+            <PortfolioCard>
+              {/* 14.05.2016 */}
+              <a
+                className="w-full h-full"
+                target="_blank"
+                rel="noopener"
+                href="https://storage.googleapis.com/flolu-website/skateboarding/14-05-2016.mp4"
+              >
+                <Image
+                  width={512}
+                  height={512}
+                  src="https://storage.googleapis.com/flolu-website/skateboarding/14-05-2016_thumb.png"
+                />
+              </a>
+            </PortfolioCard>
+
             {/* 27.04.2016 */}
             <YouTubeVideo
               id="x-LIrip4vP0"
@@ -653,12 +708,60 @@ const Portfolio: FC<Props> = ({locale}) => {
               label="Realistic skateboard animation thumbnail"
             ></YouTubeVideo>
 
+            <PortfolioCard>
+              {/* 25.04.2016 */}
+              <a
+                className="w-full h-full"
+                target="_blank"
+                rel="noopener"
+                href="https://storage.googleapis.com/flolu-website/skateboarding/25-04-2016.mp4"
+              >
+                <Image
+                  width={512}
+                  height={512}
+                  src="https://storage.googleapis.com/flolu-website/skateboarding/25-04-2016_thumb.png"
+                />
+              </a>
+            </PortfolioCard>
+
             {/* 16.04.2016 */}
             <YouTubeVideo
               id="qdm63x0obGw"
               image="vfx/knives_thumb.png"
               label="Knives animation thumbnail"
             ></YouTubeVideo>
+
+            <PortfolioCard>
+              {/* 11.04.2016 */}
+              <a
+                className="w-full h-full"
+                target="_blank"
+                rel="noopener"
+                href="https://storage.googleapis.com/flolu-website/skateboarding/11-04-2016.mp4"
+              >
+                <Image
+                  width={512}
+                  height={512}
+                  src="https://storage.googleapis.com/flolu-website/skateboarding/11-04-2016_thumb.png"
+                />
+              </a>
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* 09.04.2016 */}
+              <a
+                className="w-full h-full"
+                target="_blank"
+                rel="noopener"
+                href="https://storage.googleapis.com/flolu-website/skateboarding/09-04-2016.mp4"
+              >
+                <Image
+                  width={512}
+                  height={512}
+                  src="https://storage.googleapis.com/flolu-website/skateboarding/09-04-2016_thumb.png"
+                />
+              </a>
+            </PortfolioCard>
 
             {/* 20.03.2016 */}
             <YouTubeVideo
@@ -831,6 +934,32 @@ const Portfolio: FC<Props> = ({locale}) => {
               id="S79LoUbRBeA"
               image="intros/paluten_thumb.png"
               label="Paluten intro thumbnail"
+            ></YouTubeVideo>
+          </div>
+        </section>
+
+        <section className="space-y-2">
+          <h2 className="text-4xl font-bold sm:text-6xl">2014</h2>
+          <div className="grid grid-cols-3 gap-0 sm:gap-2 md:gap-4">
+            {/* 22.12.2014 */}
+            <YouTubeVideo
+              id="9IM-QBN6tcU"
+              image="intros/snapzztv_thumb.png"
+              label="SnapzzTV intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 17.12.2014 */}
+            <YouTubeVideo
+              id="M6sNH79AHrg"
+              image="intros/maazy_thumb.png"
+              label="Maazy intro thumbnail"
+            ></YouTubeVideo>
+
+            {/* 06.12.2014 */}
+            <YouTubeVideo
+              id="kH7Z531fhZA"
+              image="intros/praytix_thumb.png"
+              label="Praytix intro thumbnail"
             ></YouTubeVideo>
           </div>
         </section>

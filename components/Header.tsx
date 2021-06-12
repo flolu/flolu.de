@@ -107,8 +107,8 @@ export const Header = (props: Props) => {
             </Link>
           </div>
           <div className="hidden md:block">
-            <Link href="/#get-in-touch">
-              <a className="hover:text-900">{t('header:contact_me')}</a>
+            <Link href="/portfolio">
+              <a className="hover:text-900">{t('header:portfolio')}</a>
             </Link>
           </div>
           <span className="w-6 cursor-pointer fill-current" onClick={onSwitchTheme}>
