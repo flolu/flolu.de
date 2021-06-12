@@ -100,11 +100,92 @@ const Portfolio: FC<Props> = ({locale}) => {
           <h2 className="text-4xl font-bold sm:text-6xl">2020</h2>
           <div className="grid grid-cols-3 gap-0 sm:gap-2 md:gap-4">
             <PortfolioCard>
-              {/* 28.09.2020 */}
+              {/* 26.09.2020 */}
               <SketchfabModel
-                id="6VtpT"
-                image="3d-models/shells-pack_thumb.png"
-                label="Shells 3d models pack"
+                id="6V8Hq"
+                image="3d-models/grove-band-snail-shell_thumb.png"
+                label="Grove band snail shell 3d model"
+              />
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* 26.09.2020 */}
+              <SketchfabModel
+                id="6V8QJ"
+                image="3d-models/tessellate-nerita-shell2_thumb.png"
+                label="Tessellate nerita shell 3d model"
+              />
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* 25.09.2020 */}
+              <SketchfabModel
+                id="6VrQz"
+                image="3d-models/nutmeg-shell_thumb.png"
+                label="Nutmeg shell 3d model"
+              />
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* 25.09.2020 */}
+              <SketchfabModel
+                id="o6SQH"
+                image="3d-models/big-murex-shell_thumb.png"
+                label="Big murex sea shell 3d model"
+              />
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* 24.09.2020 */}
+              <SketchfabModel
+                id="6VqNt"
+                image="3d-models/ivory-snail-shell_thumb.png"
+                label="Ivory snail shell 3d model"
+              />
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* 23.09.2020 */}
+              <SketchfabModel
+                id="6V7ET"
+                image="3d-models/starfish_thumb.png"
+                label="Starfish 3d model"
+              />
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* 02.09.2020 */}
+              <SketchfabModel
+                id="6ULzX"
+                image="3d-models/common-spirula-shell_thumb.png"
+                label="Common spirula shell 3d model"
+              />
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* 02.09.2020 */}
+              <SketchfabModel
+                id="6ULMp"
+                image="3d-models/scallop-sea-shell4_thumb.png"
+                label="Scallop sea shell 3d model"
+              />
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* 02.09.2020 */}
+              <SketchfabModel
+                id="6ULON"
+                image="3d-models/sea-urchin-shell_thumb.png"
+                label="Sea urchin shell 3d model"
+              />
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* 29.08.2020 */}
+              <SketchfabModel
+                id="6UIAE"
+                image="3d-models/charonia-tritonis_thumb.png"
+                label="Charonia tritonis sea shell 3d model"
               />
             </PortfolioCard>
 
@@ -131,6 +212,42 @@ const Portfolio: FC<Props> = ({locale}) => {
               ]}
               locale={locale}
             ></GitHubRepository>
+
+            <PortfolioCard>
+              {/* 22.08.2020 */}
+              <SketchfabModel
+                id="6UCBS"
+                image="3d-models/angular-triton-shell_thumb.png"
+                label="Angular triton shell 3d model"
+              />
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* 15.08.2020 */}
+              <SketchfabModel
+                id="6UwLK"
+                image="3d-models/pyram-shell_thumb.png"
+                label="Pyram shell 3d model"
+              />
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* 12.08.2020 */}
+              <SketchfabModel
+                id="6Uun7"
+                image="3d-models/scallop-sea-shell2_thumb.png"
+                label="Scallop sea shell 3d model"
+              />
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* 11.08.2020 */}
+              <SketchfabModel
+                id="6U9wz"
+                image="3d-models/bivalve-sharp-shell_thumb.png"
+                label="Sharp bivalve sea shell 3d model"
+              />
+            </PortfolioCard>
 
             <PortfolioCard>
               {/* 16.08.2020 */}
@@ -337,6 +454,22 @@ const Portfolio: FC<Props> = ({locale}) => {
           <h2 className="text-4xl font-bold sm:text-6xl">2017</h2>
           <div className="grid grid-cols-3 gap-0 sm:gap-2 md:gap-4">
             <PortfolioCard>
+              {/* August 2017 */}
+              <a
+                className="w-full h-full"
+                target="_blank"
+                rel="noopener"
+                href="https://www.cgtrader.com/3d-models/animals/mammal/crystal-wolf-c4d-octane-render-scene-wolf-rig-included"
+              >
+                <Image
+                  width={512}
+                  height={512}
+                  src="https://storage.googleapis.com/flolu-website/vfx/crystal-wolf_thumb.png"
+                />
+              </a>
+            </PortfolioCard>
+
+            <PortfolioCard>
               {/* 05.04.2017 */}
               <SketchfabModel
                 id="6TXtv"
@@ -348,7 +481,7 @@ const Portfolio: FC<Props> = ({locale}) => {
             {/* 30.04.2017 */}
             <YouTubeVideo
               id="MokPDn7D9sI"
-              image="vfx/city-loop-animation_thumb.png"
+              image="vfx/city-loop_thumb.png"
               label="City loop animation thumbnail"
             ></YouTubeVideo>
 
@@ -371,8 +504,15 @@ const Portfolio: FC<Props> = ({locale}) => {
             {/* 18.03.2017 */}
             <YouTubeVideo
               id="VEw0jVt4ivc"
-              image="vfx/lost-room-animation_thumb.png"
+              image="vfx/lost-room_thumb.png"
               label="Lost room animation thumbnail"
+            ></YouTubeVideo>
+
+            {/* 21.02.2017 */}
+            <YouTubeVideo
+              id="mqH8Mqqbdhk"
+              image="vfx/abstract-dancing_thumb.png"
+              label="Abstract dancing vfx animation thumbnail"
             ></YouTubeVideo>
           </div>
         </section>
