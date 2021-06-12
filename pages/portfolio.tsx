@@ -520,6 +520,118 @@ const Portfolio: FC<Props> = ({locale}) => {
         <section className="space-y-2">
           <h2 className="text-4xl font-bold sm:text-6xl">2016</h2>
           <div className="grid grid-cols-3 gap-0 sm:gap-2 md:gap-4">
+            <PortfolioCard>
+              {/* Summer 2016 */}
+              <a
+                className="w-full h-full"
+                target="_blank"
+                rel="noopener"
+                href="https://storage.googleapis.com/flolu-website/vfx/danger-of-video-games-minecraft.mp4"
+              >
+                <Image
+                  width={512}
+                  height={512}
+                  src="https://storage.googleapis.com/flolu-website/vfx/minecraft-real-life-danger_thumb.png"
+                />
+              </a>
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* Summer 2016 */}
+              <a
+                className="w-full h-full"
+                target="_blank"
+                rel="noopener"
+                href="https://storage.googleapis.com/flolu-website/vfx/danger-of-video-games-pokemon.mp4"
+              >
+                <Image
+                  width={512}
+                  height={512}
+                  src="https://storage.googleapis.com/flolu-website/vfx/pokemon-real-ilfe_thumb.png"
+                />
+              </a>
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* Summer 2016 */}
+              <a
+                className="w-full h-full"
+                target="_blank"
+                rel="noopener"
+                href="https://storage.googleapis.com/flolu-website/vfx/danger-of-video-games-tetris.mp4"
+              >
+                <Image
+                  width={512}
+                  height={512}
+                  src="https://storage.googleapis.com/flolu-website/vfx/tetris-real-life_thumb.png"
+                />
+              </a>
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* Summer 2016 */}
+              <a
+                className="w-full h-full"
+                target="_blank"
+                rel="noopener"
+                href="https://storage.googleapis.com/flolu-website/vfx/minecraft-in-real-life-sub.mp4"
+              >
+                <Image
+                  width={512}
+                  height={512}
+                  src="https://storage.googleapis.com/flolu-website/vfx/minecraft-real-life_thumb.png"
+                />
+              </a>
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* Summer 2016 */}
+              <a
+                className="w-full h-full"
+                target="_blank"
+                rel="noopener"
+                href="https://storage.googleapis.com/flolu-website/vfx/nein-doch-oh.mp4"
+              >
+                <Image
+                  width={512}
+                  height={512}
+                  src="https://storage.googleapis.com/flolu-website/vfx/nein-doch-oh_thumb.png"
+                />
+              </a>
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* Summer 2016 */}
+              <a
+                className="w-full h-full"
+                target="_blank"
+                rel="noopener"
+                href="https://storage.googleapis.com/flolu-website/vfx/super-mario-in-real-life-sub.mp4"
+              >
+                <Image
+                  width={512}
+                  height={512}
+                  src="https://storage.googleapis.com/flolu-website/vfx/mario-real-life_thumb.png"
+                />
+              </a>
+            </PortfolioCard>
+
+            <PortfolioCard>
+              {/* Summer 2016 */}
+              <a
+                className="w-full h-full"
+                target="_blank"
+                rel="noopener"
+                href="https://storage.googleapis.com/flolu-website/vfx/teleporting-in-real-life-minecraft-sub.mp4"
+              >
+                <Image
+                  width={512}
+                  height={512}
+                  src="https://storage.googleapis.com/flolu-website/vfx/teleporting-in-real-life_thumb.png"
+                />
+              </a>
+            </PortfolioCard>
+
             {/* 26.05.2016 */}
             <YouTubeVideo
               id="FTErQciXgBo"
