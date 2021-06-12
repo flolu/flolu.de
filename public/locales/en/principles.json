@@ -1,4 +1,24 @@
 {
   "principles": "Principles",
-  "work_in_progress": "In progress"
+  "finisher": "Be a finisher",
+  "finisher_desc": "If you start anything, commit to it and finish it!",
+  "do_things_that_suck": "Do things that suck",
+  "do_things_that_suck_desc": "It makes you stronger and more resilient. Most problems won't be as bad anymore.",
+  "anything_is_everything": "How you do anything is how you do everything",
+  "anything_is_everything_desc": "Momentum. Good choices lead to more good choices.",
+  "motivation": "Work without motivation",
+  "motivation_desc": "Most of the time, you won't have motivation. That's why you need a plan you follow no matter what.",
+  "responsibility": "Take responsibility for everything",
+  "responsibility_desc": "You need to accept the consequences for your actions.",
+  "freedom": "Freedom is everything",
+  "freedom_desc": "Everything you do should be for the purpose of freedom.",
+  "others_opinion": "Don't care what other people think",
+  "others_opinion_desc": "Don't let the opinion of other influence your actions. That doesn't mean not to take constructive criticism, though.",
+  "control": "Don't care about things outside your control",
+  "control_desc": "If you can't control then don't waste your time with it.",
+  "go_one_more": "Always go one more",
+  "go_one_more_desc": "Strive to improve constantly. Stagnation is death.",
+  "win_or_learn": "You either win or you learn",
+  "win_or_learn_desc": "You can't lose. What does not kill you makes you stronger.",
+  "english_better": "Set language to English for best wording"
 }

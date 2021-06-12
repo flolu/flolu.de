@@ -1,6 +1,7 @@
 import {GetStaticProps} from 'next'
 import {useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+import {NextSeo} from 'next-seo'
 import Image from 'next/image'
 import {FC} from 'react'
 
@@ -18,10 +19,24 @@ interface Props {
 
 const Portfolio: FC<Props> = ({locale}) => {
   const {t} = useTranslation()
-  const formatter = new Intl.NumberFormat(locale)
+  const title = t('portfolio:portfolio')
+  const description = t('portfolio:selection_of_my_creations')
+  const url = `https://flolu.de/${locale}/portfolio`
 
   return (
-    <div>
+    <>
+      <NextSeo
+        title={title}
+        description={description}
+        canonical={url}
+        openGraph={{url, title, description, locale}}
+        twitter={{handle: '@floludewig', site: '@floludewig', cardType: 'summary'}}
+        languageAlternates={[
+          {hrefLang: 'en', href: 'https://flolu.de/en/portfolio'},
+          {hrefLang: 'de', href: 'https://flolu.de/de/portfolio'},
+        ]}
+      />
+
       <Header />
       <main className="max-w-6xl px-2 mx-auto space-y-8 sm:space-y-32">
         <section>
@@ -966,7 +981,7 @@ const Portfolio: FC<Props> = ({locale}) => {
       </main>
 
       <Footer />
-    </div>
+    </>
   )
 }
 

@@ -60,7 +60,6 @@ const Home: FC<Props> = props => {
           {hrefLang: 'en', href: 'https://flolu.de/en'},
           {hrefLang: 'de', href: 'https://flolu.de/de'},
         ]}
-        robotsProps={{}}
       />
 
       <SocialProfileJsonLd

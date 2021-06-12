@@ -21,6 +21,10 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
             rel="stylesheet"
           ></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <body className="theme-light">
           <Main />
