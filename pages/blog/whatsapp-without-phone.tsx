@@ -25,7 +25,19 @@ const Post: FC<Props> = () => {
         title={title}
         description={description}
         canonical={url}
-        openGraph={{url, title, description, locale: 'en'}}
+        openGraph={{
+          url,
+          title,
+          description,
+          locale: 'en',
+          images: [
+            {
+              url: 'https://storage.googleapis.com/flolu-website/blog/whatsapp-without-phone/thumbnail.png',
+              width: 1920,
+              height: 1080,
+            },
+          ],
+        }}
       />
 
       <Header />
