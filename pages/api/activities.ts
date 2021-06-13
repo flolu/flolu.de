@@ -157,6 +157,7 @@ async function getGitHubCommits(after: Date) {
     if (!event.created_at || Number(new Date(event.created_at)) < Number(after)) break
 
     if (event.type === 'PushEvent' && event.actor.id === userId) {
+      // console.log(event.payload)
       const commits = (event.payload as any).commits
       commits.forEach((commit: any) => {
         baseCommits.push(mapToCommit(event, commit))
@@ -164,19 +165,27 @@ async function getGitHubCommits(after: Date) {
     }
   }
 
-  return Promise.all(
+  let relevantCommits: IActivity<IGitHubCommit>[] = []
+
+  await Promise.all(
     baseCommits.map(async commit => {
       const {data} = await octokit.request({url: commit.payload.apiUrl})
-      const activity: IActivity<IGitHubCommit> = {
-        ...commit,
-        payload: {
-          ...commit.payload,
-          stats: data.stats,
-        },
+      const isInDateRange = Number(new Date(data.commit.author.date)) > Number(after)
+      const isDuplicate = relevantCommits.find(commit => commit.payload.sha === data.sha)
+      if (isInDateRange && !isDuplicate) {
+        const activity: IActivity<IGitHubCommit> = {
+          ...commit,
+          payload: {
+            ...commit.payload,
+            stats: data.stats,
+          },
+        }
+        relevantCommits.push(activity)
       }
-      return activity
     }),
   )
+
+  return relevantCommits
 }
 
 async function getStravaActivities(after: Date) {
