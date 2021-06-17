@@ -5,11 +5,9 @@ import {useTranslation} from 'react-i18next'
 
 import {DDDesignerIcon} from '@/icons/3DDesignerIcon'
 import {DrakeryLogo} from '@/icons/DrakeryLogo'
-import {FavoritesIcon} from '@/icons/FavoritesIcon'
 import {HistoryIcon} from '@/icons/HistoryIcon'
 import {LaughIcon} from '@/icons/LaughIcon'
 import {PortfolioIcon} from '@/icons/PortfolioIcon'
-import {PrinciplesIcon} from '@/icons/PrinciplesIcon'
 import {SchoolIcon} from '@/icons/SchoolIcon'
 import {TimelineIcon} from '@/icons/TimelineIcon'
 
@@ -101,9 +99,6 @@ export const AboutMe: FC<Props> = props => {
                   <div className="flex-1 space-y-2 text-left">
                     <p className="space-x-2 text-lg font-medium">
                       <span>Drakery</span>
-                      <span className="px-2 py-px text-sm rounded-lg bg-primary-50 text-primary-700">
-                        {t('home:ceo')}
-                      </span>
                     </p>
                     <p className="text-300">{t('home:drakery_description')}</p>
                   </div>
@@ -124,9 +119,6 @@ export const AboutMe: FC<Props> = props => {
                   <div className="flex-1 space-y-2 text-left">
                     <p className="space-x-2 text-lg font-medium">
                       <span>{t('home:personal_life')}</span>
-                      <span className="px-2 py-px text-sm rounded-lg bg-500 text-500">
-                        {t('home:human')}
-                      </span>
                     </p>
                     <p className="text-300">{t('home:personal_life_description')}</p>
                   </div>
@@ -147,9 +139,6 @@ export const AboutMe: FC<Props> = props => {
                   <div className="flex-1 space-y-2 text-left">
                     <p className="space-x-2 text-lg font-medium">
                       <span>{t('home:computer_science')}</span>
-                      <span className="px-2 py-px text-sm rounded-lg bg-500 text-500">
-                        {t('home:student')}
-                      </span>
                     </p>
                     <p className="text-300">{t('home:computer_science_description')}</p>
                   </div>
@@ -170,9 +159,6 @@ export const AboutMe: FC<Props> = props => {
                   <div className="flex-1 space-y-2 text-left">
                     <p className="space-x-2 text-lg font-medium">
                       <span>3D Designer</span>
-                      <span className="px-2 py-px text-sm rounded-lg bg-500 text-500">
-                        {t('home:cto')}
-                      </span>
                     </p>
                     <p className="text-300">{t('home:3d_designer_description')}</p>
                   </div>
@@ -190,29 +176,13 @@ export const AboutMe: FC<Props> = props => {
 
         <div className="space-y-8">
           <h3 className="text-2xl font-bold lg:text-4xl">{t('home:more_about_me')}</h3>
-          <div className="flex justify-between max-w-xl mx-auto">
+          <div className="flex justify-between max-w-md mx-auto">
             <Link href="/#activity">
-              <div className="flex-col items-center hidden space-y-1 cursor-pointer sm:flex">
+              <div className="flex-col items-center space-y-1 cursor-pointer flex">
                 <span className="w-8 fill-current text-300">
                   <HistoryIcon />
                 </span>
                 <span>{t('header:activity')}</span>
-              </div>
-            </Link>
-            <Link href="/#timeline">
-              <div className="flex-col items-center hidden space-y-1 cursor-pointer sm:flex">
-                <span className="w-8 fill-current text-300">
-                  <TimelineIcon />
-                </span>
-                <span>{t('header:timeline')}</span>
-              </div>
-            </Link>
-            <Link href="/favorites">
-              <div className="flex flex-col items-center space-y-1 cursor-pointer sm:hidden">
-                <span className="w-8 fill-current text-300">
-                  <FavoritesIcon />
-                </span>
-                <span>{t('header:favorites')}</span>
               </div>
             </Link>
             <Link href="/portfolio">
@@ -223,20 +193,12 @@ export const AboutMe: FC<Props> = props => {
                 <span>{t('header:portfolio')}</span>
               </div>
             </Link>
-            <Link href="/favorites">
-              <div className="flex-col items-center hidden space-y-1 cursor-pointer sm:flex">
+            <Link href="/#timeline">
+              <div className="flex-col items-center space-y-1 cursor-pointer flex">
                 <span className="w-8 fill-current text-300">
-                  <FavoritesIcon />
+                  <TimelineIcon />
                 </span>
-                <span>{t('header:favorites')}</span>
-              </div>
-            </Link>
-            <Link href="/principles">
-              <div className="flex flex-col items-center space-y-1 cursor-pointer">
-                <span className="w-8 fill-current text-300">
-                  <PrinciplesIcon />
-                </span>
-                <span>{t('header:principles')}</span>
+                <span>{t('header:timeline')}</span>
               </div>
             </Link>
           </div>

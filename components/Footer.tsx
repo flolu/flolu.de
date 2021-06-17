@@ -76,13 +76,7 @@ export function Footer() {
                 <Link href="/portfolio">{t('footer:portfolio')}</Link>
               </li>
               <li className="hover:underline">
-                <Link href="/favorites">{t('footer:favorites')}</Link>
-              </li>
-              <li className="hover:underline">
                 <Link href="/blog">{t('footer:blog')}</Link>
-              </li>
-              <li className="hover:underline">
-                <Link href="/principles">{t('footer:principles')}</Link>
               </li>
               <li className="hover:underline">
                 <Link href="/legal">{t('footer:legal')}</Link>

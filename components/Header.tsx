@@ -6,12 +6,10 @@ import {Fragment, useEffect, useRef, useState} from 'react'
 import {Themes, useAppearance} from '@/contexts//AppearanceContext'
 import {CloseIcon} from '@/icons/CloseIcon'
 import {DarkModeIcon} from '@/icons/DarkModeIcon'
-import {FavoritesIcon} from '@/icons/FavoritesIcon'
 import {HistoryIcon} from '@/icons/HistoryIcon'
 import {LaughIcon} from '@/icons/LaughIcon'
 import {LightModeIcon} from '@/icons/LightModeIcon'
 import {PortfolioIcon} from '@/icons/PortfolioIcon'
-import {PrinciplesIcon} from '@/icons/PrinciplesIcon'
 import {TimelineIcon} from '@/icons/TimelineIcon'
 import {WidgetsIcon} from '@/icons/WidgetsIcon'
 import {classNames} from '@/lib/class-names'
@@ -173,22 +171,6 @@ export const Header = (props: Props) => {
                       <PortfolioIcon />
                     </span>
                     <span>{t('header:portfolio')}</span>
-                  </div>
-                </Link>
-                <Link href="/favorites">
-                  <div className="flex flex-col items-center space-y-1 cursor-pointer">
-                    <span className="w-8 fill-current text-300">
-                      <FavoritesIcon />
-                    </span>
-                    <span>{t('header:favorites')}</span>
-                  </div>
-                </Link>
-                <Link href="/principles">
-                  <div className="flex flex-col items-center space-y-1 cursor-pointer">
-                    <span className="w-8 fill-current text-300">
-                      <PrinciplesIcon />
-                    </span>
-                    <span>{t('header:principles')}</span>
                   </div>
                 </Link>
               </div>
