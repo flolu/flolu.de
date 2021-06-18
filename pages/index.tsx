@@ -98,7 +98,7 @@ const Home: FC<Props> = props => {
 
         <section className="px-4 mx-auto max-w-7xl">
           <Activity
-            activities={props.activities!}
+            activities={props.activities}
             locale={props.locale}
             lastUpdated={props.lastUpdated}
           />

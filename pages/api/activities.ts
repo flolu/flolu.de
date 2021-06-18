@@ -120,13 +120,12 @@ async function getUnsplashPhotos(after: Date) {
 async function getGitHubCommits(after: Date) {
   const username = 'flolu'
   const userId = 34191949
-  const org = 'drakery3d'
   const octokit = new Octokit({auth: process.env.GITHUB_TOKEN})
 
-  const [personalEvents, orgEvents] = await Promise.all([
-    octokit.rest.activity.listEventsForAuthenticatedUser({username, per_page: 100}),
-    // octokit.rest.activity.listOrgEventsForAuthenticatedUser({org, username, per_page: 100}),
-  ])
+  const personalEvents = await octokit.rest.activity.listEventsForAuthenticatedUser({
+    username,
+    per_page: 100,
+  })
 
   const mapToCommit = (event: any, commit: any): IActivity<IGitHubBaseCommit> => {
     return {
@@ -142,7 +141,7 @@ async function getGitHubCommits(after: Date) {
     }
   }
 
-  let baseCommits: IActivity<IGitHubBaseCommit>[] = []
+  const baseCommits: IActivity<IGitHubBaseCommit>[] = []
   for (const event of personalEvents.data) {
     if (!event.created_at || Number(new Date(event.created_at)) < Number(after)) break
 
@@ -164,7 +163,7 @@ async function getGitHubCommits(after: Date) {
   //   }
   // }
 
-  let relevantCommits: IActivity<IGitHubCommit>[] = []
+  const relevantCommits: IActivity<IGitHubCommit>[] = []
 
   await Promise.all(
     baseCommits.map(async commit => {
@@ -204,7 +203,7 @@ async function getStravaActivities(after: Date) {
   })
   const rawActivities = await activitiesResponse.json()
 
-  let activities: IActivity<IStravaActivity>[] = []
+  const activities: IActivity<IStravaActivity>[] = []
 
   for (const data of rawActivities) {
     if (Number(new Date(data.start_date)) < Number(after)) break
@@ -294,7 +293,7 @@ export async function getActivities() {
     return Number(new Date(b.timestamp)) - Number(new Date(a.timestamp))
   })
 
-  let groupedByDay: IActivityDay[] = []
+  const groupedByDay: IActivityDay[] = []
   let previousDate: string | undefined
   for (const activity of sorted) {
     if (previousDate && isSameDay(new Date(activity.timestamp), new Date(previousDate))) {

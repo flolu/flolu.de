@@ -14,7 +14,7 @@ export const UnsplashPhoto: FC<Props> = ({id, image, width, height, label}) => {
     <a
       className="w-full h-full"
       target="_blank"
-      rel="noopener"
+      rel="noreferrer"
       href={`https://unsplash.com/photos/${id}`}
     >
       <Image

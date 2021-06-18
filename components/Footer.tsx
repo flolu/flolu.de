@@ -24,7 +24,7 @@ export function Footer() {
           <div className="flex space-x-4">
             <a
               target="_blank"
-              rel="noopener"
+              rel="noreferrer"
               href="https://www.instagram.com/flo.ludewig"
               className="w-4 cursor-pointer fill-current"
             >
@@ -32,7 +32,7 @@ export function Footer() {
             </a>
             <a
               target="_blank"
-              rel="noopener"
+              rel="noreferrer"
               href="https://www.youtube.com/c/flolu"
               className="w-4 cursor-pointer fill-current"
             >
@@ -40,7 +40,7 @@ export function Footer() {
             </a>
             <a
               target="_blank"
-              rel="noopener"
+              rel="noreferrer"
               href="https://github.com/flolu"
               className="w-4 cursor-pointer fill-current"
             >
@@ -88,7 +88,7 @@ export function Footer() {
                 <a
                   className="hover:underline"
                   target="_blank"
-                  rel="noopener"
+                  rel="noreferrer"
                   href="https://github.com/flolu/flolu.de"
                 >
                   Source Code
@@ -102,7 +102,7 @@ export function Footer() {
               <a
                 className="hover:underline"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://www.instagram.com/flo.ludewig"
               >
                 Instagram
@@ -110,7 +110,7 @@ export function Footer() {
               <a
                 className="hover:underline"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://www.youtube.com/c/flolu"
               >
                 YouTube
@@ -118,7 +118,7 @@ export function Footer() {
               <a
                 className="hover:underline"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://github.com/flolu"
               >
                 GitHub
@@ -126,7 +126,7 @@ export function Footer() {
               <a
                 className="hover:underline"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://www.strava.com/athletes/flolu"
               >
                 Strava
@@ -134,7 +134,7 @@ export function Footer() {
               <a
                 className="hover:underline"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://www.linkedin.com/in/florian-ludewig"
               >
                 LinkedIn
@@ -142,7 +142,7 @@ export function Footer() {
               <a
                 className="hover:underline"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://stackoverflow.com/users/8586803"
               >
                 StackOverflow
@@ -150,7 +150,7 @@ export function Footer() {
               <a
                 className="hover:underline"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://unsplash.com/@flolu"
               >
                 Unsplash
@@ -158,7 +158,7 @@ export function Footer() {
               <a
                 className="hover:underline"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://t.me/flolu"
               >
                 Telegram
@@ -166,7 +166,7 @@ export function Footer() {
               {/* <a
                 className="hover:underline"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://twitter.com/floludewig"
               >
                 Twitter

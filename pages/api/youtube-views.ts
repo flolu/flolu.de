@@ -30,9 +30,11 @@ export async function getYouTubeViews() {
       id: channelIds,
       part: ['statistics', 'statistics', 'statistics'],
     })
+    if (!response.data.items) throw new Error()
 
-    return response.data.items!.reduce((accumulator, channel) => {
-      return accumulator + Number(channel.statistics!.viewCount)
+    return response.data.items.reduce((accumulator, channel) => {
+      const views = channel.statistics ? Number(channel.statistics.viewCount) : 0
+      return accumulator + views
     }, 0)
   } catch (e) {
     // Fallback, manually calculated (Jun 11, 2021)

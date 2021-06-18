@@ -14,7 +14,7 @@ interface Props {
 export const YouTubeVideo: FC<Props> = ({id, image, width, height, label}) => {
   return (
     <PortfolioCard>
-      <a className="w-full h-full" target="_blank" rel="noopener" href={`https://youtu.be/${id}`}>
+      <a className="w-full h-full" target="_blank" rel="noreferrer" href={`https://youtu.be/${id}`}>
         <Image
           width={width || 512}
           height={height || 512}

@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import {FC} from 'react'
 
 import {GithubIcon} from '@/components/Icons/GithubIcon'
@@ -33,7 +32,7 @@ export const GitHubRepository: FC<Props> = ({
         <a
           className="space-y-1 text-left sm:space-y-2"
           target="_blank"
-          rel="noopener"
+          rel="noreferrer"
           href={`https://github.com/${repo}`}
         >
           <p className="flex items-center space-x-2 text-xl font-bold md:text-2xl lg:text-3xl">

@@ -15,7 +15,7 @@ export const GitHubCommit: FC<Props> = ({activity}) => {
   return (
     <a
       href={activity.payload.url}
-      rel="noopener"
+      rel="noreferrer"
       className="flex items-center space-x-2 whitespace-nowrap"
     >
       <div className="flex flex-col items-center w-5 mr-2 h-11">

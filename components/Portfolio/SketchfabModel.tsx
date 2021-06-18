@@ -11,7 +11,7 @@ interface Props {
 
 export const SketchfabModel: FC<Props> = ({id, image, width, height, label}) => {
   return (
-    <a className="w-full h-full" target="_blank" rel="noopener" href={`https://skfb.ly/${id}`}>
+    <a className="w-full h-full" target="_blank" rel="noreferrer" href={`https://skfb.ly/${id}`}>
       <Image
         width={width || 512}
         height={height || 512}

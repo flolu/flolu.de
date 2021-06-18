@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 module.exports = {
   siteUrl: process.env.SITE_URL || 'https://flolu.de',
   generateRobotsTxt: true,

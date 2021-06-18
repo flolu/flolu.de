@@ -46,7 +46,7 @@ export function HomeHead() {
         <div className="flex flex-col items-center justify-center w-5 h-56 space-y-10 cursor-pointer md:h-auto">
           <a
             target="_blank"
-            rel="noopener"
+            rel="noreferrer"
             href="https://github.com/flolu"
             className="w-5 fill-current text-primary-300"
           >
@@ -54,7 +54,7 @@ export function HomeHead() {
           </a>
           <a
             target="_blank"
-            rel="noopener"
+            rel="noreferrer"
             href="https://instagram.com/flo.ludewig"
             className="w-5 fill-current text-primary-300"
           >
@@ -62,7 +62,7 @@ export function HomeHead() {
           </a>
           <a
             target="_blank"
-            rel="noopener"
+            rel="noreferrer"
             href="https://www.youtube.com/c/flolu"
             className="w-5 fill-current text-primary-300"
           >

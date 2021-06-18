@@ -33,7 +33,7 @@ export function Timeline() {
               </p>
               <a
                 href="https://www.strava.com/athletes/69079803"
-                rel="noopener"
+                rel="noreferrer"
                 className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
               >
                 <span className="w-5 fill-current">
@@ -75,7 +75,7 @@ export function Timeline() {
               </p>
               <a
                 href="https://drakery.com"
-                rel="noopener"
+                rel="noreferrer"
                 className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
               >
                 <span className="w-5 fill-current">
@@ -100,7 +100,7 @@ export function Timeline() {
               </p>
               <a
                 href="https://www.iesgmbh.com"
-                rel="noopener"
+                rel="noreferrer"
                 className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
               >
                 <span className="w-5 fill-current">
@@ -125,7 +125,7 @@ export function Timeline() {
               </p>
               <a
                 href="https://drakery.com"
-                rel="noopener"
+                rel="noreferrer"
                 className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
               >
                 <span className="w-5 fill-current">
@@ -145,7 +145,7 @@ export function Timeline() {
               <p className="text-sm font-medium sm:text-base">{t('timeline:spleenlab_engineer')}</p>
               <a
                 href="http://spleenlab.com"
-                rel="noopener"
+                rel="noreferrer"
                 className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
               >
                 <span className="w-5 fill-current">
@@ -211,7 +211,7 @@ export function Timeline() {
               <p className="text-sm font-medium sm:text-base">{t('timeline:cs_start')}</p>
               <a
                 href="https://www.uni-jena.de"
-                rel="noopener"
+                rel="noreferrer"
                 className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
               >
                 <span className="w-5 fill-current">
@@ -232,7 +232,7 @@ export function Timeline() {
               <p className="text-sm md:text-base text-300">{t('timeline:startup_teens_desc')}</p>
               <a
                 href="https://www.startupteens.de/site/2019"
-                rel="noopener"
+                rel="noreferrer"
                 className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
               >
                 <span className="w-5 fill-current">
@@ -264,7 +264,7 @@ export function Timeline() {
               <p className="text-sm font-medium sm:text-base">{t('timeline:lacos')}</p>
               <a
                 href="https://www.lacos.eu"
-                rel="noopener"
+                rel="noreferrer"
                 className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
               >
                 <span className="w-5 fill-current">
@@ -305,7 +305,7 @@ export function Timeline() {
                 </p>
                 <a
                   href="https://apkpure.com/in/tackleit-distance-tracker/net.tackleit.tackleit"
-                  rel="noopener"
+                  rel="noreferrer"
                   className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
                 >
                   <span className="w-5 fill-current">
@@ -329,7 +329,7 @@ export function Timeline() {
                 <div className="space-x-4">
                   <a
                     href="http://www.themillionairefastlane.com"
-                    rel="noopener"
+                    rel="noreferrer"
                     className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
                   >
                     <span className="w-5 fill-current">
@@ -339,7 +339,7 @@ export function Timeline() {
                   </a>
                   <a
                     href="https://www.mjdemarco.com"
-                    rel="noopener"
+                    rel="noreferrer"
                     className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
                   >
                     <span className="w-5 fill-current">
@@ -349,7 +349,7 @@ export function Timeline() {
                   </a>
                   <a
                     href="http://getunscripted.com"
-                    rel="noopener"
+                    rel="noreferrer"
                     className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
                   >
                     <span className="w-5 fill-current">
@@ -409,7 +409,7 @@ export function Timeline() {
                 <div className="space-x-4">
                   <a
                     href="https://www.youtube.com/channel/UC3D3fk_hVob8nhT7-3WaQ9g"
-                    rel="noopener"
+                    rel="noreferrer"
                     className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
                   >
                     <span className="w-5 fill-current">
@@ -419,7 +419,7 @@ export function Timeline() {
                   </a>
                   <a
                     href="https://www.youtube.com/channel/UCptNzP2zQnvL1WXHCyPfPFw"
-                    rel="noopener"
+                    rel="noreferrer"
                     className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
                   >
                     <span className="w-5 fill-current">
@@ -444,7 +444,7 @@ export function Timeline() {
                 <div className="space-x-4">
                   <a
                     href="https://www.youtube.com/channel/UCa_UyaAlrWAgjZM0GB6zvpw"
-                    rel="noopener"
+                    rel="noreferrer"
                     className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
                   >
                     <span className="w-5 fill-current">
@@ -454,7 +454,7 @@ export function Timeline() {
                   </a>
                   <a
                     href="https://www.youtube.com/user/SkateStyleLP"
-                    rel="noopener"
+                    rel="noreferrer"
                     className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
                   >
                     <span className="w-5 fill-current">
@@ -477,7 +477,7 @@ export function Timeline() {
                 <div className="space-x-4">
                   <a
                     href="https://youtu.be/y6QRGQhEYJI"
-                    rel="noopener"
+                    rel="noreferrer"
                     className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
                   >
                     <span className="w-5 fill-current">

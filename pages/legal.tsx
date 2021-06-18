@@ -1,8 +1,9 @@
-import {Footer} from '@/components/Footer'
-import {Header} from '@/components/Header'
 import {GetStaticProps} from 'next'
 import {useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+
+import {Footer} from '@/components/Footer'
+import {Header} from '@/components/Header'
 
 export default function Legal() {
   const {t} = useTranslation()

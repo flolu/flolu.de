@@ -11,7 +11,7 @@ export const YouTubeVideo: FC<Props> = ({activity}) => {
   return (
     <a
       href={(activity.payload as IYouTubeVideo).url}
-      rel="noopener"
+      rel="noreferrer"
       className="flex items-stretch space-x-6 whitespace-nowrap"
     >
       <div className="flex flex-col items-center w-5">

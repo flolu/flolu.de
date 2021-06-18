@@ -1,5 +1,4 @@
 import {FC} from 'react'
-import {useTranslation} from 'react-i18next'
 
 import {DistanceIcon} from '@/icons/DistanceIcon'
 import {HeartIcon} from '@/icons/HeartIcon'
@@ -19,13 +18,11 @@ interface Props {
 }
 
 export const StravaActivity: FC<Props> = ({activity}) => {
-  const {t} = useTranslation()
-
   return (
     <>
       <div className="whitespace-nowrap text-500">
         {activity.payload.type === 'Swim' && (
-          <a href={activity.payload.url} rel="noopener" className="flex items-center space-x-4">
+          <a href={activity.payload.url} rel="noreferrer" className="flex items-center space-x-4">
             <div className="flex flex-col items-center w-5 h-14 md:h-20">
               <span className="w-0.5 h-full bg-blue-300"></span>
               <span className="w-8 p-1 text-blue-500 border-4 border-blue-300 rounded-full fill-current md:w-10 bg-blue-50">
@@ -62,7 +59,7 @@ export const StravaActivity: FC<Props> = ({activity}) => {
         )}
 
         {activity.payload.type === 'WeightTraining' && (
-          <a href={activity.payload.url} rel="noopener" className="flex items-center space-x-4">
+          <a href={activity.payload.url} rel="noreferrer" className="flex items-center space-x-4">
             <div className="flex flex-col items-center w-5 h-14 md:h-20">
               <span className="w-0.5 h-full bg-yellow-300"></span>
               <span className="w-8 p-1 text-yellow-500 border-4 border-yellow-300 rounded-full fill-current md:w-10 bg-yellow-50">
@@ -85,7 +82,7 @@ export const StravaActivity: FC<Props> = ({activity}) => {
         )}
 
         {activity.payload.type === 'Walk' && (
-          <a href={activity.payload.url} rel="noopener" className="flex items-center space-x-4">
+          <a href={activity.payload.url} rel="noreferrer" className="flex items-center space-x-4">
             <div className="flex flex-col items-center w-5 h-14 md:h-20">
               <span className="w-0.5 h-full bg-green-300"></span>
               <span className="w-8 p-1 text-green-500 border-4 border-green-300 rounded-full fill-current md:w-10 bg-green-50">
@@ -122,7 +119,7 @@ export const StravaActivity: FC<Props> = ({activity}) => {
         )}
 
         {activity.payload.type === 'Run' && (
-          <a href={activity.payload.url} rel="noopener" className="flex items-center space-x-4">
+          <a href={activity.payload.url} rel="noreferrer" className="flex items-center space-x-4">
             <div className="flex flex-col items-center w-5 h-14 md:h-20">
               <span className="w-0.5 h-full bg-red-300"></span>
               <span className="w-8 p-1 text-red-500 border-4 border-red-300 rounded-full fill-current md:w-10 bg-red-50">

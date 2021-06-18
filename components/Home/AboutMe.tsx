@@ -30,7 +30,7 @@ export const AboutMe: FC<Props> = props => {
         <div className="flex items-center justify-between max-w-xl mx-auto text-xs text-left sm:text-sm md:text-base">
           <a
             target="_blank"
-            rel="noopener"
+            rel="noreferrer"
             href="https://www.youtube.com/c/flolu"
             className="flex flex-col space-y-2"
           >
@@ -41,7 +41,7 @@ export const AboutMe: FC<Props> = props => {
           </a>
           <a
             target="_blank"
-            rel="noopener"
+            rel="noreferrer"
             href="https://unsplash.com/@flolu"
             className="flex flex-col space-y-2"
           >
@@ -52,7 +52,7 @@ export const AboutMe: FC<Props> = props => {
           </a>
           <a
             target="_blank"
-            rel="noopener"
+            rel="noreferrer"
             href="https://github.com/flolu"
             className="flex flex-col space-y-2"
           >

@@ -20,7 +20,7 @@ export function GetInTouch() {
           </a>
           <a
             href="https://www.instagram.com/flo.ludewig"
-            rel="noopener"
+            rel="noreferrer"
             className="flex flex-col items-center flex-1 space-y-2"
           >
             <span className="w-8 fill-current sm:w-10 md:w-12">
@@ -30,7 +30,7 @@ export function GetInTouch() {
           </a>
           <a
             href="https://t.me/flolu"
-            rel="noopener"
+            rel="noreferrer"
             className="flex flex-col items-center flex-1 space-y-2"
           >
             <span className="w-8 fill-current sm:w-10 md:w-12">

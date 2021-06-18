@@ -72,8 +72,8 @@ const Post: FC<Props> = () => {
           <div className="mb-16 text-lg text-900 leading-loose space-y-16">
             <section>
               <p>
-                Ever tried to use WhatsApp without your phone? Currently that's not possible. But
-                there is a way to make it work. This blog post showcases how to run WhatsApp on
+                Ever tried to use WhatsApp without your phone? Currently that&apos;s not possible.
+                But there is a way to make it work. This blog post showcases how to run WhatsApp on
                 Linux without an active phone connection.
               </p>
               <p className="italic">
@@ -81,15 +81,15 @@ const Post: FC<Props> = () => {
                 <a href="https://youtu.be/72WyCIWO3MQ" className="underline">
                   video tutorial
                 </a>{' '}
-                if you don't feel like reading.
+                if you don&apos;t feel like reading.
               </p>
             </section>
 
             <section>
               <h2 className="font-bold text-2xl mb-4">1. Android Emulator</h2>
               <p>
-                To do this we will be running a full Android system on our Linux machine. That's
-                possible using an open source software called{' '}
+                To do this we will be running a full Android system on our Linux machine.
+                That&apos;s possible using an open source software called{' '}
                 <a href="https://github.com/anbox/anbox" className="underline">
                   Anbox
                 </a>
@@ -138,9 +138,9 @@ const Post: FC<Props> = () => {
               <h2 className="font-bold text-2xl mb-4">4. Setup WhatsApp</h2>
               <p>
                 Simply go through the setup wizard. You will need to verify your phone number by
-                entering a code that's sent to you via SMS.
+                entering a code that&apos;s sent to you via SMS.
               </p>
-              <p>That's it 🎉</p>
+              <p>That&apos;s it 🎉</p>
             </section>
 
             <section>

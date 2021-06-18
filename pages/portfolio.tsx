@@ -441,7 +441,7 @@ const Portfolio: FC<Props> = ({locale}) => {
                 <a
                   className="space-y-1 text-left sm:space-y-2"
                   target="_blank"
-                  rel="noopener"
+                  rel="noreferrer"
                   href="https://apkpure.com/in/tackleit-distance-tracker/net.tackleit.tackleit"
                 >
                   <Image
@@ -464,7 +464,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               <a
                 className="w-full h-full"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://www.cgtrader.com/3d-models/animals/mammal/crystal-wolf-c4d-octane-render-scene-wolf-rig-included"
               >
                 <Image
@@ -496,7 +496,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               <a
                 className="w-full h-full"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://www.cgtrader.com/3d-models/various/various-models/etnies-skate-shoes"
               >
                 <Image
@@ -526,7 +526,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               <a
                 className="w-full h-full"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://storage.googleapis.com/flolu-website/skateboarding/07-02-2017.mp4"
               >
                 <Image
@@ -547,7 +547,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               <a
                 className="w-full h-full"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://storage.googleapis.com/flolu-website/skateboarding/16-10-2016_HQ.mp4"
               >
                 <Image
@@ -563,7 +563,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               <a
                 className="w-full h-full"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://storage.googleapis.com/flolu-website/skateboarding/14-10-2016_HQ.mp4"
               >
                 <Image
@@ -579,7 +579,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               <a
                 className="w-full h-full"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://storage.googleapis.com/flolu-website/vfx/danger-of-video-games-minecraft.mp4"
               >
                 <Image
@@ -595,7 +595,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               <a
                 className="w-full h-full"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://storage.googleapis.com/flolu-website/vfx/danger-of-video-games-pokemon.mp4"
               >
                 <Image
@@ -611,7 +611,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               <a
                 className="w-full h-full"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://storage.googleapis.com/flolu-website/vfx/danger-of-video-games-tetris.mp4"
               >
                 <Image
@@ -627,7 +627,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               <a
                 className="w-full h-full"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://storage.googleapis.com/flolu-website/vfx/minecraft-in-real-life-sub.mp4"
               >
                 <Image
@@ -643,7 +643,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               <a
                 className="w-full h-full"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://storage.googleapis.com/flolu-website/vfx/nein-doch-oh.mp4"
               >
                 <Image
@@ -659,7 +659,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               <a
                 className="w-full h-full"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://storage.googleapis.com/flolu-website/vfx/super-mario-in-real-life-sub.mp4"
               >
                 <Image
@@ -675,7 +675,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               <a
                 className="w-full h-full"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://storage.googleapis.com/flolu-website/vfx/teleporting-in-real-life-minecraft-sub.mp4"
               >
                 <Image
@@ -705,7 +705,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               <a
                 className="w-full h-full"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://storage.googleapis.com/flolu-website/skateboarding/14-05-2016.mp4"
               >
                 <Image
@@ -728,7 +728,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               <a
                 className="w-full h-full"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://storage.googleapis.com/flolu-website/skateboarding/25-04-2016.mp4"
               >
                 <Image
@@ -751,7 +751,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               <a
                 className="w-full h-full"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://storage.googleapis.com/flolu-website/skateboarding/11-04-2016.mp4"
               >
                 <Image
@@ -767,7 +767,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               <a
                 className="w-full h-full"
                 target="_blank"
-                rel="noopener"
+                rel="noreferrer"
                 href="https://storage.googleapis.com/flolu-website/skateboarding/09-04-2016.mp4"
               >
                 <Image
