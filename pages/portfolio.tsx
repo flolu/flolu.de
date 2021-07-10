@@ -52,7 +52,7 @@ const Portfolio: FC<Props> = ({locale}) => {
           <h2 className="text-4xl font-bold sm:text-6xl">2021</h2>
           <div className="grid grid-cols-3 gap-0 sm:gap-2 md:gap-4">
             {/* 21.04.2020 */}
-            <GitHubRepository
+            {/* <GitHubRepository
               repo="flolu/maizzle-node-example"
               name="Maizzle Node Example"
               commits={3}
@@ -61,7 +61,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               description="Example for rendering beautiful emails with dynamic content"
               tags={['nodejs', 'maizzle', 'email', 'tailwindcss', 'typescript']}
               locale={locale}
-            ></GitHubRepository>
+            ></GitHubRepository> */}
 
             {/* 06.04.2020 */}
             <GitHubRepository
@@ -89,7 +89,7 @@ const Portfolio: FC<Props> = ({locale}) => {
             ></GitHubRepository>
 
             {/* 29.01.2020 */}
-            <GitHubRepository
+            {/* <GitHubRepository
               repo="flolu/chatroom-ws2020"
               name="Websocket Chat App"
               commits={69}
@@ -98,7 +98,7 @@ const Portfolio: FC<Props> = ({locale}) => {
               description="Web socket realtime chat room web application"
               tags={['typescript', 'bazel', 'angular', 'ngrx', 'websockets', 'realtime', 'mongodb']}
               locale={locale}
-            ></GitHubRepository>
+            ></GitHubRepository> */}
 
             <PortfolioCard>
               {/* 10.01.2021 */}
