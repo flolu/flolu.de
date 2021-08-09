@@ -3,8 +3,6 @@ import {useTranslation} from 'next-i18next'
 import {CheckRoundIcon} from '@/icons/CheckRoundIcon'
 import {LinkIcon} from '@/icons/LinkIcon'
 
-// TODO add images and videos
-
 export function Timeline() {
   const {t} = useTranslation()
   return (
@@ -18,6 +16,16 @@ export function Timeline() {
           <span className="w-full h-px bg-500"></span>
         </h2>
         <ul className="space-y-8">
+          <li className="flex space-x-2">
+            <div className="flex-none w-6">
+              <span className="fill-current text-primary-300">
+                <CheckRoundIcon />
+              </span>
+            </div>
+            <div className="space-y-2">
+              <p className="text-sm font-medium sm:text-base">{t('timeline:cs_4th_semester')}</p>
+            </div>
+          </li>
           <li className="flex space-x-2">
             <div className="flex-none w-6">
               <span className="fill-current text-primary-300">

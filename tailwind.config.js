@@ -107,6 +107,9 @@ module.exports = {
         '2/3': '66.666%',
         full: '100%',
       },
+      spacing: {
+        '3/10': '30%',
+      },
     },
   },
   plugins: [require('@tailwindcss/aspect-ratio')],
