@@ -52,16 +52,26 @@ const Portfolio: FC<Props> = ({locale}) => {
           <h2 className="text-4xl font-bold sm:text-6xl">2021</h2>
           <div className="grid grid-cols-3 gap-0 sm:gap-2 md:gap-4">
             {/* 21.04.2020 */}
-            {/* <GitHubRepository
-              repo="flolu/maizzle-node-example"
-              name="Maizzle Node Example"
-              commits={3}
-              additions={5716}
-              deletions={45}
-              description="Example for rendering beautiful emails with dynamic content"
-              tags={['nodejs', 'maizzle', 'email', 'tailwindcss', 'typescript']}
-              locale={locale}
-            ></GitHubRepository> */}
+            {
+              <GitHubRepository
+                repo="flolu/auth"
+                name="Refresh Access Token Authentication"
+                commits={45}
+                additions={12300}
+                deletions={5309}
+                description="Demo with Client Side Rendering, Server Side Rendering and Websockets"
+                tags={[
+                  'nodejs',
+                  'authentication',
+                  'websockets',
+                  'terraform',
+                  'next.js',
+                  'tailwindcss',
+                  'typescript',
+                ]}
+                locale={locale}
+              ></GitHubRepository>
+            }
 
             {/* 06.04.2020 */}
             <GitHubRepository
