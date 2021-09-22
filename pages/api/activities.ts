@@ -71,22 +71,24 @@ async function getYouTubeVideos(after: Date) {
 
   let activities: IActivity<IYouTubeVideo>[] = []
   if (videos.items) {
-    activities = videos.items.map((video: any) => {
-      const activity: IActivity<IYouTubeVideo> = {
-        type: 'youtube-video',
-        payload: {
-          thumbnail: {
-            url: video.snippet.thumbnails.high.url,
-            width: video.snippet.thumbnails.high.width,
-            height: video.snippet.thumbnails.high.height,
+    activities = videos.items
+      .filter((video: any) => !!video?.id?.videoId)
+      .map((video: any) => {
+        const activity: IActivity<IYouTubeVideo> = {
+          type: 'youtube-video',
+          payload: {
+            thumbnail: {
+              url: video.snippet.thumbnails.high.url,
+              width: video.snippet.thumbnails.high.width,
+              height: video.snippet.thumbnails.high.height,
+            },
+            title: video.snippet.title,
+            url: `https://www.youtube.com/watch?v=${video.id.videoId}`,
           },
-          title: video.snippet.title,
-          url: `https://www.youtube.com/watch?v=${video.id.videoId}`,
-        },
-        timestamp: video.snippet.publishTime,
-      }
-      return activity
-    }) as IActivity<IYouTubeVideo>[]
+          timestamp: video.snippet.publishTime,
+        }
+        return activity
+      }) as IActivity<IYouTubeVideo>[]
   }
 
   return activities.filter(activity => Number(new Date(activity.timestamp)) >= Number(after))
