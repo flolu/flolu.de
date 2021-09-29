@@ -10,6 +10,8 @@ export const DiffStat: FC<Props> = ({additions, deletions}) => {
   const addBlocks = Math.round((5 * additions) / total)
   const delBlocks = Math.round((5 * deletions) / total)
 
+  if (!total) return <></>
+
   return (
     <div className="flex space-x-px">
       {/* eslint-disable-next-line prefer-spread */}
