@@ -11,8 +11,6 @@ import {getYouTubeViews} from '@/api/youtube-views'
 import {Footer} from '@/components/Footer'
 import {Header} from '@/components/Header'
 import {AboutMe} from '@/components/Home/AboutMe'
-import {Activity} from '@/components/Home/Activity'
-import {GetInTouch} from '@/components/Home/GetInTouch'
 import {HomeHead} from '@/components/Home/Head'
 import {Timeline} from '@/components/Home/Timeline'
 import {IActivityDay} from '@/types//activity'
@@ -48,7 +46,7 @@ const Home: FC<Props> = props => {
           profile: {firstName: 'Florian', lastName: 'Ludewig', username: 'flolu', gender: 'Male'},
           images: [
             {
-              url: 'https://storage.googleapis.com/flolu-website/me/avatar1.jpg',
+              url: 'https://storage.googleapis.com/flolu-website/me/avatar4.jpg',
               width: 512,
               height: 512,
               alt: 'Profile Photo',
@@ -82,7 +80,7 @@ const Home: FC<Props> = props => {
       <Header spacer={false} />
       <div className="h-24 md:hidden"></div>
 
-      <main className="mb-8 space-y-16 sm:mb-16 sm:space-y-32">
+      <main className="mb-8 space-y-24 sm:mb-16 sm:space-y-32">
         <section className="px-4 mx-auto max-w-7xl">
           <HomeHead />
         </section>
@@ -94,18 +92,6 @@ const Home: FC<Props> = props => {
             youTubeViews={props.youTubeViews}
             locale={props.locale}
           />
-        </section>
-
-        <section className="px-4 mx-auto max-w-7xl">
-          <Activity
-            activities={props.activities}
-            locale={props.locale}
-            lastUpdated={props.lastUpdated}
-          />
-        </section>
-
-        <section>
-          <GetInTouch />
         </section>
 
         <section className="px-4 mx-auto max-w-7xl">

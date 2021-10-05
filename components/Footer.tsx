@@ -12,14 +12,14 @@ export function Footer() {
 
   return (
     <footer className="text-sm text-300 body-font">
-      <div className="container flex flex-col flex-wrap px-4 py-8 mx-auto border-t border-background-500 sm:px-8 md:py-12 max-w-7xl md:items-center lg:items-start md:flex-row md:flex-nowrap">
+      <div className="container flex flex-col flex-wrap px-4 py-8 mx-auto sm:px-8 md:py-12 max-w-7xl md:items-center lg:items-start md:flex-row md:flex-nowrap">
         <div className="flex-shrink-0 max-w-sm space-y-6 md:w-1/3 md:mx-0">
           <Link href="/">
             <div className="flex items-center space-x-2 cursor-pointer text-900">
               <span className="text-lg font-medium">Florian Ludewig</span>
             </div>
           </Link>
-          <p className="text-xs text-100">© 2021 Florian Ludewig</p>
+          <p className="text-xs text-100">© {new Date().getFullYear()} Florian Ludewig</p>
           <LanguageSelect position="above" />
           <div className="flex space-x-4">
             <a
@@ -50,7 +50,7 @@ export function Footer() {
         </div>
         <div className="flex flex-wrap flex-grow mt-10 -mb-10 md:pl-20 md:mt-0">
           <div className="w-full md:w-1/2 lg:w-1/3">
-            <h2 className="mb-4 font-medium tracking-widest text-900">{t('footer:home')}</h2>
+            <h2 className="mb-4 font-medium tracking-wide text-900">{t('footer:home')}</h2>
             <ul className="mb-10 space-y-2">
               <li className="hover:underline">
                 <Link href="/">{t('footer:home')}</Link>
@@ -64,13 +64,10 @@ export function Footer() {
               <li className="hover:underline">
                 <Link href="/#timeline">{t('footer:timeline')}</Link>
               </li>
-              <li className="hover:underline">
-                <Link href="/#get-in-touch">{t('footer:contact_me')}</Link>
-              </li>
             </ul>
           </div>
           <div className="w-full md:w-1/2 lg:w-1/3">
-            <h2 className="mb-4 font-medium tracking-widest text-900">{t('footer:random')}</h2>
+            <h2 className="mb-4 font-medium tracking-wide text-900">{t('footer:random')}</h2>
             <ul className="mb-10 space-y-2">
               <li className="hover:underline">
                 <Link href="/portfolio">{t('footer:portfolio')}</Link>
@@ -97,7 +94,7 @@ export function Footer() {
             </ul>
           </div>
           <div className="w-full md:w-1/2 lg:w-1/3">
-            <h2 className="mb-4 font-medium tracking-widest text-900">{t('footer:online')}</h2>
+            <h2 className="mb-4 font-medium tracking-wide text-900">{t('footer:online')}</h2>
             <ul className="flex flex-col mb-10 space-y-2">
               <a
                 className="hover:underline"
@@ -163,14 +160,6 @@ export function Footer() {
               >
                 Telegram
               </a>
-              {/* <a
-                className="hover:underline"
-                target="_blank"
-                rel="noreferrer"
-                href="https://twitter.com/floludewig"
-              >
-                Twitter
-              </a> */}
             </ul>
           </div>
         </div>

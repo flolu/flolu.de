@@ -1,14 +1,12 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import {FC} from 'react'
 import {useTranslation} from 'react-i18next'
 
 import {DrakeryLogo} from '@/icons/DrakeryLogo'
-import {HistoryIcon} from '@/icons/HistoryIcon'
 import {LaughIcon} from '@/icons/LaughIcon'
-import {PortfolioIcon} from '@/icons/PortfolioIcon'
 import {SchoolIcon} from '@/icons/SchoolIcon'
-import {TimelineIcon} from '@/icons/TimelineIcon'
+
+import {DDDesignerIcon} from '../Icons/3DDesignerIcon'
 
 interface Props {
   githubStars: number
@@ -66,11 +64,11 @@ export const AboutMe: FC<Props> = props => {
           <div className="w-64 md:w-1/3">
             <Image
               className="rounded-2xl"
-              src="https://storage.googleapis.com/flolu-website/me/avatar2.jpg"
+              src="https://storage.googleapis.com/flolu-website/me/avatar6.jpg"
               alt="Avatar of Flo"
               layout="responsive"
               width={512}
-              height={461}
+              height={559}
             />
           </div>
 
@@ -102,9 +100,29 @@ export const AboutMe: FC<Props> = props => {
                     <p className="text-300">{t('home:drakery_description')}</p>
                   </div>
                   <div className="flex flex-col w-12 space-y-1 sm:w-20 xl:w-28">
-                    <span className="text-xl font-medium text-primary-900">40%</span>
+                    <span className="text-xl font-medium text-primary-900">30%</span>
                     <span className="flex items-center h-4 rounded-full bg-primary-50">
-                      <span className="w-2/5 h-3 ml-px rounded-full bg-primary-500"></span>
+                      <span className="h-3 ml-px rounded-full w-3/10 bg-primary-500"></span>
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="flex-none hidden w-20 h-20 p-5 mx-2 rounded-full sm:block bg-primary-50">
+                    <span className="w-full fill-current text-primary-500">
+                      <DDDesignerIcon />
+                    </span>
+                  </div>
+                  <div className="flex-1 space-y-2 text-left">
+                    <p className="space-x-2 text-lg font-medium">
+                      <span>3D Designer</span>
+                    </p>
+                    <p className="text-300">{t('home:3d_designer_description')}</p>
+                  </div>
+                  <div className="flex flex-col w-12 space-y-1 sm:w-20 xl:w-28">
+                    <span className="text-xl font-medium text-primary-900">20%</span>
+                    <span className="flex items-center h-4 rounded-full bg-primary-50">
+                      <span className="w-1/5 h-3 ml-px rounded-full bg-primary-500"></span>
                     </span>
                   </div>
                 </div>
@@ -142,64 +160,14 @@ export const AboutMe: FC<Props> = props => {
                     <p className="text-300">{t('home:computer_science_description')}</p>
                   </div>
                   <div className="flex flex-col w-12 space-y-1 sm:w-20 xl:w-28">
-                    <span className="text-xl font-medium text-900">30%</span>
+                    <span className="text-xl font-medium text-900">20%</span>
                     <span className="flex items-center h-4 rounded-full bg-300">
-                      <span className="h-3 ml-px rounded-full w-3/10 bg-900"></span>
+                      <span className="w-1/5 h-3 ml-px rounded-full bg-900"></span>
                     </span>
                   </div>
                 </div>
-
-                {/* <div className="flex items-center space-x-4">
-                  <div className="flex-none hidden w-20 h-20 p-5 mx-2 rounded-full sm:block bg-500">
-                    <span className="w-full fill-current text-100">
-                      <DDDesignerIcon />
-                    </span>
-                  </div>
-                  <div className="flex-1 space-y-2 text-left">
-                    <p className="space-x-2 text-lg font-medium">
-                      <span>3D Designer</span>
-                    </p>
-                    <p className="text-300">{t('home:3d_designer_description')}</p>
-                  </div>
-                  <div className="flex flex-col w-12 space-y-1 sm:w-20 xl:w-28">
-                    <span className="text-xl font-medium text-900">10%</span>
-                    <span className="flex items-center h-4 rounded-full bg-300">
-                      <span className="w-2/12 h-3 ml-px rounded-full bg-900"></span>
-                    </span>
-                  </div>
-                </div> */}
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="space-y-8">
-          <h3 className="text-2xl font-bold lg:text-4xl">{t('home:more_about_me')}</h3>
-          <div className="flex justify-between max-w-md mx-auto">
-            <Link href="/#activity">
-              <div className="flex flex-col items-center space-y-1 cursor-pointer">
-                <span className="w-8 fill-current text-300">
-                  <HistoryIcon />
-                </span>
-                <span>{t('header:activity')}</span>
-              </div>
-            </Link>
-            <Link href="/portfolio">
-              <div className="flex flex-col items-center space-y-1 cursor-pointer text-primary-500">
-                <span className="w-8 fill-current sm:w-10">
-                  <PortfolioIcon />
-                </span>
-                <span>{t('header:portfolio')}</span>
-              </div>
-            </Link>
-            <Link href="/#timeline">
-              <div className="flex flex-col items-center space-y-1 cursor-pointer">
-                <span className="w-8 fill-current text-300">
-                  <TimelineIcon />
-                </span>
-                <span>{t('header:timeline')}</span>
-              </div>
-            </Link>
           </div>
         </div>
       </div>

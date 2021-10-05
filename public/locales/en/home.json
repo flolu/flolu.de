@@ -1,7 +1,7 @@
 {
   "title": "I'm Flo",
   "tagline": "Computer science student, programmer, startupper and fitness-addicted.",
-  "stalk_me": "Stalk me",
+  "support_me": "Support me",
   "scroll_down": "Scroll down",
   "about_me": "About me",
   "activity": "Activity",
@@ -9,7 +9,8 @@
   "contact_me": "Let's chat",
   "project": "Project",
   "focus": "Focus",
-  "drakery_description": "We are building a 3D platform. It's like Instagram, but with 3D models instead of photos. We also work on a product development and manufacturing platform.",
+  "drakery_description": "We are building a 3D platform. It's like Instagram, but with 3D models instead of photos.",
+  "3d_designer_description": "We also work on a product manufacturing platform.",
   "computer_science": "Computer Science",
   "computer_science_description": "I am studying in the 5th semester of my Bachelor degree.",
   "personal_life": "Personal life",

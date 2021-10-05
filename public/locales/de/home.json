@@ -1,7 +1,7 @@
 {
   "title": "Ich bin Flo",
   "tagline": "Informatik-Student, Programmierer, Startupper und sportsüchtig.",
-  "stalk_me": "Stalke mich",
+  "support_me": "Unterstütze mich",
   "scroll_down": "Scrolle runter",
   "about_me": "Über mich",
   "activity": "Aktivität",
@@ -9,7 +9,8 @@
   "contact_me": "Kontaktiere mich",
   "project": "Projekt",
   "focus": "Fokus",
-  "drakery_description": "Wir bauen eine 3D-Plattform auf. Es ist wie Instagram, nur mit 3D-Modellen anstatt Fotos. Wir arbeiten auch an einer 3D-Produkt-Entwicklungs- und Herstellungs-Plattform",
+  "drakery_description": "Wir bauen eine 3D-Plattform auf. Es ist wie Instagram, nur mit 3D-Modellen anstatt Fotos.",
+  "3d_designer_description": "Wir arbeiten auch an einer 3D-Produkt-Entwicklungs-Plattform.",
   "computer_science": "Informatik",
   "computer_science_description": "Ich studiere im fünften Semester meines Bachelor-Abschlusses Informatik.",
   "personal_life": "Persönliches Leben",

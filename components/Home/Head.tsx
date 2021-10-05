@@ -23,7 +23,7 @@ export function HomeHead() {
         </p>
         <Link href="#activity">
           <button className="flex items-center px-4 py-2 mt-8 space-x-2 text-lg font-medium rounded-lg lg:mt-12 lg:px-6 lg:py-3 lg:text-xl bg-primary-700 text-on-primary-300 focus:outline-none focus:ring-4 ring-offset-2 ring-primary-100">
-            <span>{t('home:stalk_me')}</span>
+            <span>{t('home:support_me')}</span>
             <span className="w-6 fill-current">
               <ArrowForwardIcon />
             </span>
@@ -35,7 +35,7 @@ export function HomeHead() {
         <Image
           className="rounded-full"
           alt="Florian Ludewig"
-          src="https://storage.googleapis.com/flolu-website/me/avatar3.jpg"
+          src="https://storage.googleapis.com/flolu-website/me/avatar4.jpg"
           layout="responsive"
           width={512}
           height={512}
@@ -48,7 +48,7 @@ export function HomeHead() {
             target="_blank"
             rel="noreferrer"
             href="https://github.com/flolu"
-            className="w-5 fill-current text-primary-300"
+            className="w-5 fill-current sm:w-7 text-primary-500"
           >
             <GithubIcon />
           </a>
@@ -56,7 +56,7 @@ export function HomeHead() {
             target="_blank"
             rel="noreferrer"
             href="https://instagram.com/flo.ludewig"
-            className="w-5 fill-current text-primary-300"
+            className="w-5 fill-current sm:w-7 text-primary-500"
           >
             <InstagramIcon />
           </a>
@@ -64,7 +64,7 @@ export function HomeHead() {
             target="_blank"
             rel="noreferrer"
             href="https://www.youtube.com/c/flolu"
-            className="w-5 fill-current text-primary-300"
+            className="w-5 fill-current sm:w-7 text-primary-500"
           >
             <YouTubeIcon />
           </a>
