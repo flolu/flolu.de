@@ -29,7 +29,7 @@ export const AppearanceProvider: FunctionComponent = ({children}) => {
   }
 
   if (!isServer()) {
-    document.body.classList.forEach(value => document.body.classList.remove(value))
+    document.body.className = ''
     document.body.classList.add(`theme-${theme}`)
   }
 

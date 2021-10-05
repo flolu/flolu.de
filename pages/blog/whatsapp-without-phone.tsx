@@ -42,7 +42,7 @@ const Post: FC<Props> = () => {
 
       <Header />
 
-      <main className="max-w-6xl px-4 mx-auto space-y-8 sm:space-y-12 sm:px-8 font-serif">
+      <main className="max-w-6xl px-4 mx-auto space-y-8 font-serif sm:space-y-12 sm:px-8">
         <a href="https://youtu.be/72WyCIWO3MQ">
           <Image
             src="https://storage.googleapis.com/flolu-website/blog/whatsapp-without-phone/thumbnail.png"
@@ -52,12 +52,12 @@ const Post: FC<Props> = () => {
         </a>
         <div className="max-w-2xl mx-auto">
           <h1 className="text-2xl font-bold sm:text-5xl">{title}</h1>
-          <div className="flex items-center space-x-4 my-8">
-            <div className="rounded-full w-16">
+          <div className="flex items-center my-8 space-x-4">
+            <div className="w-16 rounded-full">
               <Image
                 className="rounded-full"
                 alt="Florian Ludewig"
-                src="https://storage.googleapis.com/flolu-website/me/avatar1.jpg"
+                src="https://storage.googleapis.com/flolu-website/me/avatar4.jpg"
                 layout="responsive"
                 width={512}
                 height={512}
@@ -69,7 +69,7 @@ const Post: FC<Props> = () => {
             </div>
           </div>
 
-          <div className="mb-16 text-lg text-900 leading-loose space-y-16">
+          <div className="mb-16 space-y-16 text-lg leading-loose text-900">
             <section>
               <p>
                 Ever tried to use WhatsApp without your phone? Currently that&apos;s not possible.
@@ -86,7 +86,7 @@ const Post: FC<Props> = () => {
             </section>
 
             <section>
-              <h2 className="font-bold text-2xl mb-4">1. Android Emulator</h2>
+              <h2 className="mb-4 text-2xl font-bold">1. Android Emulator</h2>
               <p>
                 To do this we will be running a full Android system on our Linux machine.
                 That&apos;s possible using an open source software called{' '}
@@ -95,7 +95,7 @@ const Post: FC<Props> = () => {
                 </a>
                 .
               </p>
-              <pre className="bg-300 py-2 px-4 rounded-sm my-2">
+              <pre className="px-4 py-2 my-2 rounded-sm bg-300">
                 sudo snap install --devmode --beta anbox
               </pre>
               <p>
@@ -105,7 +105,7 @@ const Post: FC<Props> = () => {
             </section>
 
             <section>
-              <h2 className="font-bold text-2xl mb-4">2. Android Debug Bridge</h2>
+              <h2 className="mb-4 text-2xl font-bold">2. Android Debug Bridge</h2>
               <p>
                 To install apps on our emulated Android system we need the{' '}
                 <a
@@ -116,11 +116,11 @@ const Post: FC<Props> = () => {
                 </a>
                 .
               </p>
-              <pre className="bg-300 py-2 px-4 rounded-sm my-2">sudo apt install adb</pre>
+              <pre className="px-4 py-2 my-2 rounded-sm bg-300">sudo apt install adb</pre>
             </section>
 
             <section>
-              <h2 className="font-bold text-2xl mb-4">3. Install WhatsApp</h2>
+              <h2 className="mb-4 text-2xl font-bold">3. Install WhatsApp</h2>
               <p>
                 Almost done! Download the latest APK of WhatsApp{' '}
                 <a href="https://www.whatsapp.com/android" className="underline">
@@ -129,13 +129,13 @@ const Post: FC<Props> = () => {
                 .
               </p>
               <p>And install it by running the following command.</p>
-              <pre className="bg-300 py-2 px-4 rounded-sm my-2">
+              <pre className="px-4 py-2 my-2 rounded-sm bg-300">
                 adb install ~/Downloads/WhatsApp.apk
               </pre>
             </section>
 
             <section>
-              <h2 className="font-bold text-2xl mb-4">4. Setup WhatsApp</h2>
+              <h2 className="mb-4 text-2xl font-bold">4. Setup WhatsApp</h2>
               <p>
                 Simply go through the setup wizard. You will need to verify your phone number by
                 entering a code that&apos;s sent to you via SMS.
@@ -144,7 +144,7 @@ const Post: FC<Props> = () => {
             </section>
 
             <section>
-              <h2 className="font-bold text-2xl mb-4">Limitations</h2>
+              <h2 className="mb-4 text-2xl font-bold">Limitations</h2>
               <ul>
                 <li>
                   You can only use WhatsApp on one device. Either computer or phone. At least until

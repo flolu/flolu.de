@@ -13,19 +13,8 @@ export function Timeline() {
       <div className="max-w-xl mx-auto space-y-8 md:max-w-2xl">
         <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
           <span>2021</span>
-          <span className="w-full h-px bg-500"></span>
         </h2>
         <ul className="space-y-8">
-          <li className="flex space-x-2">
-            <div className="flex-none w-6">
-              <span className="fill-current text-primary-300">
-                <CheckRoundIcon />
-              </span>
-            </div>
-            <div className="space-y-2">
-              <p className="text-sm font-medium sm:text-base">{t('timeline:cs_4th_semester')}</p>
-            </div>
-          </li>
           <li className="flex space-x-2">
             <div className="flex-none w-6">
               <span className="fill-current text-primary-300">
@@ -58,14 +47,15 @@ export function Timeline() {
               </span>
             </div>
             <div className="space-y-2">
-              <p className="text-sm font-medium sm:text-base">{t('timeline:cs_3rd_semester')}</p>
+              <p className="text-sm font-medium sm:text-base">
+                {t('timeline:cs_3rd_4th_semester')}
+              </p>
             </div>
           </li>
         </ul>
 
         <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
           <span>2020</span>
-          <span className="w-full h-px bg-500"></span>
         </h2>
         <ul className="space-y-8">
           <li className="flex space-x-2">
@@ -206,7 +196,6 @@ export function Timeline() {
 
         <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
           <span>2019</span>
-          <span className="w-full h-px bg-500"></span>
         </h2>
         <ul className="space-y-8">
           <li className="flex space-x-2">
@@ -297,7 +286,6 @@ export function Timeline() {
         <div className="space-y-8">
           <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
             <span>2018</span>
-            <span className="w-full h-px bg-500"></span>
           </h2>
           <ul className="space-y-8">
             <li className="flex space-x-2">
@@ -384,7 +372,6 @@ export function Timeline() {
 
           <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
             <span>{t('timeline:before')}</span>
-            <span className="w-full h-px bg-500"></span>
           </h2>
           <ul className="space-y-8">
             <li className="flex space-x-2">
@@ -526,7 +513,6 @@ export function Timeline() {
 
           <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
             <span className="whitespace-nowrap">2001</span>
-            <span className="w-full h-px bg-500"></span>
           </h2>
           <ul className="space-y-8">
             <li className="flex space-x-2">
