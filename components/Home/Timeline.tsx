@@ -97,14 +97,14 @@ export function Timeline() {
                 {t('timeline:started_3d_designer_desc')}
               </p>
               <a
-                href="https://www.iesgmbh.com"
+                href="https://github.com/3ddesigner"
                 rel="noreferrer"
                 className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
               >
                 <span className="w-5 fill-current">
                   <LinkIcon />
                 </span>
-                <span>IES GmbH</span>
+                <span>3D Designer</span>
               </a>
             </div>
           </li>
