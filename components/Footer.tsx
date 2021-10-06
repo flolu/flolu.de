@@ -70,6 +70,9 @@ export function Footer() {
                 <Link href="/portfolio">{t('footer:portfolio')}</Link>
               </li>
               <li className="hover:underline">
+                <a href="https://github.com/sponsors/flolu">{t('footer:support_me')}</a>
+              </li>
+              <li className="hover:underline">
                 <Link href="/legal">{t('footer:legal')}</Link>
               </li>
               <li className="hover:underline">
