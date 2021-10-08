@@ -157,6 +157,14 @@ export function Footer() {
               >
                 Telegram
               </a>
+              <a
+                className="hover:underline"
+                target="_blank"
+                rel="noreferrer"
+                href="https://open.spotify.com/user/0ur46hp96d1mtla04jkiogpwo?si=1def2b48cb904e84"
+              >
+                Spotify
+              </a>
             </ul>
           </div>
         </div>
