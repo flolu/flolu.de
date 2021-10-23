@@ -7,10 +7,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import path from 'path'
 import {FC} from 'react'
+import {useTranslation} from 'react-i18next'
 import ReactMarkdown from 'react-markdown'
 
 import {Footer} from '@/components/Footer'
 import {Header} from '@/components/Header'
+import {LeftArrowIcon} from '@/components/Icons/LeftArrowIcon'
 
 interface Props {
   locale: string
@@ -21,6 +23,7 @@ interface Props {
 const Post: FC<Props> = ({data, content}) => {
   const {title, url, description, date, locale, minutesToRead} = data
   const {imageUrl, imageWidth, imageHeight} = data
+  const {t} = useTranslation()
 
   return (
     <>
@@ -107,6 +110,15 @@ const Post: FC<Props> = ({data, content}) => {
             >
               {content}
             </ReactMarkdown>
+
+            <div className="flex items-center mt-16 space-x-2 text-primary-500">
+              <span className="w-6 fill-current">
+                <LeftArrowIcon />
+              </span>
+              <Link href="/blog">
+                <a className="text-xl font-bold">{t('blog:all_posts')}</a>
+              </Link>
+            </div>
           </div>
         </div>
       </main>
@@ -122,7 +134,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async props => {
-  const namespaces = ['header', 'footer']
+  const namespaces = ['header', 'footer', 'blog']
   const locale = props.locale || 'en'
   const translations = await serverSideTranslations(locale, namespaces)
 
