@@ -61,9 +61,27 @@ module.exports = {
   },
   theme: {
     fontFamily: {
-      sans: ['Poppins', 'sans-serif'],
-      serif: ['Noto Serif JP', 'serif'],
-      mono: ['Roboto Mono', 'monospace'],
+      sans: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Segoe WPC',
+        'Segoe UI',
+        'system-ui',
+        'Ubuntu',
+        'Droid Sans',
+        'sans-serif',
+      ],
+      mono: [
+        'SF Mono',
+        'Monaco',
+        'Menlo',
+        'Consolas',
+        'Ubuntu Mono',
+        'Liberation Mono',
+        'DejaVu Sans Mono',
+        'Courier New',
+        'monospace',
+      ],
     },
     // colors: {},
     extend: {

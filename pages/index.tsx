@@ -74,7 +74,7 @@ const Home: FC<Props> = props => {
         ]}
       />
 
-      <Header spacer={false} />
+      <Header spaceBelow={false} />
       <div className="h-24 md:hidden"></div>
 
       <main className="mb-8 space-y-24 sm:mb-16 sm:space-y-32">

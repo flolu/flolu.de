@@ -37,8 +37,8 @@ export async function getYouTubeViews() {
       return accumulator + views
     }, 0)
   } catch (e) {
-    // Fallback, manually calculated (Jun 11, 2021)
-    return 677542
+    // Fallback, manually calculated (Oct 23, 2021)
+    return 90756 + 241935 + 365958
   }
 }
 

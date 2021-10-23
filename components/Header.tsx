@@ -1,6 +1,6 @@
 import {useTranslation} from 'next-i18next'
 import Link from 'next/link'
-import {useEffect, useRef, useState} from 'react'
+import {FC, useEffect, useRef, useState} from 'react'
 
 import {Themes, useAppearance} from '@/contexts//AppearanceContext'
 import {DarkModeIcon} from '@/icons/DarkModeIcon'
@@ -8,11 +8,11 @@ import {LightModeIcon} from '@/icons/LightModeIcon'
 import {classNames} from '@/lib/class-names'
 
 interface Props {
-  spacer?: boolean
+  spaceBelow?: boolean
+  showLinks?: boolean
 }
 
-export const Header = (props: Props) => {
-  const spacer = props.spacer === undefined ? true : props.spacer
+export const Header: FC<Props> = ({spaceBelow, showLinks}) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const topAnchorRef = useRef<HTMLDivElement>(null)
   const {t} = useTranslation()
@@ -41,7 +41,7 @@ export const Header = (props: Props) => {
 
   return (
     <>
-      {spacer && <div className="h-24"></div>}
+      {(spaceBelow === undefined || !!spaceBelow) && <div className="h-24"></div>}
       <div className="absolute top-8" ref={topAnchorRef}></div>
       <nav className="fixed top-0 z-10 w-full bg-50-backdrop backdrop-filter backdrop-blur-lg">
         <div
@@ -58,21 +58,26 @@ export const Header = (props: Props) => {
 
           <div className="flex-1"></div>
 
-          <div className="hidden ml-auto sm:block">
-            <Link href="/#about-me">
-              <a className="hover:text-900">{t('header:about_me')}</a>
-            </Link>
-          </div>
-          <div className="hidden md:block">
-            <Link href="/#timeline">
-              <a className="hover:text-900">{t('header:timeline')}</a>
-            </Link>
-          </div>
-          <div className="hidden md:block">
-            <Link href="/portfolio">
-              <a className="hover:text-900">{t('header:portfolio')}</a>
-            </Link>
-          </div>
+          {(showLinks === undefined || !!showLinks) && (
+            <>
+              <div className="hidden ml-auto sm:block">
+                <Link href="/#about-me">
+                  <a className="hover:text-900">{t('header:about_me')}</a>
+                </Link>
+              </div>
+              <div className="hidden md:block">
+                <Link href="/#timeline">
+                  <a className="hover:text-900">{t('header:timeline')}</a>
+                </Link>
+              </div>
+              <div className="hidden md:block">
+                <Link href="/portfolio">
+                  <a className="hover:text-900">{t('header:portfolio')}</a>
+                </Link>
+              </div>
+            </>
+          )}
+
           <span className="w-6 cursor-pointer fill-current" onClick={onSwitchTheme}>
             {appearance.theme === Themes.Light && <DarkModeIcon />}
             {appearance.theme === Themes.Dark && <LightModeIcon />}
