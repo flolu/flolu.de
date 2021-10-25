@@ -50,7 +50,6 @@ const Home: FC<Props> = props => {
             },
           ],
         }}
-        twitter={{handle: '@floludewig', site: '@floludewig', cardType: 'summary'}}
         languageAlternates={[
           {hrefLang: 'en', href: 'https://flolu.de/en'},
           {hrefLang: 'de', href: 'https://flolu.de/de'},
@@ -65,12 +64,9 @@ const Home: FC<Props> = props => {
           'https://www.instagram.com/flo.ludewig',
           'https://www.youtube.com/c/flolu',
           'https://github.com/flolu',
-          'https://www.strava.com/athletes/flolu',
-          'https://www.linkedin.com/in/florian-ludewig',
           'https://stackoverflow.com/users/8586803',
           'https://unsplash.com/@flolu',
           'https://t.me/flolu',
-          'https://twitter.com/floludewig',
         ]}
       />
 

@@ -30,7 +30,6 @@ const Portfolio: FC<Props> = ({locale}) => {
         description={description}
         canonical={url}
         openGraph={{url, title, description, locale}}
-        twitter={{handle: '@floludewig', site: '@floludewig', cardType: 'summary'}}
         languageAlternates={[
           {hrefLang: 'en', href: 'https://flolu.de/en/portfolio'},
           {hrefLang: 'de', href: 'https://flolu.de/de/portfolio'},

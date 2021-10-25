@@ -24,19 +24,22 @@ export function Footer() {
             <li className="hover:underline">
               <Link href="/#timeline">{t('footer:timeline')}</Link>
             </li>
-          </ul>
-        </div>
-        <div className="w-full lg:w-1/3">
-          <h2 className="mb-4 font-bold tracking-wide text-900">{t('footer:random')}</h2>
-          <ul className="mb-10 space-y-2">
             <li className="hover:underline">
               <Link href="/blog">{t('footer:blog')}</Link>
             </li>
             <li className="hover:underline">
               <Link href="/portfolio">{t('footer:portfolio')}</Link>
             </li>
+          </ul>
+        </div>
+        <div className="w-full lg:w-1/3">
+          <h2 className="mb-4 font-bold tracking-wide text-900">{t('footer:random')}</h2>
+          <ul className="mb-10 space-y-2">
             <li className="hover:underline">
               <a href="https://github.com/sponsors/flolu">{t('footer:support_me')}</a>
+            </li>
+            <li className="hover:underline">
+              <Link href="/lifestyle">{t('footer:lifestyle')}</Link>
             </li>
             <li className="hover:underline">
               <Link href="/legal">{t('footer:legal')}</Link>

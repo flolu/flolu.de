@@ -60,11 +60,6 @@ export const Header: FC<Props> = ({spaceBelow, showLinks}) => {
 
           {(showLinks === undefined || !!showLinks) && (
             <>
-              <div className="hidden ml-auto sm:block">
-                <Link href="/#about-me">
-                  <a className="hover:text-900">{t('header:about_me')}</a>
-                </Link>
-              </div>
               <div className="hidden md:block">
                 <Link href="/#timeline">
                   <a className="hover:text-900">{t('header:timeline')}</a>
@@ -73,6 +68,11 @@ export const Header: FC<Props> = ({spaceBelow, showLinks}) => {
               <div className="hidden md:block">
                 <Link href="/portfolio">
                   <a className="hover:text-900">{t('header:portfolio')}</a>
+                </Link>
+              </div>
+              <div className="hidden md:block">
+                <Link href="/blog">
+                  <a className="hover:text-900">{t('header:blog')}</a>
                 </Link>
               </div>
             </>

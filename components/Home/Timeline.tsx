@@ -28,16 +28,6 @@ export function Timeline() {
               <p className="text-sm md:text-base text-300">
                 {t('timeline:learnt_freestyle_swimming_description')}
               </p>
-              <a
-                href="https://www.strava.com/athletes/69079803"
-                rel="noreferrer"
-                className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
-              >
-                <span className="w-5 fill-current">
-                  <LinkIcon />
-                </span>
-                <span>Strava</span>
-              </a>
             </div>
           </li>
           <li className="flex space-x-2">
