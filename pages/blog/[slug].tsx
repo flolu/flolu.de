@@ -78,9 +78,16 @@ const Post: FC<Props> = ({data, content}) => {
           <div className="mt-8 mb-16 text-lg leading-loose text-900">
             <ReactMarkdown
               components={{
-                code: ({children, ...props}) => {
+                code: ({children, inline, ...props}) => {
+                  if (inline)
+                    return (
+                      <pre className="inline-block px-2 mx-1 whitespace-pre-wrap text-primary-700 bg-100 ">
+                        <code {...props}>{children}</code>
+                      </pre>
+                    )
+
                   return (
-                    <pre className="w-full px-4 py-2 my-4 whitespace-pre-wrap rounded-md bg-300">
+                    <pre className="w-full px-4 py-2 mt-4 mb-8 whitespace-pre-wrap rounded-md bg-300">
                       <code {...props}>{children}</code>
                     </pre>
                   )

@@ -34,14 +34,17 @@ const Blog: NextPage<Props> = ({posts}) => {
               <Link key={index} href={`/blog/${post.slug}`}>
                 <a className="flex w-full h-40 space-y-2 sm:h-auto sm:flex-col">
                   <img
-                    src={post.imageUrl}
+                    src={post.previewImageUrl || post.imageUrl}
                     className="hidden h-24 rounded-lg sm:block sm:h-auto"
                   ></img>
                   <div className="space-y-2">
                     <h3 className="text-xl font-bold">{post.title}</h3>
                     <div className="flex space-x-4 sm:space-x-0">
-                      <img src={post.imageUrl} className="h-20 rounded sm:hidden"></img>
-                      <div>
+                      <img
+                        src={post.previewImageUrl || post.imageUrl}
+                        className="h-20 rounded sm:hidden"
+                      ></img>
+                      <div className="space-y-2">
                         <p className="overflow-hidden max-h-12 overflow-ellipsis">{post.excerpt}</p>
                         <p className="text-sm text-100">
                           {post.date} • {post.minutesToRead} min read

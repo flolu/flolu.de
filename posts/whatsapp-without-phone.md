@@ -7,6 +7,9 @@ excerpt: Ever tried to use WhatsApp without your phone? Currently that's not pos
 imageUrl: https://img.youtube.com/vi/72WyCIWO3MQ/maxresdefault.jpg
 imageWidth: 1280
 imageHeight: 720
+previewImageUrl: https://img.youtube.com/vi/72WyCIWO3MQ/maxresdefault.jpg
+previewImageWidth: 1280
+previewImageHeight: 720
 locale: en
 minutesToRead: 2
 ---
