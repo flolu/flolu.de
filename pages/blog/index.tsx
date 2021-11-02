@@ -64,9 +64,9 @@ const Blog: NextPage<Props> = ({posts}) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async ({locale}) => {
+export const getStaticProps: GetStaticProps = async () => {
   const namespaces = ['header', 'footer', 'blog']
-  const translations = await serverSideTranslations(locale || 'en', namespaces)
+  const translations = await serverSideTranslations('en', namespaces)
 
   const files = await fs.readdir(path.join('posts'))
   const posts = await Promise.all(

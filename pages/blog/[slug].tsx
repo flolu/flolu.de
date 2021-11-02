@@ -15,13 +15,12 @@ import {Header} from '@/components/Header'
 import {LeftArrowIcon} from '@/components/Icons/LeftArrowIcon'
 
 interface Props {
-  locale: string
   data: any
   content: string
 }
 
 const Post: FC<Props> = ({data, content}) => {
-  const {title, url, description, date, locale, minutesToRead} = data
+  const {title, url, description, date, minutesToRead} = data
   const {imageUrl, imageWidth, imageHeight} = data
   const {t} = useTranslation()
 
@@ -35,7 +34,7 @@ const Post: FC<Props> = ({data, content}) => {
           url,
           title,
           description,
-          locale,
+          locale: 'en',
           images: [
             {
               url: imageUrl,
@@ -136,8 +135,8 @@ const Post: FC<Props> = ({data, content}) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const files = await fs.readdir(path.join('posts'))
-  const paths = files.map(filename => ({params: {slug: filename.replace('.md', '')}}))
-  return {paths, fallback: false}
+  const paths = files.map(filename => ({params: {slug: filename.replace('.md', '')}, locale: 'en'}))
+  return {paths, fallback: true}
 }
 
 export const getStaticProps: GetStaticProps<Props> = async props => {
@@ -149,7 +148,7 @@ export const getStaticProps: GetStaticProps<Props> = async props => {
   const markdown = await fs.readFile(path.join('posts', `${slug}.md`))
   const {data, content} = matter(markdown)
 
-  return {props: {...translations, locale, data, content}}
+  return {props: {...translations, data, content}}
 }
 
 export default Post
