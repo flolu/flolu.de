@@ -21,9 +21,9 @@ export function HomeHead() {
         <p className="mt-4 leading-relaxed lg:mt-6 md:text-base lg:text-xl text-500">
           {t('home:tagline')}
         </p>
-        <Link href="#about-me">
+        <Link href="/support">
           <button className="flex items-center px-4 py-2 mt-8 space-x-2 text-lg font-medium rounded-lg lg:mt-12 lg:px-6 lg:py-3 lg:text-xl bg-primary-700 text-on-primary-300 focus:outline-none focus:ring-4 ring-offset-2 ring-primary-100">
-            <span>{t('home:what_i_do')}</span>
+            <span>{t('home:support_me')}</span>
             <span className="w-6 fill-current">
               <ArrowForwardIcon />
             </span>

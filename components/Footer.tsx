@@ -36,7 +36,7 @@ export function Footer() {
           <h2 className="mb-4 font-bold tracking-wide text-900">{t('footer:random')}</h2>
           <ul className="mb-10 space-y-2">
             <li className="hover:underline">
-              <a href="https://github.com/sponsors/flolu">{t('footer:support_me')}</a>
+              <Link href="/support">{t('footer:support_me')}</Link>
             </li>
             <li className="hover:underline">
               <Link href="/lifestyle">{t('footer:lifestyle')}</Link>

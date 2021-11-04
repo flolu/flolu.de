@@ -135,16 +135,17 @@ const Post: FC<Props> = ({data, content}) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const files = await fs.readdir(path.join('posts'))
-  const paths = files.map(filename => ({params: {slug: filename.replace('.md', '')}, locale: 'en'}))
-  return {paths, fallback: true}
+  const paths = files.map(filename => ({params: {slug: filename.replace('.md', '')}}))
+  return {paths, fallback: false}
 }
 
-export const getStaticProps: GetStaticProps<Props> = async props => {
+export const getStaticProps: GetStaticProps<Props> = async context => {
   const namespaces = ['header', 'footer', 'blog']
-  const locale = props.locale || 'en'
+  const locale = context.locale || 'en'
   const translations = await serverSideTranslations(locale, namespaces)
 
-  const slug = props.params?.slug as string
+  const slug = context.params?.slug as string
+
   const markdown = await fs.readFile(path.join('posts', `${slug}.md`))
   const {data, content} = matter(markdown)
 

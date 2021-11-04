@@ -31,7 +31,7 @@ const Blog: NextPage<Props> = ({posts}) => {
         <div className="grid gap-8 mx-auto sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, index) => {
             return (
-              <Link key={index} href={`/blog/${post.slug}`}>
+              <Link key={index} href={`/blog/${post.slug}`} locale="en">
                 <a className="flex w-full h-40 space-y-2 sm:h-auto sm:flex-col">
                   <img
                     src={post.previewImageUrl || post.imageUrl}
@@ -64,9 +64,10 @@ const Blog: NextPage<Props> = ({posts}) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async context => {
   const namespaces = ['header', 'footer', 'blog']
-  const translations = await serverSideTranslations('en', namespaces)
+  const locale = context.locale || 'en'
+  const translations = await serverSideTranslations(locale, namespaces)
 
   const files = await fs.readdir(path.join('posts'))
   const posts = await Promise.all(
