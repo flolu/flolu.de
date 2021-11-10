@@ -3,6 +3,7 @@ import matter from 'gray-matter'
 import {GetStaticProps, NextPage} from 'next'
 import {useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+import {NextSeo} from 'next-seo'
 import Link from 'next/link'
 import path from 'path'
 
@@ -15,9 +16,12 @@ interface Props {
 
 const Blog: NextPage<Props> = ({posts}) => {
   const {t} = useTranslation()
+  const title = t('footer:blog')
+  const url = `https://flolu.de/blog`
 
   return (
     <>
+      <NextSeo title={title} canonical={url} openGraph={{url, title}} />
       <Header />
 
       <main

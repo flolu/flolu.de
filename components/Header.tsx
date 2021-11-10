@@ -66,11 +66,6 @@ export const Header: FC<Props> = ({spaceBelow, showLinks}) => {
                 </Link>
               </div>
               <div className="hidden md:block">
-                <Link href="/portfolio">
-                  <a className="hover:text-900">{t('header:portfolio')}</a>
-                </Link>
-              </div>
-              <div className="hidden md:block">
                 <Link href="/blog">
                   <a className="hover:text-900">{t('header:blog')}</a>
                 </Link>
