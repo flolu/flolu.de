@@ -12,6 +12,7 @@ import ReactMarkdown from 'react-markdown'
 
 import {Footer} from '@/components/Footer'
 import {Header} from '@/components/Header'
+import {ArrowForwardIcon} from '@/components/Icons/ArrowForwardIcon'
 import {LeftArrowIcon} from '@/components/Icons/LeftArrowIcon'
 
 interface Props {
@@ -77,16 +78,17 @@ const Post: FC<Props> = ({data, content}) => {
           <div className="mt-8 mb-16 text-lg leading-loose text-900">
             <ReactMarkdown
               components={{
-                code: ({children, inline, ...props}) => {
-                  if (inline)
+                code: ({children, ...props}) => {
+                  if (!props?.inline) {
                     return (
-                      <pre className="inline-block px-2 mx-1 whitespace-pre-wrap text-primary-700 bg-100 ">
+                      <pre className="w-full px-4 py-2 mt-4 mb-8 break-words whitespace-pre-wrap rounded-md bg-300">
                         <code {...props}>{children}</code>
                       </pre>
                     )
+                  }
 
                   return (
-                    <pre className="w-full px-4 py-2 mt-4 mb-8 whitespace-pre-wrap rounded-md bg-300">
+                    <pre className="inline-block px-2 mx-1 text-sm whitespace-pre-wrap text-primary-700 bg-100">
                       <code {...props}>{children}</code>
                     </pre>
                   )
@@ -112,12 +114,50 @@ const Post: FC<Props> = ({data, content}) => {
                     </h2>
                   )
                 },
+                ul: ({children, ...props}) => {
+                  return (
+                    <ul className="ml-4 list-disc list-inside" {...props}>
+                      {children}
+                    </ul>
+                  )
+                },
               }}
             >
               {content}
             </ReactMarkdown>
 
-            <div className="flex items-center mt-16 space-x-2 text-primary-500">
+            <div className="flex items-center my-8 mt-16 space-x-4">
+              <Link href="/">
+                <a className="flex items-center space-x-4">
+                  <div className="w-16 rounded-full">
+                    <Image
+                      className="rounded-full"
+                      alt="Florian Ludewig"
+                      src="https://storage.googleapis.com/flolu-website/me/avatar4.jpg"
+                      layout="responsive"
+                      width={512}
+                      height={512}
+                    />
+                  </div>
+                  <div className="space-y-1 font-sans">
+                    <p className="font-medium">Florian Ludewig</p>
+                    <p className="text-300">{date}</p>
+                  </div>
+                </a>
+              </Link>
+              <div className="flex-1"></div>
+
+              <Link href="/support">
+                <button className="flex items-center px-4 py-2 space-x-2 text-lg font-medium rounded-lg bg-primary-700 text-on-primary-300 focus:outline-none focus:ring-4 ring-offset-2 ring-primary-100">
+                  <span>{t('blog:support_author')}</span>
+                  <span className="w-6 fill-current">
+                    <ArrowForwardIcon />
+                  </span>
+                </button>
+              </Link>
+            </div>
+
+            <div className="flex items-center space-x-2 text-primary-500">
               <span className="w-6 fill-current">
                 <LeftArrowIcon />
               </span>

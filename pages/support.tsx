@@ -5,8 +5,6 @@ import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import {Footer} from '@/components/Footer'
 import {Header} from '@/components/Header'
 
-// NOW images on google cloud!
-
 export default function Legal() {
   const {t} = useTranslation()
 
@@ -33,7 +31,7 @@ export default function Legal() {
             <img
               src="https://storage.googleapis.com/flolu-website/support/xmr.png"
               alt="Monero (XMR) address"
-              className="w-40 rounded-lg"
+              className="rounded-lg"
             />
           </div>
         </div>

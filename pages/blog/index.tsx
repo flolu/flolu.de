@@ -45,7 +45,7 @@ const Blog: NextPage<Props> = ({posts}) => {
                         className="h-20 rounded sm:hidden"
                       ></img>
                       <div className="space-y-2">
-                        <p className="overflow-hidden max-h-12 overflow-ellipsis">{post.excerpt}</p>
+                        <p className="overflow-hidden overflow-ellipsis">{post.excerpt}</p>
                         <p className="text-sm text-100">
                           {post.date} • {post.minutesToRead} min read
                         </p>
