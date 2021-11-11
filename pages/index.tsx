@@ -21,6 +21,8 @@ interface Props {
   lastUpdated: string
 }
 
+// TODO latest posts on home page
+
 const Home: FC<Props> = props => {
   const {t} = useTranslation()
 

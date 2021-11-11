@@ -994,9 +994,9 @@ const Portfolio: FC<Props> = ({locale}) => {
   )
 }
 
-export const getStaticProps: GetStaticProps<Props> = async props => {
+export const getStaticProps: GetStaticProps<Props> = async context => {
   const namespaces = ['header', 'footer', 'portfolio']
-  const locale = props.locale || 'en'
+  const locale = context.locale || 'en'
   const translations = await serverSideTranslations(locale, namespaces)
   return {props: {...translations, locale}}
 }
