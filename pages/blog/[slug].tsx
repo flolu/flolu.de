@@ -121,6 +121,13 @@ const Post: FC<Props> = ({data, content}) => {
                     </ul>
                   )
                 },
+                ol: ({children, ...props}) => {
+                  return (
+                    <ul className="list-decimal list-inside" {...props}>
+                      {children}
+                    </ul>
+                  )
+                },
               }}
             >
               {content}

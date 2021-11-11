@@ -74,6 +74,7 @@ export const getStaticProps: GetStaticProps = async context => {
   const translations = await serverSideTranslations(locale, namespaces)
 
   const files = await fs.readdir(path.join('posts'))
+  // TODO sort posts by date
   const posts = await Promise.all(
     files.map(async filename => {
       const markdown = await fs.readFile(path.join('posts', filename))
