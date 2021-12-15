@@ -34,7 +34,7 @@ export function HomeHead() {
       <div className="w-56 md:w-full lg:max-w-sm xl:max-w-md">
         <Image
           className="rounded-full"
-          alt="Florian Ludewig"
+          alt=""
           src="https://storage.googleapis.com/flolu-website/me/avatar4.jpg"
           layout="responsive"
           width={512}

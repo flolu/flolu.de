@@ -56,7 +56,7 @@ const Post: FC<Props> = ({data, content}) => {
                 <div className="w-16 rounded-full">
                   <Image
                     className="rounded-full"
-                    alt="Florian Ludewig"
+                    alt=""
                     src="https://storage.googleapis.com/flolu-website/me/avatar4.jpg"
                     layout="responsive"
                     width={512}
@@ -64,7 +64,7 @@ const Post: FC<Props> = ({data, content}) => {
                   />
                 </div>
                 <div className="space-y-1 font-sans">
-                  <p className="font-medium">Florian Ludewig</p>
+                  <p className="font-medium">Flo</p>
                   <p className="text-300">{date}</p>
                 </div>
               </a>
@@ -139,7 +139,7 @@ const Post: FC<Props> = ({data, content}) => {
                   <div className="w-16 rounded-full">
                     <Image
                       className="rounded-full"
-                      alt="Florian Ludewig"
+                      alt=""
                       src="https://storage.googleapis.com/flolu-website/me/avatar4.jpg"
                       layout="responsive"
                       width={512}
@@ -147,7 +147,7 @@ const Post: FC<Props> = ({data, content}) => {
                     />
                   </div>
                   <div className="space-y-1 font-sans">
-                    <p className="font-medium">Florian Ludewig</p>
+                    <p className="font-medium">Flo</p>
                     <p className="text-300">{date}</p>
                   </div>
                 </a>

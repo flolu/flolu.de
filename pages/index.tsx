@@ -26,7 +26,7 @@ interface Props {
 const Home: FC<Props> = props => {
   const {t} = useTranslation()
 
-  const title = 'Florian Ludewig'
+  const title = 'Flo'
   const description = t('home:tagline')
   const url = `https://flolu.de/${props.locale}`
 
@@ -60,7 +60,7 @@ const Home: FC<Props> = props => {
 
       <SocialProfileJsonLd
         type="Person"
-        name="Florian Ludewig"
+        name="Flo"
         url={url}
         sameAs={[
           'https://www.instagram.com/flo.ludewig',
