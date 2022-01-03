@@ -34,9 +34,9 @@ If Resolve starts without problems you can go on to the next section. Otherwise,
 But don't worry, there is an amazing CLI tool which does all of the hard work for you. It's called [nvidia-auto-installer-for-fedora](https://github.com/t0xic0der/nvidia-auto-installer-for-fedora). To install NVIDIA GPU drivers, run those commands:
 
 ```bash
-sudo dnf install dnf-plugins-core -y
+sudo dnf install -y dnf-plugins-core
 sudo dnf copr enable t0xic0der/nvidia-auto-installer-for-fedora -y
-sudo dnf install nvautoinstall -y
+sudo dnf install -y nvautoinstall
 sudo nvautoinstall --rpmadd
 sudo nvautoinstall --driver
 ```
@@ -44,7 +44,7 @@ sudo nvautoinstall --driver
 Reboot your computer! Unfortunately, I was once again greeted with another error: "Unsupported GPU Processing Mode". To solve that you need to install `mesa-libGLU` like this:
 
 ```bash
-sudo dnf install mesa-libGLU
+sudo dnf install -y mesa-libGLU
 ```
 
 After that my DaVinci Resolve finally started working flawlessly. If you're still having trouble you can try starting the app from the terminal like this:
@@ -54,6 +54,14 @@ After that my DaVinci Resolve finally started working flawlessly. If you're stil
 ```
 
 Any errors will be logged in the console. Then you can dig into it and try to fix it yourself. Good luck my friend 😉
+
+## Fix audio playback lag
+
+In my case the audio playback had a significant delay by default. There is an easy fix:
+
+```bash
+sudo dnf install -y alsa-plugins-pulseaudio
+```
 
 ## Import MP4 videos
 
@@ -95,11 +103,12 @@ I recommend to following render settings:
 
 [Open Broadcaster Software](https://obsproject.com) is arguably the most popular video recording software. You can actually configure it to record in a file format that is supported by DaVinci Resolve. That definitely smoothens your video creation workflow. Here is how to do it:
 
-1. Open: `Settings` > `Output` > `Recording`
-2. Change `Type` to `Custom Output (FFmpeg)`
-3. Set `Container Format` to `mov`
-4. Set `Video Encoder` to `mpeg4`
-5. Set `Audio Encoder` to `pcm_s16le`
+1. Set: `Settings` > `Output` > `Output Mode` to `Advanced`
+1. Open: `Recording` tab
+1. Change `Type` to `Custom Output (FFmpeg)`
+1. Set `Container Format` to `mov`
+1. Set `Video Encoder` to `mpeg4`
+1. Set `Audio Encoder` to `pcm_s16le`
 
 The resulting `.mov` can be imported into DaVinci Resolve without any further work.
 
