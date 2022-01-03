@@ -35,7 +35,7 @@ export function HomeHead() {
         <Image
           className="rounded-full"
           alt=""
-          src="https://storage.googleapis.com/flolu-website/me/avatar4.jpg"
+          src="https://storage.googleapis.com/flolu-website/me/DSC_0769.jpg"
           layout="responsive"
           width={512}
           height={512}

@@ -42,9 +42,6 @@ export function Footer() {
               <Link href="/lifestyle">{t('footer:lifestyle')}</Link>
             </li>
             <li className="hover:underline">
-              <Link href="/legal">{t('footer:legal')}</Link>
-            </li>
-            <li className="hover:underline">
               <Link href="/sitemap.xml">Sitemap</Link>
             </li>
             <li>

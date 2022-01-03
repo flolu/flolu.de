@@ -64,11 +64,11 @@ export const AboutMe: FC<Props> = props => {
           <div className="w-64 md:w-1/3">
             <Image
               className="rounded-2xl"
-              src="https://storage.googleapis.com/flolu-website/me/avatar6.jpg"
+              src="https://storage.googleapis.com/flolu-website/me/DSC_9184.jpg"
               alt="Avatar of Flo"
               layout="responsive"
               width={512}
-              height={559}
+              height={512}
             />
           </div>
 
@@ -128,7 +128,7 @@ export const AboutMe: FC<Props> = props => {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="flex-none hidden w-20 h-20 p-5 mx-2 rounded-full sm:block bg-500">
+                  <div className="flex-none hidden w-24 h-24 p-5 rounded-full sm:block bg-500">
                     <span className="w-full fill-current text-100">
                       <LaughIcon />
                     </span>

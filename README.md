@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://flolu.de">
-    <img width="180px" height="auto" src="https://storage.googleapis.com/flolu-website/me/avatar7.png" />
+    <img width="180px" height="auto" src="https://storage.googleapis.com/flolu-website/me/DSC_0769.jpg" />
   </a>
   <br>
   <h1>flolu.de</h1>
@@ -9,7 +9,7 @@
 
 # Usage
 
-**Recommended Operating System**: Ubuntu 20.04 LTS
+**Recommended Operating System**: Linux
 
 **Setup**
 

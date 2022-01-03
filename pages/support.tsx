@@ -11,7 +11,7 @@ interface Props {
   locale: string
 }
 
-const Legal: FC<Props> = ({locale}) => {
+const Support: FC<Props> = ({locale}) => {
   const {t} = useTranslation()
   const title = t('footer:support_me')
   const url = `https://flolu.de/${locale}/support`
@@ -58,4 +58,4 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
   return {props: {...translations, locale}}
 }
 
-export default Legal
+export default Support
