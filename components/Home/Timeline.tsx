@@ -1,7 +1,6 @@
 import {useTranslation} from 'next-i18next'
 
 import {CheckRoundIcon} from '@/icons/CheckRoundIcon'
-import {LinkIcon} from '@/icons/LinkIcon'
 
 export function Timeline() {
   const {t} = useTranslation()
@@ -12,9 +11,142 @@ export function Timeline() {
       </div>
       <div className="max-w-xl mx-auto space-y-8 md:max-w-2xl">
         <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
+          <span>2022</span>
+        </h2>
+        <ul className="space-y-8">
+          <li className="flex space-x-2">
+            <div className="flex-none w-6">
+              <span className="fill-current text-primary-300">
+                <CheckRoundIcon />
+              </span>
+            </div>
+            <div className="space-y-2">
+              <p className="text-sm font-medium sm:text-base">{t('timeline:cs_5th_semester')}</p>
+            </div>
+          </li>
+          <li className="flex space-x-2">
+            <div className="flex-none w-6">
+              <span className="fill-current text-primary-300">
+                <CheckRoundIcon />
+              </span>
+            </div>
+            <div className="space-y-2">
+              <p className="text-sm font-medium sm:text-base">{t('timeline:started_meganero')}</p>
+              <div className="space-x-2">
+                <a
+                  href="https://www.meganero.com"
+                  rel="noreferrer"
+                  className="text-sm text-primary-700 hover:underline"
+                >
+                  Meganero
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
           <span>2021</span>
         </h2>
         <ul className="space-y-8">
+          <li className="flex space-x-2">
+            <div className="flex-none w-6">
+              <span className="fill-current text-primary-300">
+                <CheckRoundIcon />
+              </span>
+            </div>
+            <div className="space-y-2">
+              <p className="text-sm font-medium sm:text-base">
+                {t('timeline:learnt_about_monero')}
+              </p>
+              <p className="text-sm md:text-base text-300">
+                {t('timeline:learnt_about_monero_description')}
+              </p>
+              <div className="space-x-2">
+                <a
+                  href="https://www.getmonero.org"
+                  rel="noreferrer"
+                  className="text-sm text-primary-700 hover:underline"
+                >
+                  Monero
+                </a>
+              </div>
+            </div>
+          </li>
+          <li className="flex space-x-2">
+            <div className="flex-none w-6">
+              <span className="fill-current text-primary-300">
+                <CheckRoundIcon />
+              </span>
+            </div>
+            <div className="space-y-2">
+              <p className="text-sm font-medium sm:text-base">
+                {t('timeline:photorealistic_3d_scanning')}
+              </p>
+              <p className="text-sm md:text-base text-300">
+                {t('timeline:photorealistic_3d_scanning_description')}
+              </p>
+              <div className="space-x-2">
+                <a
+                  href="https://drakery.com/3d-scanning"
+                  rel="noreferrer"
+                  className="text-sm text-primary-700 hover:underline"
+                >
+                  Drakery 3D Scanning
+                </a>
+              </div>
+            </div>
+          </li>
+          <li className="flex space-x-2">
+            <div className="flex-none w-6">
+              <span className="fill-current text-primary-300">
+                <CheckRoundIcon />
+              </span>
+            </div>
+            <div className="space-y-2">
+              <p className="text-sm font-medium sm:text-base">{t('timeline:bullet_journal')}</p>
+              <p className="text-sm md:text-base text-300">
+                {t('timeline:bullet_journal_description')}
+              </p>
+              <div className="space-x-2">
+                <a
+                  href="https://bulletjournal.com"
+                  rel="noreferrer"
+                  className="text-sm text-primary-700 hover:underline"
+                >
+                  Bullet Journal
+                </a>
+              </div>
+            </div>
+          </li>
+          <li className="flex space-x-2">
+            <div className="flex-none w-6">
+              <span className="fill-current text-primary-300">
+                <CheckRoundIcon />
+              </span>
+            </div>
+            <div className="space-y-2">
+              <p className="text-sm font-medium sm:text-base">{t('timeline:youtube_videos')}</p>
+              <p className="text-sm md:text-base text-300">
+                {t('timeline:youtube_videos_description')}
+              </p>
+              <div className="space-x-2">
+                <a
+                  href="https://www.youtube.com/c/flolu"
+                  rel="noreferrer"
+                  className="text-sm text-primary-700 hover:underline"
+                >
+                  YouTube
+                </a>
+                <a
+                  href="https://odysee.com/$/invite/@flolu"
+                  rel="noreferrer"
+                  className="text-sm text-primary-700 hover:underline"
+                >
+                  Odysee
+                </a>
+              </div>
+            </div>
+          </li>
           <li className="flex space-x-2">
             <div className="flex-none w-6">
               <span className="fill-current text-primary-300">
@@ -63,7 +195,7 @@ export function Timeline() {
               </p>
               <div>
                 <a
-                  href="https://github.com/drakery3d"
+                  href="https://drakery.com"
                   rel="noreferrer"
                   className="text-sm text-primary-700 hover:underline"
                 >
@@ -109,10 +241,9 @@ export function Timeline() {
               <p className="text-sm md:text-base text-300">
                 {t('timeline:started_drakery_platform_desc')}
               </p>
-
               <div>
                 <a
-                  href="https://github.com/3ddesigner"
+                  href="https://drakery.com"
                   rel="noreferrer"
                   className="text-sm text-primary-700 hover:underline"
                 >
@@ -263,6 +394,26 @@ export function Timeline() {
             </div>
             <div className="space-y-2">
               <p className="text-sm font-medium sm:text-base">{t('timeline:high_school')}</p>
+            </div>
+          </li>
+          <li className="flex space-x-2">
+            <div className="flex-none w-6">
+              <span className="fill-current text-primary-300">
+                <CheckRoundIcon />
+              </span>
+            </div>
+            <div className="space-y-2">
+              <p className="text-sm font-medium sm:text-base">{t('timeline:linux_os')}</p>
+            </div>
+          </li>
+          <li className="flex space-x-2">
+            <div className="flex-none w-6">
+              <span className="fill-current text-primary-300">
+                <CheckRoundIcon />
+              </span>
+            </div>
+            <div className="space-y-2">
+              <p className="text-sm font-medium sm:text-base">{t('timeline:ice_bathing')}</p>
             </div>
           </li>
         </ul>
@@ -418,17 +569,17 @@ export function Timeline() {
               <div className="space-y-2">
                 <p className="text-sm font-medium sm:text-base">{t('timeline:paluten')}</p>
                 <p className="text-sm md:text-base text-300">{t('timeline:paluten_description')}</p>
+
                 <div className="space-x-4">
-                  <a
-                    href="https://youtu.be/y6QRGQhEYJI"
-                    rel="noreferrer"
-                    className="inline-flex items-center px-1 space-x-2 rounded-sm hover:bg-primary-100 hover:text-primary-900 bg-100 text-700"
-                  >
-                    <span className="w-5 fill-current">
-                      <LinkIcon />
-                    </span>
-                    <span>Paluten</span>
-                  </a>
+                  <div className="space-x-2">
+                    <a
+                      href="https://youtu.be/y6QRGQhEYJI"
+                      rel="noreferrer"
+                      className="text-sm text-primary-700 hover:underline"
+                    >
+                      Paluten
+                    </a>
+                  </div>
                 </div>
               </div>
             </li>
