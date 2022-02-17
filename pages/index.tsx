@@ -8,10 +8,10 @@ import {getStars} from '@/api/github-stars'
 import {getUnsplashViews} from '@/api/unsplash-views'
 import {getYouTubeViews} from '@/api/youtube-views'
 import {Footer} from '@/components/Footer'
-import {Header} from '@/components/Header'
 import {AboutMe} from '@/components/Home/AboutMe'
 import {HomeHead} from '@/components/Home/Head'
 import {Timeline} from '@/components/Home/Timeline'
+import {Navigation} from '@/components/Navigation'
 
 interface Props {
   locale: string
@@ -45,10 +45,10 @@ const Home: FC<Props> = props => {
           profile: {firstName: 'Florian', lastName: 'Ludewig', username: 'flolu', gender: 'Male'},
           images: [
             {
-              url: 'https://storage.googleapis.com/flolu-website/me/avatar4.jpg',
+              url: 'https://storage.googleapis.com/flolu-website/me/DSC_0769.jpg',
               width: 512,
               height: 512,
-              alt: 'Profile Photo',
+              alt: 'Florian Ludewig Profile Photo',
             },
           ],
         }}
@@ -72,7 +72,8 @@ const Home: FC<Props> = props => {
         ]}
       />
 
-      <Header spaceBelow={false} />
+      {/* <Header spaceBelow={false} /> */}
+      <Navigation />
       <div className="h-24 md:hidden"></div>
 
       <main className="mb-8 space-y-24 sm:mb-16 sm:space-y-32">
@@ -100,7 +101,7 @@ const Home: FC<Props> = props => {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async context => {
-  const namespaces = ['header', 'footer', 'home', 'timeline']
+  const namespaces = ['header', 'footer', 'home', 'timeline', 'common']
   const locale = context.locale || 'en'
 
   const [translations, githubStars, unsplashViews, youTubeViews] = await Promise.all([

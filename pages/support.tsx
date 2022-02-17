@@ -5,7 +5,7 @@ import {NextSeo} from 'next-seo'
 import {FC} from 'react'
 
 import {Footer} from '@/components/Footer'
-import {Header} from '@/components/Header'
+import {Navigation} from '@/components/Navigation'
 
 interface Props {
   locale: string
@@ -19,9 +19,9 @@ const Support: FC<Props> = ({locale}) => {
   return (
     <div>
       <NextSeo title={title} canonical={url} openGraph={{url, title}} />
-      <Header />
+      <Navigation />
 
-      <main className="max-w-4xl px-4 mx-auto mb-20 space-y-8 sm:space-y-12 sm:px-8">
+      <main className="max-w-4xl px-4 mx-auto mt-4 mb-20 space-y-8 sm:space-y-12 sm:px-8 sm:mt-8">
         <div className="flex flex-col items-center w-full max-w-xs mx-auto space-y-16">
           <div className="flex flex-col items-center">
             <a href="https://www.getmonero.org/">

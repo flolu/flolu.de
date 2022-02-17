@@ -11,9 +11,9 @@ import {useTranslation} from 'react-i18next'
 import ReactMarkdown from 'react-markdown'
 
 import {Footer} from '@/components/Footer'
-import {Header} from '@/components/Header'
 import {ArrowForwardIcon} from '@/components/Icons/ArrowForwardIcon'
 import {LeftArrowIcon} from '@/components/Icons/LeftArrowIcon'
+import {Navigation} from '@/components/Navigation'
 
 interface Props {
   data: any
@@ -45,9 +45,9 @@ const Post: FC<Props> = ({data, content}) => {
           ],
         }}
       />
-      <Header showLinks={false} />
+      <Navigation />
 
-      <main className="!max-w-6xl px-4 mx-auto space-y-8 sm:space-y-12 sm:px-8">
+      <main className="px-4 mx-auto mt-4 space-y-8 sm:mt-8 sm:space-y-12 sm:px-8">
         <div className="max-w-2xl mx-auto">
           <h1 className="text-2xl font-bold sm:text-4xl">{title}</h1>
           <div className="flex items-center my-8 space-x-4">

@@ -5,7 +5,7 @@ import {NextSeo} from 'next-seo'
 import {FC} from 'react'
 
 import {Footer} from '@/components/Footer'
-import {Header} from '@/components/Header'
+import {Navigation} from '@/components/Navigation'
 
 interface Props {
   locale: string
@@ -17,9 +17,9 @@ const InternalError: FC<Props> = () => {
   return (
     <div>
       <NextSeo title="500" />
-      <Header />
+      <Navigation />
 
-      <main className="max-w-4xl px-4 mx-auto space-y-8 sm:space-y-12 sm:px-8">
+      <main className="max-w-4xl px-4 mx-auto mt-4 space-y-8 sm:space-y-12 sm:px-8 sm:mt-8">
         <div className="space-y-2" style={{minHeight: '50vh'}}>
           <span className="text-lg font-medium text-100 sm:text-xl">500</span>
           <h1 className="text-2xl font-bold sm:text-5xl">{t('500:internal_error')}</h1>

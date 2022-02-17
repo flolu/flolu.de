@@ -1,11 +1,6 @@
 import {useTranslation} from 'next-i18next'
 import Link from 'next/link'
 
-import {GithubIcon} from './Icons/GithubIcon'
-import {InstagramIcon} from './Icons/InstagramIcon'
-import {YouTubeIcon} from './Icons/YouTubeIcon'
-import {LanguageSelect} from './LanguageSelect'
-
 export function Footer() {
   const {t} = useTranslation()
 
@@ -108,35 +103,6 @@ export function Footer() {
               StackOverflow
             </a>
           </ul>
-        </div>
-      </div>
-      <div className="flex justify-between w-full px-4 bg-primary-700 text-on-primary-700">
-        <LanguageSelect position="above" />
-        <div className="flex items-center space-x-4">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.instagram.com/flo.ludewig"
-            className="w-4 cursor-pointer fill-current"
-          >
-            <InstagramIcon />
-          </a>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.youtube.com/c/flolu"
-            className="w-4 cursor-pointer fill-current"
-          >
-            <YouTubeIcon />
-          </a>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://github.com/flolu"
-            className="w-4 cursor-pointer fill-current"
-          >
-            <GithubIcon />
-          </a>
         </div>
       </div>
     </footer>

@@ -8,7 +8,7 @@ import Link from 'next/link'
 import path from 'path'
 
 import {Footer} from '@/components/Footer'
-import {Header} from '@/components/Header'
+import {Navigation} from '@/components/Navigation'
 
 interface Props {
   posts: any[]
@@ -22,10 +22,10 @@ const Blog: NextPage<Props> = ({posts}) => {
   return (
     <>
       <NextSeo title={title} canonical={url} openGraph={{url, title}} />
-      <Header />
+      <Navigation />
 
       <main
-        className="max-w-4xl px-4 mx-auto mb-16 space-y-8 sm:space-y-12 sm:px-8"
+        className="max-w-4xl px-4 mx-auto mt-4 mb-16 space-y-8 sm:space-y-12 sm:px-8 sm:mt-8"
         style={{minHeight: '60vh'}}
       >
         <div className="space-y-2">

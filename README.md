@@ -13,13 +13,13 @@
 
 **Setup**
 
-- `yarn install`, install required dependencies
+- `npm install`, install required dependencies
 
 **Development**
 
-- `yarn dev`, start development server
-- `yarn build`, build project
-- `yarn start`, run project
+- `npm run dev`, start development server
+- `npm run build`, build project
+- `npm run start`, run project
 
 # Codebase
 

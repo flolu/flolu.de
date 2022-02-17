@@ -6,7 +6,7 @@ import Image from 'next/image'
 import {FC} from 'react'
 
 import {Footer} from '@/components/Footer'
-import {Header} from '@/components/Header'
+import {Navigation} from '@/components/Navigation'
 import {PortfolioCard} from '@/components/Portfolio/Card'
 import {GitHubRepository} from '@/components/Portfolio/GitHubRepository'
 import {SketchfabModel} from '@/components/Portfolio/SketchfabModel'
@@ -36,8 +36,8 @@ const Portfolio: FC<Props> = ({locale}) => {
         ]}
       />
 
-      <Header />
-      <main className="max-w-6xl px-2 mx-auto space-y-8 sm:space-y-32">
+      <Navigation />
+      <main className="max-w-6xl px-2 mx-auto mt-4 space-y-8 sm:space-y-32 sm:mt-8">
         <section>
           <span className="text-lg font-medium text-100 sm:text-xl">
             {t('portfolio:portfolio')}
