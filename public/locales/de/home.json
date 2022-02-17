@@ -1,24 +1,8 @@
 {
-  "title": "Ich bin Flo",
-  "tagline": "Informatik-Student, Programmierer, Startupper und sportsüchtig.",
-  "support_me": "Unterstütze mich",
-  "scroll_down": "Scrolle runter",
-  "about_me": "Über mich",
+  "tagline": "Startupper, Programmierer und sportsüchtig.",
   "activity": "Aktivität",
   "timeline": "Meine Story",
-  "contact_me": "Kontaktiere mich",
-  "project": "Projekt",
-  "focus": "Fokus",
-  "drakery_description": "Wir bauen eine 3D-Plattform auf. Es ist wie Instagram, nur mit 3D-Modellen anstatt Fotos.",
-  "3d_designer_description": "Wir arbeiten auch an einer 3D-Produkt-Entwicklungs-Plattform.",
-  "computer_science": "Informatik",
-  "computer_science_description": "Ich studiere im fünften Semester meines Bachelor-Abschlusses Informatik.",
-  "personal_life": "Persönliches Leben",
-  "personal_life_description": "YouTube-Videos produzieren, Kraftsport, Laufen, Schwimmen, Familie & Freunde, Fotografie, Kochen.",
-  "last_updated_at": "zuletzt aktualisiert",
-  "last_7_days": "Meine Woche",
   "youtube_views": "YouTube-Aufrufe",
   "unsplash_views": "Unsplash-Aufrufe",
-  "github_stars": "GitHub-Sterne",
-  "more_about_me": "Mehr über mich"
+  "github_stars": "GitHub-Sterne"
 }

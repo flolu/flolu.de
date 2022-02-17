@@ -5,14 +5,9 @@ module.exports = {
   generateRobotsTxt: true,
   exclude: ['/404', '/500', '/de/400', '/en/400', '/de/500', '/en/500'],
   transform: async (config, path) => {
-    let changefreq = 'weekly'
-    if (path === '/' || path === '/de' || path === '/en') {
-      changefreq = 'daily'
-    }
-
     return {
       loc: path,
-      changefreq,
+      changefreq: 'daily',
       priority: config.priority,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
       alternateRefs: config.alternateRefs ?? [],

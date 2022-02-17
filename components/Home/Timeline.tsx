@@ -6,10 +6,10 @@ export function Timeline() {
   const {t} = useTranslation()
   return (
     <section id="timeline">
-      <div className="mb-8 space-y-2 text-center">
-        <h2 className="text-4xl font-bold lg:text-6xl">{t('home:timeline')}</h2>
-      </div>
       <div className="max-w-xl mx-auto space-y-8 md:max-w-2xl">
+        <div className="mb-8 space-y-2">
+          <h2 className="text-4xl font-bold lg:text-6xl">{t('home:timeline')}</h2>
+        </div>
         <h2 className="flex items-center space-x-4 text-2xl font-bold lg:text-4xl">
           <span>2022</span>
         </h2>

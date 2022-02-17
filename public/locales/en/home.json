@@ -1,24 +1,8 @@
 {
-  "title": "I'm Flo",
-  "tagline": "Computer science student, programmer, startupper and fitness-addicted.",
-  "support_me": "Support me",
-  "scroll_down": "Scroll down",
-  "about_me": "About me",
+  "tagline": "Startupper, programmer and fitness-addicted.",
   "activity": "Activity",
   "timeline": "Timeline",
-  "contact_me": "Let's chat",
-  "project": "Project",
-  "focus": "Focus",
-  "drakery_description": "We are building a 3D platform. It's like Instagram, but with 3D models instead of photos.",
-  "3d_designer_description": "We also work on a product manufacturing platform.",
-  "computer_science": "Computer Science",
-  "computer_science_description": "I am studying in the 5th semester of my Bachelor degree.",
-  "personal_life": "Personal life",
-  "personal_life_description": "Making YouTube videos, working out, running, swimming, family & friends, photography, cooking.",
-  "last_updated_at": "last updated",
-  "last_7_days": "My past week",
   "youtube_views": "YouTube views",
   "unsplash_views": "Unsplash views",
-  "github_stars": "GitHub stars",
-  "more_about_me": "More about me"
+  "github_stars": "GitHub stars"
 }

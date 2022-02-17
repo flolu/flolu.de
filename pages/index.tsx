@@ -8,8 +8,8 @@ import {getStars} from '@/api/github-stars'
 import {getUnsplashViews} from '@/api/unsplash-views'
 import {getYouTubeViews} from '@/api/youtube-views'
 import {Footer} from '@/components/Footer'
-import {AboutMe} from '@/components/Home/AboutMe'
-import {HomeHead} from '@/components/Home/Head'
+import {Header} from '@/components/Home/Header'
+import {Statistics} from '@/components/Home/Statistics'
 import {Timeline} from '@/components/Home/Timeline'
 import {Navigation} from '@/components/Navigation'
 
@@ -22,6 +22,7 @@ interface Props {
 }
 
 // TODO latest posts on home page
+// TODO favs (music, songs, creators, videos, applications, ...)
 
 const Home: FC<Props> = props => {
   const {t} = useTranslation()
@@ -72,27 +73,20 @@ const Home: FC<Props> = props => {
         ]}
       />
 
-      {/* <Header spaceBelow={false} /> */}
       <Navigation />
-      <div className="h-24 md:hidden"></div>
+
+      <Header />
 
       <main className="mb-8 space-y-24 sm:mb-16 sm:space-y-32">
-        <section className="px-4 mx-auto max-w-7xl">
-          <HomeHead />
-        </section>
-
-        <section className="px-4 mx-auto max-w-7xl">
-          <AboutMe
-            githubStars={props.githubStars}
-            unsplashViews={props.unsplashViews}
-            youTubeViews={props.youTubeViews}
-            locale={props.locale}
-          />
-        </section>
-
-        <section className="px-4 mx-auto max-w-7xl">
+        <section className="px-4 mx-auto mt-32 lg:mt-40 max-w-7xl">
           <Timeline />
         </section>
+        <Statistics
+          githubStars={props.githubStars}
+          unsplashViews={props.unsplashViews}
+          youTubeViews={props.youTubeViews}
+          locale={props.locale}
+        />
       </main>
 
       <Footer />
