@@ -13,10 +13,11 @@ export function Navigation() {
       <nav className="flex items-center p-6">
         <Link href="/">
           <a className="flex items-center space-x-2 hover:cursor-pointer text-900">
-            {/* <span className="w-6 sm:w-8">
-              <DrakeryLogo />
-            </span> */}
-            <span className="text-lg font-bold sm:text-xl">Florian Ludewig</span>
+            <div className="flex items-center">
+              <span className="font-serif text-4xl font-bold text-primary-500">F</span>
+              <span className="font-serif text-4xl text-primary-300">L</span>
+            </div>
+            <span className="mt-1 text-lg font-bold sm:text-xl">flolu.de</span>
           </a>
         </Link>
         <div className="flex-1"></div>

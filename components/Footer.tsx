@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import {GithubIcon} from '../components/Icons/GithubIcon'
 import {InstagramIcon} from '../components/Icons/InstagramIcon'
+import {TelegramIcon} from './Icons/TelegramIcon'
 import {YouTubeIcon} from './Icons/YouTubeIcon'
 
 export function Footer() {
@@ -15,7 +16,11 @@ export function Footer() {
         <div className="flex-shrink-0 max-w-sm space-y-6 md:w-1/3 md:mx-0">
           <Link href="/">
             <a className="flex items-center space-x-4 hover:cursor-pointer text-900">
-              <span className="text-5xl font-bold">Florian Ludewig</span>
+              <div className="flex items-center">
+                <span className="font-serif text-4xl font-bold text-primary-500">F</span>
+                <span className="font-serif text-4xl text-primary-300">L</span>
+              </div>
+              <span className="mt-1 text-lg font-bold sm:text-xl">flolu.de</span>
             </a>
           </Link>
           <p className="text-xs">© {year} Florian Ludewig</p>
@@ -49,6 +54,16 @@ export function Footer() {
               role="link"
             >
               <GithubIcon />
+            </a>
+            <a
+              target="_blank"
+              href="https://t.me/flolu"
+              rel="noreferrer"
+              className="w-4 cursor-pointer fill-current hover:text-primary-500"
+              aria-label="GitHub"
+              role="link"
+            >
+              <TelegramIcon />
             </a>
           </div>
         </div>
@@ -123,6 +138,15 @@ export function Footer() {
               <li className="hover:text-700">
                 <a target="_blank" rel="noreferrer" href="https://stackoverflow.com/users/8586803">
                   StackOverflow
+                </a>
+              </li>
+              <li className="hover:text-700">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.linkedin.com/in/florian-ludewig"
+                >
+                  LinkedIn
                 </a>
               </li>
             </ul>

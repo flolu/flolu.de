@@ -1,7 +1,6 @@
 import {FC} from 'react'
 import {useTranslation} from 'react-i18next'
 
-import {DrakeryLogoNoColor} from '../Icons/DrakeryLogoNoColor'
 import {GithubIcon} from '../Icons/GithubIcon'
 import {InstagramIcon} from '../Icons/InstagramIcon'
 import {TelegramIcon} from '../Icons/TelegramIcon'
@@ -47,7 +46,7 @@ export const Header: FC = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center -mb-3 space-x-8 lg:-mb-6 sm:-mb-4 text-700">
+      <div className="flex items-center justify-center -mb-3 space-x-8 lg:-mb-5 sm:-mb-4 text-700">
         <a
           target="_blank"
           rel="noreferrer"
@@ -76,16 +75,6 @@ export const Header: FC = () => {
         >
           <span className="w-6 duration-100 ease-in-out fill-current sm:w-8 lg:w-10 hover:text-primary-500">
             <GithubIcon />
-          </span>
-        </a>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://drakery.com"
-          className="flex flex-col space-y-2"
-        >
-          <span className="w-6 duration-100 ease-in-out fill-current sm:w-8 lg:w-10 hover:text-primary-500">
-            <DrakeryLogoNoColor />
           </span>
         </a>
         <a
