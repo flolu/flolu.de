@@ -65,7 +65,9 @@ module.exports = {
       serif: ['Noto Serif JP', 'serif'],
       mono: ['Roboto Mono', 'monospace'],
     },
-    colors: {},
+    colors: {
+      current: 'currentColor',
+    },
     extend: {
       screens: {
         xs: '400px',
