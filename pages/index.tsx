@@ -27,7 +27,7 @@ interface Props {
 const Home: FC<Props> = props => {
   const {t} = useTranslation()
 
-  const title = 'Flo'
+  const title = 'Florian Ludewig'
   const description = t('home:tagline')
   const url = `https://flolu.de/${props.locale}`
 
