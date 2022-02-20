@@ -75,12 +75,6 @@ export function Footer() {
                 <Link href="/">{t('footer:home')}</Link>
               </li>
               <li className="hover:text-700">
-                <Link href="/#about-me">{t('footer:about_me')}</Link>
-              </li>
-              <li className="hover:text-700">
-                <Link href="/#timeline">{t('footer:timeline')}</Link>
-              </li>
-              <li className="hover:text-700">
                 <Link href="/blog">{t('footer:blog')}</Link>
               </li>
               <li className="hover:text-700">
@@ -93,9 +87,6 @@ export function Footer() {
             <ul className="mb-10 space-y-2 text-xs text-300">
               <li className="hover:text-700">
                 <Link href="/support">{t('footer:support_me')}</Link>
-              </li>
-              <li className="hover:text-700">
-                <Link href="/lifestyle">{t('footer:lifestyle')}</Link>
               </li>
               <li className="hover:text-700">
                 <Link href="/sitemap.xml">Sitemap</Link>

@@ -13,7 +13,8 @@ export const Statistics: FC<Props> = props => {
   const formatter = new Intl.NumberFormat(props.locale)
 
   return (
-    <section id="about-me">
+    <section className="max-w-xl px-4 mx-auto">
+      <h2 className="mb-8 text-6xl font-bold">{t('home:statistics')}</h2>
       <div className="mb-8 space-y-8 text-center sm:space-y-16">
         <div className="flex items-center justify-between max-w-xl mx-auto text-xs text-left sm:text-sm md:text-base">
           <a

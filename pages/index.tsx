@@ -78,9 +78,7 @@ const Home: FC<Props> = props => {
       <Header />
 
       <main className="mb-8 space-y-24 sm:mb-16 sm:space-y-32">
-        <section className="px-4 mx-auto max-w-7xl">
-          <Timeline />
-        </section>
+        <Timeline />
         <Statistics
           githubStars={props.githubStars}
           unsplashViews={props.unsplashViews}
