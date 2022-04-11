@@ -5,6 +5,26 @@ import {DrakeryLogo} from '../Icons/DrakeryLogo'
 import {LacosIcon} from '../Icons/LacosIcon'
 import {MoneroLogo} from '../Icons/MoneroLogo'
 
+export function BigProgressDot() {
+  return (
+    <div className="relative">
+      <span className="absolute w-4 h-4 -ml-2 rounded-full -top-2 ring-1 ring-primary-700 bg-primary-300">
+        <span className="absolute inline-flex w-full h-full rounded-full animate-ping bg-primary-700"></span>
+      </span>
+    </div>
+  )
+}
+
+export function ProgressDot() {
+  return (
+    <div className="relative">
+      <span className="absolute w-3 h-3 -ml-[0.35rem] rounded-full -top-[0.35rem] ring-1 ring-primary-700 bg-primary-300">
+        <span className="absolute inline-flex w-full h-full rounded-full animate-ping bg-primary-700"></span>
+      </span>
+    </div>
+  )
+}
+
 export function SmallDot() {
   return (
     <div className="relative">
@@ -22,11 +42,35 @@ export function Timeline() {
   return (
     <section id="timeline" className="max-w-xl mx-auto">
       <div className="h-32 border-l sm:h-40 border-background-900"></div>
-      <div className="space-y-8 border-l border-background-900">
+      <div className="space-y-12 border-l border-background-900">
         <div className="pb-4">
-          <BigDot />
+          <BigProgressDot />
           <div className="relative w-full ml-2 -mt-2 border-t border-background-900">
             <h2 className="absolute font-serif text-6xl font-bold right-2 bottom-2">2022</h2>
+          </div>
+        </div>
+
+        <div className="flex items-center space-x-4">
+          <ProgressDot />
+          <p>{t('timeline:cs_6th_semester')}</p>
+        </div>
+
+        <div className="flex items-center space-x-4">
+          <ProgressDot />
+          <div className="space-y-2">
+            <img src="/3d_scanner.webp" className="rounded"></img>
+            <p>{t('timeline:automated_3d_scanner')}</p>
+            <p className="flex items-center">
+              <a
+                href="https://drakery.com/3d-scanning"
+                className="underline decoration-2 font-bold decoration-[#63e46e] inline-flex items-center mr-1"
+              >
+                <span className="inline-block w-8 h-8 mr-2">
+                  <DrakeryLogo />
+                </span>
+                <span>Drakery 3D Scanning</span>
+              </a>
+            </p>
           </div>
         </div>
 
@@ -35,7 +79,7 @@ export function Timeline() {
           <p>{t('timeline:cs_5th_semester')}</p>
         </div>
 
-        <div className="flex items-center space-x-4">
+        {/* <div className="flex items-center space-x-4">
           <SmallDot />
           <div>
             <p className="flex items-center">
@@ -50,7 +94,7 @@ export function Timeline() {
               </a>
             </p>
           </div>
-        </div>
+        </div> */}
 
         <div className="pt-16 pb-4">
           <BigDot />
@@ -80,7 +124,7 @@ export function Timeline() {
         <div className="flex items-center space-x-4">
           <SmallDot />
           <div className="space-y-2">
-            <img src="/indian_vase_breakdown.webp" className=""></img>
+            <img src="/indian_vase_breakdown.webp" className="rounded"></img>
             <p>{t('timeline:photorealistic_3d_scanning_description')}</p>
             <p className="flex items-center">
               <a
@@ -114,6 +158,7 @@ export function Timeline() {
         <div className="flex items-center space-x-4">
           <SmallDot />
           <div className="space-y-2">
+            <img src="/fullstack_auth.webp" className="rounded"></img>
             <p>{t('timeline:youtube_videos_description')}</p>
             <p className="flex items-center">
               <a
