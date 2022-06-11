@@ -56,6 +56,21 @@ export function Timeline() {
         </div>
 
         <div className="flex items-center space-x-4">
+          <SmallDot />
+          <div className="space-y-2">
+            <p>{t('timeline:kletterwald_website')}</p>
+            <p className="flex items-center">
+              <a
+                href="https://www.kletterwald-saalburg.de/"
+                className="underline decoration-2 font-bold decoration-[#2c633d] inline-flex items-center mr-1"
+              >
+                <span>Kletterwald Saalburg</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center space-x-4">
           <ProgressDot />
           <div className="space-y-2">
             <img src="/3d_scanner.webp" className="rounded"></img>
