@@ -77,9 +77,6 @@ export function Footer() {
               <li className="hover:text-700">
                 <Link href="/blog">{t('footer:blog')}</Link>
               </li>
-              <li className="hover:text-700">
-                <Link href="/portfolio">{t('footer:portfolio')}</Link>
-              </li>
             </ul>
           </div>
           <div className="w-full md:w-1/2 lg:w-1/3">
