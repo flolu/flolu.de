@@ -57,7 +57,7 @@ const Post: FC<Props> = ({data, content}) => {
                   <Image
                     className="rounded-full"
                     alt=""
-                    src="https://storage.googleapis.com/flolu-website/me/DSC_0769.jpg"
+                    src="/avatar.webp"
                     layout="responsive"
                     width={512}
                     height={512}
@@ -140,7 +140,7 @@ const Post: FC<Props> = ({data, content}) => {
                     <Image
                       className="rounded-full"
                       alt=""
-                      src="https://storage.googleapis.com/flolu-website/me/DSC_0769.jpg"
+                      src="/avatar.webp"
                       layout="responsive"
                       width={512}
                       height={512}

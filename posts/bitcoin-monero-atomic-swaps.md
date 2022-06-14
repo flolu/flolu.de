@@ -4,10 +4,10 @@ description: A brand new technology called atomic swaps allow for trustless peer
 url: https://flolu.de/blog/bitcoin-monero-atomic-swaps
 date: Nov 10 2021
 excerpt: While Monero is facing more and more regulations and thus...
-imageUrl: https://storage.googleapis.com/flolu-website/blog/bitcoin-monero-atomic-swaps/xmr_btc_atomic_swaps.png
+imageUrl: /blog/xmr_btc_atomic_swaps.webp
 imageWidth: 1280
 imageHeight: 720
-previewImageUrl: https://storage.googleapis.com/flolu-website/blog/bitcoin-monero-atomic-swaps/xmr_btc_atomic_swaps_preview.png
+previewImageUrl: /blog/xmr_btc_atomic_swaps_preview.webp
 previewImageWidth: 320
 previewImageHeight: 180
 locale: en

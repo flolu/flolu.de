@@ -1,8 +1,4 @@
 <div align="center">
-  <a href="https://flolu.de">
-    <img width="180px" height="auto" src="https://storage.googleapis.com/flolu-website/me/DSC_0769.jpg" />
-  </a>
-  <br>
   <h1>flolu.de</h1>
   <p>My personal website</p>
 </div>

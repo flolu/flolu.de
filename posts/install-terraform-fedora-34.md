@@ -4,10 +4,10 @@ description: To install Terraform on Fedora 34 or later, you need to add the Has
 url: https://flolu.de/blog/install-terraform-fedora-34
 date: Oct 26 2021
 excerpt: After you've added the repository, you can simply install Terraform with...
-imageUrl: https://storage.googleapis.com/flolu-website/blog/install-terraform-fedora-34/terraform-fedora.png
+imageUrl: /blog/terraform-fedora.webp
 imageWidth: 1280
 imageHeight: 720
-previewImageUrl: https://storage.googleapis.com/flolu-website/blog/install-terraform-fedora-34/terraform-fedora-preview.png
+previewImageUrl: /blog/terraform-fedora-preview.webp
 previewImageWidth: 320
 previewImageHeight: 180
 locale: en

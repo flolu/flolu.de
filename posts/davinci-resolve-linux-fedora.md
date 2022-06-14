@@ -4,10 +4,10 @@ description: Installing and using DaVinci Resolve on Linux can be quite painful 
 url: https://flolu.de/blog/bitcoin-monero-atomic-swaps
 date: Nov 11 2021
 excerpt: DaVinci Resolve is one of the most powerful video editing software...
-imageUrl: https://storage.googleapis.com/flolu-website/blog/davinci-resolve-linux-fedora.png
+imageUrl: /blog/davinci-resolve-linux-fedora.webp
 imageWidth: 1280
 imageHeight: 720
-previewImageUrl: https://storage.googleapis.com/flolu-website/blog/davinci-resolve-linux-fedora-preview.png
+previewImageUrl: /blog/davinci-resolve-linux-fedora-preview.webp
 previewImageWidth: 320
 previewImageHeight: 180
 locale: en

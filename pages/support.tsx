@@ -37,11 +37,7 @@ const Support: FC<Props> = ({locale}) => {
             <code className="overflow-hidden font-mono text-lg break-all">
               862mLrhM6jQJDXPJ5pQHm9cYQXLESg4zXTFnRcvQeKAdXBJZBkTkajSQW3MXmeacCR9GZ3iNXXsn9jiTz5XNRe8C3fi3RmZ
             </code>
-            <img
-              src="https://storage.googleapis.com/flolu-website/support/xmr.png"
-              alt="Monero (XMR) address"
-              className="rounded-lg"
-            />
+            <img src="/xmr.png" alt="Monero (XMR) address" className="rounded-lg" />
           </div>
         </div>
       </main>

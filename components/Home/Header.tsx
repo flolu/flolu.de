@@ -31,7 +31,7 @@ export const Header: FC = () => {
           <div className="px-4 mx-auto w-80 sm:w-auto sm:max-w-sm">
             <img
               className="shadow-[#EA0B0B]/50 shadow-2xl rounded-full"
-              src="https://storage.googleapis.com/flolu-website/me/DSC_0769.jpg"
+              src="/avatar.webp"
               alt="Avatar of Florian Ludewig"
               width={512}
               height={512}
