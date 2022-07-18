@@ -3,7 +3,6 @@ import Link from 'next/link'
 
 import {GithubIcon} from '../components/Icons/GithubIcon'
 import {InstagramIcon} from '../components/Icons/InstagramIcon'
-import {TelegramIcon} from './Icons/TelegramIcon'
 import {YouTubeIcon} from './Icons/YouTubeIcon'
 
 export function Footer() {
@@ -55,16 +54,6 @@ export function Footer() {
             >
               <GithubIcon />
             </a>
-            <a
-              target="_blank"
-              href="https://t.me/flolu"
-              rel="noreferrer"
-              className="w-4 cursor-pointer fill-current hover:text-primary-500"
-              aria-label="GitHub"
-              role="link"
-            >
-              <TelegramIcon />
-            </a>
           </div>
         </div>
         <div className="flex flex-wrap flex-grow mt-10 -mb-10 md:pl-20 md:mt-0">
@@ -82,9 +71,6 @@ export function Footer() {
           <div className="w-full md:w-1/2 lg:w-1/3">
             <h2 className="mb-4 font-medium text-900">{t('footer:random')}</h2>
             <ul className="mb-10 space-y-2 text-xs text-300">
-              <li className="hover:text-700">
-                <Link href="/support">{t('footer:support_me')}</Link>
-              </li>
               <li className="hover:text-700">
                 <Link href="/sitemap.xml">Sitemap</Link>
               </li>
@@ -116,11 +102,6 @@ export function Footer() {
               <li className="hover:text-700">
                 <a target="_blank" rel="noreferrer" href="https://unsplash.com/@flolu">
                   Unsplash
-                </a>
-              </li>
-              <li className="hover:text-700">
-                <a target="_blank" rel="noreferrer" href="https://t.me/flolu">
-                  Telegram
                 </a>
               </li>
               <li className="hover:text-700">

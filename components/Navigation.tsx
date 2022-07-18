@@ -23,9 +23,6 @@ export function Navigation() {
         <div className="flex-1"></div>
         <div className="hidden sm:flex">
           <div className="space-x-6 text-sm font-bold text-300">
-            <Link href="/support">
-              <a className="hover:text-primary-500">{t('header:support_me')}</a>
-            </Link>
             <Link href="/blog">
               <a className="hover:text-primary-500">{t('header:blog')}</a>
             </Link>

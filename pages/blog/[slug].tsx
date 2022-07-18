@@ -11,7 +11,6 @@ import {useTranslation} from 'react-i18next'
 import ReactMarkdown from 'react-markdown'
 
 import {Footer} from '@/components/Footer'
-import {ArrowForwardIcon} from '@/components/Icons/ArrowForwardIcon'
 import {LeftArrowIcon} from '@/components/Icons/LeftArrowIcon'
 import {Navigation} from '@/components/Navigation'
 
@@ -153,15 +152,6 @@ const Post: FC<Props> = ({data, content}) => {
                 </a>
               </Link>
               <div className="flex-1"></div>
-
-              <Link href="/support">
-                <button className="flex items-center px-4 py-2 space-x-2 text-lg font-medium rounded-lg bg-primary-700 text-on-primary-300 focus:outline-none focus:ring-4 ring-offset-2 ring-primary-100">
-                  <span>{t('blog:support_author')}</span>
-                  <span className="w-6 fill-current">
-                    <ArrowForwardIcon />
-                  </span>
-                </button>
-              </Link>
             </div>
 
             <div className="flex items-center space-x-2 text-primary-500">

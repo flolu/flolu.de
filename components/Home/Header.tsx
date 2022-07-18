@@ -1,13 +1,63 @@
-import {FC} from 'react'
+import {FC, useState} from 'react'
 import {useTranslation} from 'react-i18next'
+
+import {classNames} from '@/lib/class-names'
 
 import {GithubIcon} from '../Icons/GithubIcon'
 import {InstagramIcon} from '../Icons/InstagramIcon'
-import {TelegramIcon} from '../Icons/TelegramIcon'
+import {MoneroLogo} from '../Icons/MoneroLogo'
+import {PirateChainIcon} from '../Icons/PirateChainIcon'
+import {SessionIcon} from '../Icons/SessionIcon'
 import {YouTubeIcon} from '../Icons/YouTubeIcon'
+
+interface CopyAddressProps {
+  href: string
+  address: string
+}
+
+const CopyAddress: FC<CopyAddressProps> = ({href, children, address}) => {
+  const [selected, setSelected] = useState(false)
+  const {t} = useTranslation()
+
+  return (
+    <div className="relative flex items-center space-x-2">
+      <a className="w-6" href={href}>
+        {children}
+      </a>
+
+      <button
+        className={classNames('overflow-hidden sm:w-72 w-48 overflow-ellipsis select-all')}
+        onFocus={() => {
+          setSelected(true)
+          navigator.clipboard.writeText(address)
+        }}
+        onBlur={() => {
+          setSelected(false)
+        }}
+      >
+        <span>{address}</span>
+      </button>
+
+      {selected && (
+        <div
+          role="tooltip"
+          className="absolute z-10 inline-block px-2 py-1 text-xs font-medium rounded-sm shadow -right-20 bg-900-backdrop backdrop-filter backdrop-blur-sm"
+        >
+          {t('home:copied')}
+        </div>
+      )}
+    </div>
+  )
+}
 
 export const Header: FC = () => {
   const {t} = useTranslation()
+
+  const xmrAddress =
+    '862mLrhM6jQJDXPJ5pQHm9cYQXLESg4zXTFnRcvQeKAdXBJZBkTkajSQW3MXmeacCR9GZ3iNXXsn9jiTz5XNRe8C3fi3RmZ'
+  const arrrAddress =
+    'zs13txsrhyve44dxxl5zr488p4rhu9n3cj4e2s3ke2cpxzlu799z08zm99q4h7lsfgc9lawkrkxpkl'
+  const sessionId = '056ce2b57aa4835cec536d8d745c563c0acdec7a25e6c3649fb4dbb01a47349c57'
 
   return (
     <header className="relative border-b border-background-300">
@@ -28,7 +78,7 @@ export const Header: FC = () => {
 
       <div className="max-w-sm pb-10 mx-auto space-y-4 sm:pb-16 lg:pb-20 sm:space-y-8 sm:max-w-5xl xl:max-w-8xl">
         <div className="space-y-2 sm:space-y-4">
-          <div className="px-4 mx-auto w-80 sm:w-auto sm:max-w-sm">
+          <div className="px-4 mx-auto w-72 sm:w-auto sm:max-w-sm">
             <img
               className="shadow-[#EA0B0B]/50 shadow-2xl rounded-full"
               src="/avatar.webp"
@@ -37,12 +87,28 @@ export const Header: FC = () => {
               height={512}
             ></img>
           </div>
-          <h1 className="text-5xl font-bold tracking-tight text-center sm:text-6xl lg:text-8xl text-900">
+
+          <h1 className="text-4xl font-bold tracking-tight text-center sm:text-6xl lg:text-8xl text-900">
             Florian Ludewig
           </h1>
-          <p className="max-w-3xl px-2 mx-auto font-serif text-xl text-center sm:text-xl text-700 lg:text-3xl">
+
+          <p className="max-w-3xl px-2 pb-4 mx-auto font-serif text-xl text-center sm:text-xl text-700 lg:text-3xl">
             {t('home:tagline')}
           </p>
+
+          <div className="w-48 mx-auto space-y-2 font-mono text-sm sm:w-72">
+            <CopyAddress href="https://www.getmonero.org" address={xmrAddress}>
+              <MoneroLogo />
+            </CopyAddress>
+
+            <CopyAddress href="https://pirate.black" address={arrrAddress}>
+              <PirateChainIcon />
+            </CopyAddress>
+
+            <CopyAddress href="https://getsession.org" address={sessionId}>
+              <SessionIcon />
+            </CopyAddress>
+          </div>
         </div>
       </div>
 
@@ -75,16 +141,6 @@ export const Header: FC = () => {
         >
           <span className="w-6 duration-100 ease-in-out fill-current sm:w-8 lg:w-10 hover:text-primary-500">
             <GithubIcon />
-          </span>
-        </a>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://t.me/flolu"
-          className="flex flex-col space-y-2"
-        >
-          <span className="w-6 duration-100 ease-in-out fill-current sm:w-8 lg:w-10 hover:text-primary-500">
-            <TelegramIcon />
           </span>
         </a>
       </div>
