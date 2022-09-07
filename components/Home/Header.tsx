@@ -3,6 +3,7 @@ import {useTranslation} from 'react-i18next'
 
 import {classNames} from '@/lib/class-names'
 
+import {DeroIcon} from '../Icons/DeroIcon'
 import {GithubIcon} from '../Icons/GithubIcon'
 import {InstagramIcon} from '../Icons/InstagramIcon'
 import {MoneroLogo} from '../Icons/MoneroLogo'
@@ -21,7 +22,7 @@ const CopyAddress: FC<CopyAddressProps> = ({href, children, address}) => {
 
   return (
     <div className="relative flex items-center space-x-2">
-      <a className="w-6" href={href}>
+      <a className="w-6" href={href} target="_blank" rel="noreferrer">
         {children}
       </a>
 
@@ -57,6 +58,7 @@ export const Header: FC = () => {
     '862mLrhM6jQJDXPJ5pQHm9cYQXLESg4zXTFnRcvQeKAdXBJZBkTkajSQW3MXmeacCR9GZ3iNXXsn9jiTz5XNRe8C3fi3RmZ'
   const arrrAddress =
     'zs13txsrhyve44dxxl5zr488p4rhu9n3cj4e2s3ke2cpxzlu799z08zm99q4h7lsfgc9lawkrkxpkl'
+  const deroAddress = 'dero1qyyza9es6qaty33xvemr4pwl6dk25ae6sdaw2uhnx7dlprlzc20azqq3waf9x'
   const sessionId = '056ce2b57aa4835cec536d8d745c563c0acdec7a25e6c3649fb4dbb01a47349c57'
 
   return (
@@ -103,6 +105,10 @@ export const Header: FC = () => {
 
             <CopyAddress href="https://pirate.black" address={arrrAddress}>
               <PirateChainIcon />
+            </CopyAddress>
+
+            <CopyAddress href="https://dero.io" address={deroAddress}>
+              <DeroIcon />
             </CopyAddress>
 
             <CopyAddress href="https://getsession.org" address={sessionId}>
