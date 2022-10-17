@@ -16,6 +16,7 @@
 - `npm run dev`, start development server
 - `npm run build`, build project
 - `npm run start`, run project
+- `npx ncu`, update npm packages
 
 # Codebase
 
