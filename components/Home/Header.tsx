@@ -1,4 +1,4 @@
-import {FC, useState} from 'react'
+import {FC, ReactNode, useState} from 'react'
 import {useTranslation} from 'react-i18next'
 
 import {classNames} from '@/lib/class-names'
@@ -14,6 +14,7 @@ import {YouTubeIcon} from '../Icons/YouTubeIcon'
 interface CopyAddressProps {
   href: string
   address: string
+  children?: ReactNode
 }
 
 const CopyAddress: FC<CopyAddressProps> = ({href, children, address}) => {

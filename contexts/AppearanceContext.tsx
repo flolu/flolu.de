@@ -1,4 +1,4 @@
-import {FunctionComponent, useContext, useEffect, useState} from 'react'
+import {FunctionComponent, ReactNode, useContext, useEffect, useState} from 'react'
 
 import {isServer} from '@/lib//ssr'
 
@@ -20,7 +20,11 @@ export function useAppearance() {
   return useContext(AppearanceContextImpl)
 }
 
-export const AppearanceProvider: FunctionComponent = ({children}) => {
+interface Props {
+  children?: ReactNode
+}
+
+export const AppearanceProvider: FunctionComponent<Props> = ({children}) => {
   const [theme, setThemeInternal] = useState<Themes>(Themes.Light)
 
   const setTheme = (theme: Themes) => {
