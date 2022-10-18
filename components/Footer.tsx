@@ -66,6 +66,12 @@ export function Footer() {
               <li className="hover:text-700">
                 <Link href="/blog">{t('footer:blog')}</Link>
               </li>
+              <li className="hover:text-700">
+                <Link href="/donations">{t('footer:donations')}</Link>
+              </li>
+              <li className="hover:text-700">
+                <Link href="/contact">{t('footer:contact')}</Link>
+              </li>
             </ul>
           </div>
           <div className="w-full md:w-1/2 lg:w-1/3">
@@ -77,6 +83,16 @@ export function Footer() {
               <li className="hover:text-700">
                 <a target="_blank" rel="noreferrer" href="https://github.com/flolu/flolu.de">
                   Source Code
+                </a>
+              </li>
+              <li className="hover:text-700">
+                <a target="_blank" rel="noreferrer" href="https://drakery.com">
+                  {t('footer:drakery')}
+                </a>
+              </li>
+              <li className="hover:text-700">
+                <a target="_blank" rel="noreferrer" href="https://meganero.com">
+                  Meganero
                 </a>
               </li>
             </ul>
@@ -116,6 +132,11 @@ export function Footer() {
                   href="https://www.linkedin.com/in/florian-ludewig"
                 >
                   LinkedIn
+                </a>
+              </li>
+              <li className="hover:text-700">
+                <a target="_blank" rel="noreferrer" href="https://rumble.com/user/flolu">
+                  Rumble
                 </a>
               </li>
             </ul>

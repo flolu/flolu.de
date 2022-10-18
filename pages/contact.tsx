@@ -2,68 +2,24 @@ import {GetStaticProps} from 'next'
 import {useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 import {NextSeo} from 'next-seo'
-import {FC, ReactNode} from 'react'
+import {FC} from 'react'
 
 import {CopyAddress} from '@/components/CopyAddress'
 import {Footer} from '@/components/Footer'
-import {DeroIcon} from '@/components/Icons/DeroIcon'
-import {MoneroLogo} from '@/components/Icons/MoneroLogo'
-import {PirateChainIcon} from '@/components/Icons/PirateChainIcon'
-import {WowneroIcon} from '@/components/Icons/WowneroIcon'
+import {SessionIcon} from '@/components/Icons/SessionIcon'
 import {Navigation} from '@/components/Navigation'
-
-interface CurrencyProps {
-  id: string
-  link: string
-  address: string
-  name: string
-  ticker: string
-  icon: ReactNode
-}
-
-const Currency: FC<CurrencyProps> = ({id, link, address, name, ticker, icon}) => {
-  return (
-    <div id={id} className="flex items-center space-x-4">
-      <a
-        href={link}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={name}
-        role="link"
-        className="w-16"
-      >
-        {icon}
-      </a>
-      <div>
-        <p className="flex items-center space-x-2">
-          <span className="text-2xl font-bold">{name}</span>
-          <span className="px-2 py-0.5 font-mono text-sm font-semibold rounded bg-900 text-500 opacity-80">
-            {ticker}
-          </span>
-        </p>
-        <CopyAddress address={address} />
-      </div>
-    </div>
-  )
-}
 
 interface Props {
   locale: string
 }
 
-const Donations: FC<Props> = props => {
+const Contact: FC<Props> = props => {
   const {t} = useTranslation()
 
-  const title = `${t('donations:title')} | Florian Ludewig`
-  const url = `https://flolu.de/${props.locale}/donations`
+  const title = `${t('contact:title')} | Florian Ludewig`
+  const url = `https://flolu.de/${props.locale}/contact`
 
-  const xmrAddress =
-    '862mLrhM6jQJDXPJ5pQHm9cYQXLESg4zXTFnRcvQeKAdXBJZBkTkajSQW3MXmeacCR9GZ3iNXXsn9jiTz5XNRe8C3fi3RmZ'
-  const arrrAddress =
-    'zs13txsrhyve44dxxl5zr488p4rhu9n3cj4e2s3ke2cpxzlu799z08zm99q4h7lsfgc9lawkrkxpkl'
-  const deroAddress = 'dero1qyyza9es6qaty33xvemr4pwl6dk25ae6sdaw2uhnx7dlprlzc20azqq3waf9x'
-  const wowAddress =
-    'WW3xuWkjJ41FNY3GVohfyd5rmG4sx69ukcqYMZgWPj3w4RQcddJ7JBpWCzc4kbPrdidfFA1wFSXs7iqJkfpnWHgC15waQtdTY'
+  const sessionId = '056ce2b57aa4835cec536d8d745c563c0acdec7a25e6c3649fb4dbb01a47349c57'
 
   const headerMask = 'linear-gradient(to bottom, transparent 0%, black 20%, transparent 60%)'
 
@@ -117,50 +73,51 @@ const Donations: FC<Props> = props => {
             </div>
 
             <h1 className="text-4xl font-bold tracking-tight text-center sm:text-6xl text-900">
-              {t('donations:title')}
+              {t('contact:title')}
             </h1>
 
             <p className="max-w-3xl px-2 pb-4 mx-auto font-serif text-xl text-center sm:text-xl text-700">
-              {t('donations:subtitle')}
+              {t('contact:subtitle')}
             </p>
           </div>
         </div>
 
         <div className="flex flex-col items-center space-y-8">
-          <Currency
-            id="xmr"
-            link="https://www.getmonero.org"
-            address={xmrAddress}
-            name="Monero"
-            ticker="XMR"
-            icon={<MoneroLogo />}
+          <div id="session" className="flex items-center space-x-4">
+            <a
+              href="https://getsession.org"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Session"
+              role="link"
+              className="w-16 shadow-[#00F782]/50 shadow-2xl"
+            >
+              <SessionIcon />
+            </a>
+            <div>
+              <p className="flex items-center space-x-2">
+                <span className="text-2xl font-bold">Session</span>
+              </p>
+              <CopyAddress address={sessionId} />
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 sm:mt-20">
+          <iframe
+            className="max-w-sm mx-auto sm:hidden"
+            width="336"
+            height="189"
+            src={`https://www.youtube.com/embed/6664mpKmccA`}
+            allowFullScreen
           />
 
-          <Currency
-            id="arrr"
-            link="https://pirate.black"
-            address={arrrAddress}
-            name="Pirate Chain"
-            ticker="ARRR"
-            icon={<PirateChainIcon />}
-          />
-
-          <Currency
-            id="dero"
-            link="https://dero.io"
-            address={deroAddress}
-            name="Dero"
-            ticker="DERO"
-            icon={<DeroIcon />}
-          />
-
-          <Currency
-            id="wow"
-            link="https://wownero.org"
-            address={wowAddress}
-            name="Wownero"
-            ticker="WOW"
-            icon={<WowneroIcon />}
+          <iframe
+            className="hidden mx-auto sm:block"
+            width="464"
+            height="261"
+            src={`https://www.youtube.com/embed/6664mpKmccA`}
+            allowFullScreen
           />
         </div>
       </main>
@@ -171,7 +128,7 @@ const Donations: FC<Props> = props => {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async context => {
-  const namespaces = ['footer', 'donations', 'common']
+  const namespaces = ['footer', 'contact', 'common']
   const locale = context.locale || 'en'
 
   const translations = await serverSideTranslations(locale, namespaces)
@@ -184,4 +141,4 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
   }
 }
 
-export default Donations
+export default Contact
