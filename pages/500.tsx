@@ -32,7 +32,7 @@ const InternalError: FC<Props> = () => {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async context => {
-  const namespaces = ['header', 'footer', '500']
+  const namespaces = ['header', 'footer', '500', 'common']
   const locale = context.locale || 'en'
   const translations = await serverSideTranslations(locale, namespaces)
   return {props: {...translations, locale}}

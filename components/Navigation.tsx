@@ -24,7 +24,13 @@ export function Navigation() {
         <div className="hidden sm:flex">
           <div className="space-x-6 text-sm font-bold text-300">
             <Link href="/blog">
-              <a className="hover:text-primary-500">{t('header:blog')}</a>
+              <a className="hover:text-primary-500">{t('common:blog')}</a>
+            </Link>
+            <Link href="/donations">
+              <a className="hover:text-primary-500">{t('common:donations')}</a>
+            </Link>
+            <Link href="/contact">
+              <a className="hover:text-primary-500">{t('common:contact')}</a>
             </Link>
           </div>
           <span className="w-px h-6 mx-6 bg-900"></span>

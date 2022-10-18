@@ -177,7 +177,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async context => {
-  const namespaces = ['header', 'footer', 'blog']
+  const namespaces = ['header', 'footer', 'blog', 'common']
   const locale = context.locale || 'en'
   const translations = await serverSideTranslations(locale, namespaces)
 

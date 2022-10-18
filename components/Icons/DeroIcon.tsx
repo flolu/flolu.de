@@ -1,3 +1,3 @@
 export function DeroIcon() {
-  return <img src="dero.png"></img>
+  return <img src="/dero.png"></img>
 }

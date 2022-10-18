@@ -16,7 +16,7 @@ interface Props {
 
 const Blog: NextPage<Props> = ({posts}) => {
   const {t} = useTranslation()
-  const title = t('footer:blog')
+  const title = `${t('footer:blog')} | Florian Ludewig`
   const url = `https://flolu.de/blog`
 
   return (
@@ -69,7 +69,7 @@ const Blog: NextPage<Props> = ({posts}) => {
 }
 
 export const getStaticProps: GetStaticProps = async context => {
-  const namespaces = ['header', 'footer', 'blog']
+  const namespaces = ['header', 'footer', 'blog', 'common']
   const locale = context.locale || 'en'
   const translations = await serverSideTranslations(locale, namespaces)
 

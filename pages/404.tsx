@@ -32,7 +32,7 @@ const NotFound: FC<Props> = () => {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async context => {
-  const namespaces = ['header', 'footer', '404']
+  const namespaces = ['header', 'footer', '404', 'common']
   const locale = context.locale || 'en'
   const translations = await serverSideTranslations(locale || 'en', namespaces)
   return {props: {...translations, locale}}

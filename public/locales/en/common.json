@@ -1,4 +1,7 @@
 {
   "locale_en": "English",
-  "locale_de": "German"
+  "locale_de": "German",
+  "blog": "Blog",
+  "donations": "Donations",
+  "contact": "Contact"
 }

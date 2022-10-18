@@ -33,7 +33,25 @@ export const SmallScreenMenu: FC = () => {
             <Link href="/blog">
               <div className="block w-full px-2 py-2 cursor-pointer text-start hover:bg-300">
                 <span className="flex items-center space-x-2">
-                  <span>{t('header:blog')}</span>
+                  <span>{t('common:blog')}</span>
+                </span>
+              </div>
+            </Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link href="/donations">
+              <div className="block w-full px-2 py-2 cursor-pointer text-start hover:bg-300">
+                <span className="flex items-center space-x-2">
+                  <span>{t('common:donations')}</span>
+                </span>
+              </div>
+            </Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link href="/contact">
+              <div className="block w-full px-2 py-2 cursor-pointer text-start hover:bg-300">
+                <span className="flex items-center space-x-2">
+                  <span>{t('common:contact')}</span>
                 </span>
               </div>
             </Link>
