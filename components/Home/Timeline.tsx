@@ -521,21 +521,9 @@ export function Timeline() {
           <SmallDot />
           <p>{t('timeline:childhood_description')}</p>
         </div>
-
-        <div className="pt-16 pb-4">
-          <BigDot />
-          <div className="relative w-full ml-2 -mt-2 border-t border-background-900">
-            <h2 className="absolute font-serif text-6xl font-bold right-2 bottom-2">2001</h2>
-          </div>
-        </div>
-
-        <div className="flex items-center space-x-4">
-          <SmallDot />
-          <p>{t('timeline:born')}</p>
-        </div>
       </div>
 
-      <div className="h-32 border-l sm:h-40 border-background-900"></div>
+      <div className="h-16 border-l sm:h-20 border-background-900"></div>
     </section>
   )
 }
