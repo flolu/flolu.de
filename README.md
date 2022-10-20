@@ -18,6 +18,12 @@
 - `npm run start`, run project
 - `npx ncu`, update npm packages
 
+**YouTube API**
+
+- Enable in [Google Cloud](https://console.cloud.google.com/apis/library/youtube.googleapis.com)
+- Create [Credentials](https://console.cloud.google.com/apis/api/youtube.googleapis.com/metrics)
+- Set `YOUTUBE_API_KEY` in `.env.local`
+
 # Codebase
 
 **Directories**

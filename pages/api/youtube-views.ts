@@ -3,17 +3,8 @@ import {google} from 'googleapis'
 
 import {setCacheControl} from '@/lib//set-cache-control'
 
-const googleAuth = new google.auth.GoogleAuth({
-  credentials: {
-    client_email: process.env.GOOGLE_CLIENT_EMAIL,
-    client_id: process.env.GOOGLE_CLIENT_ID,
-    private_key: process.env.GOOGLE_PRIVATE_KEY,
-  },
-  scopes: ['https://www.googleapis.com/auth/youtube.readonly'],
-})
-
 const youtube = google.youtube({
-  auth: googleAuth,
+  auth: process.env.YOUTUBE_API_KEY,
   version: 'v3',
 })
 
@@ -37,8 +28,10 @@ export async function getYouTubeViews() {
       return accumulator + views
     }, 0)
   } catch (e) {
-    // Fallback, manually calculated (Oct 23, 2021)
-    return 90756 + 241935 + 365958
+    // eslint-disable-next-line no-console
+    console.log(e)
+    // Fallback, manually calculated (Oct 20, 2022)
+    return 193729 + 242849 + 366568
   }
 }
 
