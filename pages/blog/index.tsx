@@ -14,6 +14,8 @@ interface Props {
   posts: any[]
 }
 
+const defaultPreviewImageUrl = '/blog/default.webp'
+
 const Blog: NextPage<Props> = ({posts}) => {
   const {t} = useTranslation()
   const title = `${t('footer:blog')} | Florian Ludewig`
@@ -38,14 +40,14 @@ const Blog: NextPage<Props> = ({posts}) => {
               <Link key={index} href={`/blog/${post.slug}`} locale="en">
                 <a className="flex w-full h-40 space-y-2 sm:h-auto sm:flex-col">
                   <img
-                    src={post.previewImageUrl || post.imageUrl}
+                    src={post.previewImageUrl || defaultPreviewImageUrl}
                     className="hidden h-24 rounded-lg sm:block sm:h-auto"
                   ></img>
                   <div className="space-y-2">
                     <h3 className="text-xl font-bold">{post.title}</h3>
                     <div className="flex space-x-4 sm:space-x-0">
                       <img
-                        src={post.previewImageUrl || post.imageUrl}
+                        src={post.previewImageUrl || defaultPreviewImageUrl}
                         className="h-20 rounded sm:hidden"
                       ></img>
                       <div className="space-y-2">

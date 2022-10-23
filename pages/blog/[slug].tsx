@@ -19,9 +19,14 @@ interface Props {
   content: string
 }
 
+// TODO make images and preview images optional?!
+
 const Post: FC<Props> = ({data, content}) => {
   const {title, url, description, date, minutesToRead} = data
-  const {imageUrl, imageWidth, imageHeight} = data
+  const imageUrl = data.imageUrl
+  const imageWidth = data.imageWidth
+  const imageHeight = data.imageHeight
+
   const {t} = useTranslation()
 
   return (
@@ -35,13 +40,15 @@ const Post: FC<Props> = ({data, content}) => {
           title,
           description,
           locale: 'en',
-          images: [
-            {
-              url: imageUrl,
-              width: imageWidth,
-              height: imageHeight,
-            },
-          ],
+          images: imageUrl
+            ? [
+                {
+                  url: imageUrl,
+                  width: imageWidth,
+                  height: imageHeight,
+                },
+              ]
+            : [],
         }}
       />
       <Navigation />
@@ -72,7 +79,9 @@ const Post: FC<Props> = ({data, content}) => {
             <div className="">{minutesToRead} min read</div>
           </div>
 
-          <Image src={imageUrl} className="rounded-lg" width={imageWidth} height={imageHeight} />
+          {imageUrl && (
+            <Image src={imageUrl} className="rounded-lg" width={imageWidth} height={imageHeight} />
+          )}
 
           <div className="mt-8 mb-16 text-lg leading-loose text-900">
             <ReactMarkdown
@@ -80,16 +89,16 @@ const Post: FC<Props> = ({data, content}) => {
                 code: ({children, ...props}) => {
                   if (!props?.inline) {
                     return (
-                      <pre className="w-full px-4 py-2 mt-4 mb-8 break-words whitespace-pre-wrap rounded-md bg-300">
-                        <code {...props}>{children}</code>
-                      </pre>
+                      <div className="w-full px-4 py-2 mt-4 mb-8 text-[1rem] [lineHeight:1.5rem] break-words whitespace-pre-wrap rounded-md bg-300">
+                        <code>{children}</code>
+                      </div>
                     )
                   }
 
                   return (
-                    <pre className="inline-block px-2 mx-1 text-sm whitespace-pre-wrap text-primary-700 bg-100">
-                      <code {...props}>{children}</code>
-                    </pre>
+                    <div className="inline-block px-2 mx-1 text-sm whitespace-pre-wrap text-primary-700 bg-100">
+                      <code>{children}</code>
+                    </div>
                   )
                 },
                 a: ({href, children}) => {
@@ -133,6 +142,7 @@ const Post: FC<Props> = ({data, content}) => {
             </ReactMarkdown>
 
             <div className="flex items-center my-8 mt-16 space-x-4">
+              {/* TODO why does this have a grey background? */}
               <Link href="/">
                 <a className="flex items-center space-x-4">
                   <div className="w-16 rounded-full">
