@@ -99,11 +99,6 @@ export function Timeline() {
           </div>
         </div>
 
-        <div className="flex items-center space-x-4">
-          <SmallDot />
-          <p>{t('timeline:cs_5th_semester')}</p>
-        </div>
-
         <div className="pt-16 pb-4">
           <BigDot />
           <div className="relative w-full ml-2 -mt-2 border-t border-background-900">
@@ -136,13 +131,10 @@ export function Timeline() {
             <p>{t('timeline:photorealistic_3d_scanning_description')}</p>
             <p className="flex items-center">
               <a
-                href="https://drakery.com/3d-scanning"
-                className="underline decoration-2 font-medium decoration-[#63e46e] inline-flex items-center mr-1"
+                href="https://sketchfab.com/flolu"
+                className="underline decoration-2 font-medium decoration-[#1caad9] inline-flex items-center mr-1"
               >
-                <span className="inline-block w-8 h-8 mr-2">
-                  <DrakeryLogo />
-                </span>
-                <span>Drakery 3D Scanning</span>
+                <span>Sketchfab</span>
               </a>
             </p>
           </div>
