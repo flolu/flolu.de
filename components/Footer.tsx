@@ -4,6 +4,7 @@ import Link from 'next/link'
 import {GithubIcon} from '../components/Icons/GithubIcon'
 import {InstagramIcon} from '../components/Icons/InstagramIcon'
 import {YouTubeIcon} from './Icons/YouTubeIcon'
+import {Signature} from './Signature'
 
 export function Footer() {
   const {t} = useTranslation()
@@ -13,15 +14,7 @@ export function Footer() {
     <footer className="mt-12 text-sm text-300 body-font">
       <div className="container flex flex-col flex-wrap px-4 py-8 mx-auto sm:px-8 md:py-12 max-w-7xl md:items-center lg:items-start md:flex-row md:flex-nowrap">
         <div className="flex-shrink-0 max-w-sm space-y-6 md:w-1/3 md:mx-0">
-          <Link href="/">
-            <a className="flex items-center space-x-4 hover:cursor-pointer text-900">
-              <div className="flex items-center">
-                <span className="font-serif text-4xl font-bold text-primary-500">F</span>
-                <span className="font-serif text-4xl text-primary-300">L</span>
-              </div>
-              <span className="mt-1 text-lg font-bold sm:text-xl">flolu.de</span>
-            </a>
-          </Link>
+          <Signature />
           <p className="text-xs">© {year} Florian Ludewig</p>
           <div className="flex space-x-4 text-300">
             <a

@@ -81,6 +81,7 @@ const Donations: FC<Props> = props => {
 
       <Navigation />
 
+      {/* LATER gradient disappears when toggling language in dev mode */}
       <header>
         <div
           className="absolute inset-0 opacity-20 lg:bg-size-3 sm:bg-size-2 bg-[length:3rem_3rem] -bottom-64 z-0 pointer-events-none"

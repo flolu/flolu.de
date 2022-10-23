@@ -8,8 +8,8 @@ import {MoneroLogo} from '../Icons/MoneroLogo'
 export function BigProgressDot() {
   return (
     <div className="relative">
-      <span className="absolute w-4 h-4 -ml-2 rounded-full -top-2 ring-1 ring-primary-700 bg-primary-300">
-        <span className="absolute inline-flex w-full h-full rounded-full animate-ping bg-primary-700"></span>
+      <span className="absolute w-4 h-4 -ml-2 rounded-full -top-2 ring-1 ring-background-900 bg-300">
+        <span className="absolute inline-flex w-full h-full rounded-full animate-ping bg-900"></span>
       </span>
     </div>
   )
@@ -18,8 +18,8 @@ export function BigProgressDot() {
 export function ProgressDot() {
   return (
     <div className="relative">
-      <span className="absolute w-3 h-3 -ml-[0.35rem] rounded-full -top-[0.35rem] ring-1 ring-primary-700 bg-primary-300">
-        <span className="absolute inline-flex w-full h-full rounded-full animate-ping bg-primary-700"></span>
+      <span className="absolute w-3 h-3 -ml-[0.35rem] rounded-full -top-[0.35rem] ring-1 ring-background-900 bg-300">
+        <span className="absolute inline-flex w-full h-full rounded-full animate-ping bg-900"></span>
       </span>
     </div>
   )
@@ -40,7 +40,7 @@ export function BigDot() {
 export function Timeline() {
   const {t} = useTranslation()
   return (
-    <section id="timeline" className="max-w-xl mx-auto">
+    <section id="timeline" className="max-w-2xl mx-auto">
       <div className="h-32 border-l sm:h-40 border-background-900"></div>
       <div className="space-y-12 border-l border-background-900">
         <div className="pb-4">
@@ -52,33 +52,13 @@ export function Timeline() {
 
         <div className="flex items-center space-x-4">
           <ProgressDot />
-          <p>{t('timeline:cs_6th_semester')}</p>
-        </div>
-
-        <div className="flex items-center space-x-4">
-          <SmallDot />
           <div className="space-y-2">
-            <p>{t('timeline:kletterwald_website')}</p>
-            <p className="flex items-center">
-              <a
-                href="https://www.kletterwald-saalburg.de/"
-                className="underline decoration-2 font-bold decoration-[#2c633d] inline-flex items-center mr-1"
-              >
-                <span>Kletterwald Saalburg</span>
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <div className="flex items-center space-x-4">
-          <ProgressDot />
-          <div className="space-y-2">
-            <img src="/3d_scanner.webp" className="rounded"></img>
+            {/* <img src="/3d_scanner.webp" className="rounded"></img> */}
             <p>{t('timeline:automated_3d_scanner')}</p>
             <p className="flex items-center">
               <a
                 href="https://drakery.com/3d-scanning"
-                className="underline decoration-2 font-bold decoration-[#63e46e] inline-flex items-center mr-1"
+                className="underline decoration-2 font-medium decoration-[#63e46e] inline-flex items-center mr-1"
               >
                 <span className="inline-block w-8 h-8 mr-2">
                   <DrakeryLogo />
@@ -91,25 +71,38 @@ export function Timeline() {
 
         <div className="flex items-center space-x-4">
           <SmallDot />
-          <p>{t('timeline:cs_5th_semester')}</p>
-        </div>
-
-        {/* <div className="flex items-center space-x-4">
-          <SmallDot />
-          <div>
+          <div className="space-y-2">
+            <p>{t('timeline:cs_6th_semester')}</p>
             <p className="flex items-center">
               <a
-                href="https://meganero.com"
-                className="underline decoration-2 font-bold decoration-[#F60] inline-flex items-center mr-1"
+                href="https://flolu.de/thesis.pdf"
+                className="underline decoration-2 font-medium decoration-[#F74F4F] inline-flex items-center mr-1"
               >
-                <span className="inline-block w-8 h-8 mr-2">
-                  <MoneroLogo />
-                </span>
-                <span>Meganero</span>
+                <span>{t('timeline:bachelor_thesis')}</span>
               </a>
             </p>
           </div>
-        </div> */}
+        </div>
+
+        <div className="flex items-center space-x-4">
+          <SmallDot />
+          <div className="space-y-2">
+            <p>{t('timeline:kletterwald_website')}</p>
+            <p className="flex items-center">
+              <a
+                href="https://www.kletterwald-saalburg.de/"
+                className="underline decoration-2 font-medium decoration-[#2c633d] inline-flex items-center mr-1"
+              >
+                <span>Kletterwald Saalburg</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center space-x-4">
+          <SmallDot />
+          <p>{t('timeline:cs_5th_semester')}</p>
+        </div>
 
         <div className="pt-16 pb-4">
           <BigDot />
@@ -125,7 +118,7 @@ export function Timeline() {
             <p className="flex items-center">
               <a
                 href="https://www.getmonero.org"
-                className="underline decoration-2 font-bold decoration-[#F60] inline-flex items-center mr-1"
+                className="underline decoration-2 font-medium decoration-[#F60] inline-flex items-center mr-1"
               >
                 <span className="inline-block w-8 h-8 mr-2">
                   <MoneroLogo />
@@ -139,12 +132,12 @@ export function Timeline() {
         <div className="flex items-center space-x-4">
           <SmallDot />
           <div className="space-y-2">
-            <img src="/indian_vase_breakdown.webp" className="rounded"></img>
+            {/* <img src="/indian_vase_breakdown.webp" className="rounded"></img> */}
             <p>{t('timeline:photorealistic_3d_scanning_description')}</p>
             <p className="flex items-center">
               <a
                 href="https://drakery.com/3d-scanning"
-                className="underline decoration-2 font-bold decoration-[#63e46e] inline-flex items-center mr-1"
+                className="underline decoration-2 font-medium decoration-[#63e46e] inline-flex items-center mr-1"
               >
                 <span className="inline-block w-8 h-8 mr-2">
                   <DrakeryLogo />
@@ -162,7 +155,7 @@ export function Timeline() {
             <p className="flex items-center">
               <a
                 href="https://bulletjournal.com/"
-                className="inline-flex items-center mr-1 font-bold underline decoration-2"
+                className="inline-flex items-center mr-1 font-medium underline decoration-2"
               >
                 <span>Bullet Journal</span>
               </a>
@@ -173,18 +166,24 @@ export function Timeline() {
         <div className="flex items-center space-x-4">
           <SmallDot />
           <div className="space-y-2">
-            <img src="/fullstack_auth.webp" className="rounded"></img>
+            {/* <img src="/fullstack_auth.webp" className="rounded"></img> */}
             <p>{t('timeline:youtube_videos_description')}</p>
             <p className="flex items-center">
               <a
                 href="https://www.youtube.com/c/flolu"
-                className="inline-flex items-center mr-1 font-bold underline decoration-2 decoration-[#f00]"
+                className="inline-flex items-center mr-1 font-medium underline decoration-2 decoration-[#f00]"
               >
                 YouTube,
               </a>
               <a
+                href="https://rumble.com/user/flolu"
+                className="inline-flex items-center mr-1 font-medium underline decoration-2 decoration-[#85C742]"
+              >
+                Rumble,
+              </a>
+              <a
                 href="https://odysee.com/$/invite/@flolu"
-                className="inline-flex items-center mr-1 font-bold underline decoration-2 decoration-[#f24158]"
+                className="inline-flex items-center mr-1 font-medium underline decoration-2 decoration-[#f24158]"
               >
                 Odysee
               </a>
@@ -216,7 +215,7 @@ export function Timeline() {
             <p className="flex items-center">
               <a
                 href="https://drakery.com"
-                className="underline decoration-2 font-bold decoration-[#63e46e] inline-flex items-center mr-1"
+                className="underline decoration-2 font-medium decoration-[#63e46e] inline-flex items-center mr-1"
               >
                 <span className="inline-block w-8 h-8 mr-2">
                   <DrakeryLogo />
@@ -234,7 +233,7 @@ export function Timeline() {
             <p className="flex items-center">
               <a
                 href="https://github.com/3ddesigner"
-                className="underline decoration-2 font-bold decoration-[#0084cc] inline-flex items-center mr-1"
+                className="underline decoration-2 font-medium decoration-[#0084cc] inline-flex items-center mr-1"
               >
                 <span className="inline-block w-8 h-8 mr-2 text-[#0084cc] fill-current">
                   <DDDesignerIcon />
@@ -252,7 +251,7 @@ export function Timeline() {
             <p className="flex items-center">
               <a
                 href="https://drakery.com"
-                className="underline decoration-2 font-bold decoration-[#63e46e] inline-flex items-center mr-1"
+                className="underline decoration-2 font-medium decoration-[#63e46e] inline-flex items-center mr-1"
               >
                 <span className="inline-block w-8 h-8 mr-2">
                   <DrakeryLogo />
@@ -270,7 +269,7 @@ export function Timeline() {
             <p className="flex items-center">
               <a
                 href="https://spleenlab.com"
-                className="underline decoration-2 font-bold decoration-[#FF6633] inline-flex items-center mr-1"
+                className="underline decoration-2 font-medium decoration-[#FF6633] inline-flex items-center mr-1"
               >
                 <span>Spleenlab</span>
               </a>
@@ -313,7 +312,7 @@ export function Timeline() {
             <p className="flex items-center">
               <a
                 href="https://www.uni-jena.de"
-                className="underline decoration-2 font-bold decoration-[#002350] inline-flex items-center mr-1"
+                className="underline decoration-2 font-medium decoration-[#002350] inline-flex items-center mr-1"
               >
                 FSU Jena
               </a>
@@ -324,9 +323,9 @@ export function Timeline() {
         <div className="flex items-center space-x-4">
           <SmallDot />
           <div className="space-y-2">
-            <a href="https://www.instagram.com/p/CLUro1RnAVM/">
+            {/* <a href="https://www.instagram.com/p/CLUro1RnAVM/">
               <img src="/ice_bath.webp" className="rounded"></img>
-            </a>
+            </a> */}
             <p>{t('timeline:ice_bathing')}</p>
           </div>
         </div>
@@ -338,7 +337,7 @@ export function Timeline() {
             <p className="flex items-center">
               <a
                 href="https://www.startupteens.de/site/2019"
-                className="underline decoration-2 font-bold decoration-[#028eb6] inline-flex items-center mr-1"
+                className="underline decoration-2 font-medium decoration-[#028eb6] inline-flex items-center mr-1"
               >
                 Startup Teens
               </a>
@@ -360,7 +359,7 @@ export function Timeline() {
             <p className="flex items-center">
               <a
                 href="https://www.lacos.eu"
-                className="underline decoration-2 font-bold decoration-[#197d5f] inline-flex items-center mr-1"
+                className="underline decoration-2 font-medium decoration-[#197d5f] inline-flex items-center mr-1"
               >
                 <span className="inline-block w-8 h-8 mr-2">
                   <LacosIcon />
@@ -395,12 +394,12 @@ export function Timeline() {
         <div className="flex items-center space-x-4">
           <SmallDot />
           <div className="space-y-2">
-            <img src="/tackleit_thumb.webp"></img>
+            {/* <img src="/tackleit_thumb.webp"></img> */}
             <p>{t('timeline:tackle_it_description')}</p>
             <p className="flex items-center">
               <a
                 href="https://apkpure.com/in/tackleit-distance-tracker/net.tackleit.tackleit"
-                className="underline decoration-2 font-bold decoration-[#e5353f] inline-flex items-center mr-1"
+                className="underline decoration-2 font-medium decoration-[#e5353f] inline-flex items-center mr-1"
               >
                 <img className="inline-block w-8 h-8 mr-2" src="/tackleit.webp"></img>
                 <span>TackleIt</span>
@@ -416,7 +415,7 @@ export function Timeline() {
             <p className="flex items-center">
               <a
                 href="http://getunscripted.com"
-                className="underline decoration-2 font-bold decoration-[#d90000] inline-flex items-center mr-1"
+                className="underline decoration-2 font-medium decoration-[#d90000] inline-flex items-center mr-1"
               >
                 <span>UNSCRIPTED</span>
               </a>
@@ -431,7 +430,7 @@ export function Timeline() {
             <p className="flex items-center">
               <a
                 href="https://github.com/flolu"
-                className="inline-flex items-center mr-1 font-bold underline decoration-2"
+                className="inline-flex items-center mr-1 font-medium underline decoration-2"
               >
                 <span>GitHub</span>
               </a>
@@ -462,13 +461,13 @@ export function Timeline() {
             <p className="flex items-center">
               <a
                 href="https://www.youtube.com/c/deJunts"
-                className="inline-flex items-center mr-1 font-bold underline decoration-2 decoration-[#f85151]"
+                className="inline-flex items-center mr-1 font-medium underline decoration-2 decoration-[#f85151]"
               >
                 <span>deJunts,</span>
               </a>
               <a
                 href="https://www.youtube.com/c/deJuntsGaming"
-                className="inline-flex items-center mr-1 font-bold underline decoration-2 decoration-[#ace052]"
+                className="inline-flex items-center mr-1 font-medium underline decoration-2 decoration-[#ace052]"
               >
                 <span>deJuntsGaming</span>
               </a>
@@ -483,13 +482,13 @@ export function Timeline() {
             <p className="flex items-center">
               <a
                 href="https://www.youtube.com/channel/UCa_UyaAlrWAgjZM0GB6zvpw"
-                className="inline-flex items-center mr-1 font-bold underline decoration-2 decoration-[#fe1132]"
+                className="inline-flex items-center mr-1 font-medium underline decoration-2 decoration-[#fe1132]"
               >
                 <span>SkateStyle,</span>
               </a>
               <a
                 href="https://www.youtube.com/user/SkateStyleLP"
-                className="inline-flex items-center mr-1 font-bold underline decoration-2 decoration-[#fef52a]"
+                className="inline-flex items-center mr-1 font-medium underline decoration-2 decoration-[#fef52a]"
               >
                 <span>SkateStyleOld</span>
               </a>
@@ -504,7 +503,7 @@ export function Timeline() {
             <p className="flex items-center">
               <a
                 href="https://youtu.be/y6QRGQhEYJI"
-                className="inline-flex items-center mr-1 font-bold underline decoration-2 decoration-[#f00]"
+                className="inline-flex items-center mr-1 font-medium underline decoration-2 decoration-[#f00]"
               >
                 Paluten
               </a>

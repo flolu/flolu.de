@@ -2,7 +2,7 @@
 title: How to install Terraform on Fedora 34
 description: To install Terraform on Fedora 34 or later, you need to add the HashiCorp Linux repository. Then you can simply install Terraform with Dandified YUM (dnf).
 url: https://flolu.de/blog/install-terraform-fedora-34
-date: Oct 26 2021
+date: Oct 26, 2021
 excerpt: After you've added the repository, you can simply install Terraform with...
 imageUrl: /blog/terraform-fedora.webp
 imageWidth: 1280

@@ -2,7 +2,7 @@
 title: How to Exchange Bitcoin for Monero with Atomic Swaps
 description: A brand new technology called atomic swaps allow for trustless peer to peer exchanges of Bitcoin to Monero. In this post you will learn how to sell your Bitcoin for Monero without a centralized exchange.
 url: https://flolu.de/blog/bitcoin-monero-atomic-swaps
-date: Nov 10 2021
+date: Nov 10, 2021
 excerpt: While Monero is facing more and more regulations and thus...
 imageUrl: /blog/xmr_btc_atomic_swaps.webp
 imageWidth: 1280

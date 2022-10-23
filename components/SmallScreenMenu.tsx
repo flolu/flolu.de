@@ -12,7 +12,7 @@ export const SmallScreenMenu: FC = () => {
     <Menu as="div" className="relative h-5 sm:hidden">
       <Menu.Button className="inline-flex">
         <span
-          className="w-5 cursor-pointer fill-current hover:text-primary-500"
+          className="w-6 cursor-pointer fill-current hover:text-primary-500"
           aria-label="navigation menu"
           role="button"
         >

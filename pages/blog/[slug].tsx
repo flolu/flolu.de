@@ -10,6 +10,7 @@ import {FC} from 'react'
 import {useTranslation} from 'react-i18next'
 import ReactMarkdown from 'react-markdown'
 
+import {BlogAuthor} from '@/components/BlogAuthor'
 import {Footer} from '@/components/Footer'
 import {LeftArrowIcon} from '@/components/Icons/LeftArrowIcon'
 import {Navigation} from '@/components/Navigation'
@@ -54,27 +55,10 @@ const Post: FC<Props> = ({data, content}) => {
       <Navigation />
 
       <main className="px-4 mx-auto mt-4 space-y-8 sm:mt-8 sm:space-y-12 sm:px-8">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <h1 className="text-2xl font-bold sm:text-4xl">{title}</h1>
           <div className="flex items-center my-8 space-x-4">
-            <Link href="/">
-              <a className="flex items-center space-x-4">
-                <div className="w-16 rounded-full">
-                  <Image
-                    className="rounded-full"
-                    alt=""
-                    src="/avatar.webp"
-                    layout="responsive"
-                    width={512}
-                    height={512}
-                  />
-                </div>
-                <div className="space-y-1 font-sans">
-                  <p className="font-medium">Flo</p>
-                  <p className="text-300">{date}</p>
-                </div>
-              </a>
-            </Link>
+            <BlogAuthor date={date} />
             <div className="flex-1"></div>
             <div className="">{minutesToRead} min read</div>
           </div>
@@ -83,27 +67,27 @@ const Post: FC<Props> = ({data, content}) => {
             <Image src={imageUrl} className="rounded-lg" width={imageWidth} height={imageHeight} />
           )}
 
-          <div className="mt-8 mb-16 text-lg leading-loose text-900">
+          <div className="mt-8 mb-16 text-xl leading-loose text-900">
             <ReactMarkdown
               components={{
                 code: ({children, ...props}) => {
                   if (!props?.inline) {
                     return (
-                      <div className="w-full px-4 py-2 mt-4 mb-8 text-[1rem] [lineHeight:1.5rem] break-words whitespace-pre-wrap rounded-md bg-300">
+                      <div className="w-full px-4 py-6 mt-4 mb-8 text-[1rem] [lineHeight:1.5rem] break-words whitespace-pre-wrap rounded-md bg-500">
                         <code>{children}</code>
                       </div>
                     )
                   }
 
                   return (
-                    <div className="inline-block px-2 mx-1 text-sm whitespace-pre-wrap text-primary-700 bg-100">
+                    <div className="inline-block px-2 mx-1 text-base whitespace-pre-wrap text-700 bg-300">
                       <code>{children}</code>
                     </div>
                   )
                 },
                 a: ({href, children}) => {
                   return (
-                    <a href={href} className="text-primary-700">
+                    <a href={href} className="font-medium underline">
                       {children}
                     </a>
                   )
@@ -117,61 +101,49 @@ const Post: FC<Props> = ({data, content}) => {
                 },
                 h2: ({children, ...props}) => {
                   return (
-                    <h2 className="mt-12 mb-4 text-2xl font-bold" {...props}>
+                    <h2 className="mt-12 mb-4 text-3xl font-bold" {...props}>
                       {children}
                     </h2>
                   )
                 },
-                ul: ({children, ...props}) => {
-                  return (
-                    <ul className="ml-4 list-disc list-inside" {...props}>
-                      {children}
-                    </ul>
-                  )
+                ul: ({children}) => {
+                  return <ul className="ml-4 list-disc list-inside">{children}</ul>
                 },
-                ol: ({children, ...props}) => {
-                  return (
-                    <ul className="list-decimal list-inside" {...props}>
-                      {children}
-                    </ul>
-                  )
+                ol: ({children}) => {
+                  return <ul className="list-decimal list-inside">{children}</ul>
                 },
               }}
             >
               {content}
             </ReactMarkdown>
+          </div>
 
-            <div className="flex items-center my-8 mt-16 space-x-4">
-              {/* TODO why does this have a grey background? */}
-              <Link href="/">
-                <a className="flex items-center space-x-4">
-                  <div className="w-16 rounded-full">
-                    <Image
-                      className="rounded-full"
-                      alt=""
-                      src="/avatar.webp"
-                      layout="responsive"
-                      width={512}
-                      height={512}
-                    />
-                  </div>
-                  <div className="space-y-1 font-sans">
-                    <p className="font-medium">Flo</p>
-                    <p className="text-300">{date}</p>
-                  </div>
-                </a>
-              </Link>
-              <div className="flex-1"></div>
+          <div className="flex items-center my-8 space-x-4">
+            <BlogAuthor date={date} />
+            <div className="flex-1"></div>
+            <div className="hidden text-right sm:block">
+              <span>{t('blog:did_this_help')}</span>
+              <pre></pre>
+              <div>
+                <Link href="/donations">
+                  <a className="font-medium underline">{t('blog:consider_donating')}</a>
+                </Link>
+              </div>
             </div>
-
-            <div className="flex items-center space-x-2 text-primary-500">
-              <span className="w-6 fill-current">
-                <LeftArrowIcon />
-              </span>
-              <Link href="/blog">
-                <a className="text-xl font-bold">{t('blog:all_posts')}</a>
+            <div className="text-right sm:hidden">
+              <Link href="/donations">
+                <a className="font-medium underline">{t('blog:donate')}</a>
               </Link>
             </div>
+          </div>
+
+          <div className="flex items-center space-x-2 text-primary-500">
+            <span className="w-6 fill-current">
+              <LeftArrowIcon />
+            </span>
+            <Link href="/blog">
+              <a className="text-xl font-bold">{t('blog:all_posts')}</a>
+            </Link>
           </div>
         </div>
       </main>

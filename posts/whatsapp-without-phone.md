@@ -2,7 +2,7 @@
 title: Use WhatsApp Without Active Phone Connection on Linux
 description: An easy way to use WhatsApp on a Linux machine without an active phone connection.
 url: https://flolu.de/blog/whatsapp-without-phone
-date: Jun 3 2021
+date: Jun 3, 2021
 excerpt: Ever tried to use WhatsApp without your phone? Currently that's not...
 imageUrl: https://img.youtube.com/vi/72WyCIWO3MQ/maxresdefault.jpg
 imageWidth: 1280

@@ -51,17 +51,15 @@ const foregroundColors = {
 }
 
 module.exports = {
-  purge: {
-    content: [
-      './pages/**/*.{js,ts,jsx,tsx}',
-      './components/**/*.{js,ts,jsx,tsx}',
-      './contexts/**/*.{js,ts,jsx,tsx}',
-      './styles/**/*.{sass,scss,css}',
-    ],
-  },
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './contexts/**/*.{js,ts,jsx,tsx}',
+    './styles/**/*.{sass,scss,css}',
+  ],
   theme: {
     fontFamily: {
-      sans: ['Poppins', 'sans-serif'],
+      sans: ['Inter', 'sans-serif'],
       serif: ['Noto Serif JP', 'serif'],
       mono: ['Roboto Mono', 'monospace'],
     },

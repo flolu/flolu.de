@@ -14,7 +14,7 @@ export const ThemeSwitcher: FC = () => {
 
   return (
     <span
-      className="w-5 cursor-pointer fill-current text-primary-500 hover:text-primary-700"
+      className="w-6 cursor-pointer fill-current text-primary-500 hover:text-primary-700"
       aria-label="toggle theme"
       role="button"
       onClick={onSwitchTheme}

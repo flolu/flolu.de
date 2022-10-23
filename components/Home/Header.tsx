@@ -10,8 +10,9 @@ export const Header: FC = () => {
 
   return (
     <header className="relative border-b border-background-300">
+      {/* // TODO grid overlays image */}
       <div
-        className="absolute inset-0 z-0 opacity-25 lg:bg-size-3 sm:bg-size-2 bg-[length:3rem_3rem]"
+        className="absolute inset-0 z-0 opacity-25 lg:bg-size-3 sm:bg-size-2 bg-[length:3rem_3rem] pointer-events-none"
         style={{
           maskImage: 'linear-gradient(to bottom, transparent, black)',
           WebkitMaskImage: 'linear-gradient(to bottom, transparent, black)',
@@ -19,12 +20,10 @@ export const Header: FC = () => {
             'linear-gradient(to right, #888 1px, transparent 1px), linear-gradient(to bottom, #888 1px, transparent 1px)',
         }}
       />
-
       <div
         className="absolute inset-0 z-0 bg-top opacity-75 pointer-events-none filter"
         style={{backgroundImage: 'url(beams1.png)'}}
       ></div>
-
       <div className="max-w-sm pb-10 mx-auto space-y-4 sm:pb-16 lg:pb-20 sm:space-y-8 sm:max-w-5xl xl:max-w-8xl">
         <div className="space-y-2 sm:space-y-4">
           <div className="px-4 mx-auto w-72 sm:w-auto sm:max-w-sm">
@@ -46,7 +45,6 @@ export const Header: FC = () => {
           </p>
         </div>
       </div>
-
       <div className="flex items-center justify-center -mb-4 space-x-8 sm:-mb-5 text-700">
         <a
           target="_blank"

@@ -2,8 +2,8 @@
 title: How to Encrypt Git Repositories
 description: An easy way to encrypt Git repository remotes with GnuPG on Linux
 url: https://flolu.de/blog/encrypted-git-repository
-date: Oct 23 2022
-excerpt: In this post you will learn how to easily encrypt Git...
+date: Oct 23, 2022
+excerpt: In this post you will learn how to easily encrypt Git remote repositories with GnuPG. You could use this to...
 locale: en
 minutesToRead: 3
 ---
@@ -26,7 +26,7 @@ You will also need a GPG key for encryption. You can install GPG like this:
 
 You can list all your GPG keys with `gpg --list-keys`. In case you don't already have a key, you can create one with `gpg --full-gen-key`.
 
-## Usage
+## Configuration
 
 To create a new Git repository, run: `git init`. But you can also do this on an existing repository. Now we need to add the remote you want to encrypt like this:
 
@@ -54,6 +54,8 @@ git config remote.origin.gcrypt-participants "3D5211D0E51A0C396AB417032BF2E9B3FB
 git config remote.origin.gcrypt-signingkey "3D5211D0E51A0C396AB417032BF2E9B3FB1972D8"
 ```
 
+## Push
+
 Now you can make commits as usual with `git commit`. To upload the changes to the encrypted remote simply run:
 
 ```bash
@@ -67,6 +69,8 @@ git push origin master
 ```
 
 And that's it! Your remote files will be encrypted now. You can take a look at an encrypted GitHub repository [here](https://github.com/flolu/encrypted).
+
+## Clone
 
 To clone an encrypted Git repository, you need to run:
 

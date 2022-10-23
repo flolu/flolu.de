@@ -2,7 +2,7 @@
 title: How to Install and Use DaVinci Resolve on Fedora
 description: Installing and using DaVinci Resolve on Linux can be quite painful at first. I will show you how to install the software on Fedora and how to fix common problems like installing graphics drivers or MP4 file format import.
 url: https://flolu.de/blog/bitcoin-monero-atomic-swaps
-date: Nov 11 2021
+date: Nov 11, 2021
 excerpt: DaVinci Resolve is one of the most powerful video editing software...
 imageUrl: /blog/davinci-resolve-linux-fedora.webp
 imageWidth: 1280

@@ -1,5 +1,8 @@
 {
   "blog": "Blog",
   "posts": "Posts",
-  "all_posts": "Alle Posts ansehen"
+  "all_posts": "Alle Posts ansehen",
+  "did_this_help": "Hat das geholfen?",
+  "consider_donating": "Unterstütze mich",
+  "donate": "Spenden"
 }

@@ -9,6 +9,7 @@ import path from 'path'
 
 import {Footer} from '@/components/Footer'
 import {Navigation} from '@/components/Navigation'
+import {classNames} from '@/lib/class-names'
 
 interface Props {
   posts: any[]
@@ -31,8 +32,7 @@ const Blog: NextPage<Props> = ({posts}) => {
         style={{minHeight: '60vh'}}
       >
         <div className="space-y-2">
-          <span className="text-lg font-medium text-100 sm:text-xl">{t('blog:blog')}</span>
-          <h1 className="text-2xl font-bold sm:text-5xl">{t('blog:posts')}</h1>
+          <h1 className="text-2xl font-bold sm:text-5xl">{t('blog:blog')}</h1>
         </div>
         <div className="grid gap-8 mx-auto sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, index) => {
@@ -41,7 +41,10 @@ const Blog: NextPage<Props> = ({posts}) => {
                 <a className="flex w-full h-40 space-y-2 sm:h-auto sm:flex-col">
                   <img
                     src={post.previewImageUrl || defaultPreviewImageUrl}
-                    className="hidden h-24 rounded-lg sm:block sm:h-auto"
+                    className={classNames(
+                      'hidden h-24 rounded-lg sm:block sm:h-auto',
+                      !post.previewImageUrl && 'bg-100 border border-background-500',
+                    )}
                   ></img>
                   <div className="space-y-2">
                     <h3 className="text-xl font-bold">{post.title}</h3>
@@ -77,6 +80,7 @@ export const getStaticProps: GetStaticProps = async context => {
 
   const files = await fs.readdir(path.join('posts'))
   // TODO sort posts by date
+  // TODO format date based on locale
   const posts = await Promise.all(
     files.map(async filename => {
       const markdown = await fs.readFile(path.join('posts', filename))
