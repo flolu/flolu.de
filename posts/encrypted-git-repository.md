@@ -8,7 +8,7 @@ locale: en
 minutesToRead: 3
 ---
 
-In this post you will learn how to easily encrypt [Git](https://git-scm.com) remote repositories with [GnuPG](https://gnupg.org). You could use this to store and synchronize sensitive code on remotes, that you don't trust. For example, I'm using an encrypted Git repository to sync my passwords across multiple devices.
+In this post you will learn how to easily encrypt [Git](https://git-scm.com) remote repositories with [GnuPG](https://gnupg.org). You could use this to store and synchronize sensitive code on remotes, that you don't trust. For example, I'm using an encrypted Git repository to [sync my passwords](https://flolu.de/blog/linux-password-manager-and-sync) across multiple devices.
 
 ## Setup
 

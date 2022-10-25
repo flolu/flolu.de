@@ -21,6 +21,10 @@ interface Props {
 }
 
 // TODO make images and preview images optional?!
+// TODO ability to add tags to markdown front matter (+add to meta tag for SEO)
+// TODO anchors for headlines
+// TODO outline for blog posts
+// TODO colorful code snippets
 
 const Post: FC<Props> = ({data, content}) => {
   const {title, url, description, date, minutesToRead} = data
@@ -102,6 +106,13 @@ const Post: FC<Props> = ({data, content}) => {
                 h2: ({children, ...props}) => {
                   return (
                     <h2 className="mt-12 mb-4 text-3xl font-bold" {...props}>
+                      {children}
+                    </h2>
+                  )
+                },
+                h3: ({children, ...props}) => {
+                  return (
+                    <h2 className="mt-12 mb-4 text-2xl font-bold" {...props}>
                       {children}
                     </h2>
                   )
