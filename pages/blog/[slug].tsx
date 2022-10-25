@@ -71,20 +71,20 @@ const Post: FC<Props> = ({data, content}) => {
             <Image src={imageUrl} className="rounded-lg" width={imageWidth} height={imageHeight} />
           )}
 
-          <div className="mt-8 mb-16 text-xl leading-loose text-900">
+          <div className="mt-8 mb-16 text-base leading-loose sm:leading-loose sm:text-xl text-900">
             <ReactMarkdown
               components={{
                 code: ({children, ...props}) => {
                   if (!props?.inline) {
                     return (
-                      <div className="w-full px-4 py-6 mt-4 mb-8 text-[1rem] [lineHeight:1.5rem] break-words whitespace-pre-wrap rounded-md bg-500">
+                      <div className="w-full px-3 py-4 sm:px-4 sm:py-6 mt-4 mb-8 text-[0.9rem] [lineHeight:1.4rem] sm:text-[1rem] sm:[lineHeight:1.5rem] rounded-md bg-500 overflow-x-auto">
                         <code>{children}</code>
                       </div>
                     )
                   }
 
                   return (
-                    <div className="inline-block px-2 mx-1 text-base whitespace-pre-wrap text-700 bg-300">
+                    <div className="inline-block px-2 mx-1 text-sm whitespace-pre-wrap sm:text-base text-700 bg-300">
                       <code>{children}</code>
                     </div>
                   )

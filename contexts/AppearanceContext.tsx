@@ -46,7 +46,7 @@ export const AppearanceProvider: FunctionComponent<Props> = ({children}) => {
 
   return (
     <AppearanceContextImpl.Provider value={{theme, setTheme}}>
-      <div className="text-lg text-700 bg-50">{children}</div>
+      <div className="text-base sm:text-lg text-700 bg-50">{children}</div>
     </AppearanceContextImpl.Provider>
   )
 }
