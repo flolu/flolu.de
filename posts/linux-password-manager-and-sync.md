@@ -100,6 +100,14 @@ Once you have added a few passwords, you can now easily copy them into your clip
 - Enter `passmenu` as the "Command"
 - And set a "Shortcut" (e.g. `Ctrl` + `Alt` + `P`)
 
+
+
+In case `dmenu` isn't focused after starting, and hence you can't select passwords, then you might need to disable Wayland. This can be done by editing the `/etc/gdm/custom.conf` file:
+
+```bash
+sudo sed -i -e 's/#WaylandEnable=false.*/WaylandEnable=false/' /etc/gdm/custom.conf
+```
+
 There are also some [other options](https://www.passwordstore.org/#other) to access your passwords from a user interface:
 
 - [passff](https://github.com/passff/passff) (Mozilla Firefox add-on)
@@ -125,7 +133,7 @@ otpauth://totp/service?secret=<secret>
 
 This URI can be obtained from the QR code, that you are supposed to scan with your phone. Just make a screenshot of the QR code and run `zbarimg qr-code-screenshot.png` on it. This requires you to have [ZBar](https://zbar.sourceforge.net/) installed:
 
-- Debian: `apt install zbar-tools
+- Debian: `apt install zbar-tools`
 - Fedora: `dnf install zbar`
 - Arch: `pacman -S zbar`
 
