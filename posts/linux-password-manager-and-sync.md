@@ -102,11 +102,13 @@ Once you have added a few passwords, you can now easily copy them into your clip
 
 
 
-In case `dmenu` isn't focused after starting, and hence you can't select passwords, then you might need to disable Wayland. This can be done by editing the `/etc/gdm/custom.conf` file:
+In case `dmenu` isn't focused after starting, and hence you can't select passwords, then you might need to disable Wayland (And use X11 instead). This can be done by editing the `/etc/gdm/custom.conf` file:
 
 ```bash
 sudo sed -i -e 's/#WaylandEnable=false.*/WaylandEnable=false/' /etc/gdm/custom.conf
 ```
+
+After editing you need to restart your computer. If you are using a laptop you might run into some issues with touchpad gestures afterwards. This can be fixed by installing the [X11 Gestures](https://extensions.gnome.org/extension/4033/x11-gestures) GNOME extension and [touchegg](https://github.com/JoseExposito/touchegg#installation).
 
 There are also some [other options](https://www.passwordstore.org/#other) to access your passwords from a user interface:
 
