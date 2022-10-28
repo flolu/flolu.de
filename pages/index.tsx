@@ -65,7 +65,7 @@ const Home: FC<Props> = props => {
         url={url}
         sameAs={[
           'https://www.instagram.com/flo.ludewig',
-          'https://www.youtube.com/c/flolu',
+          'https://www.youtube.com/@flolu',
           'https://github.com/flolu',
           'https://stackoverflow.com/users/8586803',
           'https://unsplash.com/@flolu',

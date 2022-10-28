@@ -162,7 +162,7 @@ export function Timeline() {
             <p>{t('timeline:youtube_videos_description')}</p>
             <p className="flex items-center">
               <a
-                href="https://www.youtube.com/c/flolu"
+                href="https://www.youtube.com/@flolu"
                 className="inline-flex items-center mr-1 font-medium underline decoration-2 decoration-[#f00]"
               >
                 YouTube,

@@ -29,7 +29,7 @@ export function Footer() {
             </a>
             <a
               target="_blank"
-              href="https://www.youtube.com/c/flolu"
+              href="https://www.youtube.com/@flolu"
               rel="noreferrer"
               className="w-4 cursor-pointer fill-current hover:text-primary-500"
               aria-label="YouTube"
@@ -94,7 +94,7 @@ export function Footer() {
             <h2 className="mb-4 font-medium text-900">{t('footer:online')}</h2>
             <ul className="mb-10 space-y-2 text-xs text-300">
               <li className="hover:text-700">
-                <a target="_blank" rel="noreferrer" href="https://www.youtube.com/c/flolu">
+                <a target="_blank" rel="noreferrer" href="https://www.youtube.com/@flolu">
                   YouTube
                 </a>
               </li>

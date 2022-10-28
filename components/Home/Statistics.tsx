@@ -20,7 +20,7 @@ export const Statistics: FC<Props> = props => {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://www.youtube.com/c/flolu"
+            href="https://www.youtube.com/@flolu"
             className="flex flex-col space-y-2"
           >
             <p>{t('home:youtube_views')}</p>
