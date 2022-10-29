@@ -190,6 +190,8 @@ pass git remote add origin https://github.com/<user>/<repository>.git
 pass git push -u origin master
 ```
 
+If, for some reason, `git push` fails, you might need to force push your changes with `git push -f`.
+
 You can then download and sync your passwords onto your other device with the `git clone` and `git pull` commands.
 
 All passwords are encrypted and hence cannot be read by anyone, who doesn't have the GPG key. But all the password names are still visible (because each password is stored inside a single file: `<name>.gpg`). That's why I'm using another layer of encryption to hide the file names. That's possible with the help of [git-remote-gcrypt](https://github.com/spwhitton/git-remote-gcrypt). It encrypts entire Git repository remotes. I've written a [blog post](https://flolu.de/blog/encrypted-git-repository) on how to do that. Essentially, you just have to install `git-remote-crypt` and modify the remote URL.
