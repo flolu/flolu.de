@@ -14,7 +14,7 @@ In this post you will learn how to easily encrypt [Git](https://git-scm.com) rem
 
 To do this, we need the open-source [git-remote-gcrypt](https://spwhitton.name/tech/code/git-remote-gcrypt) helper by [Sean Whitton](https://spwhitton.name). You can either install it from the [source code](https://github.com/spwhitton/git-remote-gcrypt)'s `install.sh` script or via your package manager:
 
-- Debian: `apt-get install git-remote-gcrypt`
+- Debian: `apt install git-remote-gcrypt`
 - Fedora: `dnf install git-remote-gcrypt`
 - Arch: `pacman -S git-remote-gcrypt`
 

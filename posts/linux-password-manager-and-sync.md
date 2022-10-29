@@ -98,7 +98,7 @@ You can also use [rofi](https://github.com/davatorium/rofi) instead of `dmenu`. 
 
 Once you have added a few passwords, you can now easily copy them into your clipboard with the `passmenu` command. I strongly recommend setting a hotkey for `passmenu`. For example in [GNOME](https://www.gnome.org) you can add hotkeys inside the Keyboard settings:
 
-- Settings :luc_arrow_big_right: Keyboard :luc_arrow_big_right: Shortcuts :luc_arrow_big_right: Custom :luc_arrow_big_right: Add
+- Settings 🠖 Keyboard 🠖 Shortcuts 🠖 Custom 🠖 Add
 - Enter `passmenu` as the "Command"
 - And set a "Shortcut" (e.g. `Ctrl` + `Alt` + `P`)
 
@@ -125,7 +125,7 @@ With the [pass-otp](https://github.com/tadfisher/pass-otp) extension, it is also
 
 - Debian: `apt install pass-extension-otp`
 - Fedora: `dnf install pass-otp`
-- Arch: `pacman -S pass-otp
+- Arch: `pacman -S pass-otp`
 
 Now you can also add one-time-passwords with `pass otp insert <name>`. It will ask you to enter a URI. This URI looks something like this, with the secret as a query parameter:
 
