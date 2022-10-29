@@ -94,13 +94,13 @@ password=$(printf '%s\n' "${password_files[@]}" | dmenu "$@")
 pass show -c "$password" 2>/dev/null
 ```
 
+You can also use [rofi](https://github.com/davatorium/rofi) instead of `dmenu`. To do that just replace the `dmenu` command with `rofi -dmenu`.
+
 Once you have added a few passwords, you can now easily copy them into your clipboard with the `passmenu` command. I strongly recommend setting a hotkey for `passmenu`. For example in [GNOME](https://www.gnome.org) you can add hotkeys inside the Keyboard settings:
 
 - Settings :luc_arrow_big_right: Keyboard :luc_arrow_big_right: Shortcuts :luc_arrow_big_right: Custom :luc_arrow_big_right: Add
 - Enter `passmenu` as the "Command"
 - And set a "Shortcut" (e.g. `Ctrl` + `Alt` + `P`)
-
-
 
 In case `dmenu` isn't focused after starting, and hence you can't select passwords, then you might need to disable Wayland (And use X11 instead). This can be done by editing the `/etc/gdm/custom.conf` file:
 
