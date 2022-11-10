@@ -69,13 +69,13 @@ All the changes will be reflected within the `~/.password-store` Git repository,
 
 ## User interfaces
 
-Although accessing your passwords from the command line is not that slow, there is an even simpler way. That is by using the [dmenu](http://tools.suckless.org/dmenu), a small menu appearing on the top of your screen. It can be installed like this:
+Although accessing your passwords from the command line is not that slow, there is an even simpler way. That is by using the [rofi](https://github.com/davatorium/rofi). It can be installed like this:
 
-- Debian: `apt install suckless-tools`
-- Fedora: `dnf install dmenu`
-- Arch: `pacman -S dmenu`
+- Debian: `apt install rofi`
+- Fedora: `dnf install rofi`
+- Arch: `pacman -S rofi`
 
-Now we need to install a small script, `passmenu`, to access passwords through `dmenu`. To do that, create a file called `/usr/bin/passmenu`, make it executable by running `sudo chmod +x /usr/bin/passmenu` and add the following content:
+Now we need to install a small script, `passmenu`, to access passwords through `rofi`. To do that, create a file called `/usr/bin/passmenu`, make it executable by running `sudo chmod +x /usr/bin/passmenu` and add the following content:
 
 ```bash
 #!/usr/bin/env bash
@@ -87,14 +87,12 @@ password_files=( "$prefix"/**/*.gpg )
 password_files=( "${password_files[@]#"$prefix"/}" )
 password_files=( "${password_files[@]%.gpg}" )
 
-password=$(printf '%s\n' "${password_files[@]}" | dmenu "$@")
+password=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu "$@")
 
 [[ -n $password ]] || exit
 
 pass show -c "$password" 2>/dev/null
 ```
-
-You can also use [rofi](https://github.com/davatorium/rofi) instead of `dmenu`. To do that just replace the `dmenu` command with `rofi -dmenu`.
 
 Once you have added a few passwords, you can now easily copy them into your clipboard with the `passmenu` command. I strongly recommend setting a hotkey for `passmenu`. For example in [GNOME](https://www.gnome.org) you can add hotkeys inside the Keyboard settings:
 
@@ -102,7 +100,7 @@ Once you have added a few passwords, you can now easily copy them into your clip
 - Enter `passmenu` as the "Command"
 - And set a "Shortcut" (e.g. `Ctrl` + `Alt` + `P`)
 
-In case `dmenu` isn't focused after starting, and hence you can't select passwords, then you might need to disable Wayland (And use X11 instead). This can be done by editing the `/etc/gdm/custom.conf` file:
+In case the ROfi menu isn't focused after starting, and hence you can't select passwords, then you might need to disable Wayland (And use X11 instead). This can be done by editing the `/etc/gdm/custom.conf` file:
 
 ```bash
 sudo sed -i -e 's/#WaylandEnable=false.*/WaylandEnable=false/' /etc/gdm/custom.conf
@@ -143,7 +141,7 @@ The command will return something like: `QR-Code:otpauth://totp/service?secret=<
 
 To get the one-time-password, simply run: `pass otp <name>`.
 
-You can also use `pass otp` with the previously discussed `dmenu` for quick access. In order to do that we need to make a small adjustment to the `/usr/bin/passmenu` script. The modified script looks like this:
+You can also use `pass otp` with the previously discussed Rofi menu for quick access. In order to do that we need to make a small adjustment to the `/usr/bin/passmenu` script. The modified script looks like this:
 
 ```bash
 #!/usr/bin/env bash
@@ -155,7 +153,7 @@ password_files=( "$prefix"/**/*.gpg )
 password_files=( "${password_files[@]#"$prefix"/}" )
 password_files=( "${password_files[@]%.gpg}" )
 
-password=$(printf '%s\n' "${password_files[@]}" | dmenu "$@")
+password=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu "$@")
 
 [[ -n $password ]] || exit
 
@@ -202,4 +200,4 @@ Personally, I have decided not to synchronize my password with my phone, because
 
 ## Final words
 
-Once you have set up `pass` with `dmenu` and added all your passwords, it's truly amazing. You don't have to trust any third party with your passwords, and you can easily sync it with Git.
+Once you have set up `pass` with Rofi and added all your passwords, it's truly amazing. You don't have to trust any third party with your passwords, and you can easily sync it with Git.
