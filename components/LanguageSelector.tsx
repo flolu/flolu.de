@@ -34,7 +34,7 @@ export const LanguageSelector: FC = () => {
       >
         <Menu.Items className="absolute right-0 z-20 mt-4 text-sm font-bold border rounded-lg shadow-lg w-36 border-background-900 top-6 bg-50">
           <Menu.Item>
-            <Link href={router.pathname} locale="en">
+            <Link href={router.pathname} locale="en" legacyBehavior>
               <div className="block w-full px-2 py-2 cursor-pointer text-start hover:bg-300">
                 <span className="flex items-center space-x-2">
                   <span className="w-6">
@@ -48,7 +48,7 @@ export const LanguageSelector: FC = () => {
             </Link>
           </Menu.Item>
           <Menu.Item>
-            <Link href={router.pathname} locale="de">
+            <Link href={router.pathname} locale="de" legacyBehavior>
               <div className="block w-full px-2 py-2 cursor-pointer text-start hover:bg-300">
                 <span className="flex items-center space-x-2">
                   <span className="w-6">
@@ -64,5 +64,5 @@ export const LanguageSelector: FC = () => {
         </Menu.Items>
       </Transition>
     </Menu>
-  )
+  );
 }

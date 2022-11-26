@@ -30,7 +30,7 @@ export const SmallScreenMenu: FC = () => {
       >
         <Menu.Items className="absolute right-0 z-20 mt-4 text-sm font-bold border rounded-lg shadow-lg w-36 border-background-900 top-6 bg-50">
           <Menu.Item>
-            <Link href="/blog">
+            <Link href="/blog" legacyBehavior>
               <div className="block w-full px-2 py-2 cursor-pointer text-start hover:bg-300">
                 <span className="flex items-center space-x-2">
                   <span>{t('common:blog')}</span>
@@ -39,7 +39,7 @@ export const SmallScreenMenu: FC = () => {
             </Link>
           </Menu.Item>
           <Menu.Item>
-            <Link href="/donations">
+            <Link href="/donations" legacyBehavior>
               <div className="block w-full px-2 py-2 cursor-pointer text-start hover:bg-300">
                 <span className="flex items-center space-x-2">
                   <span>{t('common:donations')}</span>
@@ -48,7 +48,7 @@ export const SmallScreenMenu: FC = () => {
             </Link>
           </Menu.Item>
           <Menu.Item>
-            <Link href="/contact">
+            <Link href="/contact" legacyBehavior>
               <div className="block w-full px-2 py-2 cursor-pointer text-start hover:bg-300">
                 <span className="flex items-center space-x-2">
                   <span>{t('common:contact')}</span>
@@ -59,5 +59,5 @@ export const SmallScreenMenu: FC = () => {
         </Menu.Items>
       </Transition>
     </Menu>
-  )
+  );
 }

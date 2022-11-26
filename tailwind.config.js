@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 
+const {fontFamily} = require('tailwindcss/defaultTheme')
+
 const primaryColors = {
   50: 'var(--color-primary-50)',
   100: 'var(--color-primary-100)',
@@ -59,9 +61,9 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Inter', 'sans-serif'],
-      serif: ['Noto Serif JP', 'serif'],
-      mono: ['Roboto Mono', 'monospace'],
+      sans: ['var(--font-inter)', ...fontFamily.sans],
+      serif: ['var(--font-noto)', ...fontFamily.serif],
+      mono: ['var(--font-roboto-mono)', ...fontFamily.mono],
     },
     colors: {
       current: 'currentColor',

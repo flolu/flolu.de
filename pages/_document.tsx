@@ -12,20 +12,6 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <meta charSet="utf-8" />
-
-          <link rel="preconnect" href="https://fonts.gstatic.com"></link>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
-            rel="stylesheet"
-          ></link>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
-            rel="stylesheet"
-          ></link>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap"
-            rel="stylesheet"
-          ></link>
         </Head>
         <body className="theme-light">
           <Main />

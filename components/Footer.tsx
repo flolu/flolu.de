@@ -54,16 +54,16 @@ export function Footer() {
             <h2 className="mb-4 font-medium text-900">{t('footer:home')}</h2>
             <ul className="mb-10 space-y-2 text-xs text-300">
               <li className="hover:text-700">
-                <Link href="/">{t('footer:home')}</Link>
+                <Link href="/" legacyBehavior>{t('footer:home')}</Link>
               </li>
               <li className="hover:text-700">
-                <Link href="/blog">{t('footer:blog')}</Link>
+                <Link href="/blog" legacyBehavior>{t('footer:blog')}</Link>
               </li>
               <li className="hover:text-700">
-                <Link href="/donations">{t('footer:donations')}</Link>
+                <Link href="/donations" legacyBehavior>{t('footer:donations')}</Link>
               </li>
               <li className="hover:text-700">
-                <Link href="/contact">{t('footer:contact')}</Link>
+                <Link href="/contact" legacyBehavior>{t('footer:contact')}</Link>
               </li>
             </ul>
           </div>
@@ -137,5 +137,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

@@ -22,55 +22,57 @@ const Blog: NextPage<Props> = ({posts}) => {
   const title = `${t('footer:blog')} | Florian Ludewig`
   const url = `https://flolu.de/blog`
 
-  return (
-    <>
-      <NextSeo title={title} canonical={url} openGraph={{url, title}} />
-      <Navigation />
+  return <>
+    <NextSeo title={title} canonical={url} openGraph={{url, title}} />
+    <Navigation />
 
-      <main
-        className="max-w-4xl px-4 mx-auto mt-4 mb-16 space-y-8 sm:space-y-12 sm:px-8 sm:mt-8"
-        style={{minHeight: '60vh'}}
-      >
-        <div className="space-y-2">
-          <h1 className="text-2xl font-bold sm:text-5xl">{t('blog:blog')}</h1>
-        </div>
-        <div className="grid gap-8 mx-auto sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post, index) => {
-            return (
-              <Link key={index} href={`/blog/${post.slug}`} locale="en">
-                <a className="flex w-full h-40 space-y-2 sm:h-auto sm:flex-col">
+    <main
+      className="max-w-4xl px-4 mx-auto mt-4 mb-16 space-y-8 sm:space-y-12 sm:px-8 sm:mt-8"
+      style={{minHeight: '60vh'}}
+    >
+      <div className="space-y-2">
+        <h1 className="text-2xl font-bold sm:text-5xl">{t('blog:blog')}</h1>
+      </div>
+      <div className="grid gap-8 mx-auto sm:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post, index) => {
+          return (
+            (<Link
+              key={index}
+              href={`/blog/${post.slug}`}
+              locale="en"
+              className="flex w-full h-40 space-y-2 sm:h-auto sm:flex-col">
+
+              <img
+                src={post.previewImageUrl || defaultPreviewImageUrl}
+                className={classNames(
+                  'hidden h-24 rounded-lg sm:block sm:h-auto',
+                  !post.previewImageUrl && 'bg-100 border border-background-500',
+                )}
+              ></img>
+              <div className="space-y-2">
+                <h3 className="text-xl font-bold">{post.title}</h3>
+                <div className="flex space-x-4 sm:space-x-0">
                   <img
                     src={post.previewImageUrl || defaultPreviewImageUrl}
-                    className={classNames(
-                      'hidden h-24 rounded-lg sm:block sm:h-auto',
-                      !post.previewImageUrl && 'bg-100 border border-background-500',
-                    )}
+                    className="h-20 rounded sm:hidden"
                   ></img>
                   <div className="space-y-2">
-                    <h3 className="text-xl font-bold">{post.title}</h3>
-                    <div className="flex space-x-4 sm:space-x-0">
-                      <img
-                        src={post.previewImageUrl || defaultPreviewImageUrl}
-                        className="h-20 rounded sm:hidden"
-                      ></img>
-                      <div className="space-y-2">
-                        <p className="overflow-hidden overflow-ellipsis">{post.excerpt}</p>
-                        <p className="text-sm text-100">
-                          {post.date} • {post.minutesToRead} min read
-                        </p>
-                      </div>
-                    </div>
+                    <p className="overflow-hidden overflow-ellipsis">{post.excerpt}</p>
+                    <p className="text-sm text-100">
+                      {post.date} • {post.minutesToRead} min read
+                    </p>
                   </div>
-                </a>
-              </Link>
-            )
-          })}
-        </div>
-      </main>
+                </div>
+              </div>
 
-      <Footer />
-    </>
-  )
+            </Link>)
+          );
+        })}
+      </div>
+    </main>
+
+    <Footer />
+  </>;
 }
 
 export const getStaticProps: GetStaticProps = async context => {

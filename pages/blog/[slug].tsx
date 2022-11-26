@@ -68,25 +68,31 @@ const Post: FC<Props> = ({data, content}) => {
           </div>
 
           {imageUrl && (
-            <Image src={imageUrl} className="rounded-lg" width={imageWidth} height={imageHeight} />
+            <Image
+              alt="Thumbnail"
+              src={imageUrl}
+              className="rounded-lg"
+              width={imageWidth}
+              height={imageHeight}
+            />
           )}
 
           <div className="mt-8 mb-16 text-base leading-loose sm:leading-loose sm:text-xl text-900">
             <ReactMarkdown
               components={{
                 code: ({children, ...props}) => {
-                  if (!props?.inline) {
+                  if (props?.inline) {
                     return (
-                      <div className="w-full px-3 py-4 sm:px-4 sm:py-6 mt-4 mb-8 text-[0.9rem] [lineHeight:1.4rem] sm:text-[1rem] sm:[lineHeight:1.5rem] rounded-md bg-500 overflow-x-auto">
-                        <code>{children}</code>
-                      </div>
+                      <code className="inline-block px-2 mx-1 text-sm whitespace-pre-wrap sm:text-base text-700 bg-300">
+                        {children}
+                      </code>
                     )
                   }
 
                   return (
-                    <div className="inline-block px-2 mx-1 text-sm whitespace-pre-wrap sm:text-base text-700 bg-300">
-                      <code>{children}</code>
-                    </div>
+                    <code className="w-full block px-3 py-4 sm:px-4 sm:py-6 mt-4 mb-8 text-[0.9rem] [lineHeight:1.4rem] sm:text-[1rem] sm:[lineHeight:1.5rem] rounded-md bg-500 overflow-x-auto">
+                      {children}
+                    </code>
                   )
                 },
                 a: ({href, children}) => {
@@ -136,14 +142,14 @@ const Post: FC<Props> = ({data, content}) => {
               <span>{t('blog:did_this_help')}</span>
               <pre></pre>
               <div>
-                <Link href="/donations">
-                  <a className="font-medium underline">{t('blog:consider_donating')}</a>
+                <Link href="/donations" className="font-medium underline">
+                  {t('blog:consider_donating')}
                 </Link>
               </div>
             </div>
             <div className="text-right sm:hidden">
-              <Link href="/donations">
-                <a className="font-medium underline">{t('blog:donate')}</a>
+              <Link href="/donations" className="font-medium underline">
+                {t('blog:donate')}
               </Link>
             </div>
           </div>
@@ -152,8 +158,8 @@ const Post: FC<Props> = ({data, content}) => {
             <span className="w-6 fill-current">
               <LeftArrowIcon />
             </span>
-            <Link href="/blog">
-              <a className="text-xl font-bold">{t('blog:all_posts')}</a>
+            <Link href="/blog" className="text-xl font-bold">
+              {t('blog:all_posts')}
             </Link>
           </div>
         </div>
