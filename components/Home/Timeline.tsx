@@ -221,16 +221,16 @@ export function Timeline() {
         <div className="flex items-center space-x-4">
           <SmallDot />
           <div className="space-y-2">
-            <p>{t('timeline:started_3d_designer_desc')}</p>
+            <p>{t('timeline:started_3dreamz_desc')}</p>
             <p className="flex items-center">
               <a
-                href="https://github.com/3ddesigner"
+                href="https://github.com/3dreamz"
                 className="underline decoration-2 font-medium decoration-[#0084cc] inline-flex items-center mr-1"
               >
                 <span className="inline-block w-8 h-8 mr-2 text-[#0084cc] fill-current">
                   <DDDesignerIcon />
                 </span>
-                <span>3D Designer</span>
+                <span>3Dreamz</span>
               </a>
             </p>
           </div>
