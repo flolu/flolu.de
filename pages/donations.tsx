@@ -58,7 +58,7 @@ const Donations: FC<Props> = props => {
   const url = `https://flolu.de/${props.locale}/donations`
 
   const xmrAddress =
-    '862mLrhM6jQJDXPJ5pQHm9cYQXLESg4zXTFnRcvQeKAdXBJZBkTkajSQW3MXmeacCR9GZ3iNXXsn9jiTz5XNRe8C3fi3RmZ'
+    '84ta1nYgbTH2tuM7SnsPzLcL6raw2hJFZQ9WeAGMX6HMT9KS8QKK3JxgNr5hrzq3tbC9WuT6qgvan8Hymi9TNmtz9TjdUCx'
   const arrrAddress =
     'zs13txsrhyve44dxxl5zr488p4rhu9n3cj4e2s3ke2cpxzlu799z08zm99q4h7lsfgc9lawkrkxpkl'
   const deroAddress = 'dero1qyyza9es6qaty33xvemr4pwl6dk25ae6sdaw2uhnx7dlprlzc20azqq3waf9x'
