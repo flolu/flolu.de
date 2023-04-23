@@ -46,14 +46,13 @@ export function Timeline() {
         <div className="pb-4">
           <BigProgressDot />
           <div className="relative w-full ml-2 -mt-2 border-t border-background-900">
-            <h2 className="absolute font-serif text-6xl font-bold right-2 bottom-2">2022</h2>
+            <h2 className="absolute font-serif text-6xl font-bold right-2 bottom-2">2023</h2>
           </div>
         </div>
 
         <div className="flex items-center space-x-4">
           <ProgressDot />
           <div className="space-y-2">
-            {/* <img src="/3d_scanner.webp" className="rounded"></img> */}
             <p>{t('timeline:automated_3d_scanner')}</p>
             <p className="flex items-center">
               <a
@@ -64,6 +63,28 @@ export function Timeline() {
                   <DrakeryLogo />
                 </span>
                 <span>Drakery 3D Scanning</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div className="pt-16 pb-4">
+          <BigDot />
+          <div className="relative w-full ml-2 -mt-2 border-t border-background-900">
+            <h2 className="absolute font-serif text-6xl font-bold right-2 bottom-2">2022</h2>
+          </div>
+        </div>
+
+        <div className="flex items-center space-x-4">
+          <SmallDot />
+          <div className="space-y-2">
+            <p>{t('timeline:open_reply_start')}</p>
+            <p className="flex items-center">
+              <a
+                href="https://www.reply.com/open-reply"
+                className="underline decoration-2 font-medium decoration-[#87cfbe] inline-flex items-center mr-1"
+              >
+                <span>Open Reply</span>
               </a>
             </p>
           </div>

@@ -63,7 +63,7 @@ const Donations: FC<Props> = props => {
     'zs13txsrhyve44dxxl5zr488p4rhu9n3cj4e2s3ke2cpxzlu799z08zm99q4h7lsfgc9lawkrkxpkl'
   const deroAddress = 'dero1qyyza9es6qaty33xvemr4pwl6dk25ae6sdaw2uhnx7dlprlzc20azqq3waf9x'
   const wowAddress =
-    'WW3xuWkjJ41FNY3GVohfyd5rmG4sx69ukcqYMZgWPj3w4RQcddJ7JBpWCzc4kbPrdidfFA1wFSXs7iqJkfpnWHgC15waQtdTY'
+    'WW3Tv5sxTGUhtL6nb74S1J2uTqeLN3HzS46ABVLVKGK9Ah4pTVDtFWAXfgGGHYbKdqgxMiV1dfPswCT4S6nv4Zss2Ght93vT2'
 
   const headerMask = 'linear-gradient(to bottom, transparent 0%, black 20%, transparent 60%)'
 
@@ -138,21 +138,21 @@ const Donations: FC<Props> = props => {
           />
 
           <Currency
-            id="arrr"
-            link="https://pirate.black"
-            address={arrrAddress}
-            name="Pirate Chain"
-            ticker="ARRR"
-            icon={<PirateChainIcon />}
-          />
-
-          <Currency
             id="dero"
             link="https://dero.io"
             address={deroAddress}
             name="Dero"
             ticker="DERO"
             icon={<DeroIcon />}
+          />
+
+          <Currency
+            id="arrr"
+            link="https://pirate.black"
+            address={arrrAddress}
+            name="Pirate Chain"
+            ticker="ARRR"
+            icon={<PirateChainIcon />}
           />
 
           <Currency

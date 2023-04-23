@@ -1,7 +1,8 @@
 {
+  "open_reply_start": "I started working as a backend developer",
   "bachelor_thesis": "Bachelor thesis",
   "kletterwald_website": "I've created the new website for the Kletterwald Saalburg",
-  "automated_3d_scanner": "We are working on a fully automated 3D scanner to create photorealistic digital duplicates. For this we combine Structured Light, Photogrammetry and some photometric methods.",
+  "automated_3d_scanner": "We are working on a fully automated 3D scanner to create photorealistic digital duplicates. For this we combine several photometric methods.",
   "cs_6th_semester": "5th and 6th semester of computer science degree, as well as my bachelor thesis",
   "started_meganero": "Started Meganero",
   "learnt_about_monero_description": "I was dealing with the cryptocurrency Monero for the first time and had to realize that Monero is what Bitcoin was meant to be.",
