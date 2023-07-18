@@ -8,8 +8,6 @@ import {CopyAddress} from '@/components/CopyAddress'
 import {Footer} from '@/components/Footer'
 import {DeroIcon} from '@/components/Icons/DeroIcon'
 import {MoneroLogo} from '@/components/Icons/MoneroLogo'
-import {PirateChainIcon} from '@/components/Icons/PirateChainIcon'
-import {WowneroIcon} from '@/components/Icons/WowneroIcon'
 import {Navigation} from '@/components/Navigation'
 
 interface CurrencyProps {
@@ -59,11 +57,7 @@ const Donations: FC<Props> = props => {
 
   const xmrAddress =
     '84ta1nYgbTH2tuM7SnsPzLcL6raw2hJFZQ9WeAGMX6HMT9KS8QKK3JxgNr5hrzq3tbC9WuT6qgvan8Hymi9TNmtz9TjdUCx'
-  const arrrAddress =
-    'zs13txsrhyve44dxxl5zr488p4rhu9n3cj4e2s3ke2cpxzlu799z08zm99q4h7lsfgc9lawkrkxpkl'
   const deroAddress = 'dero1qyyza9es6qaty33xvemr4pwl6dk25ae6sdaw2uhnx7dlprlzc20azqq3waf9x'
-  const wowAddress =
-    'WW3Tv5sxTGUhtL6nb74S1J2uTqeLN3HzS46ABVLVKGK9Ah4pTVDtFWAXfgGGHYbKdqgxMiV1dfPswCT4S6nv4Zss2Ght93vT2'
 
   const headerMask = 'linear-gradient(to bottom, transparent 0%, black 20%, transparent 60%)'
 
@@ -144,24 +138,6 @@ const Donations: FC<Props> = props => {
             name="Dero"
             ticker="DERO"
             icon={<DeroIcon />}
-          />
-
-          <Currency
-            id="arrr"
-            link="https://pirate.black"
-            address={arrrAddress}
-            name="Pirate Chain"
-            ticker="ARRR"
-            icon={<PirateChainIcon />}
-          />
-
-          <Currency
-            id="wow"
-            link="https://wownero.org"
-            address={wowAddress}
-            name="Wownero"
-            ticker="WOW"
-            icon={<WowneroIcon />}
           />
         </div>
       </main>
