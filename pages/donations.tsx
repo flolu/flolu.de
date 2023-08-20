@@ -6,6 +6,7 @@ import {FC, ReactNode} from 'react'
 
 import {CopyAddress} from '@/components/CopyAddress'
 import {Footer} from '@/components/Footer'
+import {BitcoinLogo} from '@/components/Icons/BitcoinLogo'
 import {DeroIcon} from '@/components/Icons/DeroIcon'
 import {MoneroLogo} from '@/components/Icons/MoneroLogo'
 import {Navigation} from '@/components/Navigation'
@@ -49,17 +50,18 @@ interface Props {
   locale: string
 }
 
+const MONERO_ADDRESS =
+  '84ta1nYgbTH2tuM7SnsPzLcL6raw2hJFZQ9WeAGMX6HMT9KS8QKK3JxgNr5hrzq3tbC9WuT6qgvan8Hymi9TNmtz9TjdUCx'
+const DERO_ADDRESS = 'dero1qyyza9es6qaty33xvemr4pwl6dk25ae6sdaw2uhnx7dlprlzc20azqq3waf9x'
+const BITCOIN_ADDRESS = '1Fni165CCq4Vs2ZHRXSD1wGrXSfHyZeu8N'
+
+const headerMask = 'linear-gradient(to bottom, transparent 0%, black 20%, transparent 60%)'
+
 const Donations: FC<Props> = props => {
   const {t} = useTranslation()
 
   const title = `${t('donations:title')} | Florian Ludewig`
   const url = `https://flolu.de/${props.locale}/donations`
-
-  const xmrAddress =
-    '84ta1nYgbTH2tuM7SnsPzLcL6raw2hJFZQ9WeAGMX6HMT9KS8QKK3JxgNr5hrzq3tbC9WuT6qgvan8Hymi9TNmtz9TjdUCx'
-  const deroAddress = 'dero1qyyza9es6qaty33xvemr4pwl6dk25ae6sdaw2uhnx7dlprlzc20azqq3waf9x'
-
-  const headerMask = 'linear-gradient(to bottom, transparent 0%, black 20%, transparent 60%)'
 
   return (
     <>
@@ -123,9 +125,18 @@ const Donations: FC<Props> = props => {
 
         <div className="flex flex-col items-center space-y-8">
           <Currency
-            id="xmr"
+            id="bitcoin"
+            link="https://www.bitcoinsv.com"
+            address={BITCOIN_ADDRESS}
+            name="Bitcoin SV"
+            ticker="BSV"
+            icon={<BitcoinLogo />}
+          />
+
+          <Currency
+            id="monero"
             link="https://www.getmonero.org"
-            address={xmrAddress}
+            address={MONERO_ADDRESS}
             name="Monero"
             ticker="XMR"
             icon={<MoneroLogo />}
@@ -134,7 +145,7 @@ const Donations: FC<Props> = props => {
           <Currency
             id="dero"
             link="https://dero.io"
-            address={deroAddress}
+            address={DERO_ADDRESS}
             name="Dero"
             ticker="DERO"
             icon={<DeroIcon />}
