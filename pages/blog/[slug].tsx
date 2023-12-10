@@ -81,7 +81,7 @@ const Post: FC<Props> = ({data, content}) => {
             <ReactMarkdown
               components={{
                 code: ({children, ...props}) => {
-                  if (props?.inline) {
+                  if ((props as any)?.inline) {
                     return (
                       <code className="inline-block px-2 mx-1 text-sm whitespace-pre-wrap sm:text-base text-700 bg-300">
                         {children}

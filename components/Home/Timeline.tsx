@@ -1,9 +1,12 @@
 import {useTranslation} from 'next-i18next'
 
-import {DDDesignerIcon} from '../Icons/3DDesignerIcon'
+import {BitcoinLogo} from '../Icons/BitcoinLogo'
+import {DeroIcon} from '../Icons/DeroIcon'
 import {DrakeryLogo} from '../Icons/DrakeryLogo'
+import {DreamzIcon} from '../Icons/DreamzIcon'
 import {LacosIcon} from '../Icons/LacosIcon'
 import {MoneroLogo} from '../Icons/MoneroLogo'
+import {ReplyIcon} from '../Icons/ReplyIcon'
 
 export function BigProgressDot() {
   return (
@@ -44,14 +47,50 @@ export function Timeline() {
       <div className="h-32 border-l sm:h-40 border-background-900"></div>
       <div className="space-y-12 border-l border-background-900">
         <div className="pb-4">
-          <BigProgressDot />
+          <BigDot />
           <div className="relative w-full ml-2 -mt-2 border-t border-background-900">
             <h2 className="absolute font-serif text-6xl font-bold right-2 bottom-2">2023</h2>
           </div>
         </div>
 
         <div className="flex items-center space-x-4">
-          <ProgressDot />
+          <SmallDot />
+          <div className="space-y-2">
+            <p>{t('timeline:3dreamz_comic_con')}</p>
+            <p className="flex items-center">
+              <a
+                href="https://threedreamz.app"
+                className="inline-flex items-center mr-1 font-medium underline decoration-2"
+              >
+                <span className="inline-block w-8 h-8 mr-2 fill-current">
+                  <DreamzIcon />
+                </span>
+                <span>3Dreamz</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center space-x-4">
+          <SmallDot />
+          <div className="space-y-2">
+            <p>{t('timeline:bitcoin')}</p>
+            <p className="flex items-center">
+              <a
+                href="https://bitcoinsv.com"
+                className="underline decoration-2 font-medium decoration-[#eab300] inline-flex items-center mr-1"
+              >
+                <span className="inline-block w-8 h-8 mr-2">
+                  <BitcoinLogo />
+                </span>
+                <span>Bitcoin</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center space-x-4">
+          <SmallDot />
           <div className="space-y-2">
             <p>{t('timeline:automated_3d_scanner')}</p>
             <p className="flex items-center">
@@ -84,6 +123,9 @@ export function Timeline() {
                 href="https://www.reply.com/open-reply"
                 className="underline decoration-2 font-medium decoration-[#87cfbe] inline-flex items-center mr-1"
               >
+                <span className="inline-block w-8 h-8 mr-2 text-[#87cfbe] fill-current">
+                  <ReplyIcon />
+                </span>
                 <span>Open Reply</span>
               </a>
             </p>
@@ -100,6 +142,42 @@ export function Timeline() {
                 className="underline decoration-2 font-medium decoration-[#F74F4F] inline-flex items-center mr-1"
               >
                 <span>{t('timeline:bachelor_thesis')}</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center space-x-4">
+          <SmallDot />
+          <div className="space-y-2">
+            <p>{t('timeline:mastery_club')}</p>
+            <p className="flex items-center">
+              <a
+                href="https://mastery-club.com"
+                className="inline-flex decoration-[#e1c54c] items-center mr-1 font-medium underline decoration-2"
+              >
+                <span className="inline-block w-8 h-8 mr-2 fill-current">
+                  <img src="/MasteryClub_Resized.png" className="rounded"></img>
+                </span>
+                <span>Mastery Club</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center space-x-4">
+          <SmallDot />
+          <div className="space-y-2">
+            <p>{t('timeline:dero')}</p>
+            <p className="flex items-center">
+              <a
+                href="https://dero.io"
+                className="underline decoration-2 font-medium decoration-[#5d54dd] inline-flex items-center mr-1"
+              >
+                <span className="inline-block w-8 h-8 mr-2">
+                  <DeroIcon />
+                </span>
+                <span>DERO</span>
               </a>
             </p>
           </div>
@@ -148,7 +226,7 @@ export function Timeline() {
         <div className="flex items-center space-x-4">
           <SmallDot />
           <div className="space-y-2">
-            {/* <img src="/indian_vase_breakdown.webp" className="rounded"></img> */}
+            <img src="/indian_vase_breakdown.webp" className="rounded"></img>
             <p>{t('timeline:photorealistic_3d_scanning_description')}</p>
             <p className="flex items-center">
               <a
@@ -179,7 +257,7 @@ export function Timeline() {
         <div className="flex items-center space-x-4">
           <SmallDot />
           <div className="space-y-2">
-            {/* <img src="/fullstack_auth.webp" className="rounded"></img> */}
+            <img src="/fullstack_auth.webp" className="rounded"></img>
             <p>{t('timeline:youtube_videos_description')}</p>
             <p className="flex items-center">
               <a
@@ -245,11 +323,11 @@ export function Timeline() {
             <p>{t('timeline:started_3dreamz_desc')}</p>
             <p className="flex items-center">
               <a
-                href="https://github.com/3dreamz"
-                className="underline decoration-2 font-medium decoration-[#0084cc] inline-flex items-center mr-1"
+                href="https://threedreamz.app"
+                className="underline decoration-2 font-medium decoration-[#ffc701] inline-flex items-center mr-1"
               >
-                <span className="inline-block w-8 h-8 mr-2 text-[#0084cc] fill-current">
-                  <DDDesignerIcon />
+                <span className="inline-block w-8 h-8 mr-2 fill-current">
+                  <DreamzIcon />
                 </span>
                 <span>3Dreamz</span>
               </a>
@@ -336,9 +414,9 @@ export function Timeline() {
         <div className="flex items-center space-x-4">
           <SmallDot />
           <div className="space-y-2">
-            {/* <a href="https://www.instagram.com/p/CLUro1RnAVM/">
+            <a href="https://www.instagram.com/p/CLUro1RnAVM/">
               <img src="/ice_bath.webp" className="rounded"></img>
-            </a> */}
+            </a>
             <p>{t('timeline:ice_bathing')}</p>
           </div>
         </div>
@@ -407,7 +485,7 @@ export function Timeline() {
         <div className="flex items-center space-x-4">
           <SmallDot />
           <div className="space-y-2">
-            {/* <img src="/tackleit_thumb.webp"></img> */}
+            <img src="/tackleit_thumb.webp"></img>
             <p>{t('timeline:tackle_it_description')}</p>
             <p className="flex items-center">
               <a
