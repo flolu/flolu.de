@@ -1,5 +1,4 @@
 import type {NextApiRequest, NextApiResponse} from 'next'
-import * as queryString from 'query-string'
 
 import {fetcher} from '@/lib//fetcher'
 import {setCacheControl} from '@/lib//set-cache-control'
@@ -22,7 +21,7 @@ interface RepoData {
 
 async function getStarsOf(username: string) {
   const user = await fetcher<UserData>(`${api}/users/${username}`, {headers})
-  const query = queryString.stringify({per_page: user.public_repos})
+  const query = `per_page=${user.public_repos}`
   const repos = await fetcher<RepoData[]>(`${api}/users/${username}/repos?${query}`, {headers})
   const sourceRepos = repos.filter(repo => !repo.fork)
   return sourceRepos.reduce((accumulator, repo) => {

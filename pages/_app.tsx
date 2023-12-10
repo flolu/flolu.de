@@ -1,7 +1,7 @@
 import '@/styles/globals.sass'
 
-import {Inter, Noto_Serif, Roboto_Mono} from '@next/font/google'
 import {appWithTranslation} from 'next-i18next'
+import {Inter, Noto_Serif, Roboto_Mono} from 'next/font/google'
 import Script from 'next/script'
 import React from 'react'
 

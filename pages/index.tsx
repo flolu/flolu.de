@@ -112,7 +112,7 @@ export const getStaticProps: GetStaticProps<Props> = async context => {
       lastUpdated: new Date().toISOString(),
       locale,
     },
-    revalidate: 60 * 5,
+    revalidate: 60 * 60 * 1,
   }
 }
 

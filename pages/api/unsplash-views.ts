@@ -1,6 +1,5 @@
 import type {NextApiRequest, NextApiResponse} from 'next'
 
-import * as queryString from 'query-string'
 
 import {fetcher} from '@/lib//fetcher'
 import {setCacheControl} from '@/lib//set-cache-control'
@@ -18,7 +17,7 @@ interface StatisticsData {
 }
 
 export async function getUnsplashViews() {
-  const query = queryString.stringify({client_id: key})
+  const query = `client_id=${key}`
   const stats = await fetcher<StatisticsData>(`${api}/users/${username}/statistics?${query}`)
   return stats.views.total
 }

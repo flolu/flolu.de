@@ -3,7 +3,7 @@
   <p>My personal website</p>
 </div>
 
-# Usage
+## Usage
 
 **Recommended Operating System**: Linux
 
@@ -24,7 +24,12 @@
 - Create [Credentials](https://console.cloud.google.com/apis/api/youtube.googleapis.com/metrics)
 - Set `YOUTUBE_API_KEY` in `.env.local`
 
-# Codebase
+**Upgrade Dependencies**
+
+- Update NPM dependencies (`npx npm-check-updates --interactive --format group`)
+- Update `engines.node` in [`package.json`](package.json)
+
+## Codebase
 
 **Directories**
 
