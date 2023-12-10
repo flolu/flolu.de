@@ -1,6 +1,8 @@
 /* eslint-disable no-undef */
 /** @type {import('next-i18next').UserConfig} */
 
+const path = require('path')
+
 module.exports = {
   i18n: {
     defaultLocale: 'en',
@@ -8,6 +10,8 @@ module.exports = {
     // localePath: path.resolve('./public/locales'),
     // TODO ignore i18n for blog does not work
     // ignoreRoutes: ['/blog/', 'blog', 'blog/*'],
-    localeDetection: false,
+    localeDetection: true,
   },
+  localePath: path.resolve('./public/locales'),
+  reloadOnPrerender: process.env.NODE_ENV === 'development',
 }
